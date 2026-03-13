@@ -62,4 +62,4 @@ MonoBehaviour:
     PhysicMaterial: {fileID: 13400000, guid: ce1e6fe960420124b8b74090bb5697b7, type: 2}
     Color: {r: 0, g: 0, b: 0, a: 0}
     PrefabParticles: {fileID: 5221816439557420030, guid: 0fd8c9138336dac43bd56fae0b7abc00, type: 3}
-    Friction: 1.2
+    Friction: 1.4

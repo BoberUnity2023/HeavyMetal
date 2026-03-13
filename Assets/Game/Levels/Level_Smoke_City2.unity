@@ -1255,13 +1255,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659022382}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 43.48, y: 1, z: 0.35455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1678301142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,15 +2046,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
   _hub: {fileID: 1862994659}
-  _speed: 0
-  _distanceMin: 0
-  _distanceMax: 0
-  _distanceToTarget: 0
+  _speed: 5
+  _distanceMin: 2
+  _distanceMax: 8
+  _distanceToTarget: 5
   _distanceFaceState: 0
   _distanceFinishState: 0
   _distanceScaler: 0
-  _distanceGame: 0
+  _distanceGame: 5
+  _offset: {x: 4, y: 4, z: -10}
   _target: {fileID: 0}
+  _cameraPosition: {fileID: 0}
 --- !u!1 &1862994658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,6 +2238,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 827173633254598973, guid: 4216fd1b6b145e94b9e9dd30910eb294, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 827173633254598973, guid: 4216fd1b6b145e94b9e9dd30910eb294, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 827173633254598973, guid: 4216fd1b6b145e94b9e9dd30910eb294, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 827173633254598973, guid: 4216fd1b6b145e94b9e9dd30910eb294, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

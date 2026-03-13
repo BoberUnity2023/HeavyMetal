@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public enum CameraState
 {
@@ -46,11 +47,11 @@ public class CameraMove : MonoBehaviour
         //_hub.Screen.OnOrientationChanged += Screen_OnOrientationChanged;
         _distanceGame = _distanceToTarget;
         //SetState(CameraState.Game);
-        //SetByTargetState();
-        _offset = new Vector3(2, 2, -5);
+        //SetByTargetState();        
         GameObject pos = new GameObject();
-        pos.transform.position = _target.position + _offset;
+        pos.name = "CameraPosition";
         pos.transform.parent = _target;
+        pos.transform.localPosition = _offset;
         _cameraPosition = pos.transform;
     }
 
@@ -65,7 +66,7 @@ public class CameraMove : MonoBehaviour
     {
         Update_ScrollZoom();
         //Update_FieldOfView();
-
+        _cameraPosition.localPosition = _offset;
         //_freeDist = FreeDistance;        
     }
 
