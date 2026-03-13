@@ -146,7 +146,7 @@ namespace NWH.VehiclePhysics2.Input
             switch (steeringInputType)
             {
                 case HorizontalAxisType.SteeringWheel:
-                    return steeringWheel != null ? steeringWheel.GetClampedValue() : 0f;
+                    return steeringWheel != null ? /*steeringWheel.GetClampedValue()*/1.0f : 0f;//Error fixed BB!!
                 case HorizontalAxisType.Accelerometer:
                     return UnityEngine.Input.acceleration.x * tiltSensitivity;
                 case HorizontalAxisType.Button:

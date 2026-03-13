@@ -2065,6 +2065,18 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3521379264288970562, guid: 40ea60f2e85127846aec0c5d0efe5a8d, type: 3}
+      propertyPath: brakes.maxTorque
+      value: 20520
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521379264288970562, guid: 40ea60f2e85127846aec0c5d0efe5a8d, type: 3}
+      propertyPath: powertrain.engine.maxPower
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521379264288970562, guid: 40ea60f2e85127846aec0c5d0efe5a8d, type: 3}
+      propertyPath: steering.maximumSteerAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521379264288970562, guid: 40ea60f2e85127846aec0c5d0efe5a8d, type: 3}
       propertyPath: steering.speedSensitiveSteeringCurve.m_Curve.Array.data[1].time
       value: 0.56105214
       objectReference: {fileID: 0}

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1097494149451903339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6518803565975274952}
+  - component: {fileID: 5279882291150218642}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6518803565975274952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097494149451903339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5279882291150218642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097494149451903339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b3adb44a273424cafafaa4dbbf1866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameController
+  _config: {fileID: 0}
+  _levels: {fileID: 0}
+  _sceneLoader: {fileID: 0}
+  _soundContoller: {fileID: 0}
+  _controllerSettings: {fileID: 0}
+  _controllerAnalitycs: {fileID: 0}
+  _console: {fileID: 0}
+  _prefabSkidmarks: {fileID: 6130739728617072297, guid: 632e25f0cf8de734ea127112aa6ca2a5, type: 3}
+  _groundPropses:
+  - GroundMaterial: 0
+    PhysicMaterial: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    PrefabParticles: {fileID: 0}
+    Friction: 0
+  - GroundMaterial: 1
+    PhysicMaterial: {fileID: 13400000, guid: ce1e6fe960420124b8b74090bb5697b7, type: 2}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    PrefabParticles: {fileID: 5221816439557420030, guid: 0fd8c9138336dac43bd56fae0b7abc00, type: 3}
+    Friction: 1.2
