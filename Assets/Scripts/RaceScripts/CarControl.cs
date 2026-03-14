@@ -80,7 +80,7 @@ public class CarControl: MonoBehaviour
             
             if (!wheel.IsSteerable)
             {
-                bool isAutoHandbrake = !IsAccelerating && Mathf.Abs(Speed) < 1;
+                bool isAutoHandbrake = force == 0 && Mathf.Abs(Speed) < 1;
                 float _handbrake = _carInput.Handbrake;
                 
                 if (isAutoHandbrake)
