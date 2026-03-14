@@ -164,7 +164,7 @@ public class WheelSkid : MonoBehaviour
     {
         get
         {
-            float brakeSlide = _car.Hub.Input.CarInput.Brake; //[0...1]
+            float brakeSlide = _car.Input.Brake; //[0...1]
             float speedClamped = Mathf.Min(_carForwardVelocity, _brakeFadeSpeed);
             return brakeSlide *= (_brakeFadeSpeed - speedClamped) / _brakeFadeSpeed;//Доб. Затухание при высокой скорости
         }
@@ -174,7 +174,7 @@ public class WheelSkid : MonoBehaviour
     {
         get
         {
-            float handbrakeSlide = _car.Hub.Input.CarInput.Handbrake; //[0 ... 1]
+            float handbrakeSlide = _car.Input.Handbrake; //[0 ... 1]
             float speedClamped = Mathf.Min(_carForwardVelocity, _brakeFadeSpeed);
             return handbrakeSlide *= (_brakeFadeSpeed - speedClamped) / _brakeFadeSpeed;//Доб. Затухание при высокой скорости
         }
@@ -185,7 +185,7 @@ public class WheelSkid : MonoBehaviour
         get 
         {
             float speedClamped = Mathf.Min(_carForwardVelocity, _forceFadeEndSpeed);
-            float forwardSlide = _car.Hub.Input.CarInput.Force + _car.Hub.Input.CarInput.Reverse;//[0...1]
+            float forwardSlide = _car.Hub.Input.PlayerInput.Force + _car.Hub.Input.PlayerInput.Reverse;//[0...1]
             if (speedClamped > _forceFadeStartSpeed)
             {
                 float delta = _forceFadeEndSpeed - _forceFadeStartSpeed;

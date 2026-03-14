@@ -15,15 +15,14 @@ public class ControllerRace : MonoBehaviour
     {
         for (int i = 0; i < _carPositions.Length; i++)
         {
+            _car = Instantiate(_carPrefab, _carPositions[i].position, _carPositions[i].rotation);
             if (i < _carPositions.Length - 1)
-            {
-                _car = Instantiate(_carPrefab, _carPositions[i].position, _carPositions[i].rotation);
-                _car.Init(_hub, true);
+            {                
+                _car.Init(_hub, InputType.AI);
             }
             else
             {
-                _car = Instantiate(_carPrefab, _carPositions[i].position, _carPositions[i].rotation);
-                _car.Init(_hub, false);
+                _car.Init(_hub, InputType.Player);
                 _cameraMove.SetTarget(_car.transform);
             }
         }

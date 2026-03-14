@@ -25,10 +25,10 @@ public class CarSmoke : MonoBehaviour
     {
         get
         {
-            if (!_car.CarControl.IsAccelerating)
+            if (!_car.Control.IsAccelerating)
                 return _rateMin;
 
-            return _rateMin + (_rateMax - _rateMin) * Mathf.Abs(_car.Hub.Input.CarInput.Force);
+            return _rateMin + (_rateMax - _rateMin) * Mathf.Abs(_car.Input.Force);
         }
     }
 }

@@ -172,52 +172,52 @@ public class CanvasLevel : MonoBehaviour
 
     public void PointerDownLeft()
     {
-        _hub.Input.CarInput.PointerDownLeft();
+        _hub.Input.PlayerInput.PointerDownLeft();
     }
 
     public void PointerUpLeft()
     {
-        _hub.Input.CarInput.PointerUpLeft();
+        _hub.Input.PlayerInput.PointerUpLeft();
     }
 
     public void PointerDownRight()
     {
-        _hub.Input.CarInput.PointerDownRight();
+        _hub.Input.PlayerInput.PointerDownRight();
     }
 
     public void PointerUpRight()
     {
-        _hub.Input.CarInput.PointerUpRight();
+        _hub.Input.PlayerInput.PointerUpRight();
     }
 
     public void PointerDownForce()
     {
-        _hub.Input.CarInput.PointerDownForce();
+        _hub.Input.PlayerInput.PointerDownForce();
     }
 
     public void PointerUpForce()
     {
-        _hub.Input.CarInput.PointerUpForce();
+        _hub.Input.PlayerInput.PointerUpForce();
     }
 
     public void PointerDownBrake()
     {
-        _hub.Input.CarInput.PointerDownBrake();
+        _hub.Input.PlayerInput.PointerDownBrake();
     }
 
     public void PointerUpBrake()
     {
-        _hub.Input.CarInput.PointerUpBrake();
+        _hub.Input.PlayerInput.PointerUpBrake();
     }
 
     public void PointerDownHandbrake()
     {
-        _hub.Input.CarInput.PointerDownHandbrake();
+        _hub.Input.PlayerInput.PointerDownHandbrake();
     }
 
     public void PointerUpHandbrake()
     {
-        _hub.Input.CarInput.PointerUpHandbrake();
+        _hub.Input.PlayerInput.PointerUpHandbrake();
     }
 
     public void SetButterflyCount(int count)

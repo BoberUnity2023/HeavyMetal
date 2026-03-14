@@ -13,7 +13,7 @@ public class SteeringWheel : MonoBehaviour
     private void Update_AnimationsTurn()
     {
         AnimatorStateInfo stateTurn = _animator.GetCurrentAnimatorStateInfo(0);
-        float normalizedTime = _car.Hub.Input.CarInput.Steer / 2 + 0.5f;
+        float normalizedTime = _car.Hub.Input.PlayerInput.Steer / 2 + 0.5f;
         _animator.Play(stateTurn.fullPathHash, 0, normalizedTime);
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 public class InputController : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
-    [SerializeField] private CarInput _carInput;
+    [SerializeField] private PlayerInput _playerInput;
 
-    public CarInput CarInput => _carInput;
+    public PlayerInput PlayerInput => _playerInput;
 
     private void Start()
     {

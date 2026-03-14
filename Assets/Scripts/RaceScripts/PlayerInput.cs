@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CarInput : MonoBehaviour, ICarInputable
+public class PlayerInput : MonoBehaviour, ICarInputable
 {
     [SerializeField] private Hub _hub;
 
@@ -34,12 +34,12 @@ public class CarInput : MonoBehaviour, ICarInputable
     {
         get
         {
-            if (_hub.Level.Race.Car.CarControl.IsAccelerating)
+            if (_hub.Level.Race.Car.Control.IsAccelerating)
                 return 0;
 
             if (_delta.y >= 0)
             {
-                if (_hub.Level.Race.Car.CarControl.Speed > 0)
+                if (_hub.Level.Race.Car.Control.Speed > 0)
                     return 0;
 
                 return _delta.y;//Тормоза при нажатии Вперёд - заднем ходе
@@ -64,13 +64,13 @@ public class CarInput : MonoBehaviour, ICarInputable
             if (_delta.y >= 0)
                 return 0;
 
-            if (!_hub.Level.Race.Car.CarControl.IsAccelerating)
+            if (!_hub.Level.Race.Car.Control.IsAccelerating)
                 return 0;
 
             return -_delta.y;
         }
     }    
-    
+
     private void Update()
     {
         Update_KeyboardArrowcControl();

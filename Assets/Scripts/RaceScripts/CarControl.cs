@@ -3,8 +3,7 @@ using UnityEngine;
 public class CarControl: MonoBehaviour
 {    
     [Header("Car Properties")]
-    [SerializeField] private Car _car;
-    //[SerializeField] private bool _ai;
+    [SerializeField] private Car _car;    
     [SerializeField] private float motorTorque = 2000f;
     [SerializeField] private float brakeTorque = 2000f;
     [SerializeField] private float maxSpeed = 20f;
@@ -12,34 +11,27 @@ public class CarControl: MonoBehaviour
     [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
     [SerializeField] private float _speedForward;
-
-    private Hub _hub;
+    
     private WheelControl[] _wheels;
-    private Rigidbody _rigidBody;
-    private ICarInputable _carInput;
+    private Rigidbody _rigidBody;    
 
     //Calculate current speed along the car's forward axis
     public float Speed => Vector3.Dot(transform.forward, _rigidBody.linearVelocity); //O� -Max �� Max
     public float SpeedForward => _speedForward; //O� 0 �� Max        
 
     private void Start()
-    {
-        _hub = _car.Hub;
-        _carInput = _car.AIInput.IsAI ? _car.AIInput : _hub.Input.CarInput;
+    {               
         _rigidBody = GetComponent<Rigidbody>();
 
         // Get all wheel components attached to the car
-        _wheels = GetComponentsInChildren<WheelControl>();
+        _wheels = GetComponentsInChildren<WheelControl>();        
     }
     
     public void FixedUpdate()
     {
-        // Get player input for acceleration and steering
-        float force = _carInput.Force; // Forward/backward input
-        float steering = _carInput.Steer; // Steering input        
-        
-        // Calculate current speed along the car's forward axis
-        //float speed = Vector3.Dot(transform.forward, rigidBody.velocity);//linearVelocity
+        // Get player input for acceleration and steering        
+        float force = _car.Input.Force; // Forward/backward input
+        float steering = _car.Input.Steer; // Steering input  
         
         // Normalized speed factor
         _speedForward = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(Speed)); ;
@@ -73,7 +65,7 @@ public class CarControl: MonoBehaviour
                 // Apply brakes when reversing direction
                 wheel.WheelCollider.motorTorque = 0f;
 
-                _brakeTorque = _carInput.Brake * brakeTorque; 
+                _brakeTorque = _car.Input.Brake * brakeTorque; 
                 
                 if (!CanAccelerate)
                     _brakeTorque = brakeTorque;                               
@@ -82,7 +74,7 @@ public class CarControl: MonoBehaviour
             if (!wheel.IsSteerable)
             {
                 bool isAutoHandbrake = force == 0 && Mathf.Abs(Speed) < 1;
-                float _handbrake = _carInput.Handbrake;
+                float _handbrake = _car.Input.Handbrake;
                 
                 if (isAutoHandbrake)
                     _handbrake = 1;
@@ -126,7 +118,7 @@ public class CarControl: MonoBehaviour
     }
 
     // Determine if the player is accelerating or trying to reverse
-    public bool IsAccelerating => Mathf.Sign(_carInput.Force) == Mathf.Sign(Speed) || SpeedForward < 0.01f;
+    public bool IsAccelerating => Mathf.Sign(_car.Input.Force) == Mathf.Sign(Speed) || SpeedForward < 0.01f;
 
     private bool CanAccelerate
     {
