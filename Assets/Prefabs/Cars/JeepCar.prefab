@@ -5920,6 +5920,7 @@ GameObject:
   - component: {fileID: 1445235045075204917}
   - component: {fileID: 3335092485689057933}
   - component: {fileID: 8534404491845417155}
+  - component: {fileID: -7534694214258213320}
   - component: {fileID: 7085787564322592434}
   - component: {fileID: 1228678545467683298}
   - component: {fileID: 6455621255536215378}
@@ -5970,6 +5971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hub: {fileID: 0}
   _carControl: {fileID: 8534404491845417155}
+  _aIInput: {fileID: -7534694214258213320}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}
   _heroPosition: {fileID: 7343239410339146340}
@@ -5986,6 +5988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
+  _ai: 1
   motorTorque: 6000
   brakeTorque: 4000
   maxSpeed: 80
@@ -5993,6 +5996,21 @@ MonoBehaviour:
   steeringRangeAtMaxSpeed: 30
   _downForce: 0
   _speedForward: 0
+--- !u!114 &-7534694214258213320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2169b860c1a67424c8d2ceebf5c0af75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarAI
+  _isAI: 1
+  currentWaypoint: 0
+  Laps: 1
 --- !u!54 &7085787564322592434
 Rigidbody:
   m_ObjectHideFlags: 0

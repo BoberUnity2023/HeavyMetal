@@ -6,6 +6,7 @@ public class Car : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
     [SerializeField] private CarControl _carControl;
+    [SerializeField] private CarAI _aIInput;
     [SerializeField] private GameObject _prefabSparks;
     [SerializeField] private Transform _podnosPosition;
     [SerializeField] private Transform _heroPosition;
@@ -14,14 +15,18 @@ public class Car : MonoBehaviour
 
     public CarControl CarControl => _carControl;
 
+    public CarAI AIInput => _aIInput;
+
     public GameObject PrefabSparks => _prefabSparks;
 
     public Transform PodnosPosition => _podnosPosition;
 
     public Transform HeroPosition => _heroPosition;
 
-    public void Initi(Hub hub)
+    public void Init(Hub hub, bool ai)
     {
         _hub = hub;
+        if (ai)
+            _aIInput.IsAI = true;
     }
 }

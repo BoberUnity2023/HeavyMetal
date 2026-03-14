@@ -22,10 +22,10 @@ namespace NWH.VehiclePhysics2.Input
     {
         /// <summary>
         ///     When enabled input will be auto-retrieved from the InputProviders present in the scene.
-        ///     Disable to manually set the input through external scripts, i.e. AI controller.
+        ///     Disable to manually set the input through external scripts, i.e. AIInput controller.
         /// </summary>
         [FormerlySerializedAs("autoSettable")]
-        [UnityEngine.Tooltip("    When enabled input will be auto-retrieved from the InputProviders present in the scene.\r\n Disable to manualy set the input through external scripts, i.e. AI controller.")]
+        [UnityEngine.Tooltip("    When enabled input will be auto-retrieved from the InputProviders present in the scene.\r\n Disable to manualy set the input through external scripts, i.e. AIInput controller.")]
         public bool autoSetInput = true;
 
 

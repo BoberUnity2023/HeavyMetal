@@ -4,6 +4,7 @@ public class CarControl: MonoBehaviour
 {    
     [Header("Car Properties")]
     [SerializeField] private Car _car;
+    //[SerializeField] private bool _ai;
     [SerializeField] private float motorTorque = 2000f;
     [SerializeField] private float brakeTorque = 2000f;
     [SerializeField] private float maxSpeed = 20f;
@@ -15,7 +16,7 @@ public class CarControl: MonoBehaviour
     private Hub _hub;
     private WheelControl[] _wheels;
     private Rigidbody _rigidBody;
-    private CarInput _carInput;
+    private ICarInputable _carInput;
 
     //Calculate current speed along the car's forward axis
     public float Speed => Vector3.Dot(transform.forward, _rigidBody.linearVelocity); //O� -Max �� Max
@@ -24,7 +25,7 @@ public class CarControl: MonoBehaviour
     private void Start()
     {
         _hub = _car.Hub;
-        _carInput = _hub.Input.CarInput;
+        _carInput = _car.AIInput.IsAI ? _car.AIInput : _hub.Input.CarInput;
         _rigidBody = GetComponent<Rigidbody>();
 
         // Get all wheel components attached to the car
@@ -35,7 +36,7 @@ public class CarControl: MonoBehaviour
     {
         // Get player input for acceleration and steering
         float force = _carInput.Force; // Forward/backward input
-        float steering = _carInput.Steer; // Steering input
+        float steering = _carInput.Steer; // Steering input        
         
         // Calculate current speed along the car's forward axis
         //float speed = Vector3.Dot(transform.forward, rigidBody.velocity);//linearVelocity
@@ -72,7 +73,7 @@ public class CarControl: MonoBehaviour
                 // Apply brakes when reversing direction
                 wheel.WheelCollider.motorTorque = 0f;
 
-                _brakeTorque = _carInput.Brake * brakeTorque; //*/Mathf.Abs(force) * brakeTorque;
+                _brakeTorque = _carInput.Brake * brakeTorque; 
                 
                 if (!CanAccelerate)
                     _brakeTorque = brakeTorque;                               

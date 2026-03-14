@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CarInput : MonoBehaviour
+public class CarInput : MonoBehaviour, ICarInputable
 {
     [SerializeField] private Hub _hub;
 
