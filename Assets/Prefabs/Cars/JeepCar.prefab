@@ -6631,7 +6631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  motorTorque: 6000
+  motorTorque: 5000
   brakeTorque: 4000
   maxSpeed: 80
   steeringRange: 42

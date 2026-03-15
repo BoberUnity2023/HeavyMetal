@@ -101,7 +101,7 @@ public class CarAI : MonoBehaviour, ICarInputable
     {
         get
         {
-            return Mathf.Abs(_steer) < 0.1f ? 0.30f : 0.15f;
+            return Mathf.Abs(_steer) < 0.1f ? 0.25f : 0.10f;
         }
     }
 

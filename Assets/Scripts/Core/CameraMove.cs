@@ -3,8 +3,8 @@ using static UnityEditor.PlayerSettings;
 
 public enum CameraState
 {
-    Game,
-    Face,
+    Follow,
+    Izometry,
     Finish
 }
 public class CameraMove : MonoBehaviour
@@ -25,7 +25,7 @@ public class CameraMove : MonoBehaviour
     private Camera _camera;
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _cameraPosition;
-    private CameraState _state;
+    private CameraState _state;    
 
     public int TargetState { get; private set; }
 
@@ -35,6 +35,12 @@ public class CameraMove : MonoBehaviour
         {
             //Vector3 heroToCamera = (_target.position - _hub.Hero.CameraTarget.position).normalized;
             //float dist = Mathf.Min(_distanceToTarget, _freeDist);
+            if (_state == CameraState.Izometry)
+                return _target.position + _offset * 2.4f;
+            
+            if (_state == CameraState.Follow)
+                return _cameraPosition.position;
+
             return _cameraPosition.position;
         }
     }
@@ -47,12 +53,25 @@ public class CameraMove : MonoBehaviour
         //_hub.Screen.OnOrientationChanged += Screen_OnOrientationChanged;
         _distanceGame = _distanceToTarget;
         //SetState(CameraState.Game);
-        //SetByTargetState();        
+        //SetByTargetState();
         GameObject pos = new GameObject();
         pos.name = "CameraPosition";
         pos.transform.parent = _target;
         pos.transform.localPosition = _offset;
         _cameraPosition = pos.transform;
+
+        _state = CameraState.Izometry;
+    }
+
+    private void SetFollow()
+    {
+
+        _state = CameraState.Follow;
+    }
+
+    private void SetIzometry()
+    {
+        _state = CameraState.Izometry;
     }
 
     private void OnDestroy()
@@ -67,7 +86,15 @@ public class CameraMove : MonoBehaviour
         Update_ScrollZoom();
         //Update_FieldOfView();
         _cameraPosition.localPosition = _offset;
-        //_freeDist = FreeDistance;        
+        //_freeDist = FreeDistance;
+        //
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (_state == CameraState.Izometry)            
+                SetFollow();            
+            else
+                SetIzometry();
+        }    
     }
 
     private void FixedUpdate()
@@ -92,20 +119,7 @@ public class CameraMove : MonoBehaviour
             return;
 
         _state = state;        
-        if (state == CameraState.Game)
-        {
-            //SetTarget(_hub.Hero.CameraTarget);
-            _distanceMin = _distanceFaceState;
-            _distanceToTarget = _distanceGame;
-        }
-
-        if (_state == CameraState.Face)
-        {
-            _distanceGame = _distanceToTarget;
-            //SetTarget(_hub.Hero.CameraTargetLevelComplete);
-            _distanceMin = _distanceFaceState;
-            _distanceToTarget = _distanceFaceState;
-        }
+        
 
         if (_state == CameraState.Finish)
         {
@@ -119,7 +133,7 @@ public class CameraMove : MonoBehaviour
     public void Restart(Vector3 position)
     {
         transform.position = position;
-        SetState(CameraState.Game);
+        //SetState(CameraState.Game);
     }
 
     public void FixedUpdate_TryMove()
@@ -154,7 +168,7 @@ public class CameraMove : MonoBehaviour
 
     private void Level_OnLevelLost()
     {
-        SetState(CameraState.Face);
+        //SetState(CameraState.Face);
     }
 
     private void Level_OnLevelComplete(int cakes)
@@ -245,41 +259,7 @@ public class CameraMove : MonoBehaviour
 
         if (TargetState == 1)
         {
-            //if (_hub.Level.GameType == GameType.Podnos)
-            //{
-            //    _hub.Hero.CameraPosition.localPosition = new Vector3(5, 5, 4);
-            //    _hub.Hero.CameraPosition.localRotation = Quaternion.Euler(40, -105, 0);
-            //    _hub.Hero.CameraTarget.localPosition = new Vector3(0, 0.5f, 1.5f);
-            //    _distanceToTarget = 2.8f;
-            //    _distanceGame = 2.8f;
-            //}
-
-            //if (_hub.Level.GameType == GameType.Race)
-            //{
-            //    _hub.Hero.CameraPosition.localPosition = new Vector3(4, 2, 3);
-            //    _hub.Hero.CameraPosition.localRotation = Quaternion.Euler(15, -105, 0);
-            //    _hub.Hero.CameraTarget.localPosition = new Vector3(0, 0.8f, 2.5f);
-            //    _distanceToTarget = 2.5f;
-            //    _distanceGame = 2.5f;
-            //}
+            
         }
-
-        //if (TargetState == 2)
-        //{
-        //    _hub.Hero.CameraPosition.localPosition = new Vector3(7, 7, 3);
-        //    _hub.Hero.CameraPosition.localRotation = Quaternion.Euler(25, -105, 0);
-        //    _hub.Hero.CameraTarget.localPosition = new Vector3(0, 0.2f, 1.5f);
-        //    _distanceToTarget = 1.5f;
-        //    _distanceGame = 1.5f;
-        //}
-
-        //if (TargetState == 3)
-        //{
-        //    _hub.Hero.CameraPosition.localPosition = new Vector3(20, 6, 6);
-        //    _hub.Hero.CameraPosition.localRotation = Quaternion.Euler(15, -100, 0);
-        //    _hub.Hero.CameraTarget.localPosition = new Vector3(0, 0.5f, 1.2f);
-        //    _distanceToTarget = 3.0f;
-        //    _distanceGame = 3.0f;
-        //}
     }
 }
