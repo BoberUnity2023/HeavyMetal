@@ -4,8 +4,7 @@ using UnityEngine;
 public class ControllerControl : MonoBehaviour
 {
     [SerializeField] private ConfigControl _config;
-    [SerializeField] private Hub _hub;
-    [SerializeField] private Cursor3d _cursor3d;
+    [SerializeField] private Hub _hub;    
 
     private Camera _camera;
     private Vector3 _worldPositionCursor = Vector3.zero;
@@ -57,8 +56,7 @@ public class ControllerControl : MonoBehaviour
         //if (Vector3.Distance(hit.point, _hub.Hero.transform.position) < 5)
         //{
         //    _worldPositionCursor = hit.point;            
-        //}
-        _cursor3d.SetPosition(hit.point);
+        //}        
     }
 
     private void Update_Cursor()
@@ -82,8 +80,7 @@ public class ControllerControl : MonoBehaviour
         //    _cursor3d.SetPositionType(PositionType.Normal);
         //    return;
         //}
-
-        _cursor3d.SetPositionType(PositionType.Good);        
+            
     }
 
     private bool IsCursorOnUI

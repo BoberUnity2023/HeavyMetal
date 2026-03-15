@@ -80,23 +80,6 @@ public class CanvasLevel : MonoBehaviour
             RaceButtonsShow();
     }
 
-    public void PressJump() 
-    {
-        _hub.Sound.PressSound();
-        _hub.Input.Jump();
-    }
-
-    public void PointerDownJumpBig()
-    {
-        _buttonJumpAnimator.Play("Pressed");
-        PressJump();
-    }
-
-    public void PointerUpJumpBig()
-    {
-        _buttonJumpAnimator.Play("Normal");        
-    }
-
     public void PressMainMenu()
     {
         _hub.Sound.PressSound();
@@ -131,8 +114,7 @@ public class CanvasLevel : MonoBehaviour
     public void PressRestartFromCheckpoint()
     {
         _hub.Sound.PressSound();
-        OnPressRestartFromCheckpoint?.Invoke();
-        _hub.Input.RestartFromCheckpoint();        
+        OnPressRestartFromCheckpoint?.Invoke();              
     }
 
     public void PressCamera()

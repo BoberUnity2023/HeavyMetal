@@ -16,18 +16,9 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        Update_TryJump();        
+             
     }
-
-    private void Update_TryJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {            
-            Jump();
-            PlayerPrefs.SetInt("Jumped", 1);
-        }
-    }
-
+    
     public void LoadScene(int buildIndex)
     {
         _hub.SceneLoader.LoadScene(buildIndex);
@@ -53,13 +44,5 @@ public class InputController : MonoBehaviour
         LoadScene(buildIndex);
     }
 
-    public void Jump()
-    {
-        //_hub.Hero.Move.TryJump();
-    }
-
-    public void RestartFromCheckpoint()
-    {        
-        
-    }
+    
 }
