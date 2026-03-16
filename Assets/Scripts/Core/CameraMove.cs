@@ -9,8 +9,7 @@ public enum CameraState
 }
 public class CameraMove : MonoBehaviour
 {
-    [SerializeField] private Hub _hub;
-    //[SerializeField] LayerMask _layerMask;
+    [SerializeField] private Hub _hub;    
     [SerializeField] private float _speed;    
     [SerializeField] private float _distanceMin;
     [SerializeField] private float _distanceMax;

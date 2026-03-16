@@ -87,7 +87,7 @@ namespace Coffee.UIExtensions.Demo
 
         public void ParticleSystem_WorldSpaseSimulation(bool flag)
         {
-            foreach (var p in FindObjectsOfType<ParticleSystem>())
+            foreach (var p in FindObjectsByType<ParticleSystem>(FindObjectsSortMode.None))//BB
             {
                 var main = p.main;
                 main.simulationSpace = flag

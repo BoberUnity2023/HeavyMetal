@@ -35,10 +35,7 @@ public class Joistick : MonoBehaviour
     }
 
     private void LateUpdate()
-    { 
-        if (_hub.Control.Type != ControlType.Mobile)
-            return;        
-
+    {         
         if (_hub.Game.Device == Device.Mobile)
         {
             //Debug.Log("TouchCount: " + Input.touchCount);
@@ -115,8 +112,8 @@ public class Joistick : MonoBehaviour
 
     public void OnTouchBegan(Vector2 touchPosition)
     {
-        if (_hub.Control.IsOnUI(touchPosition))
-            return;
+        //if (_hub.Control.IsOnUI(touchPosition))
+        //    return;
 
         if (_hub.Level.IsLost || _hub.Level.IsComplete)
             return;
@@ -135,8 +132,8 @@ public class Joistick : MonoBehaviour
 
     public void OnTouchMoved(Vector2 touchPosition)
     {
-        if (_hub.Control.IsOnUI(touchPosition))
-            return;
+        //if (_hub.Control.IsOnUI(touchPosition))
+        //    return;
 
         if (!_isTouched)
             return;

@@ -9,7 +9,7 @@ public class WheelSkid : MonoBehaviour
     [SerializeField] private float _skidSlideStart = 0.2f;
     [SerializeField] private float _sideSlideMin = 0.2f;
     [SerializeField] private float _sideSlideMax = 2.2f;
-    [SerializeField] private float _brakeSlideStart = 0.5f;
+    //[SerializeField] private float _brakeSlideStart = 0.5f;
     [SerializeField] private float _brakeFadeSpeed = 20.0f;//На этой скорости следы от тормозов растворяются
     [SerializeField] private float _forceFadeStartSpeed = 3.0f;//На этой скорости следы от пробуксовки начинают растворяются
     [SerializeField] private float _forceFadeEndSpeed = 7.0f;//На этой скорости следы от пробуксовки растворяются
@@ -17,12 +17,7 @@ public class WheelSkid : MonoBehaviour
     [SerializeField] private float _mark_width = 0.2f;//Ширина следа
 
     private Skidmarks _skidmarksController;
-    /*private ParticleSystem _smoke;
-    private ParticleSystem _smokeSand;
-    private ParticleSystem _smokeSnow;*/
     private List<ParticleSystem> _particleSystems = new List<ParticleSystem>();
-    //private ParticleSystem.EmissionModule _emissionModuleSand;
-    //private ParticleSystem.EmissionModule _emissionModuleSnow;
     private WheelCollider _wheelCollider;
     private WheelHit _wheelHitInfo;
     [SerializeField] private GroundMaterial _groundMaterial;
@@ -31,7 +26,7 @@ public class WheelSkid : MonoBehaviour
 
     private int _lastSkid = -1; // Array index for the skidmarks controller. Index of last skidmark piece this wheel used
     private float lastFixedUpdateTime;
-    private float _carForwardVelocity;
+    private float _carSpeed;
 
     public GroundMaterial GroundMaterial => _groundMaterial;
 
@@ -116,10 +111,10 @@ public class WheelSkid : MonoBehaviour
 	private void Mark()
 	{
         float intensity = 0;
+        _carSpeed = _car.Speed;
+
         if (_wheelCollider.GetGroundHit(out _wheelHitInfo))
         {
-            _carForwardVelocity = Vector3.Dot(_rigidbody.linearVelocity, transform.forward);    
-
             intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);            
             
             if (intensity >= _skidSlideStart)
@@ -165,7 +160,7 @@ public class WheelSkid : MonoBehaviour
         get
         {
             float brakeSlide = _car.Input.Brake; //[0...1]
-            float speedClamped = Mathf.Min(_carForwardVelocity, _brakeFadeSpeed);
+            float speedClamped = Mathf.Min(_carSpeed, _brakeFadeSpeed);
             return brakeSlide *= (_brakeFadeSpeed - speedClamped) / _brakeFadeSpeed;//Доб. Затухание при высокой скорости
         }
     }
@@ -175,7 +170,7 @@ public class WheelSkid : MonoBehaviour
         get
         {
             float handbrakeSlide = _car.Input.Handbrake; //[0 ... 1]
-            float speedClamped = Mathf.Min(_carForwardVelocity, _brakeFadeSpeed);
+            float speedClamped = Mathf.Min(_carSpeed, _brakeFadeSpeed);
             return handbrakeSlide *= (_brakeFadeSpeed - speedClamped) / _brakeFadeSpeed;//Доб. Затухание при высокой скорости
         }
     }
@@ -184,7 +179,7 @@ public class WheelSkid : MonoBehaviour
     {
         get 
         {
-            float speedClamped = Mathf.Min(_carForwardVelocity, _forceFadeEndSpeed);
+            float speedClamped = Mathf.Min(_carSpeed, _forceFadeEndSpeed);
             float forwardSlide = _car.Hub.Input.PlayerInput.Force + _car.Hub.Input.PlayerInput.Reverse;//[0...1]
             if (speedClamped > _forceFadeStartSpeed)
             {

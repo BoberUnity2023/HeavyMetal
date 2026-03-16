@@ -39,7 +39,7 @@ public class PlayerInput : MonoBehaviour, ICarInputable
 
             if (_delta.y >= 0)
             {
-                if (_hub.Level.Race.Car.Control.Speed > 0)
+                if (_hub.Level.Race.Car.Speed > 0)
                     return 0;
 
                 return _delta.y;//Тормоза при нажатии Вперёд - заднем ходе

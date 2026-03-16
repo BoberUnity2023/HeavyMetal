@@ -55,7 +55,7 @@ public class LevelEndWindow : MonoBehaviour
         Show();
         _buttonNextLevel.gameObject.SetActive(false);
         _buttonRestart.gameObject.SetActive(true);
-        _buttonRestartFromCheckpoint.gameObject.SetActive(_hub.Level.HasCheckpoint);
+        //_buttonRestartFromCheckpoint.gameObject.SetActive(_hub.Level.HasCheckpoint);
         
     }
 

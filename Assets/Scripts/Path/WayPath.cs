@@ -7,6 +7,8 @@ public class WayPath : MonoBehaviour
     public Transform[] Points;
     public float[] MaxSpeeds;
 
+    public int PointsCount => Points.Length - 1;
+
     private void Awake()
     {
         int i = 0;

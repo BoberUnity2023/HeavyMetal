@@ -6559,10 +6559,12 @@ GameObject:
   - component: {fileID: 1445235045075204917}
   - component: {fileID: 3335092485689057933}
   - component: {fileID: 8534404491845417155}
+  - component: {fileID: 4789119249719021234}
   - component: {fileID: -7534694214258213320}
   - component: {fileID: 7085787564322592434}
   - component: {fileID: 1228678545467683298}
   - component: {fileID: 6455621255536215378}
+  - component: {fileID: 4676841522073122653}
   m_Layer: 0
   m_Name: JeepCar
   m_TagString: Untagged
@@ -6615,9 +6617,12 @@ MonoBehaviour:
   _hub: {fileID: 0}
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
+  _lapsCounter: {fileID: 4789119249719021234}
+  _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}
   _heroPosition: {fileID: 7343239410339146340}
+  IsFinished: 0
 --- !u!114 &8534404491845417155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6638,6 +6643,22 @@ MonoBehaviour:
   steeringRangeAtMaxSpeed: 30
   _downForce: 0
   _speedForward: 0
+--- !u!114 &4789119249719021234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0716433251fe1f1479b77e2414eab1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LapsCounter
+  _car: {fileID: 3335092485689057933}
+  Lap: 1
+  _currentPoint: 0
+  _relativePointPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-7534694214258213320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6651,10 +6672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
   _car: {fileID: 3335092485689057933}
-  _currentPoint: 0
-  _relativePointPosition: {x: 0, y: 0, z: 0}
-  _f: {x: 0, y: 0, z: 0}
-  Laps: 1
 --- !u!54 &7085787564322592434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6713,6 +6730,27 @@ MonoBehaviour:
   - {fileID: 4553891560773527226}
   _rateMin: 4
   _rateMax: 12
+--- !u!65 &4676841522073122653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.83, z: 0}
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

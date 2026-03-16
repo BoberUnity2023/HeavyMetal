@@ -13,16 +13,12 @@ public class CarControl: MonoBehaviour
     [SerializeField] private float _speedForward;
     
     private WheelControl[] _wheels;
-    private Rigidbody _rigidBody;    
 
     //Calculate current speed along the car's forward axis
-    public float Speed => Vector3.Dot(transform.forward, _rigidBody.linearVelocity); //O� -Max �� Max
-    public float SpeedForward => _speedForward; //O� 0 �� Max        
+    public float MaxSpeed => maxSpeed;
 
     private void Start()
-    {               
-        _rigidBody = GetComponent<Rigidbody>();
-
+    { 
         // Get all wheel components attached to the car
         _wheels = GetComponentsInChildren<WheelControl>();        
     }
@@ -31,14 +27,11 @@ public class CarControl: MonoBehaviour
     {
         // Get player input for acceleration and steering        
         float force = _car.Input.Force; // Forward/backward input
-        float steering = _car.Input.Steer; // Steering input  
-        
-        // Normalized speed factor
-        _speedForward = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(Speed)); ;
+        float steering = _car.Input.Steer; // Steering input 
 
         // Reduce motor torque and steering at high speeds for better handling
-        float currentMotorTorque = Mathf.Lerp(motorTorque, 0, SpeedForward);//��� SpeedForward == 0 - 1; ��� SpeedForward.Max == 0;
-        float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, SpeedForward);
+        float currentMotorTorque = Mathf.Lerp(motorTorque, 0, _car.SpeedForward);//��� SpeedForward == 0 - 1; ��� SpeedForward.Max == 0;
+        float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedForward);
 
         foreach (WheelControl wheel in _wheels)
         {
@@ -56,9 +49,7 @@ public class CarControl: MonoBehaviour
                 if (wheel.IsMotorized)
                 {
                     wheel.WheelCollider.motorTorque = force * currentMotorTorque;
-                }
-                // Release brakes when accelerating
-                wheel.WheelCollider.brakeTorque = 0f;
+                }                
             }
             else
             {
@@ -73,10 +64,10 @@ public class CarControl: MonoBehaviour
             
             if (!wheel.IsSteerable)
             {
-                bool isAutoHandbrake = force == 0 && Mathf.Abs(Speed) < 1;
+                bool isAutoHandbrake = force == 0 && Mathf.Abs(_car.Speed) < 1;
                 float _handbrake = _car.Input.Handbrake;
                 
-                if (isAutoHandbrake)
+                if (isAutoHandbrake || _car.IsFinished)
                     _handbrake = 1;
 
                 _brakeTorque += _handbrake * brakeTorque;
@@ -106,19 +97,19 @@ public class CarControl: MonoBehaviour
 
         if (other.gameObject.name.Contains("Checkpoint"))
         {
-            Debug.Log(gameObject.name + ".Checkpoint");
-            Checkpoint checkpoint = other.GetComponent<Checkpoint>();
-            checkpoint.StartComplete();
+            //Debug.Log(gameObject.name + ".Checkpoint");
+            //Checkpoint checkpoint = other.GetComponent<Checkpoint>();
+            //checkpoint.StartComplete();
         }
     }
 
     private void AddDownForce()
     {
-        _rigidBody.AddForce(-transform.up * _downForce * SpeedForward);        
+        _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward);        
     }
 
     // Determine if the player is accelerating or trying to reverse
-    public bool IsAccelerating => Mathf.Sign(_car.Input.Force) == Mathf.Sign(Speed) || SpeedForward < 0.01f;
+    public bool IsAccelerating => Mathf.Sign(_car.Input.Force) == Mathf.Sign(_car.Speed) || _car.SpeedForward < 0.01f;
 
     private bool CanAccelerate
     {
