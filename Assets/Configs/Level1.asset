@@ -15,3 +15,7 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _sceneBuildIndex: 0
   _laps: 2
+  _enemyPrefabs:
+  - {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+  - {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
+  - {fileID: 3335092485689057933, guid: 4189196ed3bf5f84ba9eebb8219d9f15, type: 3}

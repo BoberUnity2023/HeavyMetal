@@ -12,6 +12,7 @@ public class Hub : SceneController
     [SerializeField] private Joistick _joistick = null;
     [SerializeField] private WindowSettings _windowSettings;
     [SerializeField] private ResultController _resultController;
+    [SerializeField] private PathSelector _pathSelector;
     private PlaceController _placeController;
     //public GameController Game { get; set; }
 
@@ -40,6 +41,8 @@ public class Hub : SceneController
     public WindowSettings WindowSettings => _windowSettings;
 
     public ResultController ResultController => _resultController;
+
+    public PathSelector PathSelector => _pathSelector;
 
     private void Awake()
     {

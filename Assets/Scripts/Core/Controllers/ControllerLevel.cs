@@ -18,6 +18,8 @@ public class ControllerLevel : MonoBehaviour
 
     public Hub Hub => _hub;
 
+    public ConfigLevel Config => _config.Level(1);
+
     public ConfigLevel Level => _config.Level(_hub.Game.CurrentLevel);     
 
     public ControllerRace Race => _race;    

@@ -17,9 +17,9 @@ public class LapsCounter : MonoBehaviour
 
     public Vector3 RelativePointPosition => _relativePointPosition;
 
-    private void Start()
+    public void SetWayPath(WayPath wayPath)
     {
-        _wayPath = FindAnyObjectByType<WayPath>();
+        _wayPath = wayPath;
     }
 
     private void FixedUpdate()

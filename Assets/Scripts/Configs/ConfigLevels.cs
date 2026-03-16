@@ -13,7 +13,7 @@ public class ConfigLevels : ScriptableObject
 {
     //[SerializeField] private int _pathIndicatorMaxLevel;
     //[SerializeField] private LevelCake[] _levelCakes;
-    [SerializeField] private ConfigLevel[] _levels;
+    [SerializeField] private ConfigLevel[] _levels;    
 
     //public int PathIndicatorMaxLevel => _pathIndicatorMaxLevel;
     public ConfigLevel[] Levels => _levels;

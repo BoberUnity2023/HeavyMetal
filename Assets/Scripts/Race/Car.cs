@@ -42,15 +42,18 @@ public class Car : MonoBehaviour
 
     public ICarInputable Input => _input;
 
-    public InputType InputType => _inputType;    
+    public InputType InputType => _inputType;   
 
-    public void Init(Hub hub, InputType inputType)
+    public void Init(Hub hub, InputType inputType, int id)//OnlyAI
     {
         _hub = hub;
-        _inputType = inputType;        
+        _inputType = inputType;
 
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
+
+        WayPath wayPath = Hub.PathSelector.WayPath(id);
+        LapsCounter.SetWayPath(wayPath);
     }
 
     private void FixedUpdate()

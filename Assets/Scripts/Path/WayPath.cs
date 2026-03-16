@@ -5,7 +5,7 @@ public class WayPath : MonoBehaviour
 {
     [SerializeField] private Color wayColor = new Color(1, 1, 1, 1);
     public Transform[] Points;
-    public float[] MaxSpeeds;
+    public float[] MaxSpeeds;    
 
     public int PointsCount => Points.Length - 1;
 
@@ -34,7 +34,7 @@ public class WayPath : MonoBehaviour
             foreach (Transform point in points)
             {
                 Gizmos.color = wayColor;
-                Gizmos.DrawWireSphere(point.position, 10f);
+                Gizmos.DrawWireSphere(point.position, 15);
             }
         }
 

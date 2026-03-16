@@ -24,24 +24,31 @@ public class ControllerRace : MonoBehaviour
     private void CreateCars()
     {
         for (int i = 0; i < _carPositions.Length; i++)
-        {
-            _car = Instantiate(_carPrefab, _carPositions[i].position, _carPositions[i].rotation);
+        {            
             if (i < _carPositions.Length - 1)            
-                InitEnemy(_car);            
+                InitEnemy(i);            
             else            
-                InitPlayer(_car);            
+                InitPlayer();            
         }
     }
 
-    private void InitPlayer(Car car)
+    private void InitPlayer()
     {
-        car.Init(_hub, InputType.Player);
-        _cameraMove.SetTarget(_car.transform);
+        int id = _carPositions.Length - 1;
+        Transform carPosition = _carPositions[id];
+        Car car = Instantiate(_carPrefab, carPosition.position, carPosition.rotation);
+        _car = car;
+        car.Init(_hub, InputType.Player, 0);
+        _cameraMove.SetTarget(car.transform);
     }
 
-    private void InitEnemy(Car car)
-    {
-        _car.Init(_hub, InputType.AI);
-        _enemies.Add(_car);
+    private void InitEnemy(int id)
+    {        
+        Transform carPosition = _carPositions[id];
+        Car prefab = _hub.Level.Config.EnemyPrefabs[id];  
+        Car car = Instantiate(prefab, carPosition.position, carPosition.rotation);
+        car.Init(_hub, InputType.AI, id);
+        _enemies.Add(car);
+        Debug.Log("Enemy " + prefab.gameObject.name + " created");
     }
 }

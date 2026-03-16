@@ -2,8 +2,11 @@
 
 public class CarAI : MonoBehaviour, ICarInputable
 {
-    [SerializeField] private Car _car;    
-    
+    [SerializeField] private Car _car;
+    [SerializeField] private float _fullForceSpeed;
+
+    [SerializeField] private float _s;
+
     private float _steer;
     private float _steerPrevious;
     private bool _isReversing;
@@ -19,6 +22,7 @@ public class CarAI : MonoBehaviour, ICarInputable
 
     public void FixedUpdate()
     {
+        _s = _car.Speed;
         if (_car.InputType == InputType.AI)
         {            
             FixedUpdate_CalculateSteer();            
@@ -70,7 +74,7 @@ public class CarAI : MonoBehaviour, ICarInputable
             if (_car.IsFinished)
                 return 0;
 
-            if (_car.Speed < 6)
+            if (_car.Speed < _fullForceSpeed)
                 return 1;
 
             return Mathf.Abs(_steer) < 0.1f ? 0.25f : 0.10f;
