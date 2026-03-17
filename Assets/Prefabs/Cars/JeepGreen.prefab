@@ -135,7 +135,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.58
   m_SuspensionSpring:
-    spring: 70000
+    spring: 50000
     damper: 5000
     targetPosition: 0.6
   m_SuspensionDistance: 0.3
@@ -1045,7 +1045,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.58
   m_SuspensionSpring:
-    spring: 70000
+    spring: 50000
     damper: 5000
     targetPosition: 0.6
   m_SuspensionDistance: 0.3
@@ -1158,7 +1158,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.58
   m_SuspensionSpring:
-    spring: 70000
+    spring: 50000
     damper: 5000
     targetPosition: 0.6
   m_SuspensionDistance: 0.3
@@ -1271,7 +1271,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.58
   m_SuspensionSpring:
-    spring: 70000
+    spring: 50000
     damper: 5000
     targetPosition: 0.6
   m_SuspensionDistance: 0.3
@@ -6562,7 +6562,7 @@ GameObject:
   - component: {fileID: 6455621255536215378}
   - component: {fileID: 4676841522073122653}
   m_Layer: 0
-  m_Name: Jeep
+  m_Name: JeepGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

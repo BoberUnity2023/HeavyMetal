@@ -28,22 +28,7 @@ public class ControllerLevel : MonoBehaviour
 
     public bool IsLost { get; private set; }
 
-    public bool IsPlaying => !IsLost && !IsComplete;    
-
-    public int StarsByType(LevelType type)
-    {
-        int output = 0;
-
-        for (int i = 0; i < _hub.Game.CurrentLevel - 1; i++)
-        {
-            //if (_config.Levels[i].Type == type)
-            //{
-            //    //output += _hub.Game.Saves.GetLevelStars(i);
-            //}
-        }
-        //Debug.Log("StarsByType(" + type.ToString() + ")" + output);
-        return output;
-    }    
+    public bool IsPlaying => !IsLost && !IsComplete;  
 
     public bool IsRace => Race != null;
 

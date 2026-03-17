@@ -11,10 +11,7 @@ public class MainMenuController : SceneController
     [SerializeField] private Transform _canvasScrollContent;
     [SerializeField] private ButtonLevel _buttonLevelPrefab;
     [SerializeField] private RectTransform _content;
-    [SerializeField] private Hat _hat;    
-
-    public Hat Hat => _hat;    
-
+    
     private void OnEnable()
     {
         //int sceneIndex = Game != null ? Game.LastCompleteLevel : 2;
