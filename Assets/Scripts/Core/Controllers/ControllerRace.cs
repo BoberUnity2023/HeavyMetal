@@ -14,6 +14,13 @@ public class ControllerRace : MonoBehaviour
     private Car _car;
     public Car Car => _car;
 
+    public bool IsStarted { get; private set; }
+
+    public void StartRace()//3-2-1 Completed
+    {
+        IsStarted = true;
+    }
+
     public List<Car> Enemies => _enemies;
 
     private void Awake()

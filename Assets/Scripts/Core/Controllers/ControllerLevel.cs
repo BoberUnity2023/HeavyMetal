@@ -28,7 +28,7 @@ public class ControllerLevel : MonoBehaviour
 
     public bool IsLost { get; private set; }
 
-    public bool IsPlaying => !IsLost && !IsComplete;  
+    public bool IsPlaying => !IsLost && !IsComplete;    
 
     public bool IsRace => Race != null;
 

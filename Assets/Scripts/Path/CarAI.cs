@@ -71,6 +71,9 @@ public class CarAI : MonoBehaviour, ICarInputable
     {
         get
         {
+            if (!_car.Control.CanAccelerate)
+                return 0;
+            
             if (_car.IsFinished)
                 return 0;
 

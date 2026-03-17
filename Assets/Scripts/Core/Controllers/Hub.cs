@@ -13,6 +13,7 @@ public class Hub : SceneController
     [SerializeField] private WindowSettings _windowSettings;
     [SerializeField] private ResultController _resultController;
     [SerializeField] private PathSelector _pathSelector;
+    [SerializeField] private RaceStarter _raceStarter;
     private PlaceController _placeController;
     //public GameController Game { get; set; }
 
@@ -44,10 +45,10 @@ public class Hub : SceneController
 
     public PathSelector PathSelector => _pathSelector;
 
+    public RaceStarter RaceStarter => _raceStarter;
+
     private void Awake()
     {
         _placeController = new PlaceController(this);
     }
-
-
 }

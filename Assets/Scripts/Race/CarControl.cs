@@ -111,15 +111,18 @@ public class CarControl: MonoBehaviour
     // Determine if the player is accelerating or trying to reverse
     public bool IsAccelerating => Mathf.Sign(_car.Input.Force) == Mathf.Sign(_car.Speed) || _car.SpeedForward < 0.01f;
 
-    private bool CanAccelerate
+    public bool CanAccelerate
     {
         get
         {
-            //if (_hub.Level.IsComplete)
-            //    return false;
+            if (_car.Hub.Level.IsComplete)
+                return false;
 
-            //if (_hub.Level.IsLost)
-            //    return false;
+            if (_car.Hub.Level.IsLost)
+                return false;
+
+            if (!_car.Hub.Level.Race.IsStarted)
+                return false;            
 
             return true;
         }
