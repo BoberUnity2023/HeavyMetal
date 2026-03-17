@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
 public class ControllerRace : MonoBehaviour
@@ -16,9 +15,18 @@ public class ControllerRace : MonoBehaviour
 
     public bool IsStarted { get; private set; }
 
+    public event Action OnFinish;
+
     public void StartRace()//3-2-1 Completed
     {
         IsStarted = true;
+    }
+
+    public void Finish()
+    {
+        _hub.Level.Race.Car.IsFinished = true;
+        if (!_car.IsAI)
+            OnFinish?.Invoke();
     }
 
     public List<Car> Enemies => _enemies;

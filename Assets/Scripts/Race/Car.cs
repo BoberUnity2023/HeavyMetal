@@ -71,7 +71,5 @@ public class Car : MonoBehaviour
         {
             return _inputType == InputType.AI;
         }        
-    }
-
-    
+    }    
 }

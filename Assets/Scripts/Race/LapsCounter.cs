@@ -10,10 +10,10 @@ public class LapsCounter : MonoBehaviour
     private WayPath _wayPath;    
     [SerializeField] private Vector3 _relativePointPosition;
     private bool _completed;
-    
+    [SerializeField] private int _p = 0;   
     public int Lap => _lap;
 
-    public int Points => _currentPoint + Lap * _wayPath.Points.Length;
+    public int Points => _currentPoint + (Lap - 1) * _wayPath.Points.Length;
 
     public Vector3 RelativePointPosition => _relativePointPosition;
 
@@ -26,6 +26,7 @@ public class LapsCounter : MonoBehaviour
     {
         FixedUpdate_CalculateRelativePointPosition();
         FixedUpdate_CheckPoint();
+        _p = Points;
     }
 
     private void OnTriggerExit(Collider other)
@@ -37,9 +38,15 @@ public class LapsCounter : MonoBehaviour
             _lap++;
 
             //Debug.LogWarning("Lap: " + Lap);
-            if (_lap > 2)
-            { 
+            bool isRaceCompleted = _lap > _car.Hub.Level.Config.Laps;
+            if (isRaceCompleted)
+            {
+                //_lap = _car.Hub.Level.Config.Laps;
                 _car.IsFinished = true;
+                
+                if (!_car.IsAI)
+                    _car.Hub.Level.Race.Finish();   
+                
                 Debug.LogWarning("Finished");
             }
         }
@@ -47,7 +54,9 @@ public class LapsCounter : MonoBehaviour
 
     private void FixedUpdate_CheckPoint()
     {
-        if (_relativePointPosition.magnitude < 20)
+        float checkDistance = _car.IsAI ? 20 : 25;
+        
+        if (_relativePointPosition.magnitude < checkDistance)
         {            
             _currentPoint = Mathf.Min(_currentPoint + 1, _wayPath.PointsCount);
             

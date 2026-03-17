@@ -115,11 +115,11 @@ public class CarControl: MonoBehaviour
     {
         get
         {
-            if (_car.Hub.Level.IsComplete)
-                return false;
+            //if (_car.Hub.Level.IsComplete)
+            //    return false;
 
-            if (_car.Hub.Level.IsLost)
-                return false;
+            //if (_car.Hub.Level.IsLost)
+            //    return false;
 
             if (!_car.Hub.Level.Race.IsStarted)
                 return false;            

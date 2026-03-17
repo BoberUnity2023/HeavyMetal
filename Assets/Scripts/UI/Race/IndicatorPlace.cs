@@ -8,6 +8,7 @@ public class IndicatorPlace : MonoBehaviour
 
     private void Update()
     {
-        _indicator.text = "Place: " + _hub.Place.Place;
+        int countPlayers = _hub.Level.Config.EnemyPrefabs.Length + 1;
+        _indicator.text = "Place: " + _hub.Place.Place + "/" + countPlayers.ToString();
     }
 }

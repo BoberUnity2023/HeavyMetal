@@ -8,6 +8,8 @@ public class IndicatorLap : MonoBehaviour
 
     private void Update()
     {
-        _indicator.text = "Lap: " + _hub.Level.Race.Car.LapsCounter.Lap;
+        int lap = _hub.Level.Race.Car.LapsCounter.Lap;
+        int laps = _hub.Level.Config.Laps;
+        _indicator.text = "Lap: " + Mathf.Min(lap, laps).ToString() + "/" + laps.ToString();
     }
 }
