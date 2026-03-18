@@ -7305,6 +7305,7 @@ GameObject:
   - component: {fileID: 4676841522073122653}
   - component: {fileID: 8433288325025400582}
   - component: {fileID: 1935695550632082182}
+  - component: {fileID: 9112534829010888652}
   m_Layer: 0
   m_Name: JeepGreen
   m_TagString: Untagged
@@ -7380,9 +7381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  motorTorque: 5000
+  motorTorque: 4000
   brakeTorque: 4000
-  maxSpeed: 80
+  maxSpeed: 50
   steeringRange: 42
   steeringRangeAtMaxSpeed: 30
   _downForce: 0
@@ -7431,7 +7432,7 @@ Rigidbody:
   m_Mass: 2000
   m_LinearDamping: 0.1
   m_AngularDamping: 0.1
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_CenterOfMass: {x: 0, y: -0.5, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -7525,12 +7526,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03acecf866a30764393087c80a21a57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
+  _car: {fileID: 3335092485689057933}
   _wheelSkids:
   - {fileID: 906868371875342245}
   - {fileID: 6145087750088671203}
   - {fileID: 3112239149767827456}
   - {fileID: 5177822733348565408}
   _audioSource: {fileID: 8904925242094180706}
+--- !u!114 &9112534829010888652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5609f944b451e041a6dd267f79091ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RocketGun
+  _d: 0
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

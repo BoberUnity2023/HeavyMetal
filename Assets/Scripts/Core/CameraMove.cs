@@ -20,6 +20,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private float _distanceGame;
     //[SerializeField] private float _freeDist;
     [SerializeField] private Vector3 _offset;
+    //[SerializeField] private Vector3 _offsetFollow;
 
     private Camera _camera;
     [SerializeField] private Transform _target;

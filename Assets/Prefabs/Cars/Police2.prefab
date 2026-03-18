@@ -8026,6 +8026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03acecf866a30764393087c80a21a57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
+  _car: {fileID: 3335092485689057933}
   _wheelSkids:
   - {fileID: 906868371875342245}
   - {fileID: 6145087750088671203}
