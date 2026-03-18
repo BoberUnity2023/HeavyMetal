@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Recorder;
+using UnityEngine;
 
 public class CarAI : MonoBehaviour, ICarInputable
 {
@@ -70,7 +71,7 @@ public class CarAI : MonoBehaviour, ICarInputable
     public float Force
     {
         get
-        {
+        {            
             if (!_car.Control.CanAccelerate)
                 return 0;
             
@@ -78,9 +79,14 @@ public class CarAI : MonoBehaviour, ICarInputable
                 return 0;
 
             if (_car.Speed < _fullForceSpeed)
+            {
+                _car.Force = 1;
                 return 1;
-
-            return Mathf.Abs(_steer) < 0.1f ? 0.25f : 0.10f;
+            }
+            
+            float output = Mathf.Abs(_steer) < 0.1f ? 0.25f : 0.10f;
+            _car.Force = output;
+            return output; 
         }
     }
 

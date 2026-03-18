@@ -29,6 +29,8 @@ public class CarControl: MonoBehaviour
         float force = _car.Input.Force; // Forward/backward input
         float steering = _car.Input.Steer; // Steering input 
 
+        _car.Force = IsAccelerating && CanAccelerate ? force : 0;
+
         // Reduce motor torque and steering at high speeds for better handling
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, _car.SpeedForward);//��� SpeedForward == 0 - 1; ��� SpeedForward.Max == 0;
         float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedForward);
@@ -73,7 +75,7 @@ public class CarControl: MonoBehaviour
                 _brakeTorque += _handbrake * brakeTorque;
             }
             
-            wheel.WheelCollider.brakeTorque = _brakeTorque;
+            wheel.WheelCollider.brakeTorque = _brakeTorque;            
         }
         
         AddDownForce();

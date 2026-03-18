@@ -22,7 +22,9 @@ public class Car : MonoBehaviour
     private InputType _inputType;
     private float _speedForward;    
 
-    public bool IsFinished;    
+    public bool IsFinished;  
+    
+    public float Force { get; set; }
 
     public Hub Hub => _hub;
 

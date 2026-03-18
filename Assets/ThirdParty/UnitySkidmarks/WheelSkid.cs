@@ -30,6 +30,8 @@ public class WheelSkid : MonoBehaviour
 
     public GroundMaterial GroundMaterial => _groundMaterial;
 
+    public float Intensity;//TODO: TO Property
+
     protected void Start() 
     {
 		_wheelCollider = GetComponent<WheelCollider>();
@@ -132,7 +134,7 @@ public class WheelSkid : MonoBehaviour
         {
             _lastSkid = -1;            
         }
-
+        Intensity = intensity;
         //Smoke
         float rateOverTime = intensity * _smokeMax;
 

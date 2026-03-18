@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BlowController : MonoBehaviour
 {
-    [SerializeField] private Car _car;
+    [SerializeField] private Car _car;    
 
     private void OnCollisionEnter(Collision collision)
     {
