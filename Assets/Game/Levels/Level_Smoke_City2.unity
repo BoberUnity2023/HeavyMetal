@@ -5051,7 +5051,7 @@ MonoBehaviour:
   _distanceFinishState: 0
   _distanceScaler: 0
   _distanceGame: 5
-  _offset: {x: 4, y: 4, z: -10}
+  _offset: {x: 0, y: 9, z: -10}
   _target: {fileID: 0}
   _cameraPosition: {fileID: 0}
 --- !u!1 &1831149013
