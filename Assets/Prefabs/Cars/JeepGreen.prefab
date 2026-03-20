@@ -7306,6 +7306,7 @@ GameObject:
   - component: {fileID: 8433288325025400582}
   - component: {fileID: 1935695550632082182}
   - component: {fileID: 9112534829010888652}
+  - component: {fileID: 5952033291620079489}
   m_Layer: 0
   m_Name: JeepGreen
   m_TagString: Untagged
@@ -7364,6 +7365,7 @@ MonoBehaviour:
   _aIInput: {fileID: -7534694214258213320}
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: 9112534829010888652}
+  _damageCounter: {fileID: 5952033291620079489}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}
@@ -7549,6 +7551,19 @@ MonoBehaviour:
   _car: {fileID: 3335092485689057933}
   _transformGun: {fileID: 3015240056592623300}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
+--- !u!114 &5952033291620079489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0caa1054c01e646b2ab4b9f443d525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageCounter
+  _car: {fileID: 3335092485689057933}
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

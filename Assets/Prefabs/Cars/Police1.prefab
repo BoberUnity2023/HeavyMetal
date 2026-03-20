@@ -7807,6 +7807,7 @@ GameObject:
   - component: {fileID: 4676841522073122653}
   - component: {fileID: 2524243430457700311}
   - component: {fileID: 2659173973760616901}
+  - component: {fileID: -7760443612287598961}
   m_Layer: 0
   m_Name: Police1
   m_TagString: Untagged
@@ -7863,11 +7864,14 @@ MonoBehaviour:
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
   _lapsCounter: {fileID: 4789119249719021234}
+  _rocketGun: {fileID: 0}
+  _damageCounter: {fileID: -7760443612287598961}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}
   _heroPosition: {fileID: 7343239410339146340}
   IsFinished: 0
+  IsCrashed: 0
 --- !u!114 &8534404491845417155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8033,6 +8037,20 @@ MonoBehaviour:
   - {fileID: 3112239149767827456}
   - {fileID: 5177822733348565408}
   _audioSource: {fileID: 6595871000326126174}
+--- !u!114 &-7760443612287598961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0caa1054c01e646b2ab4b9f443d525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageCounter
+  _car: {fileID: 3335092485689057933}
+  _wheels: []
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

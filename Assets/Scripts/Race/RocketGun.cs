@@ -49,7 +49,7 @@ public class RocketGun : MonoBehaviour
             if (CanShooted(enemy))
             {
                 //Debug.Log("ShootBy: " + enemy.gameObject.name);
-                rocket.Shoot(enemy.transform);
+                rocket.Shoot(enemy);
                 _isShooted = true;
                 break;
             }            

@@ -15,6 +15,7 @@ public class Car : MonoBehaviour
     [SerializeField] private CarAI _aIInput;
     [SerializeField] private LapsCounter _lapsCounter;
     [SerializeField] private RocketGun _rocketGun;
+    [SerializeField] private DamageCounter _damageCounter;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject _prefabSparks;
     [SerializeField] private Transform _podnosPosition;
@@ -23,8 +24,10 @@ public class Car : MonoBehaviour
     private InputType _inputType;
     private float _speedForward;    
 
-    public bool IsFinished;  
-    
+    public bool IsFinished;
+
+    public bool IsCrashed;
+
     public float Force { get; set; }
 
     public Hub Hub => _hub;
@@ -36,6 +39,8 @@ public class Car : MonoBehaviour
     public LapsCounter LapsCounter => _lapsCounter;
 
     public RocketGun RocketGun => _rocketGun;
+
+    public DamageCounter DamageCounter => _damageCounter;
 
     public Rigidbody Rigidbody => _rigidbody;
 

@@ -6,16 +6,12 @@ public class Rocket : MonoBehaviour
     [SerializeField] private GameObject _prefabBlast;
     private const float speed = 30f;
     
-    public void Shoot(Transform target)
+    public void Shoot(Car car)
     {
-        transform.parent = target;
-        float distance = Vector3.Distance(transform.position, target.position);
+        transform.parent = car.transform;
+        float distance = Vector3.Distance(transform.position, car.transform.position);
         float time = distance / speed;
-        transform.DOLocalJump(Vector3.zero, 2f, 1, 1.0f).OnComplete(() => 
-        { 
-            AttachTo(target);
-            Blast();
-        });
+        transform.DOLocalJump(Vector3.zero, 2f, 1, 1.0f).OnComplete(() => Blast(car));
     }
 
     public void Shoot()
@@ -25,16 +21,17 @@ public class Rocket : MonoBehaviour
         Vector3 finish = transform.position + transform.forward * distance;
         float time = distance / speed;
         transform.DOJump(finish, 2, 1, time).OnComplete(() => Blast());
-    }
-
-    private void AttachTo(Transform target)
-    {
-        transform.SetParent(target);
-    }
+    }    
 
     private void Blast()
     {
         Instantiate(_prefabBlast, transform.position, Quaternion.identity);
+    }
+
+    private void Blast(Car car)
+    {
+        Instantiate(_prefabBlast, transform.position, Quaternion.identity, car.transform);
+        car.DamageCounter.DamageAdd(34);
     }
 
     private float RayDistance

@@ -124,7 +124,10 @@ public class CarControl: MonoBehaviour
             //    return false;
 
             if (!_car.Hub.Level.Race.IsStarted)
-                return false;            
+                return false;  
+            
+            if (_car.IsCrashed) 
+                return false;
 
             return true;
         }
