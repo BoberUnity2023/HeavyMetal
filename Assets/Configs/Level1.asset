@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
   _icon: {fileID: 0}
   _sceneBuildIndex: 0
-  _laps: 2
+  _laps: 3
   _enemyPrefabs:
   - {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
   - {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
