@@ -20,6 +20,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private float _distanceGame;
     //[SerializeField] private float _freeDist;
     [SerializeField] private Vector3 _offset;
+    [SerializeField] private Vector3 _offsetFollow;
     //[SerializeField] private Vector3 _offsetFollow;
 
     private Camera _camera;
@@ -57,7 +58,7 @@ public class CameraMove : MonoBehaviour
         GameObject pos = new GameObject();
         pos.name = "CameraPosition";
         pos.transform.parent = _target;
-        pos.transform.localPosition = _offset;
+        pos.transform.localPosition = _offsetFollow;
         _cameraPosition = pos.transform;
 
         _state = CameraState.Izometry;
@@ -85,7 +86,7 @@ public class CameraMove : MonoBehaviour
     {
         Update_ScrollZoom();
         //Update_FieldOfView();
-        _cameraPosition.localPosition = _offset;
+        _cameraPosition.localPosition = _offsetFollow;
         //_freeDist = FreeDistance;
         //
         if (Input.GetKeyDown(KeyCode.C))
