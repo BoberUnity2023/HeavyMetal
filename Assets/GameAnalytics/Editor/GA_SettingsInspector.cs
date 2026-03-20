@@ -37,7 +37,7 @@ namespace GameAnalyticsSDK.Editor
         private GUIContent _verboseLogBuild = new GUIContent("Verbose Log Build", "Show full info messages from GA in builds (f.x. Xcode for iOS). Noet that this option includes long JSON messages sent to the server.");
         private GUIContent _useManualSessionHandling = new GUIContent("Use manual session handling", "Manually choose when to end and start a new session. Note initializing of the SDK will automatically start the first session.");
 
-        private GUIContent _enableSDKInitEvent  = new GUIContent("Enable SDK Init Event (boot time on Android, iOS)", "Enable the SDK Init Event to automatically track the boot time (time from application launch to the GameAnalytics SDK initialization)");
+        private GUIContent _enableSDKInitEvent  = new GUIContent("Enable SDK Shoot Event (boot time on Android, iOS)", "Enable the SDK Shoot Event to automatically track the boot time (time from application launch to the GameAnalytics SDK initialization)");
         private GUIContent _enableHealthEvent   = new GUIContent("Enable Session Performance Metrics", "Enables automatic performance data collection across the whole session. This includes sampling fps, memory consumption & cpu usage without any noticeable performance impact.");
 
         private GUIContent _enableMemoryTracking     = new GUIContent("Health Memory Snapshots (Android, iOS)", "Performance & error events will take memory usage snapshots");
