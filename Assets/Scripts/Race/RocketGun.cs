@@ -5,7 +5,25 @@ public class RocketGun : MonoBehaviour
     [SerializeField] private Car _car;
     [SerializeField] private Transform _transformGun;
     [SerializeField] private Rocket _prefabRocket;
-    
+    private int _armo = 4;
+
+    public int Armo => _armo;
+
+    private void Start()
+    {
+        _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
+    }
+
+    private void OnDestroy()
+    {
+        _car.LapsCounter.OnLapStart -= LapsCounter_OnLapStart;
+    }
+
+    private void LapsCounter_OnLapStart(int obj)
+    {
+        _armo = 4;
+    }
+
     private void Update()
     {        
         if (Input.GetKeyDown(KeyCode.Return))
@@ -16,6 +34,13 @@ public class RocketGun : MonoBehaviour
 
     private void TryShoot()
     {
+        if (_armo == 0)
+            return;
+
+        if(_car.IsFinished || !_car.Hub.Level.IsPlaying)
+            return;
+
+        _armo--;
         //Debug.Log("Shoot");
         bool _isShooted = false;
         Rocket rocket = Instantiate(_prefabRocket, _transformGun.position, _transformGun.rotation);

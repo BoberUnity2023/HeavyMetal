@@ -11,7 +11,11 @@ public class Rocket : MonoBehaviour
         transform.parent = target;
         float distance = Vector3.Distance(transform.position, target.position);
         float time = distance / speed;
-        transform.DOLocalJump(Vector3.zero, 2f, 1, 1.0f).OnComplete(() => Blast());
+        transform.DOLocalJump(Vector3.zero, 2f, 1, 1.0f).OnComplete(() => 
+        { 
+            AttachTo(target);
+            Blast();
+        });
     }
 
     public void Shoot()
@@ -21,6 +25,11 @@ public class Rocket : MonoBehaviour
         Vector3 finish = transform.position + transform.forward * distance;
         float time = distance / speed;
         transform.DOJump(finish, 2, 1, time).OnComplete(() => Blast());
+    }
+
+    private void AttachTo(Transform target)
+    {
+        transform.SetParent(target);
     }
 
     private void Blast()

@@ -7363,6 +7363,7 @@ MonoBehaviour:
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
   _lapsCounter: {fileID: 4789119249719021234}
+  _rocketGun: {fileID: 9112534829010888652}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}
@@ -7548,7 +7549,6 @@ MonoBehaviour:
   _car: {fileID: 3335092485689057933}
   _transformGun: {fileID: 3015240056592623300}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
-  _d: 0
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

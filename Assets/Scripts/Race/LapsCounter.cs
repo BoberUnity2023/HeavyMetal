@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Build;
 using UnityEngine;
 
@@ -15,7 +16,9 @@ public class LapsCounter : MonoBehaviour
 
     public int Points => _currentPoint + (Lap - 1) * _wayPath.Points.Length;
 
-    public Vector3 RelativePointPosition => _relativePointPosition;
+    public Vector3 RelativePointPosition => _relativePointPosition;    
+
+    public event Action<int> OnLapStart;
 
     public void SetWayPath(WayPath wayPath)
     {
@@ -30,24 +33,30 @@ public class LapsCounter : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    {        
+    {
         if (other.gameObject.name == "Finish" && _completed)
-        {            
-            _completed = false;
-            _currentPoint = 0;            
-            _lap++;
+        {
+            if (_currentPoint < 10)//For back
+                return;
 
-            //Debug.LogWarning("Lap: " + Lap);
-            bool isRaceCompleted = _lap > _car.Hub.Level.Config.Laps;
+            _completed = false;
+            _currentPoint = 0;
+
+            bool isRaceCompleted = _lap == _car.Hub.Level.Config.Laps;
             if (isRaceCompleted)
             {
                 //_lap = _car.Hub.Level.Config.Laps;
                 _car.IsFinished = true;
-                
+
                 if (!_car.IsAI)
-                    _car.Hub.Level.Race.Finish();   
-                
+                    _car.Hub.Level.Race.Finish();
+
                 Debug.LogWarning("Finished");
+            }
+            else
+            {   //Debug.LogWarning("Lap: " + Lap);
+                _lap++;
+                OnLapStart?.Invoke(_lap);
             }
         }
     }    
