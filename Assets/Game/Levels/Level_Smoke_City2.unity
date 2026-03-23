@@ -4979,13 +4979,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.092752226, y: -0.9017697, z: 0.3461567, w: -0.24162802}
-  m_LocalPosition: {x: 20.31, y: 22.84, z: 25.88}
+  m_LocalRotation: {x: 0.14465785, y: -0.726213, z: 0.16099752, w: 0.65250945}
+  m_LocalPosition: {x: 65.1, y: 10, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 42, y: -210, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: -96.12, z: 0}
 --- !u!114 &1823688468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5161,7 +5161,7 @@ GameObject:
   - component: {fileID: 1831149015}
   - component: {fileID: 1831149014}
   m_Layer: 0
-  m_Name: RC
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5179,6 +5179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31eafea7507dc3d49950496b27ee46e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResultController
+  _hub: {fileID: 1862994659}
 --- !u!4 &1831149015
 Transform:
   m_ObjectHideFlags: 0

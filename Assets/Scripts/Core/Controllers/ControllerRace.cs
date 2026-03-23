@@ -19,6 +19,7 @@ public class ControllerRace : MonoBehaviour
 
     public void StartRace()//3-2-1 Completed
     {
+        _hub.Result.StartRace();
         IsStarted = true;
     }
 

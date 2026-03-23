@@ -41,7 +41,7 @@ public class Hub : SceneController
 
     public WindowSettings WindowSettings => _windowSettings;
 
-    public ResultController ResultController => _resultController;
+    public ResultController Result => _resultController;
 
     public PathSelector PathSelector => _pathSelector;
 

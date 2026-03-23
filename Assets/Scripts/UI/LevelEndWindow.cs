@@ -28,7 +28,8 @@ public class LevelEndWindow : MonoBehaviour
     {
         Show();
         _finishText.gameObject.SetActive(true);
-        _finishText.text = _hub.Place.Place.ToString();
+        int place = 1 + _hub.Result.FinishedEnemies;
+        _finishText.text = place.ToString();//_hub.Place.Place.ToString();
     }
 
     private void OnDestroy()

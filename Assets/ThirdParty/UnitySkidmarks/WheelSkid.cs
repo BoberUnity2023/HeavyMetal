@@ -107,18 +107,22 @@ public class WheelSkid : MonoBehaviour
 
     protected void LateUpdate() 
 	{
-        Mark();        
+        _carSpeed = _car.Speed;
+        Mark();       
     }
 
 	private void Mark()
 	{
-        float intensity = 0;
-        _carSpeed = _car.Speed;
+        float intensity = 0;        
 
         if (_wheelCollider.GetGroundHit(out _wheelHitInfo))
         {
-            intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);            
+            intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);
             
+            if (_carSpeed < 0.1f)
+                intensity = 0;
+
+
             if (intensity >= _skidSlideStart)
             {                                                 
                 Vector3 skidPoint = _wheelHitInfo.point + _rigidbody.linearVelocity * (Time.time - lastFixedUpdateTime) * 1.3f;

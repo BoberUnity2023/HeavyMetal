@@ -27,6 +27,7 @@ public class LapsCounter : MonoBehaviour
     public Vector3 RelativePointPosition => _relativePointPosition;    
 
     public event Action<int> OnLapStart;
+    public event Action<Car> OnFinish;
 
     public void SetWayPath(WayPath wayPath)
     {
@@ -58,6 +59,7 @@ public class LapsCounter : MonoBehaviour
                 if (!_car.IsAI)
                     _car.Hub.Level.Race.Finish();
 
+                OnFinish?.Invoke(_car);
                 Debug.LogWarning("Finished");
             }
             else

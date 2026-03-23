@@ -6372,7 +6372,7 @@ MonoBehaviour:
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
   _smokeMax: 20
-  _mark_width: 0.3
+  _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
   Intensity: 0
@@ -6486,7 +6486,7 @@ MonoBehaviour:
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
   _smokeMax: 20
-  _mark_width: 0.3
+  _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
   Intensity: 0
@@ -12210,7 +12210,7 @@ MonoBehaviour:
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
   _smokeMax: 20
-  _mark_width: 0.3
+  _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
   Intensity: 0
@@ -12324,7 +12324,7 @@ MonoBehaviour:
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
   _smokeMax: 20
-  _mark_width: 0.3
+  _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
   Intensity: 0
