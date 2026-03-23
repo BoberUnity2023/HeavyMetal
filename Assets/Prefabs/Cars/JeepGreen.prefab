@@ -7371,6 +7371,7 @@ MonoBehaviour:
   _podnosPosition: {fileID: 6159089245106069145}
   _heroPosition: {fileID: 7343239410339146340}
   IsFinished: 0
+  IsCrashed: 0
 --- !u!114 &8534404491845417155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7564,6 +7565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageCounter
   _car: {fileID: 3335092485689057933}
+  _wheels: []
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0
@@ -12598,7 +12600,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30

@@ -5,7 +5,7 @@ public class RocketGun : MonoBehaviour
     [SerializeField] private Car _car;
     [SerializeField] private Transform _transformGun;
     [SerializeField] private Rocket _prefabRocket;
-    private int _armo = 4;
+    private int _armo = 14;
 
     public int Armo => _armo;
 
@@ -21,11 +21,14 @@ public class RocketGun : MonoBehaviour
 
     private void LapsCounter_OnLapStart(int obj)
     {
-        _armo = 4;
+        _armo = 14;
     }
 
     private void Update()
-    {        
+    {
+        if (_car.IsAI)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             TryShoot();
@@ -44,21 +47,22 @@ public class RocketGun : MonoBehaviour
         //Debug.Log("Shoot");
         bool _isShooted = false;
         Rocket rocket = Instantiate(_prefabRocket, _transformGun.position, _transformGun.rotation);
-        foreach (Car enemy in _car.Hub.Level.Race.Enemies)
-        {            
-            if (CanShooted(enemy))
-            {
-                //Debug.Log("ShootBy: " + enemy.gameObject.name);
-                rocket.Shoot(enemy);
-                _isShooted = true;
-                break;
-            }            
-        }
+        rocket.Init(_car.Hub);
+        //foreach (Car enemy in _car.Hub.Level.Race.Enemies)
+        //{            
+        //    if (CanShooted(enemy))
+        //    {
+        //        //Debug.Log("ShootBy: " + enemy.gameObject.name);
+        //        rocket.Shoot(enemy);
+        //        _isShooted = true;
+        //        break;
+        //    }            
+        //}
 
         if (!_isShooted)
         {
             //Debug.Log("ShootFail:");
-            rocket.Shoot(); 
+            //rocket.Shoot(); 
         }
     }
 

@@ -6099,7 +6099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  motorTorque: 5000
+  motorTorque: 5200
   brakeTorque: 4000
   maxSpeed: 80
   steeringRange: 42
@@ -6137,7 +6137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
   _car: {fileID: 3335092485689057933}
-  _fullForceSpeed: 12
+  _fullForceSpeed: 13
   _s: 0
 --- !u!54 &7085787564322592434
 Rigidbody:

@@ -10,11 +10,19 @@ public class LapsCounter : MonoBehaviour
     [SerializeField] private int _targetPoint = 0;
     private WayPath _wayPath;    
     [SerializeField] private Vector3 _relativePointPosition;
-    private bool _completed;
-    [SerializeField] private int _p = 0;   
+    
+    private bool _isWayCompleted;    
+    private bool _isRaceCompleted;
+    [SerializeField] private int _p = 0;
     public int Lap => _lap;
 
-    public int Points => _currentPoint + (Lap - 1) * _wayPath.Points.Length;
+    public int Points 
+    { 
+        get 
+        {
+            return _currentPoint + (Lap - 1) * _wayPath.Points.Length; 
+        } 
+    }
 
     public Vector3 RelativePointPosition => _relativePointPosition;    
 
@@ -34,16 +42,15 @@ public class LapsCounter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Finish" && _completed)
+        if (other.gameObject.name == "Finish" && _isWayCompleted)
         {
             if (_currentPoint < 10)//For back
                 return;
 
-            _completed = false;
-            _currentPoint = 0;
-
-            bool isRaceCompleted = _lap == _car.Hub.Level.Config.Laps;
-            if (isRaceCompleted)
+            _isWayCompleted = false;
+            
+            _isRaceCompleted = _lap == _car.Hub.Level.Config.Laps;
+            if (_isRaceCompleted)
             {
                 //_lap = _car.Hub.Level.Config.Laps;
                 _car.IsFinished = true;
@@ -55,6 +62,7 @@ public class LapsCounter : MonoBehaviour
             }
             else
             {   //Debug.LogWarning("Lap: " + Lap);
+                _currentPoint = 0;
                 _lap++;
                 OnLapStart?.Invoke(_lap);
             }
@@ -68,15 +76,17 @@ public class LapsCounter : MonoBehaviour
         if (_relativePointPosition.magnitude < checkDistance)
         {            
             _currentPoint = Mathf.Min(_currentPoint + 1, _wayPath.PointsCount);
-            
+
             //if (resultController != null && resultController.Results.Length > 0)
             //{
             //    resultController.Results[_currentPoint + (Laps - 1) * waypoint.Waypoints.Length] += 1;
             //    resultController.CheckResults(); //
             //}
-            if (_currentPoint == _wayPath.Points.Length - 1)
+
+            bool isPointLast = _currentPoint == _wayPath.Points.Length - 1;
+            if (isPointLast)
             {                
-                _completed = true;
+                _isWayCompleted = true;
                 _targetPoint = 0;
             }
             else

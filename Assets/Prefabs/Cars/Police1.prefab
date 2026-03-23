@@ -7923,7 +7923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
   _car: {fileID: 3335092485689057933}
-  _fullForceSpeed: 15
+  _fullForceSpeed: 20
   _s: 0
 --- !u!54 &7085787564322592434
 Rigidbody:
