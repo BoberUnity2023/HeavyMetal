@@ -9,6 +9,7 @@ public class ControllerRace : MonoBehaviour
     [SerializeField] private Transform[] _carPositions;
     [SerializeField] private CameraMove _cameraMove;
     [SerializeField] private List<Car> _enemies;
+    [SerializeField] private List<Car> _cars;
 
     private Car _car;
     public Car Car => _car;
@@ -31,6 +32,7 @@ public class ControllerRace : MonoBehaviour
     }
 
     public List<Car> Enemies => _enemies;
+    public List<Car> Cars => _cars;
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class ControllerRace : MonoBehaviour
         _car = car;
         car.Init(_hub, InputType.Player, 0);
         _cameraMove.SetTarget(car.transform);
+        _cars.Add(car);
     }
 
     private void InitEnemy(int id)
@@ -65,6 +68,7 @@ public class ControllerRace : MonoBehaviour
         Car car = Instantiate(prefab, carPosition.position, carPosition.rotation);
         car.Init(_hub, InputType.AI, id);
         _enemies.Add(car);
+        _cars.Add(car);
         Debug.Log("Enemy " + prefab.gameObject.name + " created");
     }
 }

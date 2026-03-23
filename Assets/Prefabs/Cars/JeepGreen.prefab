@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5499797144650479955}
   - component: {fileID: 761983692057896024}
   - component: {fileID: 3234788365620208079}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4267113096230820148}
   - component: {fileID: 5167667948063654878}
   - component: {fileID: 906868371875342245}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: WheelBackRightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 3502931596831655379}
   - component: {fileID: 4957461989504554932}
   - component: {fileID: 3489555008899179017}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shield_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 2102508492038660828}
   - component: {fileID: 3854451394997385505}
   - component: {fileID: 5471034731838913721}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Engine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 7437367769682071299}
   - component: {fileID: 8181322032368482941}
   - component: {fileID: 7869364231803170145}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 2610075259839497516}
   - component: {fileID: 6382764025907024746}
   - component: {fileID: 1423771864197630470}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: lightFaraRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 5986727012287042995}
   - component: {fileID: 5036854791924171783}
   - component: {fileID: 5454295222076243731}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: steeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 6329656391261841840}
   - component: {fileID: 7874111828652639534}
   - component: {fileID: 2924614755870999019}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Engine_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 6559696069067942080}
   - component: {fileID: 1485193412539505804}
   - component: {fileID: 3457115556984921439}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spot LightLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 4596154497266567786}
   - component: {fileID: 8087486875483333119}
   - component: {fileID: 4319438122605971224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spot LightRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,7 +1233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5755415592559656617}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelModels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1270,7 @@ GameObject:
   - component: {fileID: 3147021263032673090}
   - component: {fileID: 1767549850763226226}
   - component: {fileID: 4131015057195337685}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shield_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291039799729243787}
   - component: {fileID: 3649968636357645079}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SoundEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1488,7 +1488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5815683209724380237}
   - component: {fileID: 8904925242094180706}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SoundSkid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7343239410339146340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HeroPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3751221350095406176}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 8012909724973155213}
   - component: {fileID: 2922779140664598165}
   - component: {fileID: 7452255551785258427}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1751,7 +1751,7 @@ GameObject:
   - component: {fileID: 6737876599544892193}
   - component: {fileID: 9077531976945742913}
   - component: {fileID: 3112239149767827456}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: WheelFrontLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1865,7 @@ GameObject:
   - component: {fileID: 8242486395312587326}
   - component: {fileID: 8666910821992769769}
   - component: {fileID: 5177822733348565408}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: WheelFrontRightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 8105264555188572554}
   - component: {fileID: 1386906785140983297}
   - component: {fileID: 6145087750088671203}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: WheelBackLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2090,7 +2090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6159089245106069145}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: PodnosPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2123,7 +2123,7 @@ GameObject:
   - component: {fileID: 3089175046189373614}
   - component: {fileID: 6976904463149753568}
   - component: {fileID: 54543809126933712}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SmokeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6959,7 +6959,7 @@ GameObject:
   - component: {fileID: 5508622625124553428}
   - component: {fileID: 7279411788683899308}
   - component: {fileID: 8509913535186590048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Engine_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7049,7 +7049,7 @@ GameObject:
   - component: {fileID: 1086013671190346381}
   - component: {fileID: 5249857568149320136}
   - component: {fileID: 3692336517727671480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Engine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7139,7 +7139,7 @@ GameObject:
   - component: {fileID: 2809784309130756984}
   - component: {fileID: 4034881842710707086}
   - component: {fileID: 6126049440487075609}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7227,7 +7227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6526192108085764677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7264,7 +7264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3015240056592623300}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7307,7 +7307,7 @@ GameObject:
   - component: {fileID: 1935695550632082182}
   - component: {fileID: 9112534829010888652}
   - component: {fileID: 5952033291620079489}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: JeepGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7423,7 +7423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
   _car: {fileID: 3335092485689057933}
-  _fullForceSpeed: 12
+  _fullForceSpeed: 20
   _s: 0
 --- !u!54 &7085787564322592434
 Rigidbody:
@@ -7552,6 +7552,7 @@ MonoBehaviour:
   _car: {fileID: 3335092485689057933}
   _transformGun: {fileID: 3015240056592623300}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
+  _tryAIShootTime: 1
 --- !u!114 &5952033291620079489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7577,7 +7578,7 @@ GameObject:
   - component: {fileID: 2142906180413335555}
   - component: {fileID: 5201667109364481156}
   - component: {fileID: 5856828288306175703}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shield_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7667,7 +7668,7 @@ GameObject:
   - component: {fileID: 897865511858142487}
   - component: {fileID: 4553891560773527226}
   - component: {fileID: 1947306376741254887}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SmokeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12504,7 +12505,7 @@ GameObject:
   - component: {fileID: 5903454360883809194}
   - component: {fileID: 7099163486958677553}
   - component: {fileID: 2994114115375193324}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Car_Body_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12614,7 +12615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3915141566643088653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12651,7 +12652,7 @@ GameObject:
   - component: {fileID: 2752443578797183661}
   - component: {fileID: 442208553263678213}
   - component: {fileID: 2795786585136629976}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shiled_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12741,7 +12742,7 @@ GameObject:
   - component: {fileID: 1025610621704181257}
   - component: {fileID: 3045577561226872336}
   - component: {fileID: 3722051078736347679}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shield_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12831,7 +12832,7 @@ GameObject:
   - component: {fileID: 9104289604083470515}
   - component: {fileID: 4556767210442665163}
   - component: {fileID: 3390560290399081732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12919,7 +12920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532580404893097404}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12956,7 +12957,7 @@ GameObject:
   - component: {fileID: 2562854295618570793}
   - component: {fileID: 3694997658904052158}
   - component: {fileID: 1398731535674697261}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: lightFaraLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13044,7 +13045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4274565745930476510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CenterOfMass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13077,7 +13078,7 @@ GameObject:
   - component: {fileID: 8064483371158696340}
   - component: {fileID: 1569351998927682072}
   - component: {fileID: 4473846802454340721}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shield_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

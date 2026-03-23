@@ -4,12 +4,14 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBlast;
-    private Hub _hub;
+    private Hub _hub;    
+    private Car _attacker;
     private const float _speed = 50f;
 
-    public void Init(Hub hub)
-    {
-        _hub = hub;
+    public void Init(Car attacker)
+    {        
+        _attacker = attacker;
+        _hub = _attacker.Hub;
     }
 
     public void Shoot(Car car)
@@ -40,13 +42,16 @@ public class Rocket : MonoBehaviour
 
     private void OnFlyUpdate()
     {
-        foreach (Car enemy in _hub.Level.Race.Enemies)
+        foreach (Car car in _hub.Level.Race.Cars)
         {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance < 2.5)
-            { 
-                Blast(enemy);
-                Destroy(gameObject);
+            if (car != _attacker)
+            {
+                float distance = Vector3.Distance(transform.position, car.transform.position);
+                if (distance < 2.5)
+                {
+                    Blast(car);
+                    Destroy(gameObject);
+                }
             }
         }
     }
