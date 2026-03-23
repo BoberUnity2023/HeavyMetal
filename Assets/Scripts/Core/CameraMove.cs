@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -5,6 +6,7 @@ public enum CameraState
 {
     Follow,
     Izometry,
+    InEyes,
     Finish
 }
 public class CameraMove : MonoBehaviour
@@ -19,8 +21,9 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private float _distanceScaler;
     [SerializeField] private float _distanceGame;
     //[SerializeField] private float _freeDist;
-    [SerializeField] private Vector3 _offset;
+    [SerializeField] private Vector3 _offsetIzometry;
     [SerializeField] private Vector3 _offsetFollow;
+    [SerializeField] private Vector3 _offsetInEyes;
     //[SerializeField] private Vector3 _offsetFollow;
 
     private Camera _camera;
@@ -37,7 +40,7 @@ public class CameraMove : MonoBehaviour
             //Vector3 heroToCamera = (_target.position - _hub.Hero.CameraTarget.position).normalized;
             //float dist = Mathf.Min(_distanceToTarget, _freeDist);
             if (_state == CameraState.Izometry)
-                return _target.position + _offset * 2.4f;
+                return _target.position + _offsetIzometry;
             
             if (_state == CameraState.Follow)
                 return _cameraPosition.position;
@@ -64,15 +67,24 @@ public class CameraMove : MonoBehaviour
         _state = CameraState.Izometry;
     }
 
-    private void SetFollow()
-    {
-
-        _state = CameraState.Follow;
-    }
-
     private void SetIzometry()
     {
         _state = CameraState.Izometry;
+        transform.SetParent(null);        
+    }
+
+    private void SetFollow()
+    {
+        _state = CameraState.Follow;
+        transform.SetParent(null);        
+    }    
+
+    private void SetInEyes()
+    {
+        _state = CameraState.InEyes;
+        transform.SetParent(_target);
+        transform.localPosition = _offsetInEyes;
+        transform.localRotation = Quaternion.Euler(4, 9, 0);
     }
 
     private void OnDestroy()
@@ -84,18 +96,31 @@ public class CameraMove : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            switch (_state)
+            {
+                case CameraState.Izometry:
+                    SetFollow();
+                    break;
+                case CameraState.Follow:
+                    SetInEyes();
+                    break;
+                case CameraState.InEyes:
+                    SetIzometry();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (_state == CameraState.InEyes)
+            return;
+
         Update_ScrollZoom();
         //Update_FieldOfView();
         _cameraPosition.localPosition = _offsetFollow;
-        //_freeDist = FreeDistance;
-        //
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            if (_state == CameraState.Izometry)            
-                SetFollow();            
-            else
-                SetIzometry();
-        }    
+        //_freeDist = FreeDistance;        
     }
 
     private void FixedUpdate()
@@ -140,6 +165,9 @@ public class CameraMove : MonoBehaviour
     public void FixedUpdate_TryMove()
     {
         if (_target == null)
+            return;
+
+        if (_state == CameraState.InEyes)
             return;
 
         Vector3 a = transform.position;
