@@ -22,6 +22,8 @@ public class Car : MonoBehaviour
     [SerializeField] private Transform _heroPosition;    
     private ICarInputable _input;
     private InputType _inputType;
+    private WayPath _wayPath;
+    private WheelControl[] _wheels;
     private float _speedForward;    
 
     public bool IsFinished;
@@ -52,9 +54,13 @@ public class Car : MonoBehaviour
 
     public ICarInputable Input => _input;
 
-    public InputType InputType => _inputType;   
+    public InputType InputType => _inputType;  
+    
+    public WayPath WayPath => _wayPath;
 
-    public void Init(Hub hub, InputType inputType, int id)//OnlyAI
+    public WheelControl[] Wheels => _wheels;
+
+    public void Init(Hub hub, InputType inputType, int id)
     {
         _hub = hub;
         _inputType = inputType;
@@ -64,6 +70,8 @@ public class Car : MonoBehaviour
 
         WayPath wayPath = Hub.PathSelector.WayPath(id);
         LapsCounter.SetWayPath(wayPath);
+
+        _wheels = GetComponentsInChildren<WheelControl>();
     }
 
     private void FixedUpdate()

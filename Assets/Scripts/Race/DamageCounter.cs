@@ -1,23 +1,39 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DamageCounter : MonoBehaviour
 {
     [SerializeField] private Car _car;
     [SerializeField] private ParticleSystem _smoke;
-    [SerializeField] private ParticleSystem _fire;
-    [SerializeField] private WheelCollider[] _wheels;
+    [SerializeField] private ParticleSystem _fire;    
     private Transform _wheelsParent;
     private Vector3[] _wheelPositions = new Vector3[4];
     private int _damage;
 
     private void Start()
     {
-        _wheels = GetComponentsInChildren<WheelCollider>();
-        _wheelsParent = _wheels[0].transform.parent;
+        Init();
+    }
+
+    private void Update()
+    {
+        //if (_car.IsAI)
+        //    return;
+
+        //if (Input.GetKeyDown(KeyCode.M))
+        //    SecondCrash();
+
+        //if (Input.GetKeyDown(KeyCode.N))
+        //    ThirdCrash();
+    }
+
+    private void Init()
+    {        
+        _wheelsParent = _car.Wheels[0].transform.parent;
         for (int i = 0; i < 4; i++)
         {
-            _wheelPositions[i] = _wheels[i].transform.localPosition;
+            _wheelPositions[i] = _car.Wheels[i].transform.localPosition;
         }
     }
 
@@ -33,45 +49,36 @@ public class DamageCounter : MonoBehaviour
 
         if (_damage < 35)
         {
-            PrePreCrash();
+            FirstCrash();
         }
 
         if (_damage > 60 && _damage < 90)
         {
-            PreCrash();
+            SecondCrash();
         }
 
         if (_damage >= 100)         
         {
-            Crash();
+            ThirdCrash();
         }
     }
 
-    private void PrePreCrash()
-    {
-        //Debug.Log("PreCrash()");
-        //_wheels[0].enabled = false;
-        //_wheels[0].transform.SetParent(null);
-        ParticleSystem.EmissionModule emission = _smoke.emission;
-        emission.enabled = true;
+    private void FirstCrash()
+    {        
+        Emit(_smoke, true);              
     }
 
-    private void PreCrash()
-    {
-        Debug.Log("PreCrash()");
-        ParticleSystem.EmissionModule emission = _fire.emission;
-        emission.enabled = true;
-
-        _wheels[1].enabled = false;
-        _wheels[1].transform.SetParent(null);
+    private void SecondCrash()
+    {        
+        Emit(_fire, true);
+        WheelDeattach(_car.Wheels[1]);            
     }
 
-    private void Crash()
+    private void ThirdCrash()
     {
-        foreach (var wheel in _wheels)
-        {
-            wheel.enabled = false;
-            wheel.transform.SetParent(null);
+        foreach (var wheel in _car.Wheels)
+        {            
+            WheelDeattach(wheel);
         }
         _car.IsCrashed = true;
 
@@ -86,24 +93,46 @@ public class DamageCounter : MonoBehaviour
 
     private void Restart()
     {
-        ParticleSystem.EmissionModule emission = _smoke.emission;
-        emission.enabled = false;
-
-        emission = _fire.emission;
-        emission.enabled = false;
+        Emit(_smoke, false);
+        Emit(_fire, false);
 
         for (int i = 0; i < 4; i++)
-        {
-            _wheels[i].transform.SetParent(_wheelsParent);
-            _wheels[i].transform.localPosition = _wheelPositions[i];
-            _wheels[i].transform.localRotation = Quaternion.identity;            
-            _wheels[i].enabled = true;
+        {            
+            WheelAttach(_car.Wheels[i], i);
         }
-
-        foreach (var wheel in _wheels)
-        {
-                      
-        }
+        
         _car.IsCrashed = false;
+    }
+
+    private void Emit(ParticleSystem particleSystem, bool value)
+    {
+        ParticleSystem.EmissionModule emission = particleSystem.emission;
+        emission.enabled = value;
+    }
+
+    private void WheelDeattach(WheelControl wheelControl)
+    {
+        if (!wheelControl.IsAttached)
+            return;
+
+        wheelControl.enabled = false;
+        wheelControl.WheelCollider.enabled = false;
+        wheelControl.transform.SetParent(null);
+        wheelControl.WheelModel.SetParent(null);
+        wheelControl.ModelMeshCollider.enabled = true;        
+        wheelControl.WheelModel.AddComponent<Rigidbody>();
+    }
+
+    private void WheelAttach(WheelControl wheelControl, int id)
+    {
+        wheelControl.ModelMeshCollider.enabled = false;
+        Rigidbody rigidbody = wheelControl.WheelModel.GetComponent<Rigidbody>();
+        Destroy(rigidbody);
+        wheelControl.transform.SetParent(_wheelsParent);
+        wheelControl.transform.localPosition = _wheelPositions[id];
+        wheelControl.transform.localRotation = Quaternion.identity;
+        wheelControl.WheelCollider.enabled = true;
+        wheelControl.WheelModel.SetParent(_wheelsParent);
+        wheelControl.enabled = true;
     }
 }

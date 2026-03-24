@@ -3,14 +3,22 @@ using UnityEngine;
 public class WheelControl : MonoBehaviour
 {
     [SerializeField] private Transform _wheelModel;
-    [HideInInspector] public WheelCollider WheelCollider;
+    private WheelCollider _wheelCollider;    
+    private MeshCollider _modelMeshCollider;
+
+    public Transform WheelModel => _wheelModel;
+
+    public WheelCollider WheelCollider => _wheelCollider;
+
+    public MeshCollider ModelMeshCollider => _modelMeshCollider;
 
     public bool IsSteerable;
     public bool IsMotorized;
     
     private void Start()
     {
-        WheelCollider = GetComponent<WheelCollider>();
+        _wheelCollider = GetComponent<WheelCollider>();
+        _modelMeshCollider = _wheelModel.GetComponent<MeshCollider>();        
     }
 
     private void FixedUpdate()
@@ -21,4 +29,9 @@ public class WheelControl : MonoBehaviour
         _wheelModel.transform.position = position;
         _wheelModel.transform.rotation = rotation;
     } 
+
+    public bool IsAttached
+    {
+        get { return enabled; }        
+    }
 }

@@ -4,8 +4,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(WheelCollider))]
 public class WheelSkid : MonoBehaviour 
 {    
-    [SerializeField] private Car _car;    	
-    [SerializeField] private Rigidbody _rigidbody;    
+    [SerializeField] private Car _car;   
     [SerializeField] private float _skidSlideStart = 0.2f;
     [SerializeField] private float _sideSlideMin = 0.2f;
     [SerializeField] private float _sideSlideMax = 2.2f;
@@ -19,6 +18,7 @@ public class WheelSkid : MonoBehaviour
     private Skidmarks _skidmarksController;
     private List<ParticleSystem> _particleSystems = new List<ParticleSystem>();
     private WheelCollider _wheelCollider;
+    private WheelControl _wheelControl;
     private WheelHit _wheelHitInfo;
     [SerializeField] private GroundMaterial _groundMaterial;
     [SerializeField] private int _groundMaterialID;
@@ -33,9 +33,10 @@ public class WheelSkid : MonoBehaviour
     public float Intensity;//TODO: TO Property
 
     protected void Start() 
-    {
-		_wheelCollider = GetComponent<WheelCollider>();
-		lastFixedUpdateTime = Time.time;
+    {		
+        _wheelControl = GetComponent<WheelControl>();
+        _wheelCollider = _wheelControl.WheelCollider;
+        lastFixedUpdateTime = Time.time;
         _skidmarksController = Instantiate(_car.Hub.Game.PrefabSkidmarks, Vector3.zero, Quaternion.identity);
         _skidmarksController.Init(this);
         CreateParticles();
@@ -115,7 +116,7 @@ public class WheelSkid : MonoBehaviour
 	{
         float intensity = 0;        
 
-        if (_wheelCollider.GetGroundHit(out _wheelHitInfo))
+        if (_wheelControl.IsAttached && _wheelCollider.GetGroundHit(out _wheelHitInfo))
         {
             intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);
             
@@ -125,7 +126,7 @@ public class WheelSkid : MonoBehaviour
 
             if (intensity >= _skidSlideStart)
             {                                                 
-                Vector3 skidPoint = _wheelHitInfo.point + _rigidbody.linearVelocity * (Time.time - lastFixedUpdateTime) * 1.3f;
+                Vector3 skidPoint = _wheelHitInfo.point + _car.Rigidbody.linearVelocity * (Time.time - lastFixedUpdateTime) * 1.3f;
                 float mark_width = _mark_width + SideSlide * _mark_width * 0.3f;
                 _lastSkid = _skidmarksController.AddSkidMark(skidPoint, _wheelHitInfo.normal, intensity, _lastSkid, mark_width);
             }
@@ -153,7 +154,7 @@ public class WheelSkid : MonoBehaviour
     {
         get
         {
-            Vector3 localVelocity = transform.InverseTransformDirection(_rigidbody.linearVelocity);
+            Vector3 localVelocity = transform.InverseTransformDirection(_car.Rigidbody.linearVelocity);
             float sideSlide = Mathf.Abs(localVelocity.x); //[0...infinity]
             sideSlide = Mathf.Min(sideSlide, _sideSlideMax);//[0..._sideSlideMax]
             sideSlide = (sideSlide - _sideSlideMin) / (_sideSlideMax - _sideSlideMin);//[0...1]  

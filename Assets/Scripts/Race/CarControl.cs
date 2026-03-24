@@ -11,17 +11,9 @@ public class CarControl: MonoBehaviour
     [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
     [SerializeField] private float _speedForward;
-    
-    private WheelControl[] _wheels;
 
     //Calculate current speed along the car's forward axis
-    public float MaxSpeed => maxSpeed;
-
-    private void Start()
-    { 
-        // Get all wheel components attached to the car
-        _wheels = GetComponentsInChildren<WheelControl>();        
-    }
+    public float MaxSpeed => maxSpeed;    
     
     public void FixedUpdate()
     {
@@ -35,7 +27,7 @@ public class CarControl: MonoBehaviour
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, _car.SpeedForward);//��� SpeedForward == 0 - 1; ��� SpeedForward.Max == 0;
         float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedForward);
 
-        foreach (WheelControl wheel in _wheels)
+        foreach (WheelControl wheel in _car.Wheels)
         {
             float _brakeTorque = 0;
 

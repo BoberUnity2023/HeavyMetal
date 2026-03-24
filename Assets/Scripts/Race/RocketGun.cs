@@ -102,9 +102,7 @@ public class RocketGun : MonoBehaviour
             LayerMask layerMask = 1 << 11;//Layer Car
 
             if (Physics.Raycast(from, direction, out hit, 100, layerMask))
-            {
-                string n = hit.collider.gameObject.name;
-                Debug.Log(n);
+            {                
                 return hit.distance; 
             }
 

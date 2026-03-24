@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 278081548899336852}
   serializedVersion: 2
   m_LocalRotation: {x: 0.9848078, y: 0, z: 0, w: 0.17364825}
-  m_LocalPosition: {x: -0.246, y: 0.147, z: -1.297}
+  m_LocalPosition: {x: -0.2, y: 1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5222,6 +5222,7 @@ GameObject:
   - component: {fileID: 2656942146233575027}
   - component: {fileID: 3337246498494721497}
   - component: {fileID: 2662403787452280554}
+  - component: {fileID: 1332308251132094475}
   m_Layer: 11
   m_Name: RL
   m_TagString: Untagged
@@ -5301,6 +5302,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1332308251132094475
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165562216544005134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5056564515923819001, guid: 430538c45d5792942851b7222dbb9577, type: 3}
 --- !u!1 &1612558014466345052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,6 +5335,7 @@ GameObject:
   - component: {fileID: 8919678395804523133}
   - component: {fileID: 6259941102738281333}
   - component: {fileID: 2533696247840982071}
+  - component: {fileID: 8419681763209685430}
   m_Layer: 11
   m_Name: RR
   m_TagString: Untagged
@@ -5391,6 +5415,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8419681763209685430
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612558014466345052}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1550026729220326002, guid: 430538c45d5792942851b7222dbb9577, type: 3}
 --- !u!1 &1770574912871609989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5402,6 +5448,7 @@ GameObject:
   - component: {fileID: 4241659637756097508}
   - component: {fileID: 4178060826903183570}
   - component: {fileID: 664162293095256152}
+  - component: {fileID: 6702396876810647281}
   m_Layer: 11
   m_Name: FL
   m_TagString: Untagged
@@ -5481,6 +5528,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6702396876810647281
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770574912871609989}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1493623658105553845, guid: 430538c45d5792942851b7222dbb9577, type: 3}
 --- !u!1 &1809252456594479874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5759,11 +5828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
   _car: {fileID: 8397304227506098460}
-  _wheelSkids:
-  - {fileID: 4034565049691129200}
-  - {fileID: 8152318160296728356}
-  - {fileID: 6751231056312763301}
-  - {fileID: 7389964894330282047}
   _audioSource: {fileID: 695507213646290483}
 --- !u!114 &3930983298962315897
 MonoBehaviour:
@@ -5796,7 +5860,6 @@ MonoBehaviour:
   _car: {fileID: 8397304227506098460}
   _smoke: {fileID: 9011584670821114092}
   _fire: {fileID: 4114760906551830870}
-  _wheels: []
 --- !u!1 &2243941709484906782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6280,7 +6343,7 @@ GameObject:
   - component: {fileID: 727406937376621003}
   - component: {fileID: 4034565049691129200}
   m_Layer: 11
-  m_Name: WheelBackRightCollider
+  m_Name: WheelColliderRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6353,7 +6416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 8919678395804523133}
-  WheelCollider: {fileID: 0}
   IsSteerable: 0
   IsMotorized: 1
 --- !u!114 &4034565049691129200
@@ -6394,7 +6456,7 @@ GameObject:
   - component: {fileID: 950237909673283136}
   - component: {fileID: 8152318160296728356}
   m_Layer: 11
-  m_Name: WheelBackLeftCollider
+  m_Name: WheelColliderRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6467,7 +6529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 2656942146233575027}
-  WheelCollider: {fileID: 0}
   IsSteerable: 0
   IsMotorized: 1
 --- !u!114 &8152318160296728356
@@ -6712,6 +6773,7 @@ GameObject:
   - component: {fileID: 4736797106916192832}
   - component: {fileID: 7275803232023897383}
   - component: {fileID: 916305031277848393}
+  - component: {fileID: 1556312790861211470}
   m_Layer: 11
   m_Name: FR
   m_TagString: Untagged
@@ -6791,6 +6853,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1556312790861211470
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378570910027179915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -78122290439093665, guid: 430538c45d5792942851b7222dbb9577, type: 3}
 --- !u!1 &5151091587112090292
 GameObject:
   m_ObjectHideFlags: 0
@@ -7296,7 +7380,7 @@ Transform:
   m_GameObject: {fileID: 8765198105547059116}
   serializedVersion: 2
   m_LocalRotation: {x: 0.9848078, y: 0, z: 0, w: 0.17364825}
-  m_LocalPosition: {x: 0.24199998, y: 0.166, z: -1.297}
+  m_LocalPosition: {x: 0.2, y: 1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12118,7 +12202,7 @@ GameObject:
   - component: {fileID: 1141638403837002979}
   - component: {fileID: 6751231056312763301}
   m_Layer: 11
-  m_Name: WheelFrontLeftCollider
+  m_Name: WheelColliderFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12190,8 +12274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20465baa4cd8c8c4898232642d97a020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 4736797106916192832}
-  WheelCollider: {fileID: 0}
+  _wheelModel: {fileID: 4241659637756097508}
   IsSteerable: 1
   IsMotorized: 1
 --- !u!114 &6751231056312763301
@@ -12232,7 +12315,7 @@ GameObject:
   - component: {fileID: 3475901545028299065}
   - component: {fileID: 7389964894330282047}
   m_Layer: 11
-  m_Name: WheelFrontRightCollider
+  m_Name: WheelColliderFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12305,7 +12388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 4736797106916192832}
-  WheelCollider: {fileID: 0}
   IsSteerable: 1
   IsMotorized: 1
 --- !u!114 &7389964894330282047
