@@ -5444,7 +5444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerRace
   _hub: {fileID: 1862994659}
-  _carPrefab: {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+  _carPrefab: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
   _carPositions:
   - {fileID: 1659022383}
   - {fileID: 1144301888}

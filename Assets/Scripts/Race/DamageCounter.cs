@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class DamageCounter : MonoBehaviour
 {
-    [SerializeField] private Car _car;    
+    [SerializeField] private Car _car;
+    [SerializeField] private ParticleSystem _smoke;
+    [SerializeField] private ParticleSystem _fire;
     [SerializeField] private WheelCollider[] _wheels;
     private Transform _wheelsParent;
     private Vector3[] _wheelPositions = new Vector3[4];
@@ -50,11 +52,16 @@ public class DamageCounter : MonoBehaviour
         //Debug.Log("PreCrash()");
         //_wheels[0].enabled = false;
         //_wheels[0].transform.SetParent(null);
+        ParticleSystem.EmissionModule emission = _smoke.emission;
+        emission.enabled = true;
     }
 
     private void PreCrash()
     {
         Debug.Log("PreCrash()");
+        ParticleSystem.EmissionModule emission = _fire.emission;
+        emission.enabled = true;
+
         _wheels[1].enabled = false;
         _wheels[1].transform.SetParent(null);
     }
@@ -79,6 +86,12 @@ public class DamageCounter : MonoBehaviour
 
     private void Restart()
     {
+        ParticleSystem.EmissionModule emission = _smoke.emission;
+        emission.enabled = false;
+
+        emission = _fire.emission;
+        emission.enabled = false;
+
         for (int i = 0; i < 4; i++)
         {
             _wheels[i].transform.SetParent(_wheelsParent);

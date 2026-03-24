@@ -81,7 +81,7 @@ public class RocketGun : MonoBehaviour
             //rocket.Shoot(); 
         }
 
-        StartCoroutine(WaitPatron(0.5f));
+        StartCoroutine(WaitPatron(1.5f));
     }
 
     private bool CanShooted(Car enemy)
