@@ -214,7 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  _rigidbody: {fileID: 7085787564322592434}
   _skidSlideStart: 0.12
   _sideSlideMin: 0.05
   _sideSlideMax: 1.2
@@ -1885,7 +1884,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  _rigidbody: {fileID: 7085787564322592434}
   _skidSlideStart: 0.12
   _sideSlideMin: 0.05
   _sideSlideMax: 1.2
@@ -1998,7 +1996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  _rigidbody: {fileID: 7085787564322592434}
   _skidSlideStart: 0.12
   _sideSlideMin: 0.05
   _sideSlideMax: 1.2
@@ -2111,7 +2108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 3335092485689057933}
-  _rigidbody: {fileID: 7085787564322592434}
   _skidSlideStart: 0.12
   _sideSlideMin: 0.05
   _sideSlideMax: 1.2
@@ -7372,6 +7368,7 @@ GameObject:
   - component: {fileID: 1935695550632082182}
   - component: {fileID: 9112534829010888652}
   - component: {fileID: 5952033291620079489}
+  - component: {fileID: 2619338596475475530}
   m_Layer: 11
   m_Name: JeepGreen
   m_TagString: Untagged
@@ -7476,7 +7473,6 @@ MonoBehaviour:
   _currentPoint: 0
   _targetPoint: 0
   _relativePointPosition: {x: 0, y: 0, z: 0}
-  _p: 0
 --- !u!114 &-7534694214258213320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7630,6 +7626,22 @@ MonoBehaviour:
   _car: {fileID: 3335092485689057933}
   _smoke: {fileID: 2941240523914696912}
   _fire: {fileID: 7837502575181107562}
+--- !u!114 &2619338596475475530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dbbfa710256b54f96ac9cef491af9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnOnRoad
+  _car: {fileID: 3335092485689057933}
+  collapsTime: 3
+  whiteInterval: 0.15
+  currentCollapsTime: 0
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

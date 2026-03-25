@@ -6,14 +6,14 @@ public class LapsCounter : MonoBehaviour
 {
     [SerializeField] private Car _car;
     [SerializeField] private int _lap = 1;
-    [SerializeField] private int _currentPoint = 0;
-    [SerializeField] private int _targetPoint = 0;
+    [SerializeField] private int _currentPoint;
+    [SerializeField] private int _targetPoint;
     private WayPath _wayPath;    
     [SerializeField] private Vector3 _relativePointPosition;
     
     private bool _isWayCompleted;    
     private bool _isRaceCompleted;
-    [SerializeField] private int _p = 0;
+    //[SerializeField] private int _p = 0;
     public int Lap => _lap;
 
     public int Points 
@@ -23,6 +23,8 @@ public class LapsCounter : MonoBehaviour
             return _currentPoint + (Lap - 1) * _wayPath.Points.Length; 
         } 
     }
+
+    public int CurrentPoint => _currentPoint;
 
     public Vector3 RelativePointPosition => _relativePointPosition;    
 
@@ -38,7 +40,7 @@ public class LapsCounter : MonoBehaviour
     {
         FixedUpdate_CalculateRelativePointPosition();
         FixedUpdate_CheckPoint();
-        _p = Points;
+        //_p = Points;
     }
 
     private void OnTriggerExit(Collider other)

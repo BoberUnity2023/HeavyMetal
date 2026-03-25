@@ -68,8 +68,8 @@ public class Car : MonoBehaviour
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
 
-        WayPath wayPath = Hub.PathSelector.WayPath(id);
-        LapsCounter.SetWayPath(wayPath);
+        _wayPath = Hub.PathSelector.WayPath(id);
+        LapsCounter.SetWayPath(_wayPath);
 
         _wheels = GetComponentsInChildren<WheelControl>();
     }
