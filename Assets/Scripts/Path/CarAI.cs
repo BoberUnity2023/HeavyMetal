@@ -43,28 +43,30 @@ public class CarAI : MonoBehaviour, ICarInputable
             if (_car.IsFinished)
                 return 1;
 
+            float output = 0;
+
             if (_steer > 0)
             {
-                if (_steer > _steerPrevious)                
-                    _steer = _steerPrevious + _steeringSpeed * Time.fixedDeltaTime;
+                if (_steer > _steerPrevious)
+                    output = Mathf.Min(_steer, _steerPrevious + _steeringSpeed * Time.fixedDeltaTime);
                 else
                 {
                     if (_steer < _steerPrevious)
-                        _steer = _steerPrevious - _steeringBackSpeed * Time.fixedDeltaTime;
+                        output = Mathf.Max(0, _steerPrevious - _steeringBackSpeed * Time.fixedDeltaTime);
                 }
             }
 
             if (_steer < 0)
             {
                 if (_steer > _steerPrevious)
-                    _steer = _steerPrevious + _steeringBackSpeed * Time.fixedDeltaTime;
+                    output = Mathf.Min(0, _steerPrevious + _steeringBackSpeed * Time.fixedDeltaTime);
                 else
                 {
                     if (_steer < _steerPrevious)
-                        _steer = _steerPrevious - _steeringSpeed * Time.fixedDeltaTime;
+                        output = Mathf.Max(_steerPrevious - _steeringSpeed * Time.fixedDeltaTime, _steer);
                 }
             }
-            return _steer;
+            return output;
         }
     }
 

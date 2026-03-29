@@ -8082,6 +8082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 6528207836551631212}
+  _scale: 1
 --- !u!114 &2659173973760616901
 MonoBehaviour:
   m_ObjectHideFlags: 0

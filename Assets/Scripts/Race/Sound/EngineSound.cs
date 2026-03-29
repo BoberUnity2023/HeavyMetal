@@ -4,8 +4,9 @@ using UnityEngine;
 public class EngineSound : MonoBehaviour
 {
     [SerializeField] private Car _car;
-    [SerializeField] private AudioSource _audioSource;    
-    
+    [SerializeField] private AudioSource _audioSource;
+    [Range(0, 1)][SerializeField] private float _scale;
+
     private bool _isFun;
     private float _volume;
     private float _volumeTarget;
@@ -16,7 +17,7 @@ public class EngineSound : MonoBehaviour
     {        
         if (_car.Force < 0.05f)
         {
-            _volumeTarget = 0.5f;
+            _volumeTarget = 0.5f * _scale; ;
 
             if (_isFun)
             {
@@ -26,7 +27,7 @@ public class EngineSound : MonoBehaviour
         }
         else
         {
-            _volumeTarget = _car.Force;
+            _volumeTarget = _car.Force * _scale; ;
 
             if (!_isFun)
             {

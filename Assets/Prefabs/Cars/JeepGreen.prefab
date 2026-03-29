@@ -7581,6 +7581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 3649968636357645079}
+  _scale: 1
 --- !u!114 &1935695550632082182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7639,9 +7640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnOnRoad
   _car: {fileID: 3335092485689057933}
-  collapsTime: 3
-  whiteInterval: 0.15
-  currentCollapsTime: 0
+  _collapsTime: 5
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0
