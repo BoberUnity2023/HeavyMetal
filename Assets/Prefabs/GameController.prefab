@@ -53,13 +53,15 @@ MonoBehaviour:
   _console: {fileID: 0}
   _prefabSkidmarks: {fileID: 6130739728617072297, guid: 632e25f0cf8de734ea127112aa6ca2a5, type: 3}
   _groundPropses:
-  - GroundMaterial: 0
-    PhysicMaterial: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
-    Color: {r: 0, g: 0, b: 0, a: 0}
-    PrefabParticles: {fileID: 0}
-    Friction: 0
   - GroundMaterial: 1
     PhysicMaterial: {fileID: 13400000, guid: ce1e6fe960420124b8b74090bb5697b7, type: 2}
     Color: {r: 0, g: 0, b: 0, a: 0}
     PrefabParticles: {fileID: 5221816439557420030, guid: 0fd8c9138336dac43bd56fae0b7abc00, type: 3}
+    RateOverTimeMax: 20
     Friction: 2
+  - GroundMaterial: 0
+    PhysicMaterial: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    PrefabParticles: {fileID: 0}
+    RateOverTimeMax: 0
+    Friction: 0

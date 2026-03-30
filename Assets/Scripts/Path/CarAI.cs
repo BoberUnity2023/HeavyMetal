@@ -110,4 +110,12 @@ public class CarAI : MonoBehaviour, ICarInputable
             return 0f;
         }
     }
+
+    public float Reverse
+    {
+        get
+        {
+            return 0f;
+        }
+    }
 }

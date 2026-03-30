@@ -220,11 +220,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &1261304766677453502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,11 +1888,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &4812818840633712280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,11 +1998,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &5014544331148478879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,11 +2108,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &5082247500683901711
 GameObject:
   m_ObjectHideFlags: 0
@@ -7430,6 +7422,7 @@ MonoBehaviour:
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: 9112534829010888652}
   _damageCounter: {fileID: 5952033291620079489}
+  _visible: {fileID: 8540619745159850575}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}
@@ -7498,7 +7491,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 2000
   m_LinearDamping: 0.1
-  m_AngularDamping: 0.1
+  m_AngularDamping: 10
   m_CenterOfMass: {x: 0, y: -0.3, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -12579,6 +12572,7 @@ GameObject:
   - component: {fileID: 5903454360883809194}
   - component: {fileID: 7099163486958677553}
   - component: {fileID: 2994114115375193324}
+  - component: {fileID: 8540619745159850575}
   m_Layer: 11
   m_Name: Car_Body_02
   m_TagString: Untagged
@@ -12680,6 +12674,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6605927604496691472, guid: 9977ea93e9a2def4e9c1d0d3699d3c7d, type: 3}
+--- !u!114 &8540619745159850575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6567251793203411153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af1312e1ab38c4bb05badd7d38751e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Visible
 --- !u!1 &6770258671417120559
 GameObject:
   m_ObjectHideFlags: 0

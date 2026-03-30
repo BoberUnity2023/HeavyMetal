@@ -15,7 +15,7 @@ public class ReturnOnRoad : MonoBehaviour
 
         if (!_car.IsFinished && _car.Input.Handbrake < 0.01f)
         {
-            if (_car.Rigidbody.linearVelocity.magnitude < 2)
+            if (_car.Rigidbody.velocity.magnitude < 2 && _car.Input.Force > 0.5f && CanReturn)
             {
                 _currentCollapsTime += Time.deltaTime;
                 if (_currentCollapsTime > 0.7f && !isEffect)
@@ -32,7 +32,7 @@ public class ReturnOnRoad : MonoBehaviour
             else
             {
                 _currentCollapsTime = 0;
-                if (isEffect && _car.Rigidbody.linearVelocity.magnitude > 3)
+                if (isEffect && _car.Rigidbody.velocity.magnitude > 3)
                 {
                     isEffect = false;
                 }
@@ -42,7 +42,7 @@ public class ReturnOnRoad : MonoBehaviour
 
     private void MoveToNearestReturnPoint()
     {
-        _car.Rigidbody.linearVelocity = Vector3.zero;
+        _car.Rigidbody.velocity = Vector3.zero;
         _currentCollapsTime = 0;
         int currentPoint = Mathf.Max(0, _car.LapsCounter.CurrentPoint - 1);
         Transform wayPoint = _car.WayPath.Points[currentPoint];
@@ -58,5 +58,16 @@ public class ReturnOnRoad : MonoBehaviour
         //    Invoke("ChangeOutlineColor", whiteInterval);
         //else
         //    meshRenderer.material.SetColor("_OutlineColor", Color.black);
+    }
+
+    private bool CanReturn
+    {
+        get
+        {
+            if (!_car.IsAI)
+                return true;
+
+            return !_car.IsVisible;
+        }
     }
 }

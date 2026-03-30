@@ -1,16 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ResultController : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
-    public int FinishedEnemies { get; private set; }
+    private List<Car> _finishedCars = new List<Car>();
+
+    public int FinishedEnemies => _finishedCars.Count;//{ get; private set; }
 
     public void StartRace()
     {
         foreach (Car enemy in _hub.Level.Race.Enemies)
         {
             enemy.LapsCounter.OnFinish += OnFinishCar;
-        }        
+        }
     }
 
     private void OnDestroy()
@@ -23,6 +26,9 @@ public class ResultController : MonoBehaviour
 
     public void OnFinishCar(Car car)
     {
-        FinishedEnemies++;
+        if (_finishedCars.Contains(car))
+            return;
+
+        _finishedCars.Add(car);
     }
 }

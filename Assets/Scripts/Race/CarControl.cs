@@ -69,8 +69,9 @@ public class CarControl: MonoBehaviour
             
             wheel.WheelCollider.brakeTorque = _brakeTorque;            
         }
-        
-        AddDownForce();
+
+        FixedUpdate_AddDownForce();
+        FixedUpdate_AddAngularDrag();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -97,9 +98,18 @@ public class CarControl: MonoBehaviour
         }
     }
 
-    private void AddDownForce()
+    private void FixedUpdate_AddDownForce()
     {
-        _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward);        
+        if (_car.SlideForce > 0.25f)
+            _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward * (_car.SlideForce - 0.25f));
+    }
+
+    private void FixedUpdate_AddAngularDrag()
+    {
+        _car.Rigidbody.angularDrag = 0.3f;
+
+        if (_car.SlideForce > 0.5f)
+            _car.Rigidbody.angularDrag = (_car.SlideForce - 0.5f) * 6.5f;
     }
 
     // Determine if the player is accelerating or trying to reverse

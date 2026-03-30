@@ -5670,6 +5670,7 @@ MonoBehaviour:
   _heroPosition: {fileID: 3770500232870755456}
   IsFinished: 0
   IsCrashed: 0
+  _visible: {fileID: 8551986998073348888}
 --- !u!114 &168958509920371513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6452,11 +6453,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &3097838535618298993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6564,11 +6563,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &3202861681707095444
 GameObject:
   m_ObjectHideFlags: 0
@@ -7265,6 +7262,7 @@ GameObject:
   - component: {fileID: 3271507528922194313}
   - component: {fileID: 7158319259651333456}
   - component: {fileID: 6154575557930934182}
+  - component: {fileID: 8551986998073348888}
   m_Layer: 11
   m_Name: Car_Body
   m_TagString: Untagged
@@ -7366,6 +7364,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8452620946744165354, guid: 430538c45d5792942851b7222dbb9577, type: 3}
+--- !u!114 &8551986998073348888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244888488696337442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af1312e1ab38c4bb05badd7d38751e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Visible
 --- !u!1 &8765198105547059116
 GameObject:
   m_ObjectHideFlags: 0
@@ -12309,11 +12319,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &8983633938199074066
 GameObject:
   m_ObjectHideFlags: 0
@@ -12421,11 +12429,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.7
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1001 &4313149982732111198
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,7 +37,8 @@ public enum GroundMaterial
     public GroundMaterial GroundMaterial;
     public PhysicsMaterial PhysicMaterial;
     public Color Color;
-    public ParticleSystem PrefabParticles;    
+    public ParticleSystem PrefabParticles;
+    public int RateOverTimeMax;
     public float Friction;
 }
 

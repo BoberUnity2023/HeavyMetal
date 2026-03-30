@@ -220,11 +220,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &1261304766677453502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,11 +2037,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &4812818840633712280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,11 +2147,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &4955255839978091576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,11 +2497,9 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _smokeMax: 20
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
-  Intensity: 0
 --- !u!1 &5082247500683901711
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,6 +7469,7 @@ GameObject:
   - component: {fileID: 3328217344429293023}
   - component: {fileID: 2035308052008644319}
   - component: {fileID: 4297027349274617508}
+  - component: {fileID: 7917498490579872062}
   m_Layer: 11
   m_Name: Car_Body_02
   m_TagString: Untagged
@@ -7578,6 +7571,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -92309898875404387, guid: 2606ab82930e53e49af01fff9e8087b3, type: 3}
+--- !u!114 &7917498490579872062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565011049739160471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af1312e1ab38c4bb05badd7d38751e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Visible
 --- !u!1 &5760805685569476384
 GameObject:
   m_ObjectHideFlags: 0
@@ -7931,6 +7936,7 @@ MonoBehaviour:
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: -4822395907130684273}
   _damageCounter: {fileID: -7760443612287598961}
+  _visible: {fileID: 7917498490579872062}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 6159089245106069145}

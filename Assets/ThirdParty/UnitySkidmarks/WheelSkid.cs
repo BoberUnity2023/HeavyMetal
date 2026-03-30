@@ -11,32 +11,34 @@ public class WheelSkid : MonoBehaviour
     //[SerializeField] private float _brakeSlideStart = 0.5f;
     [SerializeField] private float _brakeFadeSpeed = 20.0f;//На этой скорости следы от тормозов растворяются
     [SerializeField] private float _forceFadeStartSpeed = 3.0f;//На этой скорости следы от пробуксовки начинают растворяются
-    [SerializeField] private float _forceFadeEndSpeed = 7.0f;//На этой скорости следы от пробуксовки растворяются
-    [SerializeField] private float _smokeMax = 10;
+    [SerializeField] private float _forceFadeEndSpeed = 7.0f;//На этой скорости следы от пробуксовки растворяются    
     [SerializeField] private float _mark_width = 0.2f;//Ширина следа
 
     private Skidmarks _skidmarksController;
     private List<ParticleSystem> _particleSystems = new List<ParticleSystem>();
     private WheelCollider _wheelCollider;
-    private WheelControl _wheelControl;
-    private WheelHit _wheelHitInfo;
+    private WheelControl _wheelControl;    
     [SerializeField] private GroundMaterial _groundMaterial;
     [SerializeField] private int _groundMaterialID;
     private GroundMaterial _groundMaterialPrevious;
 
     private int _lastSkid = -1; // Array index for the skidmarks controller. Index of last skidmark piece this wheel used
-    private float lastFixedUpdateTime;
+    private float _lastFixedUpdateTime;
     private float _carSpeed;
+    private float _intensity;
+    private bool _isGrounded;
 
     public GroundMaterial GroundMaterial => _groundMaterial;
 
-    public float Intensity;//TODO: TO Property
+    public float Intensity => _intensity;
+
+    public bool IsGrounded => _isGrounded;
 
     protected void Start() 
     {		
         _wheelControl = GetComponent<WheelControl>();
         _wheelCollider = _wheelControl.WheelCollider;
-        lastFixedUpdateTime = Time.time;
+        _lastFixedUpdateTime = Time.time;
         _skidmarksController = Instantiate(_car.Hub.Game.PrefabSkidmarks, Vector3.zero, Quaternion.identity);
         _skidmarksController.Init(this);
         CreateParticles();
@@ -44,7 +46,7 @@ public class WheelSkid : MonoBehaviour
 
 	protected void FixedUpdate() 
     {
-		lastFixedUpdateTime = Time.time;
+		_lastFixedUpdateTime = Time.time;
         GetGround_FixedUpdate();        
     }
 
@@ -106,48 +108,62 @@ public class WheelSkid : MonoBehaviour
         _wheelCollider.sidewaysFriction = wheelFrictionCurve;
     }
 
-    protected void LateUpdate() 
-	{
+    protected void LateUpdate()
+    {
         _carSpeed = _car.Speed;
-        Mark();       
+        LateUpdate_Mark();
+        LateUpdate_SkidSmoke();
     }
 
-	private void Mark()
-	{
-        float intensity = 0;        
-
-        if (_wheelControl.IsAttached && _wheelCollider.GetGroundHit(out _wheelHitInfo))
+    private void LateUpdate_Mark()
+    {
+        _intensity = 0;
+        if (!_wheelControl.IsAttached)
         {
-            intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);
-            
-            if (_carSpeed < 0.1f)
-                intensity = 0;
-
-
-            if (intensity >= _skidSlideStart)
-            {                                                 
-                Vector3 skidPoint = _wheelHitInfo.point + _car.Rigidbody.linearVelocity * (Time.time - lastFixedUpdateTime) * 1.3f;
-                float mark_width = _mark_width + SideSlide * _mark_width * 0.3f;
-                _lastSkid = _skidmarksController.AddSkidMark(skidPoint, _wheelHitInfo.normal, intensity, _lastSkid, mark_width);
-            }
-            else
-            {
-                _lastSkid = -1;                
-            }
+            _lastSkid = -1;
+            return;
         }
-        else
+
+        WheelHit wheelHitInfo;
+        _isGrounded = _wheelCollider.GetGroundHit(out wheelHitInfo);
+        if (!_isGrounded || _carSpeed < 0.1f)
         {
-            _lastSkid = -1;            
+            _lastSkid = -1;
+            return;
         }
-        Intensity = intensity;
-        //Smoke
-        float rateOverTime = intensity * _smokeMax;
+        _intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);
+
+        if (_intensity < _skidSlideStart)
+        {
+            _lastSkid = -1;
+            return;
+        }
+
+        Vector3 skidPoint = wheelHitInfo.point + _car.Rigidbody.linearVelocity * (Time.time - _lastFixedUpdateTime) * 1.3f;
+        float mark_width = _mark_width + SideSlide * _mark_width * 0.3f;
+        _lastSkid = _skidmarksController.AddSkidMark(skidPoint, wheelHitInfo.normal, _intensity, _lastSkid, mark_width);
+    }
+
+    private void LateUpdate_SkidSmoke()
+    {
+        float rateOverTime = _intensity * RateOverTimeMax;
 
         for (int i = 0; i < _particleSystems.Count; i++)
         {
             ParticleSystem.EmissionModule em = _particleSystems[i].emission;
             em.rateOverTime = i == GroundMaterialID - 1 ? rateOverTime : 0;
-        }      
+        }
+    }
+
+    private int RateOverTimeMax
+    {
+        get
+        {
+            if (GroundMaterialID == 0)
+                return 0;
+
+            return _car.Hub.Game.GroundPropses[GroundMaterialID - 1].RateOverTimeMax;
+        }
     }
 
     private float SideSlide
@@ -187,7 +203,7 @@ public class WheelSkid : MonoBehaviour
         get 
         {
             float speedClamped = Mathf.Min(_carSpeed, _forceFadeEndSpeed);
-            float forwardSlide = _car.Hub.Input.PlayerInput.Force + _car.Hub.Input.PlayerInput.Reverse;//[0...1]
+            float forwardSlide = _car.Input.Force + _car.Input.Reverse;//[0...1]
             if (speedClamped > _forceFadeStartSpeed)
             {
                 float delta = _forceFadeEndSpeed - _forceFadeStartSpeed;
