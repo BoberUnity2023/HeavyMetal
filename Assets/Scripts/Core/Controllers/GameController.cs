@@ -227,7 +227,7 @@ public class GameController : MonoBehaviour
             //}
 
             //if (Platform != Platform.Vk)
-            //    SceneLoader.LoadScene(1);
+                SceneLoader.LoadScene(1);
         }
 
         if (scene.buildIndex == 1)
@@ -237,7 +237,7 @@ public class GameController : MonoBehaviour
             mainMenuController.Init(this, fromLevel);
             Settings.SetGrafics();
         }
-        if (scene.buildIndex >= 2)
+        if (scene.buildIndex >= 3)
         {
             Hub = FindObjectOfType<Hub>();
             Hub.Game = this;

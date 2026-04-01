@@ -29,6 +29,7 @@ public class MainMenuController : SceneController
 
     public void Init(GameController game, bool fromLevel = false)
     {
+        return;
         Game = game;
         CreateButtons();
         SetButtonLevels();

@@ -37,9 +37,9 @@ public class ControllerSettings : MonoBehaviour
                 postProcessLayer.enabled = pss;            
         }
 
-        if (SceneManager.GetActiveScene().buildIndex >= 2)
+        if (SceneManager.GetActiveScene().buildIndex >= 3)
         {
-            _game.Hub.Camera.GetComponent<PostProcessLayer>().enabled = pss;                    
+            //_game.Hub.Camera.GetComponent<PostProcessLayer>().enabled = pss;                    
         }
     }
 }
