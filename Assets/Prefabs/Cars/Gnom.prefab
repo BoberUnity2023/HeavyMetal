@@ -5664,13 +5664,13 @@ MonoBehaviour:
   _lapsCounter: {fileID: 2313992211572780358}
   _rocketGun: {fileID: 3930983298962315897}
   _damageCounter: {fileID: 2133264978317198086}
+  _visible: {fileID: 8551986998073348888}
   _rigidbody: {fileID: 3973057290476016625}
   _prefabSparks: {fileID: 100000, guid: 3975c3d0f0f2bf643a31886050a8c2db, type: 3}
   _podnosPosition: {fileID: 1456092594922989742}
   _heroPosition: {fileID: 3770500232870755456}
   IsFinished: 0
   IsCrashed: 0
-  _visible: {fileID: 8551986998073348888}
 --- !u!114 &168958509920371513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5875,7 +5875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnOnRoad
   _car: {fileID: 8397304227506098460}
-  _collapsTime: 5
+  _collapsTimePlayer: 4
+  _collapsTimeEnemy: 1
 --- !u!1 &2243941709484906782
 GameObject:
   m_ObjectHideFlags: 0

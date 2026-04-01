@@ -7633,7 +7633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnOnRoad
   _car: {fileID: 3335092485689057933}
-  _collapsTime: 5
+  _collapsTimePlayer: 4
+  _collapsTimeEnemy: 1
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

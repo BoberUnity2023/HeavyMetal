@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class ReturnOnRoad : MonoBehaviour
 {
     [SerializeField] private Car _car;
-    [SerializeField] private float _collapsTime = 5;    
+    [SerializeField] private float _collapsTimePlayer;
+    [SerializeField] private float _collapsTimeEnemy;
     private float _currentCollapsTime = 0;
     private bool isEffect = false;
 
@@ -11,31 +13,31 @@ public class ReturnOnRoad : MonoBehaviour
     {
         //if (Input.GetKeyDown(KeyCode.R))
         //    MoveToNearestReturnPoint();
+        if (!_car.Hub.Level.Race.IsStarted || 
+            _car.IsFinished ||              
+            _car.IsCrashed)
+            return;
 
-
-        if (!_car.IsFinished && _car.Input.Handbrake < 0.01f)
+        if (_car.Speed < 2 && _car.Input.Force > 0.5f && CanReturn)
         {
-            if (_car.Rigidbody.linearVelocity.magnitude < 2 && _car.Input.Force > 0.5f && CanReturn)
+            _currentCollapsTime += Time.deltaTime;
+            if (_currentCollapsTime > 0.7f && !isEffect)
             {
-                _currentCollapsTime += Time.deltaTime;
-                if (_currentCollapsTime > 0.7f && !isEffect)
-                {
-                    isEffect = true;
-                    ChangeOutlineColor();
-                }
-
-                if (_currentCollapsTime > _collapsTime)
-                {
-                    MoveToNearestReturnPoint();
-                }
+                isEffect = true;
+                ChangeOutlineColor();
             }
-            else
+
+            if (_currentCollapsTime > CollapsTime)
             {
-                _currentCollapsTime = 0;
-                if (isEffect && _car.Rigidbody.linearVelocity.magnitude > 3)
-                {
-                    isEffect = false;
-                }
+                MoveToNearestReturnPoint();
+            }
+        }
+        else
+        {
+            _currentCollapsTime = 0;
+            if (isEffect && _car.Rigidbody.linearVelocity.magnitude > 3)
+            {
+                isEffect = false;
             }
         }
     }
@@ -58,6 +60,14 @@ public class ReturnOnRoad : MonoBehaviour
         //    Invoke("ChangeOutlineColor", whiteInterval);
         //else
         //    meshRenderer.material.SetColor("_OutlineColor", Color.black);
+    }
+
+    private float CollapsTime
+    {
+        get
+        {
+            return _car.IsAI ? _collapsTimeEnemy : _collapsTimePlayer;
+        }
     }
 
     private bool CanReturn

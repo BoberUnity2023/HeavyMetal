@@ -1064,8 +1064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 323891880558834044}
   - component: {fileID: 216962068021696020}
-  - component: {fileID: 228012923414224323}
-  - component: {fileID: 2713411704183056892}
   m_Layer: 0
   m_Name: Car_03_Old
   m_TagString: Untagged
@@ -1126,55 +1124,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &228012923414224323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492177310752090879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab3e6ae8411ec5d4f901800885ad4c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PrometeoCarController
-  maxSpeed: 100
-  accelerationMultiplier: 4
-  maxSteeringAngle: 27
-  brakeForce: 1000
-  frontLeftMesh: {fileID: 5692536390098103764}
-  frontLeftCollider: {fileID: 1508870139743342270}
-  frontRightMesh: {fileID: 9167545631138399133}
-  frontRightCollider: {fileID: 8963233296406852256}
-  rearLeftMesh: {fileID: 1834665561987825575}
-  rearLeftCollider: {fileID: 2442321799043520222}
-  rearRightMesh: {fileID: 5515024302265402170}
-  rearRightCollider: {fileID: 5704185988076105937}
-  useEffects: 0
-  RLWParticleSystem: {fileID: 0}
-  RRWParticleSystem: {fileID: 0}
-  RLWTireSkid: {fileID: 0}
-  RRWTireSkid: {fileID: 0}
-  useSounds: 0
-  carEngineSound: {fileID: 0}
-  tireScreechSound: {fileID: 0}
-  carSpeed: 0
-  carRigidbody: {fileID: 0}
---- !u!114 &2713411704183056892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492177310752090879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1fba2f2a1475541b923fadb898a6fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GadgetManager
-  slots:
-  - {fileID: 8972379740297909196}
-  - {fileID: 638721663708811801}
 --- !u!1 &3737666746550639634
 GameObject:
   m_ObjectHideFlags: 0
