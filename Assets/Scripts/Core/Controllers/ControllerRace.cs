@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControllerRace : MonoBehaviour
 {
     [SerializeField] private Hub _hub;    
-    [SerializeField] private Car _carPrefab;
+    //[SerializeField] private Car _carPrefab;
     [SerializeField] private Transform[] _carPositions;
     [SerializeField] private CameraMove _cameraMove;
     [SerializeField] private List<Car> _enemies;
@@ -54,7 +54,8 @@ public class ControllerRace : MonoBehaviour
     {
         int id = _carPositions.Length - 1;
         Transform carPosition = _carPositions[id];
-        Car car = Instantiate(_carPrefab, carPosition.position, carPosition.rotation);
+        Car carPrefab = _hub.Game.CarPropses[_hub.Game.SelectedCar].Prefab;
+        Car car = Instantiate(carPrefab, carPosition.position, carPosition.rotation);
         _car = car;
         car.Init(_hub, InputType.Player, 0);
         _cameraMove.SetTarget(car.transform);

@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 3d1ecaee882e81441aae7ff97d2c8cda
   - enabled: 1
     path: Assets/Scenes/01_Garage.unity
-    guid: 82d9684a928b77543b5a0914a3a923b6
+    guid: dca724f9b0f14b949abd244f348cfd24
   - enabled: 1
     path: Assets/Scenes/02_LevelMenu.unity
     guid: c92169fa70d35414baaa1c4927203200

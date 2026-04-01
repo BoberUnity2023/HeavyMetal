@@ -23,6 +23,20 @@ public enum Platform
     GamePush
 }
 
+public enum CarType
+{
+    JeepGreen,
+    JeepRed,
+    Police,
+    Gnom
+}
+
+[Serializable] public struct CarProps
+{
+    public CarType CarType;
+    public Car Prefab;    
+}
+
 public enum GroundMaterial
 {  
     Blocker = 0,
@@ -52,8 +66,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private ControllerSettings _controllerSettings;
     [SerializeField] private ControllerAnalitycs _controllerAnalitycs;
     [SerializeField] private Canvas _console;
+    [SerializeField] private Skidmarks _prefabSkidmarks;
 
-    [SerializeField] private Skidmarks _prefabSkidmarks; 
+    [SerializeField] private CarProps[] _carPropses;    
     [SerializeField] private GroundProps[] _groundPropses;
     
     private bool _isMobile;
@@ -64,6 +79,9 @@ public class GameController : MonoBehaviour
     public bool HasFocus { get; set; }
 
     public GroundProps[] GroundPropses => _groundPropses;
+
+    public int SelectedCar { get; set; }
+    
 
     public event Action<int> OnScoreChanged;
 
@@ -133,6 +151,8 @@ public class GameController : MonoBehaviour
     public ControllerAnalitycs Analitycs => _controllerAnalitycs;
 
     public Skidmarks PrefabSkidmarks => _prefabSkidmarks;
+
+    public CarProps[] CarPropses => _carPropses;    
 
     public int Stars
     {
