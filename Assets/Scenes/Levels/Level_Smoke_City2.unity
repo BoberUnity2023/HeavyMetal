@@ -5457,7 +5457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 851289653}
   m_Layer: 0
-  m_Name: Level3
+  m_Name: Track3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6990,7 +6990,7 @@ GameObject:
   - component: {fileID: 1152759948}
   - component: {fileID: 1152759947}
   m_Layer: 0
-  m_Name: Level2
+  m_Name: Track2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9994,7 +9994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1690863248}
   m_Layer: 0
-  m_Name: Level1
+  m_Name: Track1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11386,7 +11386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerRace
   _hub: {fileID: 1862994659}
-  _carPrefab: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
   _carPositions:
   - {fileID: 1659022383}
   - {fileID: 1144301888}
@@ -11411,6 +11410,10 @@ MonoBehaviour:
   _hub: {fileID: 1862994659}
   _screenFromShadowEffect: {fileID: 0}
   _race: {fileID: 1870886055}
+  _tracks:
+  - {fileID: 1690863247}
+  - {fileID: 1152759946}
+  - {fileID: 851289652}
 --- !u!1 &1893902971
 GameObject:
   m_ObjectHideFlags: 0

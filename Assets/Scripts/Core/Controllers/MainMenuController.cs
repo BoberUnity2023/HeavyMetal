@@ -17,19 +17,19 @@ public class MainMenuController : SceneController
         //int sceneIndex = Game != null ? Game.LastCompleteLevel : 2;
         //Game.SceneLoader.SceneIndex = sceneIndex;
         //SetButtonLevels();
-        if (Application.platform == RuntimePlatform.WindowsEditor)
-        {
-            GameController game = FindObjectOfType<GameController>();
-            if ( game == null)
-            {
-                SceneManager.LoadScene(0);
-            }
-        }        
+        //if (Application.platform == RuntimePlatform.WindowsEditor)
+        //{
+        //    GameController game = FindObjectOfType<GameController>();
+        //    if ( game == null)
+        //    {
+        //        SceneManager.LoadScene(0);
+        //    }
+        //}        
     }
 
     public void Init(GameController game, bool fromLevel = false)
     {
-        return;
+        //return;
         Game = game;
         CreateButtons();
         SetButtonLevels();
@@ -55,7 +55,7 @@ public class MainMenuController : SceneController
 
     private void PressLoadLevel(int level)
     {
-        Game.Sound.Play(SoundClip.Click);
+        //Game.Sound.Play(SoundClip.Click);
 
         if (IsLevelLock(level) && IsLevelAvialableByVideo(level))
         {            
@@ -70,6 +70,7 @@ public class MainMenuController : SceneController
     
     private void LoadLevel(int level)
     {
+        Debug.Log("Load Level: " + level);
         SaveScrollPosition();
         int buildIndex = Game.Levels.Level(level).SceneBuildIndex;//level + 1;
         Game.CurrentLevel = level;
@@ -118,7 +119,7 @@ public class MainMenuController : SceneController
         //    return false;
 
         //int stars = Game.Saves.Stars + Game.Saves.PurchasedStars;
-        return true;// Game.Levels.Level(level).StarsForOpen > stars;
+        return false;// Game.Levels.Level(level).StarsForOpen > stars;
     }
 
     public bool IsLevelAvialableByVideo(int level)

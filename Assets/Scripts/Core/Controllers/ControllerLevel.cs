@@ -14,6 +14,7 @@ public class ControllerLevel : MonoBehaviour
     [SerializeField] private Hub _hub;    
     [SerializeField] private GameObject _screenFromShadowEffect;  
     [SerializeField] private ControllerRace _race;
+    [SerializeField] private GameObject[] _tracks;
     private float _timeStart;
 
     public Hub Hub => _hub;
@@ -50,7 +51,7 @@ public class ControllerLevel : MonoBehaviour
         //SetAmbient();
         //_hub.Camera.SetTarget(_hero.CameraTarget);
         //_hub.CanvasLevel.SetButterflyCount(_hub.Game.Saves.Butterflies);
-        //StartLevel();        
+        StartLevel();        
     }
 
     private void StartLevel()
@@ -58,7 +59,17 @@ public class ControllerLevel : MonoBehaviour
         _hub.Game.LastPlayedLevel = _hub.Game.CurrentLevel;           
         //_hub.Joistick.ResetCenter();  
         _timeStart = Time.time;
-        _hub.Analitycs.SendLevelStart((int)_timeStart);        
+        //_hub.Analitycs.SendLevelStart((int)_timeStart);
+        SetTrack();
+    }
+
+    private void SetTrack()
+    {
+        int level = _hub.Game.CurrentLevel;
+        for (int i = 0; i < _tracks.Length; i++)
+        {
+            _tracks[i].SetActive(level == i + 1);
+        }
     }
 
     public void RestartFromCheckpoint()

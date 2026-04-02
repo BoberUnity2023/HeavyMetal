@@ -53,8 +53,8 @@ public class ButtonLevel : MonoBehaviour
 
     public void Lock()
     {
-        _iconUIEffect.enabled = true;
-        _iconUIEffect.effectFactor = 0.6f; 
+        //_iconUIEffect.enabled = true;
+        //_iconUIEffect.effectFactor = 0.6f; 
         _lock.SetActive(true);
         _plus.SetActive(false);
         _video.SetActive(_mainMenuController.IsLevelAvialableByVideo(_level));

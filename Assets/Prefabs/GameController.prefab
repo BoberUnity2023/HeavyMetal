@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b3adb44a273424cafafaa4dbbf1866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
-  _config: {fileID: 0}
-  _levels: {fileID: 0}
+  _config: {fileID: 11400000, guid: 12cf970621f105f48932b05c012e9b5c, type: 2}
+  _levels: {fileID: 11400000, guid: 1d7fba5bc6380f145af461e506af3f67, type: 2}
   _sceneLoader: {fileID: 2894431513775640236}
   _soundContoller: {fileID: 0}
   _controllerSettings: {fileID: 5788248675881965683}

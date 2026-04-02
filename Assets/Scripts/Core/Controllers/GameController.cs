@@ -250,7 +250,7 @@ public class GameController : MonoBehaviour
                 SceneLoader.LoadScene(1);
         }
 
-        if (scene.buildIndex == 1)
+        if (scene.buildIndex == 2)
         {
             MainMenuController mainMenuController = FindObjectOfType<MainMenuController>();
             bool fromLevel = _previousScene >= 2;

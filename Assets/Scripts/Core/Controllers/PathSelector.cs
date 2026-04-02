@@ -5,12 +5,13 @@ public class PathSelector : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
     [SerializeField] private LevelPaths[] _levelPaths;    
-    private int _level = 2;
+    private int _level;
 
     private void Awake()
     {
         //WayPath[] paths = gameObject.GetComponentsInChildren<WayPath>();
-        //Array.Resize(ref _wayPaths, paths.Length - 1);        
+        //Array.Resize(ref _wayPaths, paths.Length - 1);
+        _level = _hub.Game.CurrentLevel - 1;
     }
 
     public WayPath RandomWayPath
