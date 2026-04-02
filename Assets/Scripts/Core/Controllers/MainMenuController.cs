@@ -115,11 +115,11 @@ public class MainMenuController : SceneController
 
     public bool IsLevelLock(int level)
     {
-        //if (Game.Saves.GetPlayedLevels(level - 1))
-        //    return false;
+        if (Game.Saves.GetPlayedLevels(level - 1))
+            return false;
 
-        //int stars = Game.Saves.Stars + Game.Saves.PurchasedStars;
-        return false;// Game.Levels.Level(level).StarsForOpen > stars;
+        int stars = Game.Saves.Stars + Game.Saves.PurchasedStars;
+        return Game.Levels.Level(level).StarsForOpen > stars;
     }
 
     public bool IsLevelAvialableByVideo(int level)

@@ -15,6 +15,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 603ca50469e0b6c468fccc38979668c3, type: 3}
   _sceneBuildIndex: 3
   _laps: 3
+  _starsForOpen: 7
   _enemyPrefabs:
   - {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
   - {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}

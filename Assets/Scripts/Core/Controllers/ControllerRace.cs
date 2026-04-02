@@ -27,6 +27,9 @@ public class ControllerRace : MonoBehaviour
     public void Finish()
     {
         _hub.Level.Race.Car.IsFinished = true;
+              
+        _hub.Game.Saves.SaveLevelStars(StarsForLevel);
+
         if (!_car.IsAI)
             OnFinish?.Invoke();
     }
@@ -71,5 +74,22 @@ public class ControllerRace : MonoBehaviour
         _enemies.Add(car);
         _cars.Add(car);
         Debug.Log("Enemy " + prefab.gameObject.name + " created");
+    }
+
+    private int StarsForLevel
+    {
+        get
+        {
+            int place = _hub.Result.Place;
+
+            if (place == 1)
+                return 3;
+            if (place == 2)
+                return 2;
+            if (place == 3)
+                return 1;
+
+            return 0;
+        }        
     }
 }

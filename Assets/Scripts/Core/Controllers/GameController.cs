@@ -21,7 +21,7 @@ public enum Platform
     Ok,
     Vk,
     GamePush,
-    Staeam
+    Steam
 }
 
 public enum CarType
@@ -63,6 +63,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private ConfigGame _config;
     [SerializeField] private ConfigLevels _levels;
     [SerializeField] private SceneLoader _sceneLoader;
+    [SerializeField] private SavesContoller _savesContoller;
     [SerializeField] private ControllerSound _soundContoller;
     [SerializeField] private ControllerSettings _controllerSettings;
     [SerializeField] private ControllerAnalitycs _controllerAnalitycs;
@@ -110,6 +111,8 @@ public class GameController : MonoBehaviour
     public ConfigLevels Levels => _levels;
 
     public SceneLoader SceneLoader => _sceneLoader;
+
+    public SavesContoller Saves => _savesContoller;
 
     public ControllerSound Sound => _soundContoller;
 

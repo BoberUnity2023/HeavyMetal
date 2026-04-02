@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,11 +7,12 @@ public class LevelEndWindow : MonoBehaviour
 {
     [SerializeField] private Hub _hub;    
     [SerializeField] private GameObject _window;
-    [SerializeField] private Text _finishText;
+    [SerializeField] private TMP_Text _finishText;
     [SerializeField] private Button _buttonRestartFromCheckpoint;
     [SerializeField] private Button _buttonRestart;
     [SerializeField] private Button _buttonNextLevel;
-    [SerializeField] private GameObject _iconVideo;    
+    [SerializeField] private GameObject _iconVideo;
+    [SerializeField] private GameObject[] _stars;
 
     private void Start()
     {        
@@ -28,8 +30,11 @@ public class LevelEndWindow : MonoBehaviour
     {
         Show();
         _finishText.gameObject.SetActive(true);
-        int place = 1 + _hub.Result.FinishedEnemies;
-        _finishText.text = place.ToString();//_hub.Place.Place.ToString();
+        int place = _hub.Result.Place;
+        _finishText.text = place.ToString();
+        _stars[0].SetActive(place <= 3);
+        _stars[1].SetActive(place <= 2);
+        _stars[2].SetActive(place == 1);
     }
 
     private void OnDestroy()

@@ -8,6 +8,8 @@ public class ResultController : MonoBehaviour
 
     public int FinishedEnemies => _finishedCars.Count;//{ get; private set; }
 
+    public int Place => 1 + FinishedEnemies;
+
     public void StartRace()
     {
         foreach (Car enemy in _hub.Level.Race.Enemies)

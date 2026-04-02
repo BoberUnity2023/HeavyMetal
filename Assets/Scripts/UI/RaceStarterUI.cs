@@ -1,12 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RaceStarterUI : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
-    [SerializeField] private Text clockText = null;
-    [SerializeField] private Image numerImage = null;
-    [SerializeField] private Sprite[] numerSprites = new Sprite[4];
+    [SerializeField] private TMP_Text _clockText = null;
+    [SerializeField] private Image _numerImage = null;
+    [SerializeField] private Sprite[] _numerSprites = new Sprite[4];
 
     [SerializeField] private GameObject[] reds = null;
     [SerializeField] private GameObject[] greens = null;
@@ -16,8 +17,8 @@ public class RaceStarterUI : MonoBehaviour
         _hub.RaceStarter.OnTimer += RaceStarter_OnTimer;
         _hub.RaceStarter.OnStartRace += RaceStarter_OnStartRace;
 
-        clockText.text = "";
-        numerImage.sprite = null;
+        _clockText.text = "";
+        //_numerImage.sprite = null;
     }
 
     private void OnDestroy()
@@ -65,14 +66,14 @@ public class RaceStarterUI : MonoBehaviour
         //    }
         //}
 
-        clockText.text = "3";
-        numerImage.sprite = numerSprites[3];  
+        _clockText.text = "3";
+        //_numerImage.sprite = _numerSprites[3];  
     }
 
     private void Show(int value)
     {
-        clockText.text = value.ToString();
-        numerImage.sprite = numerSprites[value];
+        _clockText.text = value.ToString();
+        //_numerImage.sprite = _numerSprites[value];
         
         foreach (var red in reds)
         {
@@ -82,8 +83,8 @@ public class RaceStarterUI : MonoBehaviour
 
     private void Show0()
     {
-        clockText.text = "0";
-        numerImage.sprite = numerSprites[0];
+        _clockText.text = "0";
+        //_numerImage.sprite = _numerSprites[0];
         
         foreach (var red in reds)
         {
@@ -97,10 +98,10 @@ public class RaceStarterUI : MonoBehaviour
 
     private void ClockOff()
     {        
-        clockText.text = "";
-        clockText.gameObject.SetActive(false);
-        numerImage.sprite = null;
-        numerImage.gameObject.SetActive(false);
+        _clockText.text = "";
+        _clockText.gameObject.SetActive(false);
+        //_numerImage.sprite = null;
+        //_numerImage.gameObject.SetActive(false);
 
         foreach (var red in reds)
         {

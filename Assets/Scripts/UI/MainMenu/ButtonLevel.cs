@@ -26,8 +26,8 @@ public class ButtonLevel : MonoBehaviour
         //Debug.Log(gameObject.name + ".SetLevel(" + level + ")");
         _levelIndicator.text = level.ToString();
 
-        //int stars = _game.Saves.GetLevelStars(level - 1);
-        //SetStars(stars);
+        int stars = _game.Saves.GetLevelStars(level - 1);
+        SetStars(stars);
 
         _icon.sprite = icon;
         _iconLight.sprite = icon;
@@ -36,7 +36,7 @@ public class ButtonLevel : MonoBehaviour
 
         bool isLevelplayed = IsLevelPlayed(level);
         _plus.SetActive(!isLevelplayed);        
-        _iconLight.gameObject.SetActive(!isLevelplayed);        
+        //_iconLight.gameObject.SetActive(!isLevelplayed);        
     }
 
     private void SetStars(int count)
@@ -67,6 +67,6 @@ public class ButtonLevel : MonoBehaviour
 
     private bool IsLevelPlayed(int level)
     {
-        return true;// _game.Saves.GetPlayedLevels(level - 1);
+        return _game.Saves.GetPlayedLevels(level - 1);
     }
 }
