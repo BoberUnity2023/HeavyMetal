@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69a1b9bfad04834bb0cbd7598d191b7, type: 3}
+  m_Name: Level7
+  m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
+  _icon: {fileID: 21300000, guid: 57d868787a3e26a44a56e7b38968d27d, type: 3}
+  _sceneBuildIndex: 3
+  _laps: 3
+  _enemyPrefabs:
+  - {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+  - {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
+  - {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
