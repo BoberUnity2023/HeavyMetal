@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2b9940014a09744b0b0a7566fb9756, type: 3}
   m_Name: _Game
   m_EditorClassIdentifier: Assembly-CSharp::ConfigGame
-  _platform: 0
+  _platform: 4

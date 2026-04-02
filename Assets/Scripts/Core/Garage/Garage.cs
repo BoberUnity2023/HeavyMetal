@@ -12,7 +12,7 @@ public class Garage : MonoBehaviour
 
     private void Start()
     {
-        //CreateCars();
+        ShowCar(_sceneController.Game.SelectedCar);
     }
 
     private void CreateCars()
@@ -24,6 +24,7 @@ public class Garage : MonoBehaviour
             Transform parent = _carPositions[i];
             _cars[i] = Instantiate(prefab, parent.position, parent.rotation, parent);
         }
+
     }
 
     public void ShowCar(int id)

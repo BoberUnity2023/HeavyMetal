@@ -20,7 +20,8 @@ public enum Platform
     Yandex,
     Ok,
     Vk,
-    GamePush
+    GamePush,
+    Staeam
 }
 
 public enum CarType
