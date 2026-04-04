@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69a1b9bfad04834bb0cbd7598d191b7, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
-  _icon: {fileID: 21300000, guid: 941687b1e94c2dc49b8b558cff4deb41, type: 3}
+  _icon: {fileID: 21300000, guid: ae0f1e54379e1af4b92dde9b6552c592, type: 3}
   _sceneBuildIndex: 3
   _laps: 3
   _starsForOpen: 1
