@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class BlowController : MonoBehaviour
@@ -11,7 +10,13 @@ public class BlowController : MonoBehaviour
         {
             foreach (ContactPoint contact in collision.contacts)
             {
-                Instantiate(_car.PrefabSparks, contact.point, Quaternion.identity);
+                float impulse = contact.impulse.magnitude;
+                if (impulse > 500)
+                {
+                    GameObject spark = Instantiate(_car.PrefabSparks, contact.point, Quaternion.identity);
+                    AudioSource sparkAudioSource = spark.GetComponent<AudioSource>();
+                    sparkAudioSource.volume = Mathf.Min(impulse / 5000, 1);                    
+                }           
             }
         }
     }

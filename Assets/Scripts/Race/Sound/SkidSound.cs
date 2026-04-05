@@ -4,6 +4,7 @@ public class SkidSound : MonoBehaviour
 {
     [SerializeField] private Car _car;    
     [SerializeField] private AudioSource _audioSource;
+    [Range(0, 1)][SerializeField] private float _scale;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
 
     private void Start()
@@ -35,6 +36,6 @@ public class SkidSound : MonoBehaviour
         if (_car.Speed < 1)
             volume *= _car.Speed;
 
-        _audioSource.volume = volume /= 4;
+        _audioSource.volume = Mathf.Clamp(volume / 4, 0, 1) * _scale;
     }
 }

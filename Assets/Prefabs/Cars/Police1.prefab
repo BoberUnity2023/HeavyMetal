@@ -8103,6 +8103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 6595871000326126174}
+  _scale: 0.5
 --- !u!114 &-4822395907130684273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8147,7 +8148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnOnRoad
   _car: {fileID: 3335092485689057933}
-  _collapsTimePlayer: 4
+  _collapsTimePlayer: 2.5
   _collapsTimeEnemy: 1
 --- !u!1 &6177637341933279311
 GameObject:
