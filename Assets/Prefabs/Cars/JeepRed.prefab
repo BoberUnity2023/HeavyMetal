@@ -6052,7 +6052,7 @@ Transform:
   m_GameObject: {fileID: 6088300971249946369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 0.91000026, z: 1.8999999}
+  m_LocalPosition: {x: 0.74, y: 1.375, z: 1.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6105,6 +6105,7 @@ Transform:
   - {fileID: 2775984477289443135}
   - {fileID: 3751221350095406176}
   - {fileID: 3015240056592623300}
+  - {fileID: 8261483542289588191}
   - {fileID: 8012909724973155213}
   - {fileID: 6159089245106069145}
   - {fileID: 7343239410339146340}
@@ -6156,7 +6157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68048bf4158a244c868094bcbe44fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _car: {fileID: 3335092485689057933}
   motorTorque: 5200
   brakeTorque: 4000
   maxSpeed: 80
@@ -6176,11 +6176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0716433251fe1f1479b77e2414eab1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LapsCounter
-  _car: {fileID: 3335092485689057933}
   _lap: 1
   _currentPoint: 0
   _targetPoint: 0
-  _relativePointPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-7534694214258213320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6193,9 +6191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2169b860c1a67424c8d2ceebf5c0af75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
-  _car: {fileID: 3335092485689057933}
-  _fullForceSpeed: 15
-  _s: 0
+  _fullForceSpeed: 21
 --- !u!54 &7085787564322592434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6317,7 +6313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5609f944b451e041a6dd267f79091ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketGun
-  _car: {fileID: 3335092485689057933}
   _transformGun: {fileID: 3015240056592623300}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
   _tryAIShootTime: 0.3
@@ -6333,7 +6328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0caa1054c01e646b2ab4b9f443d525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageCounter
-  _car: {fileID: 3335092485689057933}
   _smoke: {fileID: 2626045109962905586}
   _fire: {fileID: 6945838842099785288}
 --- !u!114 &6943483865636845664
@@ -12473,4 +12467,66 @@ ParticleSystem:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4209731392266258, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   m_PrefabInstance: {fileID: 7108194860919863872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8443148689397348404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1445235045075204917}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6499999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+      propertyPath: m_Name
+      value: Rocket_Launcher
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+--- !u!4 &8261483542289588191 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a430929255309124faa1ed0b6fa55d08, type: 3}
+  m_PrefabInstance: {fileID: 8443148689397348404}
   m_PrefabAsset: {fileID: 0}

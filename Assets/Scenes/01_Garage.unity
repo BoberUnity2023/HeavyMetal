@@ -3139,6 +3139,10 @@ PrefabInstance:
       propertyPath: m_Range
       value: 0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 4204658395636623939, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+      propertyPath: m_Intensity
+      value: 127403.53
+      objectReference: {fileID: 0}
     - target: {fileID: 4789119249719021234, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
       propertyPath: _car
       value: 
@@ -3170,6 +3174,10 @@ PrefabInstance:
     - target: {fileID: 6173555836478698046, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
       propertyPath: m_Range
       value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173555836478698046, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+      propertyPath: m_Intensity
+      value: 127403.53
       objectReference: {fileID: 0}
     - target: {fileID: 6455621255536215378, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
       propertyPath: _car
@@ -5728,10 +5736,6 @@ MonoBehaviour:
   m_Script: {fileID: 1380575957}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.SceneObjectIDMapSceneAsset
-  m_Entries:
-  - id: 0
-    category: 0
-    gameObject: {fileID: 1714869652}
 --- !u!4 &1245419322
 Transform:
   m_ObjectHideFlags: 19
