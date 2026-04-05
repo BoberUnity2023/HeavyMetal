@@ -5847,7 +5847,7 @@ MonoBehaviour:
   _car: {fileID: 8397304227506098460}
   _transformGun: {fileID: 3862068699154400802}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
-  _tryAIShootTime: 0.5
+  _tryAIShootTime: 0.3
 --- !u!114 &2133264978317198086
 MonoBehaviour:
   m_ObjectHideFlags: 0

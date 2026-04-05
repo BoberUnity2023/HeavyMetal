@@ -1,13 +1,10 @@
-﻿using UnityEditor.Recorder;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CarAI : MonoBehaviour, ICarInputable
 {
-    [SerializeField] private Car _car;
     [SerializeField] private float _fullForceSpeed;
-
-    [SerializeField] private float _s;
-
+    
+    private Car _car;
     private float _steer;
     private float _steerPrevious;
     private bool _isReversing;
@@ -16,14 +13,13 @@ public class CarAI : MonoBehaviour, ICarInputable
     private const float _steeringSpeed = 2;//Double by CarInput
     private const float _steeringBackSpeed = 4;//Double by CarInput
 
-    private void Start()
+    public void Init(Car car)
     {
-        
+        _car = car;
     }
 
     public void FixedUpdate()
-    {
-        _s = _car.Speed;
+    {        
         if (_car.InputType == InputType.AI)
         {            
             FixedUpdate_CalculateSteer();            

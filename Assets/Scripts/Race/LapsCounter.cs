@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class LapsCounter : MonoBehaviour
 {
-    [SerializeField] private Car _car;
+    
     [SerializeField] private int _lap = 1;
     [SerializeField] private int _currentPoint;
     [SerializeField] private int _targetPoint;
-    private WayPath _wayPath;    
-    [SerializeField] private Vector3 _relativePointPosition;
-    
+    private WayPath _wayPath;
+    private Car _car;
+    private Vector3 _relativePointPosition;    
     private bool _isWayCompleted;    
     private bool _isRaceCompleted;
-    //[SerializeField] private int _p = 0;
+    
     public int Lap => _lap;
 
     public int Points 
@@ -30,6 +30,11 @@ public class LapsCounter : MonoBehaviour
 
     public event Action<int> OnLapStart;
     public event Action<Car> OnFinish;
+
+    public void Init(Car car)
+    {
+        _car = car;
+    }
 
     public void SetWayPath(WayPath wayPath)
     {

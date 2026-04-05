@@ -82,6 +82,12 @@ public class Car : MonoBehaviour
         {
             _wheelSkids[i] = Wheels[i].GetComponent<WheelSkid>();
         }
+
+        _control.Init(this);
+        _aIInput.Init(this);
+        _lapsCounter.Init(this);
+        _rocketGun.Init(this);
+        _damageCounter.Init(this);
     }
 
     private void FixedUpdate()

@@ -3,24 +3,29 @@ using UnityEngine;
 
 public class RocketGun : MonoBehaviour
 {
-    [SerializeField] private Car _car;
+    
     [SerializeField] private Transform _transformGun;
     [SerializeField] private Rocket _prefabRocket;    
     [SerializeField] private float _tryAIShootTime;
+    private Car _car;
     private int _armo = 4;
-    private bool _waitingNextPatron;    
+    private bool _waitingNextPatron;
+    private bool _isInited;
 
     public int Armo => _armo;
 
-    private void Start()
+    public void Init(Car car)
     {
+        _car = car;
+        _isInited = true;
         _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
         StartCoroutine(WaitAITryShoot(_tryAIShootTime));        
     }
 
     private void OnDestroy()
     {
-        _car.LapsCounter.OnLapStart -= LapsCounter_OnLapStart;
+        if (_isInited)
+            _car.LapsCounter.OnLapStart -= LapsCounter_OnLapStart;
     }
 
     private void LapsCounter_OnLapStart(int obj)
@@ -43,7 +48,7 @@ public class RocketGun : MonoBehaviour
     {
         if (_armo > 0 && _car.IsAI)
         {
-            if (RayDistance < 15)
+            if (RayDistance < 30)
                 TryShoot();
         }
     }

@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class DamageCounter : MonoBehaviour
 {
-    [SerializeField] private Car _car;
     [SerializeField] private ParticleSystem _smoke;
-    [SerializeField] private ParticleSystem _fire;    
+    [SerializeField] private ParticleSystem _fire;
+    private Car _car;
     private Transform _wheelsParent;
     private Vector3[] _wheelPositions = new Vector3[4];
     private int _damage;
 
-    private void Start()
-    {
-        Init();
-    }
-
-    private void Update()
-    {
+    //private void Update()
+    //{
         //if (_car.IsAI)
         //    return;
 
@@ -26,10 +21,11 @@ public class DamageCounter : MonoBehaviour
 
         //if (Input.GetKeyDown(KeyCode.N))
         //    ThirdCrash();
-    }
+    //}
 
-    private void Init()
-    {        
+    public void Init(Car car)
+    {  
+        _car = car;
         _wheelsParent = _car.Wheels[0].transform.parent;
         for (int i = 0; i < 4; i++)
         {

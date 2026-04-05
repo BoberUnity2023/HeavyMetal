@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CarControl: MonoBehaviour
 {    
-    [Header("Car Properties")]
-    [SerializeField] private Car _car;    
+    [Header("Car Properties")]        
     [SerializeField] private float motorTorque = 2000f;
     [SerializeField] private float brakeTorque = 2000f;
     [SerializeField] private float maxSpeed = 20f;
@@ -11,10 +10,15 @@ public class CarControl: MonoBehaviour
     [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
     [SerializeField] private float _speedForward;
-
+    private Car _car;
     //Calculate current speed along the car's forward axis
-    public float MaxSpeed => maxSpeed;    
-    
+    public float MaxSpeed => maxSpeed;
+
+    public void Init(Car car)
+    {
+        _car = car;
+    }
+
     public void FixedUpdate()
     {
         // Get player input for acceleration and steering        
