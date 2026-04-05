@@ -91,9 +91,10 @@ public class ControllerSound : MonoBehaviour
         {
             SetMusicClip(0);
         }
-        if (scene.buildIndex > 1)
+        if (scene.buildIndex >= 3)
         {
-            SetMusicClip(1);
+            int rnd = UnityEngine.Random.Range(0, _musics.Length);
+            SetMusicClip(rnd);
         }
     }
 

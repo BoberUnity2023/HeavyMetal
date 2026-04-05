@@ -53,7 +53,7 @@ MonoBehaviour:
   _levels: {fileID: 11400000, guid: 1d7fba5bc6380f145af461e506af3f67, type: 2}
   _sceneLoader: {fileID: 2894431513775640236}
   _savesContoller: {fileID: 4349069502150437515}
-  _soundContoller: {fileID: 0}
+  _soundContoller: {fileID: 5112412991435644164}
   _controllerSettings: {fileID: 5788248675881965683}
   _controllerAnalitycs: {fileID: 0}
   _console: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &362665473123127146
 Transform:
   m_ObjectHideFlags: 0
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b0c21d33eb17a4380182ec9428258b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _game: {fileID: 0}
+  _game: {fileID: 5279882291150218642}
   _audioSourceMusic: {fileID: 3260994046429105363}
   _click: {fileID: 8300000, guid: bd50593f3c468be43a9789621516b62e, type: 3}
   _checkpoint: {fileID: 8300000, guid: a0c29e878bbdbc14a965b9c3912fb0e0, type: 3}
@@ -713,8 +713,10 @@ MonoBehaviour:
   _butterflyOut: {fileID: 8300000, guid: ea72a2991b07fc04d8c4a3e6c2785ba9, type: 3}
   _batDead: {fileID: 8300000, guid: 31707147446b87d40be0812b6439c01a, type: 3}
   _musics:
-  - {fileID: 8300000, guid: 89ac6b4abc682b942accc071bd8da551, type: 3}
-  - {fileID: 8300000, guid: 8c6dce552dc62e147aae685638d26cad, type: 3}
+  - {fileID: 8300000, guid: a029ec2d5dad35d4f96d72279635753d, type: 3}
+  - {fileID: 8300000, guid: 2d5a6cb064f423f4791da5bb18f06c53, type: 3}
+  - {fileID: 8300000, guid: 30d016a565b54c14c9478af5e2828da4, type: 3}
+  - {fileID: 8300000, guid: fbea7ace3e6364e4bb10d65416a17461, type: 3}
 --- !u!82 &3260994046429105363
 AudioSource:
   m_ObjectHideFlags: 0
