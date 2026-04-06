@@ -3,7 +3,8 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
-    [SerializeField] private Transform _player;
+    [SerializeField] private Transform _pointPlayer;
+    [SerializeField] private Transform[] _pointEnemies;
     [SerializeField] private GameObject[] _maps;
     [SerializeField] private Vector2[] _offsets;
 
@@ -13,10 +14,25 @@ public class Map : MonoBehaviour
     }
 
     private void Update()
+    {        
+        //Vector2 offset = _offsets[_hub.Game.CurrentLevel - 1];
+        
+        Car player = _hub.Level.Race.Car;
+        SetPointToCar(_pointPlayer, player);       
+        
+
+        for (int i = 0; i < _hub.Level.Race.Enemies.Count; i++)
+        {
+            Car enemy = _hub.Level.Race.Enemies[i];
+            SetPointToCar(_pointEnemies[i], enemy);
+            //_pointEnemies[i].localPosition = new Vector3(-enemy.position.x + offset.x, -enemy.position.z + offset.y, 0);
+        }
+    }
+
+    private void SetPointToCar(Transform point, Car car)
     {
-        Transform player = _hub.Level.Race.Car.transform;
         Vector2 offset = _offsets[_hub.Game.CurrentLevel - 1];
-        _player.localPosition = new Vector3(-player.position.x + offset.x, -player.position.z + offset.y, 0);
+        point.localPosition = new Vector3(-car.transform.position.x + offset.x, -car.transform.position.z + offset.y, 0);
     }
 
     private void ShowMap()
