@@ -6117,7 +6117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330747564
 Transform:
   m_ObjectHideFlags: 0
@@ -22607,10 +22607,6 @@ PrefabInstance:
     - target: {fileID: 2684463357039219401, guid: 86364e5d9a00ba34ab9e1878d3d8f4d3, type: 3}
       propertyPath: m_Name
       value: Road_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2684463357039219401, guid: 86364e5d9a00ba34ab9e1878d3d8f4d3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
