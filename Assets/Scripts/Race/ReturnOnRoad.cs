@@ -42,6 +42,14 @@ public class ReturnOnRoad : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Dead")
+        {
+            MoveToNearestReturnPoint();
+        }
+    }
+
     private void MoveToNearestReturnPoint()
     {
         _car.Rigidbody.linearVelocity = Vector3.zero;

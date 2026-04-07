@@ -17,7 +17,9 @@ public class CarControl: MonoBehaviour
     public void Init(Car car)
     {
         _car = car;
-    }
+        Vector3 tensor = _car.Rigidbody.inertiaTensor;
+        _car.Rigidbody.inertiaTensor = tensor * 2;
+    }    
 
     public void FixedUpdate()
     {

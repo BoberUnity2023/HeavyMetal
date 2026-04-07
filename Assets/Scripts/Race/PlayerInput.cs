@@ -81,14 +81,14 @@ public class PlayerInput : MonoBehaviour, ICarInputable
     {
         Vector2 inputVector = _deltaKeyboard;// new Vector2(Delta.x, Delta.y);
 
-        if (!Input.GetKey(KeyCode.UpArrow) && !_isPressedForce &&
-            !Input.GetKey(KeyCode.DownArrow) && !_isPressedBrake)
+        if (!Input.GetKey(KeyCode.W) && !_isPressedForce &&
+            !Input.GetKey(KeyCode.S) && !_isPressedBrake)
         {
             inputVector.y = 0;
         }
 
-        if (!Input.GetKey(KeyCode.RightArrow) && !_isPressedRight && 
-            !Input.GetKey(KeyCode.LeftArrow) && !_isPressedLeft)
+        if (!Input.GetKey(KeyCode.D) && !_isPressedRight && 
+            !Input.GetKey(KeyCode.A) && !_isPressedLeft)
         {
             if (inputVector.x > 0)
                 inputVector.x = Mathf.Max(0, inputVector.x - Time.deltaTime * steeringBackSpeed);
@@ -97,17 +97,17 @@ public class PlayerInput : MonoBehaviour, ICarInputable
                 inputVector.x = Mathf.Min(0, inputVector.x + Time.deltaTime * steeringBackSpeed);
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) || _isPressedForce)
+        if (Input.GetKey(KeyCode.W) || _isPressedForce)
             inputVector.y = 1;
 
-        if (Input.GetKey(KeyCode.DownArrow) || _isPressedBrake)
+        if (Input.GetKey(KeyCode.S) || _isPressedBrake)
             inputVector.y = -1; 
         
 
-        if (Input.GetKey(KeyCode.LeftArrow) || _isPressedLeft)
+        if (Input.GetKey(KeyCode.A) || _isPressedLeft)
             inputVector.x = Mathf.Max(inputVector.x - Time.deltaTime * steeringSpeed, -1);
 
-        if (Input.GetKey(KeyCode.RightArrow) || _isPressedRight)
+        if (Input.GetKey(KeyCode.D) || _isPressedRight)
             inputVector.x = Mathf.Min(inputVector.x + Time.deltaTime * steeringSpeed, 1);
 
         _deltaKeyboard = inputVector;

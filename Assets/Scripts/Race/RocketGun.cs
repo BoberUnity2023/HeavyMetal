@@ -38,7 +38,7 @@ public class RocketGun : MonoBehaviour
         if (_car.IsAI)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             TryShoot();
         }

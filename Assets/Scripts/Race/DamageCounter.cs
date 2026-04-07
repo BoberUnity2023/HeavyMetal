@@ -78,7 +78,7 @@ public class DamageCounter : MonoBehaviour
         }
         _car.IsCrashed = true;
 
-        StartCoroutine(WaitRestart(3));
+        StartCoroutine(WaitRestart(4));
     }
 
     private IEnumerator WaitRestart(float time)
@@ -98,6 +98,7 @@ public class DamageCounter : MonoBehaviour
         }
         
         _car.IsCrashed = false;
+        _damage = 0;
     }
 
     private void Emit(ParticleSystem particleSystem, bool value)
