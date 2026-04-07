@@ -7363,7 +7363,7 @@ GameObject:
   - component: {fileID: 2619338596475475530}
   m_Layer: 11
   m_Name: JeepGreen
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12571,7 +12571,7 @@ GameObject:
   - component: {fileID: 8540619745159850575}
   m_Layer: 11
   m_Name: Car_Body_02
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
