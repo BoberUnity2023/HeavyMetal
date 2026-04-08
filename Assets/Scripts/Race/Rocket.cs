@@ -4,6 +4,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBlast;
+    [SerializeField] private float _blastForce;
     private Hub _hub;    
     private Car _attacker;
     private const float _speed = 50f;
@@ -64,6 +65,8 @@ public class Rocket : MonoBehaviour
     private void Blast(Car car)
     {
         Instantiate(_prefabBlast, transform.position, Quaternion.identity, car.transform);
+        Vector3 direction = (car.transform.position - transform.position).normalized;
+        car.Rigidbody.AddForce(direction * _blastForce);
         car.DamageCounter.DamageAdd(34);
     }
 
