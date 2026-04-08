@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 657850943949158135}
   - component: {fileID: 4029975111004405637}
   - component: {fileID: 4352447679148827239}
+  - component: {fileID: 2082761634448495838}
   m_Layer: 0
   m_Name: Spark_new
   m_TagString: Untagged
@@ -4932,3 +4933,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2082761634448495838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471003305429672722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21ea18147815eb4f9ccf612a21331b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeLive
+  time: 1

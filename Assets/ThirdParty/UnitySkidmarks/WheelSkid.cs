@@ -66,6 +66,9 @@ public class WheelSkid : MonoBehaviour
 
     private void GetGround_FixedUpdate()
     {
+        if (!_car.IsVisible)
+            return;
+
         RaycastHit hit;        
 
         if (Physics.Raycast(transform.position, -transform.up, out hit))
