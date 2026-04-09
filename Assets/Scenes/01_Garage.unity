@@ -348,7 +348,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4413
+  m_ColorTemperature: 3516
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -3081,7 +3081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445235045075204917, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35099995
+      value: -0.147
       objectReference: {fileID: 0}
     - target: {fileID: 1445235045075204917, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3384,7 +3384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1419468416100494561, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1419468416100494561, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5304,7 +5304,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 0.8874634, b: 0.72264147, a: 1}
-  m_Intensity: 172.40797
+  m_Intensity: 100.51791
   m_Range: 21.2
   m_SpotAngle: 91.295334
   m_InnerSpotAngle: 49.388477
@@ -5814,9 +5814,9 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 74.44084
+  m_Intensity: 138.71367
   m_Range: 35
-  m_SpotAngle: 116.927345
+  m_SpotAngle: 83.84685
   m_InnerSpotAngle: 49.388477
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
@@ -6684,7 +6684,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4413
+  m_ColorTemperature: 3516
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -7631,7 +7631,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 0.8874634, b: 0.72264147, a: 1}
-  m_Intensity: 54.85119
+  m_Intensity: 18.861156
   m_Range: 21.2
   m_SpotAngle: 91.295334
   m_InnerSpotAngle: 49.388477
@@ -7747,7 +7747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3751836023865850735, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.054
       objectReference: {fileID: 0}
     - target: {fileID: 3751836023865850735, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8063,7 +8063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445235045075204917, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35099995
+      value: -0.357
       objectReference: {fileID: 0}
     - target: {fileID: 1445235045075204917, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9485,7 +9485,7 @@ Transform:
   m_GameObject: {fileID: 1787339655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.25, z: 0.52}
+  m_LocalPosition: {x: 1, y: 1.349, z: 0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9771,9 +9771,9 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 88.503746
+  m_Intensity: 133.15019
   m_Range: 103.9
-  m_SpotAngle: 116.927345
+  m_SpotAngle: 93.84793
   m_InnerSpotAngle: 49.388477
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
@@ -10251,9 +10251,9 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 400.42258
+  m_Intensity: 566.9073
   m_Range: 103.9
-  m_SpotAngle: 116.927345
+  m_SpotAngle: 96.92516
   m_InnerSpotAngle: 49.388477
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
@@ -14922,13 +14922,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9140418616020218314}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.97414213, z: -0, w: -0.2259361}
-  m_LocalPosition: {x: -3.23, y: 2.473, z: 9.733}
+  m_LocalRotation: {x: -0, y: -0.96600723, z: -0, w: -0.25851518}
+  m_LocalPosition: {x: -4.57, y: 2.473, z: 9.733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -206.116, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -209.964, z: 0}
 --- !u!33 &7362724227219521321
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15035,7 +15035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1419468416100494561, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 1419468416100494561, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -15093,6 +15093,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e2a29dffc9a97fd409c539bf4dfc32d8, type: 3}
+    - target: {fileID: 3324093929473447312, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5389790680873886301, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
       propertyPath: m_Name
       value: ButtonNextCar

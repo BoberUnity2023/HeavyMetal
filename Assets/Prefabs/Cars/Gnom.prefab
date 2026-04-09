@@ -5811,7 +5811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineSound
   _car: {fileID: 8397304227506098460}
   _audioSource: {fileID: 7609571372172697190}
-  _scale: 1
+  _scale: 0.1
 --- !u!114 &3233635533432212158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5826,7 +5826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
   _car: {fileID: 8397304227506098460}
   _audioSource: {fileID: 695507213646290483}
-  _scale: 0.5
+  _scale: 0.1
 --- !u!114 &3930983298962315897
 MonoBehaviour:
   m_ObjectHideFlags: 0
