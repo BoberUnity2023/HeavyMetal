@@ -6,6 +6,7 @@ public class DamageCounter : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _smoke;
     [SerializeField] private ParticleSystem _fire;
+    private Spirit _spirit;
     private Car _car;
     private Transform _wheelsParent;
     private Vector3[] _wheelPositions = new Vector3[4];
@@ -41,6 +42,9 @@ public class DamageCounter : MonoBehaviour
     
     public void DamageAdd(int value)
     {
+        if (_car.IsCrashed)
+            return;
+
         _damage += value;
 
         if (_damage < 35)
@@ -78,12 +82,18 @@ public class DamageCounter : MonoBehaviour
         }
         _car.IsCrashed = true;
 
-        StartCoroutine(WaitRestart(4));
+        StartCoroutine(WaitHide(1));
     }
 
-    private IEnumerator WaitRestart(float time)
+    private IEnumerator WaitHide(float time)
     {
         yield return new WaitForSeconds(time);
+        _spirit = new GameObject().AddComponent<Spirit>();
+        _spirit.Init(_car, 3);   
+    }
+
+    public void SpiritEnd()//From Spirit
+    {        
         Restart();
     }
 

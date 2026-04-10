@@ -19,8 +19,9 @@ public class ReturnOnRoad : MonoBehaviour
             return;
 
         bool isTurned = transform.eulerAngles.z > 80 && transform.eulerAngles.z < 280;
+        bool slippage = _car.Speed < 2 && _car.Input.Force > 0.5f;
 
-        if ((_car.Speed < 2 && _car.Input.Force > 0.5f) || isTurned && CanReturn)
+        if ((slippage || isTurned) && CanReturn)
         {
             _currentCollapsTime += Time.deltaTime;
             if (_currentCollapsTime > 0.7f && !isEffect)
@@ -37,7 +38,7 @@ public class ReturnOnRoad : MonoBehaviour
         else
         {
             _currentCollapsTime = 0;
-            if (isEffect && _car.Rigidbody.linearVelocity.magnitude > 3)
+            if (isEffect && _car.Speed > 3)
             {
                 isEffect = false;
             }
