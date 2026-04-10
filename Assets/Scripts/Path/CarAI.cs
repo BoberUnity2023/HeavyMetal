@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CarAI : MonoBehaviour, ICarInputable
 {
     [SerializeField] private float _fullForceSpeed;
-    
+
     private Car _car;
     private float _steer;
     private float _steerPrevious;
+
     private bool _isReversing;
-    private const float _reverceTime = 1;
+    private const float _reverceTime = 0.75f;
+    private float _currentCollapsTime = 0;
 
     private const float _steeringSpeed = 2;//Double by CarInput
     private const float _steeringBackSpeed = 4;//Double by CarInput
@@ -22,7 +25,8 @@ public class CarAI : MonoBehaviour, ICarInputable
     {        
         if (_car.InputType == InputType.AI)
         {            
-            FixedUpdate_CalculateSteer();            
+            FixedUpdate_CalculateSteer();
+            FixedUpdate_TryReverse();
         }
     }   
 
@@ -31,7 +35,36 @@ public class CarAI : MonoBehaviour, ICarInputable
         _steerPrevious = _steer;
         _steer = _car.LapsCounter.RelativePointPosition.x / _car.LapsCounter.RelativePointPosition.magnitude;
     }
-    
+
+    private void FixedUpdate_TryReverse()
+    {
+        if (!_car.IsFinished &&
+            _car.Input.Handbrake < 0.01f &&
+            _car.Speed < 2 &&
+            _car.Input.Force > 0.5f)
+        {
+            _currentCollapsTime += Time.fixedDeltaTime;
+            if (_currentCollapsTime > 1)
+            {
+                AIReverseOn();
+            }
+        }
+    }
+
+    private void AIReverseOn()
+    {
+        _currentCollapsTime = 0;
+        _isReversing = true;
+        StartCoroutine(AIReverseOff(_reverceTime));
+    }
+
+    private IEnumerator AIReverseOff(float time)
+    {
+        yield return new WaitForSeconds(time);
+        _isReversing = false;
+        _currentCollapsTime = 0;
+    }
+
     public float Steer
     {
         get
@@ -76,6 +109,9 @@ public class CarAI : MonoBehaviour, ICarInputable
             if (_car.IsFinished)
                 return 0;
 
+            if (_isReversing)
+                return -1;
+
             if (_car.Speed < _fullForceSpeed)
             {
                 _car.Force = 1;
@@ -111,6 +147,9 @@ public class CarAI : MonoBehaviour, ICarInputable
     {
         get
         {
+            if (_isReversing)
+                return 1;
+
             return 0f;
         }
     }

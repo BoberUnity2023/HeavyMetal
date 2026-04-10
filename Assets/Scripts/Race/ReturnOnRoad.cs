@@ -18,7 +18,9 @@ public class ReturnOnRoad : MonoBehaviour
             _car.IsCrashed)
             return;
 
-        if (_car.Speed < 2 && _car.Input.Force > 0.5f && CanReturn)
+        bool isTurned = transform.eulerAngles.z > 80 && transform.eulerAngles.z < 280;
+
+        if ((_car.Speed < 2 && _car.Input.Force > 0.5f) || isTurned && CanReturn)
         {
             _currentCollapsTime += Time.deltaTime;
             if (_currentCollapsTime > 0.7f && !isEffect)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public enum InputType
@@ -19,8 +20,8 @@ public class Car : MonoBehaviour
     [SerializeField] private Visible _visible;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject _prefabSparks;
-    [SerializeField] private Transform _podnosPosition;
-    [SerializeField] private Transform _heroPosition;    
+    private Transform _podnosPosition;
+    private Transform _heroPosition;    
     private ICarInputable _input;
     private InputType _inputType;
     private WayPath _wayPath;
@@ -72,6 +73,9 @@ public class Car : MonoBehaviour
 
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
+
+        if (!IsAI)
+            gameObject.AddComponent<AudioListener>();
 
         _wayPath = Hub.PathSelector.WayPath(id);
         LapsCounter.SetWayPath(_wayPath);

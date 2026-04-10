@@ -84,7 +84,7 @@ public class LapsCounter : MonoBehaviour
         
         if (_relativePointPosition.magnitude < checkDistance)
         {            
-            _currentPoint = Mathf.Min(_currentPoint + 1, _wayPath.PointsCount);
+            _currentPoint = Mathf.Min(_currentPoint + 1, _wayPath.PointsCount - 1);
 
             //if (resultController != null && resultController.Results.Length > 0)
             //{
@@ -92,7 +92,7 @@ public class LapsCounter : MonoBehaviour
             //    resultController.CheckResults(); //
             //}
 
-            bool isPointLast = _currentPoint == _wayPath.Points.Length - 1;
+            bool isPointLast = _currentPoint == _wayPath.PointsCount - 1;
             if (isPointLast)
             {                
                 _isWayCompleted = true;
