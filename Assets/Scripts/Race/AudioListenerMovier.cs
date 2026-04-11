@@ -7,8 +7,9 @@ public class AudioListenerMovier : MonoBehaviour
 
     public void Init(Transform target)
     {
+        _isInited = true; 
         _target = target;
-        enabled = true;
+        enabled = true;        
     }
     
     void Update()

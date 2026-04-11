@@ -109,8 +109,9 @@ public class CarControl: MonoBehaviour
 
     private void FixedUpdate_AddDownForce()
     {
-        if (_car.SlideForce > 0.25f)
-            _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward * (_car.SlideForce - 0.25f));
+        _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward);
+        //if (_car.SlideForce > 0.25f)
+        //    _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward * (_car.SlideForce - 0.25f));
     }
 
     private void FixedUpdate_AddAngularDrag()

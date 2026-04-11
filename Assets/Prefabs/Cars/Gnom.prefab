@@ -5686,7 +5686,7 @@ MonoBehaviour:
   maxSpeed: 50
   steeringRange: 42
   steeringRangeAtMaxSpeed: 30
-  _downForce: 0
+  _downForce: 40000
   _speedForward: 0
 --- !u!114 &2313992211572780358
 MonoBehaviour:
