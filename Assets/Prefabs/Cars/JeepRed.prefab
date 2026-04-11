@@ -6548,7 +6548,7 @@ MonoBehaviour:
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: -6036202623926066216}
   _damageCounter: {fileID: 2011302960441392434}
-  _visible: {fileID: 0}
+  _visible: {fileID: 7347943285164900504}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 4471003305429672722, guid: 7a47e13fbcd7658448a26df37940109c, type: 3}
   IsFinished: 0
@@ -6721,7 +6721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5609f944b451e041a6dd267f79091ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketGun
-  _transformGun: {fileID: 0}
+  _transformGun: {fileID: 5122556787402117352}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
   _tryAIShootTime: 0.3
 --- !u!114 &2011302960441392434
@@ -12112,6 +12112,7 @@ GameObject:
   - component: {fileID: 3604639750171181951}
   - component: {fileID: 5829751737964739516}
   - component: {fileID: 8435187881078139421}
+  - component: {fileID: 7347943285164900504}
   m_Layer: 0
   m_Name: Car_Body_02
   m_TagString: Untagged
@@ -12213,6 +12214,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6605927604496691472, guid: 9977ea93e9a2def4e9c1d0d3699d3c7d, type: 3}
+--- !u!114 &7347943285164900504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377946544281384979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af1312e1ab38c4bb05badd7d38751e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Visible
 --- !u!1 &7710773915604073295
 GameObject:
   m_ObjectHideFlags: 0

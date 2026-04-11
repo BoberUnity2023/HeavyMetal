@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 1388942071762060244}
   - component: {fileID: 6765936802716216985}
   - component: {fileID: 805427616888058022}
+  - component: {fileID: 6666120620835564644}
   m_Layer: 0
   m_Name: Car_03_Body
   m_TagString: Untagged
@@ -203,6 +204,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -92309898875404387, guid: 932f2e4131eb59b478a42e747a74b0b8, type: 3}
+--- !u!114 &6666120620835564644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468470430001465781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af1312e1ab38c4bb05badd7d38751e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Visible
 --- !u!1 &1018141103555447793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7827,7 +7840,7 @@ MonoBehaviour:
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: -4822395907130684273}
   _damageCounter: {fileID: -7760443612287598961}
-  _visible: {fileID: 0}
+  _visible: {fileID: 6666120620835564644}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 4471003305429672722, guid: 7a47e13fbcd7658448a26df37940109c, type: 3}
   IsFinished: 0
