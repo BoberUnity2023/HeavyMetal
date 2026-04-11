@@ -7426,8 +7426,6 @@ MonoBehaviour:
   _visible: {fileID: 8540619745159850575}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabSparks: {fileID: 4471003305429672722, guid: 7a47e13fbcd7658448a26df37940109c, type: 3}
-  _podnosPosition: {fileID: 6159089245106069145}
-  _heroPosition: {fileID: 7343239410339146340}
   IsFinished: 0
   IsCrashed: 0
 --- !u!114 &8534404491845417155
@@ -7570,7 +7568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 3649968636357645079}
-  _scale: 0.1
+  _scale: 0.05
 --- !u!114 &1935695550632082182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7585,7 +7583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 8904925242094180706}
-  _scale: 0.1
+  _scale: 0.05
 --- !u!114 &9112534829010888652
 MonoBehaviour:
   m_ObjectHideFlags: 0
