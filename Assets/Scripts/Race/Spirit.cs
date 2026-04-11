@@ -20,12 +20,6 @@ public class Spirit : MonoBehaviour
             particleSystem.transform.parent = null;
         }
         StartCoroutine(Wait(time));
-
-        if (_car.IsAI)
-        {
-            transform.position = _car.transform.position;
-            gameObject.AddComponent<AudioListener>();
-        }
     }
 
     private IEnumerator Wait(float time)

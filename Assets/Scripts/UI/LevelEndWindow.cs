@@ -11,6 +11,7 @@ public class LevelEndWindow : MonoBehaviour
     [SerializeField] private Button _buttonRestartFromCheckpoint;
     [SerializeField] private Button _buttonRestart;
     [SerializeField] private Button _buttonNextLevel;
+    [SerializeField] private Button _buttonGarage;
     [SerializeField] private GameObject _iconVideo;
     [SerializeField] private GameObject[] _stars;
 
@@ -29,6 +30,7 @@ public class LevelEndWindow : MonoBehaviour
     private void Race_OnFinish()
     {
         Show();
+        _buttonGarage.gameObject.SetActive(false);
         _finishText.gameObject.SetActive(true);
         int place = _hub.Result.Place;
         _finishText.text = place.ToString();

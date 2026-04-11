@@ -14,6 +14,7 @@ public class Hub : SceneController
     [SerializeField] private ResultController _resultController;
     [SerializeField] private PathSelector _pathSelector;
     [SerializeField] private RaceStarter _raceStarter;
+    [SerializeField] private AudioListenerMovier _audioListenerMovier;
     private PlaceController _placeController;
     //public GameController Game { get; set; }
 
@@ -46,6 +47,8 @@ public class Hub : SceneController
     public PathSelector PathSelector => _pathSelector;
 
     public RaceStarter RaceStarter => _raceStarter;
+
+    public AudioListenerMovier AudioListenerMovier => _audioListenerMovier;
 
     private void Awake()
     {

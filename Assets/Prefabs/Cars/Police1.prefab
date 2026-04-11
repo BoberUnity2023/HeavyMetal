@@ -7463,7 +7463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2169b860c1a67424c8d2ceebf5c0af75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
-  _fullForceSpeed: 23
+  _fullForceSpeed: 26
 --- !u!54 &7085787564322592434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7557,7 +7557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 6528207836551631212}
-  _scale: 0.05
+  _scale: 0.02
 --- !u!114 &2659173973760616901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7572,7 +7572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
   _car: {fileID: 3335092485689057933}
   _audioSource: {fileID: 6595871000326126174}
-  _scale: 0.05
+  _scale: 0.03
 --- !u!114 &-4822395907130684273
 MonoBehaviour:
   m_ObjectHideFlags: 0

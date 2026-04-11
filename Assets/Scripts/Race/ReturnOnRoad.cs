@@ -59,7 +59,7 @@ public class ReturnOnRoad : MonoBehaviour
         _currentCollapsTime = 0;
         int currentPoint = Mathf.Max(0, _car.LapsCounter.CurrentPoint - 1);
         Transform wayPoint = _car.WayPath.Points[currentPoint];
-        transform.position = wayPoint.position;
+        transform.position = wayPoint.position + Vector3.up * 2;
         Debug.Log(gameObject.name + " was returned on point " + currentPoint);
     }
 

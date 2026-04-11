@@ -75,7 +75,7 @@ public class Car : MonoBehaviour
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
 
         if (!IsAI)
-            gameObject.AddComponent<AudioListener>();
+            Hub.AudioListenerMovier.Init(transform);
 
         _wayPath = Hub.PathSelector.WayPath(id);
         LapsCounter.SetWayPath(_wayPath);

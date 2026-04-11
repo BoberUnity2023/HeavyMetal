@@ -9,8 +9,10 @@ public class CarControl: MonoBehaviour
     [SerializeField] private float steeringRange = 30f;
     [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
+    private float _angularDampingMultipler = 6.5f;
     [SerializeField] private float _speedForward;
     private Car _car;
+    private float _angularDampingStart;
     //Calculate current speed along the car's forward axis
     public float MaxSpeed => maxSpeed;
 
@@ -19,6 +21,7 @@ public class CarControl: MonoBehaviour
         _car = car;
         Vector3 tensor = _car.Rigidbody.inertiaTensor;
         _car.Rigidbody.inertiaTensor = tensor * 2;
+        _angularDampingStart = _car.Rigidbody.angularDamping;
     }    
 
     public void FixedUpdate()
@@ -77,7 +80,7 @@ public class CarControl: MonoBehaviour
         }
 
         FixedUpdate_AddDownForce();
-        FixedUpdate_AddAngularDrag();
+        //FixedUpdate_AddAngularDrag();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -112,10 +115,10 @@ public class CarControl: MonoBehaviour
 
     private void FixedUpdate_AddAngularDrag()
     {
-        _car.Rigidbody.angularDamping = 0.3f;
+        _car.Rigidbody.angularDamping = _angularDampingStart;
 
         if (_car.SlideForce > 0.5f)
-            _car.Rigidbody.angularDamping = (_car.SlideForce - 0.5f) * 6.5f;
+            _car.Rigidbody.angularDamping = _angularDampingStart + (_car.SlideForce - 0.5f) * _angularDampingMultipler;
     }
 
     // Determine if the player is accelerating or trying to reverse

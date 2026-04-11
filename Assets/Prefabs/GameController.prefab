@@ -73,7 +73,7 @@ MonoBehaviour:
     Color: {r: 0, g: 0, b: 0, a: 0}
     PrefabParticles: {fileID: 5221816439557420030, guid: 0fd8c9138336dac43bd56fae0b7abc00, type: 3}
     RateOverTimeMax: 20
-    Friction: 2.4
+    Friction: 2
   - GroundMaterial: 0
     PhysicMaterial: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
     Color: {r: 0, g: 0, b: 0, a: 0}
