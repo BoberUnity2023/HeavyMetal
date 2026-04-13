@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3690911942315079332
 Transform:
@@ -5069,7 +5069,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.2
-  MinDistance: 20
+  MinDistance: 10
   MaxDistance: 40
   Pan2D: 0
   rolloffMode: 1
@@ -5120,7 +5120,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5809,7 +5809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineSound
   _car: {fileID: 8397304227506098460}
   _audioSource: {fileID: 7609571372172697190}
-  _scale: 0.02
+  _scale: 0.04
 --- !u!114 &3233635533432212158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5824,7 +5824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkidSound
   _car: {fileID: 8397304227506098460}
   _audioSource: {fileID: 695507213646290483}
-  _scale: 0.03
+  _scale: 0.05
 --- !u!114 &3930983298962315897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6023,7 +6023,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.2
-  MinDistance: 20
+  MinDistance: 10
   MaxDistance: 40
   Pan2D: 0
   rolloffMode: 1
@@ -6074,7 +6074,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6816,7 +6816,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9039177876034923032
 Transform:

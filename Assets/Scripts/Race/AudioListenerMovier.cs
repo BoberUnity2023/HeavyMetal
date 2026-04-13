@@ -18,5 +18,6 @@ public class AudioListenerMovier : MonoBehaviour
             return;
 
         transform.position = _target.position;
+        transform.rotation = _target.rotation;
     }
 }
