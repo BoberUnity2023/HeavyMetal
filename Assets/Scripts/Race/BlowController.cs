@@ -13,11 +13,23 @@ public class BlowController : MonoBehaviour
                 float impulse = contact.impulse.magnitude;
                 if (impulse > 500)
                 {
-                    GameObject spark = Instantiate(_car.PrefabSparks, contact.point, Quaternion.identity);
+                    GameObject prefab = SparkPrefab(impulse);
+                    GameObject spark = Instantiate(prefab, contact.point, Quaternion.identity);
                     AudioSource sparkAudioSource = spark.GetComponent<AudioSource>();
                     sparkAudioSource.volume = Mathf.Min(impulse / 5000, 1);                    
                 }           
             }
         }
+    }
+
+    private GameObject SparkPrefab(float impulse)
+    {
+        if (impulse < 2000)
+            return _car.PrefabsSparks[0];
+
+        if (impulse < 5000)
+            return _car.PrefabsSparks[1];
+
+        return _car.PrefabsSparks[2];
     }
 }

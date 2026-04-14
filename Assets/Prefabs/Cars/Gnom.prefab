@@ -5666,7 +5666,10 @@ MonoBehaviour:
   _damageCounter: {fileID: 2133264978317198086}
   _visible: {fileID: 8551986998073348888}
   _rigidbody: {fileID: 3973057290476016625}
-  _prefabSparks: {fileID: 4471003305429672722, guid: 7a47e13fbcd7658448a26df37940109c, type: 3}
+  _prefabsSparks:
+  - {fileID: 4471003305429672722, guid: f8f7487fcaf145d43b81bb47340fa40d, type: 3}
+  - {fileID: 4471003305429672722, guid: 2a9842de72c539046999a5f31fd0a079, type: 3}
+  - {fileID: 4471003305429672722, guid: b40c40239e8abc946b5f9c821395c06b, type: 3}
   IsFinished: 0
   IsCrashed: 0
 --- !u!114 &168958509920371513

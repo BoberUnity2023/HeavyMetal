@@ -19,7 +19,7 @@ public class Car : MonoBehaviour
     [SerializeField] private DamageCounter _damageCounter;
     [SerializeField] private Visible _visible;
     [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private GameObject _prefabSparks;
+    [SerializeField] private GameObject[] _prefabsSparks;
     private Transform _podnosPosition;
     private Transform _heroPosition;    
     private ICarInputable _input;
@@ -50,7 +50,7 @@ public class Car : MonoBehaviour
 
     public Rigidbody Rigidbody => _rigidbody;
 
-    public GameObject PrefabSparks => _prefabSparks;
+    public GameObject[] PrefabsSparks => _prefabsSparks;
 
     public Transform PodnosPosition => _podnosPosition;
 
