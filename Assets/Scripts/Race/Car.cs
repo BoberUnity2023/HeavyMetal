@@ -27,7 +27,7 @@ public class Car : MonoBehaviour
     private WayPath _wayPath;
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
-    private float _speedForward;
+    private float _speedFactor;
     private float _slideForce;
 
     public bool IsFinished;
@@ -62,9 +62,17 @@ public class Car : MonoBehaviour
     
     public WayPath WayPath => _wayPath;
 
-    public WheelControl[] Wheels => _wheels;
+    public WheelControl[] Wheels => _wheels;    
+
+    public float Speed => Vector3.Dot(transform.forward, _rigidbody.linearVelocity); //from -Max to Max
+
+    public float SpeedFactor => _speedFactor; //From 0 to 1
+
+    public float SlideForce => _slideForce;
 
     public bool IsVisible => _visible.IsVisible;
+
+    public bool IsAI => _inputType == InputType.AI;       
 
     public void Init(Hub hub, InputType inputType, int id)
     {
@@ -96,23 +104,9 @@ public class Car : MonoBehaviour
 
     private void FixedUpdate()
     {        
-        _speedForward = Mathf.InverseLerp(0, Control.MaxSpeed, Mathf.Abs(Speed));      // From 0 to 1 
+        _speedFactor = Mathf.InverseLerp(0, Control.MaxSpeed, Mathf.Abs(Speed));      // From 0 to 1 
         FixedUpdate_CalculateSlideForce();
-    }
-
-    public float Speed => Vector3.Dot(transform.forward, _rigidbody.linearVelocity); //from -Max to Max
-    
-    public float SpeedForward => _speedForward; //From 0 to 1//TODO: Rename
-
-    public bool IsAI
-    {
-        get
-        {
-            return _inputType == InputType.AI;
-        }        
-    }
-
-    public float SlideForce => _slideForce;
+    }    
 
     private void FixedUpdate_CalculateSlideForce()
     {

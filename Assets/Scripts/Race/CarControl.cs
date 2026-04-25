@@ -33,8 +33,8 @@ public class CarControl: MonoBehaviour
         _car.Force = IsAccelerating && CanAccelerate ? force : 0;
 
         // Reduce motor torque and steering at high speeds for better handling
-        float currentMotorTorque = Mathf.Lerp(motorTorque, 0, _car.SpeedForward);//��� SpeedForward == 0 - 1; ��� SpeedForward.Max == 0;
-        float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedForward);
+        float currentMotorTorque = Mathf.Lerp(motorTorque, 0, _car.SpeedFactor);//��� SpeedFactor == 0 - 1; ��� SpeedFactor.Max == 0;
+        float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedFactor);
 
         foreach (WheelControl wheel in _car.Wheels)
         {
@@ -109,9 +109,9 @@ public class CarControl: MonoBehaviour
 
     private void FixedUpdate_AddDownForce()
     {
-        _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward);
+        _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedFactor);
         //if (_car.SlideForce > 0.25f)
-        //    _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedForward * (_car.SlideForce - 0.25f));
+        //    _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedFactor * (_car.SlideForce - 0.25f));
     }
 
     private void FixedUpdate_AddAngularDrag()
@@ -123,7 +123,7 @@ public class CarControl: MonoBehaviour
     }
 
     // Determine if the player is accelerating or trying to reverse
-    public bool IsAccelerating => Mathf.Sign(_car.Input.Force) == Mathf.Sign(_car.Speed) || _car.SpeedForward < 0.01f;
+    public bool IsAccelerating => Mathf.Sign(_car.Input.Force) == Mathf.Sign(_car.Speed) || _car.SpeedFactor < 0.01f;
 
     public bool CanAccelerate
     {

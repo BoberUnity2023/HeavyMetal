@@ -8,9 +8,14 @@ public class GarageSettingsMenu : MonoBehaviour
     [SerializeField] private GameObject _iconMusicOn;
     [SerializeField] private GameObject _iconMusicOff;
 
+    [SerializeField] private Slider _sliderQuality;    
+
     private void OnEnable()
     {   
         _sliderMusicVolume.value = PlayerPrefs.GetFloat("MusicVolume", 0.15f);
+
+        _sliderQuality.value = PlayerPrefs.GetInt("QualityLevel", 1);
+        OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 1));
     }
 
     public void OnMusicVolumeChanged(float value)
@@ -19,7 +24,14 @@ public class GarageSettingsMenu : MonoBehaviour
         PlayerPrefs.Save();
         _sceneController.Game.Sound.SetMusicVolume(value);
         _iconMusicOn.SetActive(value > 0);
-        _iconMusicOff.SetActive(value == 0);
-        //TryPlaySound();
+        _iconMusicOff.SetActive(value == 0);        
+    }
+
+    public void OnGraficChanged(float value)
+    {
+        PlayerPrefs.SetInt("QualityLevel", (int)value);
+        PlayerPrefs.Save();
+
+        _sceneController.Game.Settings.SetGrafics();
     }
 }
