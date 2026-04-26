@@ -8,12 +8,19 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private PriceIndicator _priceIndicator;
     [SerializeField] private Button _buttonContinue;
     [SerializeField] private Button _buttonBuy;
-    [SerializeField] private Button _buttonTuning;    
-    private GameController _game;
+    //[SerializeField] private Button _buttonTuning;
+    [SerializeField] private Bar _barEngine;
+    [SerializeField] private Bar _barTires;
+    [SerializeField] private Bar _barNitro;
+    private GameController _game;    
 
     private void Start()
     {
-        _game = _sceneController.Game;        
+        _game = _sceneController.Game;
+        _barEngine.Init(_sceneController);
+        _barTires.Init(_sceneController);
+        _barNitro.Init(_sceneController);        
+        
         SetButtonsByCar(_game.SelectedCar);
     }
 
@@ -25,6 +32,8 @@ public class WindowSelectCar : WindowBase
 
         _garage.ShowCar(_game.SelectedCar);
         SetButtonsByCar(_game.SelectedCar);
+
+        SetBars();
     }
 
     public void PressPreviousCar()
@@ -35,6 +44,8 @@ public class WindowSelectCar : WindowBase
 
         _garage.ShowCar(_game.SelectedCar);
         SetButtonsByCar(_game.SelectedCar);
+
+        SetBars();
     }
 
     public void PressBuy()
@@ -51,15 +62,14 @@ public class WindowSelectCar : WindowBase
 
     public void PressTuning()
     {
-        hide();
-        _garage.WindowTuning.Show();
+        
     }
 
     private void SetButtonsByCar(int carId)
     {
         bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
         _buttonContinue.gameObject.SetActive(hasCar);
-        _buttonTuning.gameObject.SetActive(hasCar);
+        //_buttonTuning.gameObject.SetActive(hasCar);
         _buttonBuy.gameObject.SetActive(!hasCar);
         _priceIndicator.gameObject.SetActive(!hasCar);
         int price = Price(_game.SelectedCar);
@@ -69,5 +79,12 @@ public class WindowSelectCar : WindowBase
     int Price(int carId)
     {
         return _game.CarPropses[_game.SelectedCar].Price;
+    }
+
+    private void SetBars()
+    {
+        _barEngine.Set(_game.Saves.GetTuningEngine(_game.SelectedCarType));
+        _barTires.Set(_game.Saves.GetTuningTires(_game.SelectedCarType));
+        _barNitro.Set(_game.Saves.GetTuningNitro(_game.SelectedCarType));
     }
 }
