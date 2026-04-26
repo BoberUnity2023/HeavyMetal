@@ -4,6 +4,11 @@ public class Garage : MonoBehaviour
 {
     [SerializeField] private SceneController _sceneController;
     [SerializeField] private GameObject[] _cars = new GameObject[4];
+    [SerializeField] private WindowSelectCar _windowSelectCar;
+    [SerializeField] private WindowTuning _windowTuning;
+
+    public WindowSelectCar WindowSelectCar => _windowSelectCar;
+    public WindowTuning WindowTuning => _windowTuning;
 
     private void Start()
     {

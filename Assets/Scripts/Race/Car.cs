@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum InputType
 {
@@ -14,6 +11,7 @@ public class Car : MonoBehaviour
     [SerializeField] private Hub _hub;
     [SerializeField] private CarControl _control;
     [SerializeField] private CarAI _aIInput;
+    [SerializeField] private Tuning _tuning;
     [SerializeField] private LapsCounter _lapsCounter;
     [SerializeField] private RocketGun _rocketGun;
     [SerializeField] private DamageCounter _damageCounter;
@@ -21,14 +19,17 @@ public class Car : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
     private Transform _podnosPosition;
-    private Transform _heroPosition;    
+    private Transform _heroPosition;
+    private CarType _carType;
     private ICarInputable _input;
     private InputType _inputType;
     private WayPath _wayPath;
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
     private float _speedFactor;
-    private float _slideForce;
+    private float _slideForce;    
+
+    public int Id { get; private set; }
 
     public bool IsFinished;
 
@@ -41,6 +42,8 @@ public class Car : MonoBehaviour
     public CarControl Control => _control;
 
     public CarAI AIInput => _aIInput;
+
+    public Tuning Tuning => _tuning;
 
     public LapsCounter LapsCounter => _lapsCounter;
 
@@ -55,6 +58,8 @@ public class Car : MonoBehaviour
     public Transform PodnosPosition => _podnosPosition;
 
     public Transform HeroPosition => _heroPosition;
+
+    public CarType CarType => _carType;
 
     public ICarInputable Input => _input;
 
@@ -74,10 +79,11 @@ public class Car : MonoBehaviour
 
     public bool IsAI => _inputType == InputType.AI;       
 
-    public void Init(Hub hub, InputType inputType, int id)
+    public void Init(Hub hub, InputType inputType, int id, CarType carType)
     {
         _hub = hub;
-        _inputType = inputType;
+        _inputType = inputType;        
+        _carType = carType;
 
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
@@ -97,6 +103,7 @@ public class Car : MonoBehaviour
 
         _control.Init(this);
         _aIInput.Init(this);
+        _tuning.Init(this);
         _lapsCounter.Init(this);
         _rocketGun.Init(this);
         _damageCounter.Init(this);

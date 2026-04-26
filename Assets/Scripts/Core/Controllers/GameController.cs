@@ -35,7 +35,8 @@ public enum CarType
 [Serializable] public struct CarProps
 {
     public CarType CarType;
-    public Car Prefab;    
+    public Car Prefab;
+    public int Price;
 }
 
 public enum GroundMaterial
@@ -80,10 +81,19 @@ public class GameController : MonoBehaviour
 
     public bool HasFocus { get; set; }
 
+    public CarProps[] CarPropses => _carPropses;
     public GroundProps[] GroundPropses => _groundPropses;
 
     public int SelectedCar { get; set; }
-    
+
+    public CarType SelectedCarType 
+    { 
+        get 
+        {
+            return _carPropses[SelectedCar].CarType;
+        } 
+    }
+
 
     public event Action<int> OnScoreChanged;
 
@@ -107,6 +117,8 @@ public class GameController : MonoBehaviour
     public Platform Platform => _config.Platform;
 
     public Hub Hub { get; private set; }
+
+    public ConfigGame ConfigGame => _config;
 
     public ConfigLevels Levels => _levels;
 
@@ -154,9 +166,7 @@ public class GameController : MonoBehaviour
 
     public ControllerAnalitycs Analitycs => _controllerAnalitycs;
 
-    public Skidmarks PrefabSkidmarks => _prefabSkidmarks;
-
-    public CarProps[] CarPropses => _carPropses;    
+    public Skidmarks PrefabSkidmarks => _prefabSkidmarks;      
 
     public int Stars
     {

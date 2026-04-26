@@ -10,7 +10,7 @@ public class Save
     public bool HasNoAds;    
     public int PurchasedStars;
     public int EveryDayVisits;
-    public int Score;
+    public int Coins;
     public string LastVisitTime;    
     public int[] LevelStars;
     public bool[] PlayedLevels;
@@ -31,7 +31,15 @@ public class SavesContoller : MonoBehaviour
 
     public string KeyPurchasedStars => "PurchasedStars";  
 
-    public string KeyScore => "Score";
+    public string KeyCoins => "Coins";
+
+    public string KeyBoughtCar => "BoughtCar";
+
+    public string KeyTuningEngine => "TuningEngine";
+
+    public string KeyTuningTires => "TuningTires";
+
+    public string KeyTuningNitro => "TuningNitro";
 
     public string KeyEveryDayVisits => "EveryDayVisits";
 
@@ -44,7 +52,9 @@ public class SavesContoller : MonoBehaviour
     public string KeyJson => "json";
 
     public bool IsStorageReceived { get; set; }
-    
+
+    public event Action<int> OnCoinsChanged;
+
     public int PurchasedStars
     {
         get
@@ -386,46 +396,94 @@ public class SavesContoller : MonoBehaviour
            
     }
 
-    public int Score
+    public int Coins
     {
         get
         {
+            int startCoins = _game.ConfigGame.StartCoins;
+
             if (_game.Platform == Platform.Yandex)
             {
-                //return YandexGame.savesData.Score;
+                //return YandexGame.savesData.Coins;
             }
 
             if (_game.Platform == Platform.Vk ||
                 _game.Platform == Platform.GamePush)
-            {
-                return Mathf.Max(Save.Score, PlayerPrefs.GetInt(KeyScore, 0));
+            {                
+                return Mathf.Max(Save.Coins, PlayerPrefs.GetInt(KeyCoins, startCoins));
             }
 
             if (_game.Platform == Platform.Steam)
             {
-                return PlayerPrefs.GetInt(KeyScore, 0);
+                return PlayerPrefs.GetInt(KeyCoins, startCoins);
             }
+
             return 0;
         }
 
         set
         {
-            PlayerPrefs.SetInt(KeyScore, value);
+            PlayerPrefs.SetInt(KeyCoins, value);
             PlayerPrefs.Save();
 
             if (_game.Platform == Platform.Yandex)
             {
-                //YandexGame.savesData.Score = value;
+                //YandexGame.savesData.Coins = value;
                 //YandexGame.SaveProgress();
             }            
 
             if (_game.Platform == Platform.Vk ||
                 _game.Platform == Platform.GamePush)
             {
-                Save.Score = value;
+                Save.Coins = value;
                 StorageSave();                
             }
+            OnCoinsChanged?.Invoke(value);
         }
+    }
+
+    public void SetBoughtCar(CarType cartype)
+    {
+        PlayerPrefs.SetInt(KeyBoughtCar + cartype.ToString(), 1);
+        PlayerPrefs.Save();
+    }
+
+    public bool HasBoughtCar(CarType cartype)
+    {
+        return PlayerPrefs.GetInt(KeyBoughtCar + cartype.ToString()) == 1;        
+    }
+
+    public void SetTuningEngine(CarType cartype, int value)
+    {
+        PlayerPrefs.SetInt(KeyTuningEngine + cartype.ToString(), value);
+        PlayerPrefs.Save();
+    }
+
+    public int GetTuningEngine(CarType cartype)
+    {
+        return PlayerPrefs.GetInt(KeyTuningEngine + cartype.ToString(), 0);
+    }
+
+    public void SetTuningTires(CarType cartype, int value)
+    {
+        PlayerPrefs.SetInt(KeyTuningTires + cartype.ToString(), value);
+        PlayerPrefs.Save();
+    }
+
+    public int GetTuningTires(CarType cartype)
+    {
+        return PlayerPrefs.GetInt(KeyTuningTires + cartype.ToString(), 0);
+    }
+
+    public void SetTuningNitro(CarType cartype, int value)
+    {
+        PlayerPrefs.SetInt(KeyTuningNitro + cartype.ToString(), value);
+        PlayerPrefs.Save();
+    }
+
+    public int GetTuningNitro(CarType cartype)
+    {
+        return PlayerPrefs.GetInt(KeyTuningNitro + cartype.ToString(), 0);
     }
 
     public int ConvertStringToInt(string value)
@@ -582,7 +640,7 @@ public class SavesContoller : MonoBehaviour
         }        
 
         Save.LastVisitTime = PlayerPrefs.GetString(KeyLastVisitTime, "0");
-        Save.Score = PlayerPrefs.GetInt(KeyScore, 0);        
+        Save.Coins = PlayerPrefs.GetInt(KeyCoins, 0);        
         Save.HasNoAds = PlayerPrefs.GetInt(KeyNoAds, 0) == 1;        
         Save.PurchasedStars = PlayerPrefs.GetInt(KeyPurchasedStars, 0);
         Save.EveryDayVisits = PlayerPrefs.GetInt(KeyEveryDayVisits, 0);        
@@ -613,7 +671,7 @@ public class SavesContoller : MonoBehaviour
 
         Save.LastVisitTime = Mathf.Max(fromPlayerPrefs, fromStorage).ToString();        
 
-        Save.Score = Mathf.Max(PlayerPrefs.GetInt(KeyScore, 0), save.Score);        
+        Save.Coins = Mathf.Max(PlayerPrefs.GetInt(KeyCoins, 0), save.Coins);        
         Save.HasNoAds = PlayerPrefs.GetInt(KeyNoAds, 0) == 1 || save.HasNoAds;        
         Save.PurchasedStars = Mathf.Max(PlayerPrefs.GetInt(KeyPurchasedStars, 0), save.PurchasedStars);
         Save.EveryDayVisits = Mathf.Max(PlayerPrefs.GetInt(KeyEveryDayVisits, 0), save.EveryDayVisits); 
@@ -626,7 +684,7 @@ public class SavesContoller : MonoBehaviour
         Save.PlayedLevels = new bool[100];  
         Save.TakenDayBonuses = new bool[5];  
         Save.LastVisitTime = "0";
-        Save.Score = 0;        
+        Save.Coins = 0;        
         Save.HasNoAds = false;        
         Save.PurchasedStars = 0;
         Save.EveryDayVisits = 0;
@@ -648,7 +706,7 @@ public class SavesContoller : MonoBehaviour
             //if (!GP_Player.Has(KeyJson))
             //{
             //    Debug.Log("JSON CREATED");
-            //    _json = "{\"NoAds\":false,\"Score\":0,\"Gold\":21944,\"Experience\":0,\"PlayedGames\":0,\"Wins\":0,\"Losts\":0,\"FastestWinTime\":0,\"FastestPartyTime\":0,\"LongestPartyTime\":0,\"LastVisitTime\":\"0\",\"TakenDayBonuses\":[false,false,false,false,false],\"AchivementProgress\":[0,0,0,0,0,0,0,0,0,0]}";
+            //    _json = "{\"NoAds\":false,\"Coins\":0,\"Gold\":21944,\"Experience\":0,\"PlayedGames\":0,\"Wins\":0,\"Losts\":0,\"FastestWinTime\":0,\"FastestPartyTime\":0,\"LongestPartyTime\":0,\"LastVisitTime\":\"0\",\"TakenDayBonuses\":[false,false,false,false,false],\"AchivementProgress\":[0,0,0,0,0,0,0,0,0,0]}";
             //}
             //else
             //{

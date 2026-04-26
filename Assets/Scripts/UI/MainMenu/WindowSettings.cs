@@ -79,8 +79,8 @@ public class WindowSettings : MonoBehaviour
         _sliderSoundVolume.value = PlayerPrefs.GetFloat("SoundVolume", 1);
         OnSoundVolumeChanged(PlayerPrefs.GetFloat("SoundVolume", 1));
 
-        _sliderGrafic.value = PlayerPrefs.GetInt("QualityLevel", 1);
-        OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 1));
+        _sliderGrafic.value = PlayerPrefs.GetInt("QualityLevel", 2);
+        OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 2));
 
         _sliderSpeed.value = PlayerPrefs.GetFloat("HeroSpeed", 0.4f);
         //OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 1));

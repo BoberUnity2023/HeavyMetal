@@ -21,7 +21,7 @@ public class ControllerSettings : MonoBehaviour
 
     public void SetGrafics()
     {
-        int level = PlayerPrefs.GetInt("QualityLevel", 1);
+        int level = PlayerPrefs.GetInt("QualityLevel", 2);
         bool pss = false;
         int index = 0;  
 
@@ -69,7 +69,7 @@ public class ControllerSettings : MonoBehaviour
         if (_volume == null)
             return;
 
-        int level = PlayerPrefs.GetInt("QualityLevel", 1);
+        int level = PlayerPrefs.GetInt("QualityLevel", 2);
         _volume.gameObject.SetActive(level > 0);        
     }
 

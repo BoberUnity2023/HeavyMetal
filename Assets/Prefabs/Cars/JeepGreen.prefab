@@ -7833,6 +7833,7 @@ GameObject:
   - component: {fileID: 8534404491845417155}
   - component: {fileID: 4789119249719021234}
   - component: {fileID: -7534694214258213320}
+  - component: {fileID: 4142788925139355657}
   - component: {fileID: 7085787564322592434}
   - component: {fileID: 1228678545467683298}
   - component: {fileID: 6455621255536215378}
@@ -7903,6 +7904,7 @@ MonoBehaviour:
   _hub: {fileID: 0}
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
+  _tuning: {fileID: 4142788925139355657}
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: 9112534829010888652}
   _damageCounter: {fileID: 5952033291620079489}
@@ -7932,7 +7934,6 @@ MonoBehaviour:
   steeringRange: 42
   steeringRangeAtMaxSpeed: 30
   _downForce: 40000
-  _speedForward: 0
 --- !u!114 &4789119249719021234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7961,6 +7962,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
   _fullForceSpeed: 24
+--- !u!114 &4142788925139355657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c6ef6dbfcc67841884c103ceff1e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tunning
+  _engine:
+    CountBought: 0
+    CountMax: 5
+    Power: 200
+    Price: 150
+  _tires:
+    CountBought: 0
+    CountMax: 5
+    Power: 1
+    Price: 170
+  _nitro:
+    CountBought: 0
+    CountMax: 5
+    Power: 1
+    Price: 220
 --- !u!54 &7085787564322592434
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class ControllerOptimization : MonoBehaviour
 
     public void Set()
     {
-        int level = PlayerPrefs.GetInt("QualityLevel", 1);
+        int level = PlayerPrefs.GetInt("QualityLevel", 2);
         bool isVisible = level > 0;
         foreach (var obj in _hidenObjects)
         {

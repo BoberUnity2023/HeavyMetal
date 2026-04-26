@@ -121,7 +121,7 @@ public class ControllerLevel : MonoBehaviour
     //        }
     //        float time = IsFood() ? 1 : 3;
     //        StartCoroutine(ActivateStars(count, 3));            
-    //        //_hub.Game.Score += count * 10;
+    //        //_hub.Game.Coins += count * 10;
     //    }
     //    OnLevelComplete?.Invoke(cakesOnPodnos);
     //    _hub.Analitycs.SendLevelComplete(PlayTime);

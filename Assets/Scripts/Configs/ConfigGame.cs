@@ -4,6 +4,9 @@ using UnityEngine;
 public class ConfigGame : ScriptableObject
 {
     [SerializeField] private Platform _platform;
+    [SerializeField] private int _startCoins;
 
     public Platform Platform => _platform;
+
+    public int StartCoins => _startCoins;
 }

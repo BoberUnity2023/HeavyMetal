@@ -14,8 +14,8 @@ public class GarageSettingsMenu : MonoBehaviour
     {   
         _sliderMusicVolume.value = PlayerPrefs.GetFloat("MusicVolume", 0.15f);
 
-        _sliderQuality.value = PlayerPrefs.GetInt("QualityLevel", 1);
-        OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 1));
+        _sliderQuality.value = PlayerPrefs.GetInt("QualityLevel", 2);
+        OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 2));
     }
 
     public void OnMusicVolumeChanged(float value)
