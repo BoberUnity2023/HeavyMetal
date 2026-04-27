@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using TMPro;
@@ -32,15 +33,27 @@ public enum CarType
     Gnom
 }
 
+[Serializable] public class CarColor
+{
+    [SerializeField] private Color _color;
+    [SerializeField] private Material _material;    
+
+    public Color Color => _color;
+    public Material Material => _material;
+}
+
 [Serializable] public class CarTuning
 {
     [SerializeField] private TuningCategory _engine;
     [SerializeField] private TuningCategory _tires;
     [SerializeField] private TuningCategory _nitro;
+    [SerializeField] private CarColor[] _carColors;
 
     public TuningCategory Engine => _engine;
     public TuningCategory Tires => _tires;
     public TuningCategory Nitro => _nitro;
+
+    public CarColor[] CarColors => _carColors;
 }
 
 [Serializable] public class TuningCategory

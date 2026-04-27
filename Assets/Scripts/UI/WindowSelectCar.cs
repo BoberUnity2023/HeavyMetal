@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class WindowSelectCar : WindowBase
 {
     [SerializeField] private SceneController _sceneController;
+    [SerializeField] private ColorPanel _colorPanel;
     [SerializeField] private PriceIndicator _priceIndicator;
     [SerializeField] private Button _buttonContinue;
     [SerializeField] private Button _buttonBuy;    
@@ -18,8 +19,9 @@ public class WindowSelectCar : WindowBase
         _game = _sceneController.Game;
         _barEngine.Init(_sceneController);
         _barTires.Init(_sceneController);
-        _barNitro.Init(_sceneController);        
-        
+        _barNitro.Init(_sceneController);
+        _colorPanel.Init(_sceneController, _garage);
+
         SetButtonsByCar();
     }
 
@@ -107,6 +109,11 @@ public class WindowSelectCar : WindowBase
         int price = Price();
         _priceIndicator.SetPrice(price);
         SetBars();
+        
+        if (hasCar)
+            _colorPanel.Show();
+        else
+            _colorPanel.Hide();
     }
 
     private int Price()

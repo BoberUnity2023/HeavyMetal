@@ -5606,6 +5606,7 @@ GameObject:
   - component: {fileID: 3930983298962315897}
   - component: {fileID: 2133264978317198086}
   - component: {fileID: -4303322087925471485}
+  - component: {fileID: -3263639599032819825}
   m_Layer: 11
   m_Name: Gnom
   m_TagString: Car
@@ -5668,6 +5669,7 @@ MonoBehaviour:
   _rocketGun: {fileID: 3930983298962315897}
   _damageCounter: {fileID: 2133264978317198086}
   _visible: {fileID: 8551986998073348888}
+  _paint: {fileID: -3263639599032819825}
   _rigidbody: {fileID: 3973057290476016625}
   _prefabsSparks:
   - {fileID: 4471003305429672722, guid: f8f7487fcaf145d43b81bb47340fa40d, type: 3}
@@ -5901,6 +5903,19 @@ MonoBehaviour:
   _car: {fileID: 8397304227506098460}
   _collapsTimePlayer: 2.5
   _collapsTimeEnemy: 1
+--- !u!114 &-3263639599032819825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136799944968247584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a6bb910a6218419cabf2bfb951ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarPaint
+  _renderer: {fileID: 7158319259651333456}
 --- !u!1 &2243941709484906782
 GameObject:
   m_ObjectHideFlags: 0

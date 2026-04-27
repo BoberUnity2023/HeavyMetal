@@ -7844,6 +7844,7 @@ GameObject:
   - component: {fileID: 5952033291620079489}
   - component: {fileID: 2619338596475475530}
   - component: {fileID: 3155519493677330075}
+  - component: {fileID: -8875266826104564525}
   m_Layer: 11
   m_Name: JeepGreen
   m_TagString: Car
@@ -7901,6 +7902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0aabda2407ba554fa92dee0de92fc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _carType: 0
   _hub: {fileID: 0}
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
@@ -7909,6 +7911,7 @@ MonoBehaviour:
   _rocketGun: {fileID: 9112534829010888652}
   _damageCounter: {fileID: 5952033291620079489}
   _visible: {fileID: 8540619745159850575}
+  _paint: {fileID: -8875266826104564525}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabsSparks:
   - {fileID: 4471003305429672722, guid: f8f7487fcaf145d43b81bb47340fa40d, type: 3}
@@ -8160,6 +8163,19 @@ MonoBehaviour:
   - {fileID: 6627857212609745927}
   _intensityMin: 40000
   _intensityMax: 700000
+--- !u!114 &-8875266826104564525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a6bb910a6218419cabf2bfb951ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarPaint
+  _renderer: {fileID: 7099163486958677553}
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

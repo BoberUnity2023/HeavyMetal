@@ -17,6 +17,7 @@ public class Car : MonoBehaviour
     [SerializeField] private RocketGun _rocketGun;
     [SerializeField] private DamageCounter _damageCounter;
     [SerializeField] private Visible _visible;
+    [SerializeField] private CarPaint _paint;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
     private Transform _podnosPosition;
@@ -28,7 +29,7 @@ public class Car : MonoBehaviour
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
     private float _speedFactor;
-    private float _slideForce;
+    private float _slideForce;    
 
     public CarType CarType => _carType;    
 
@@ -44,7 +45,9 @@ public class Car : MonoBehaviour
 
     public RocketGun RocketGun => _rocketGun;
 
-    public DamageCounter DamageCounter => _damageCounter;    
+    public DamageCounter DamageCounter => _damageCounter; 
+    
+    public CarPaint Paint => _paint;
 
     public Rigidbody Rigidbody => _rigidbody;
 

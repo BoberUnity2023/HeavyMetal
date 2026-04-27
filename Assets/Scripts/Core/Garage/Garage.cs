@@ -3,11 +3,22 @@ using UnityEngine;
 public class Garage : MonoBehaviour
 {
     [SerializeField] private SceneController _sceneController;
-    [SerializeField] private GameObject[] _cars = new GameObject[4];
+    [SerializeField] private Car[] _cars = new Car[4];
     [SerializeField] private WindowSelectCar _windowSelectCar;
+    private Car _currentCar;
 
     public SceneController SceneController => _sceneController;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
+
+    public Car CurrentCar => _currentCar;
+
+    private void Awake()
+    {  
+        foreach (Car car in _cars)
+        {
+            car.enabled = false;
+        }
+    }
 
     private void Start()
     {
@@ -18,7 +29,9 @@ public class Garage : MonoBehaviour
     {  
         for (int i = 0; i < _cars.Length; i++)
         {
-            _cars[i].SetActive(i == id);
+            _cars[i].gameObject.SetActive(i == id);
+            if (i == id)
+                _currentCar = _cars[i];
         }
     }
 }

@@ -31,3 +31,12 @@ MonoBehaviour:
       CountMax: 5
       Power: 1
       Price: 290
+    _carColors:
+    - _color: {r: 0.04918185, g: 0.81132066, b: 0.04701721, a: 0.98039216}
+      _material: {fileID: 2100000, guid: adb11a9f43d7f0c488cbd247e44cbee6, type: 2}
+    - _color: {r: 0.8392157, g: 0, b: 0, a: 1}
+      _material: {fileID: 2100000, guid: ad4ca4058e4f2944bb27df721ad58079, type: 2}
+    - _color: {r: 0.011764719, g: 0.50428236, b: 0.9098039, a: 1}
+      _material: {fileID: 2100000, guid: 135a9fae85e24d74489dc8758c3e2681, type: 2}
+    - _color: {r: 0.84905654, g: 0.6872846, b: 0.02631839, a: 1}
+      _material: {fileID: 2100000, guid: de6f1faac61531d4ead8986fcff8dd3e, type: 2}

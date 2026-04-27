@@ -7785,6 +7785,7 @@ GameObject:
   - component: {fileID: -7760443612287598961}
   - component: {fileID: 4889279212036679229}
   - component: {fileID: 3123870421995100251}
+  - component: {fileID: 2164162522870847796}
   m_Layer: 11
   m_Name: Police1
   m_TagString: Car
@@ -7845,6 +7846,7 @@ MonoBehaviour:
   _rocketGun: {fileID: -4822395907130684273}
   _damageCounter: {fileID: -7760443612287598961}
   _visible: {fileID: 6666120620835564644}
+  _paint: {fileID: 2164162522870847796}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabsSparks:
   - {fileID: 4471003305429672722, guid: f8f7487fcaf145d43b81bb47340fa40d, type: 3}
@@ -8096,6 +8098,19 @@ MonoBehaviour:
   - {fileID: 8931946489843076807}
   _intensityMin: 40000
   _intensityMax: 600000
+--- !u!114 &2164162522870847796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a6bb910a6218419cabf2bfb951ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarPaint
+  _renderer: {fileID: 6765936802716216985}
 --- !u!1 &6188593264528043108
 GameObject:
   m_ObjectHideFlags: 0
