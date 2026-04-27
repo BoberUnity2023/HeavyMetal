@@ -22,19 +22,18 @@ public class Bar : MonoBehaviour
 
     public void Init(SceneController sceneController)
     {
-        _sceneController = sceneController;
-        GameController game = _sceneController.Game;
-        Set(game.Saves.GetTuningEngine(game.SelectedCarType)/5);
+        _sceneController = sceneController;              
     }
 
-    public void Set(float value)
-    {
+    public void Set(float value, int price)
+    {        
         _progress.fillAmount = value;
         _indicator.text = (value * 100).ToString("f0") + "%";
         
         bool _canUpgrade = CanUpgrade;
         _buttonUpgrade.gameObject.SetActive(_canUpgrade);
         _priceIndicator.gameObject.SetActive(_canUpgrade);
+        _priceIndicator.SetPrice(price);
     }
 
     private bool CanUpgrade
@@ -47,12 +46,15 @@ public class Bar : MonoBehaviour
                 return false;
 
             bool isMax = false;
+            ConfigCar _configCar = _game.ConfigGame.Cars[_game.SelectedCar];
             if (_type == TuningType.Engine)
-                isMax = _game.Saves.GetTuningEngine(_game.SelectedCarType) == 5;
+                isMax = _game.Saves.GetTuningEngine(_game.SelectedCarType) == _configCar.Tuning.Engine.CountMax;
+
             if (_type == TuningType.Tires)
-                isMax = _game.Saves.GetTuningTires(_game.SelectedCarType) == 5;
+                isMax = _game.Saves.GetTuningTires(_game.SelectedCarType) == _configCar.Tuning.Tires.CountMax;
+
             if (_type == TuningType.Nitro)
-                isMax = _game.Saves.GetTuningNitro(_game.SelectedCarType) == 5;
+                isMax = _game.Saves.GetTuningNitro(_game.SelectedCarType) == _configCar.Tuning.Nitro.CountMax;
 
             return !isMax;
         }

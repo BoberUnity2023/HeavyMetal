@@ -8,6 +8,7 @@ public enum InputType
 
 public class Car : MonoBehaviour
 {
+    [SerializeField] private CarType _carType;
     [SerializeField] private Hub _hub;
     [SerializeField] private CarControl _control;
     [SerializeField] private CarAI _aIInput;
@@ -20,22 +21,16 @@ public class Car : MonoBehaviour
     [SerializeField] private GameObject[] _prefabsSparks;
     private Transform _podnosPosition;
     private Transform _heroPosition;
-    private CarType _carType;
+    
     private ICarInputable _input;
     private InputType _inputType;
     private WayPath _wayPath;
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
     private float _speedFactor;
-    private float _slideForce;    
+    private float _slideForce;
 
-    public int Id { get; private set; }
-
-    public bool IsFinished;
-
-    public bool IsCrashed;
-
-    public float Force { get; set; }
+    public CarType CarType => _carType;    
 
     public Hub Hub => _hub;
 
@@ -57,9 +52,7 @@ public class Car : MonoBehaviour
 
     public Transform PodnosPosition => _podnosPosition;
 
-    public Transform HeroPosition => _heroPosition;
-
-    public CarType CarType => _carType;
+    public Transform HeroPosition => _heroPosition;    
 
     public ICarInputable Input => _input;
 
@@ -75,15 +68,22 @@ public class Car : MonoBehaviour
 
     public float SlideForce => _slideForce;
 
+    public int Id { get; private set; }
+
     public bool IsVisible => _visible.IsVisible;
 
-    public bool IsAI => _inputType == InputType.AI;       
+    public bool IsAI => _inputType == InputType.AI;    
 
-    public void Init(Hub hub, InputType inputType, int id, CarType carType)
+    public bool IsFinished;
+
+    public bool IsCrashed;
+
+    public float Force { get; set; }
+
+    public void Init(Hub hub, InputType inputType, int id)
     {
         _hub = hub;
-        _inputType = inputType;        
-        _carType = carType;
+        _inputType = inputType; 
 
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;

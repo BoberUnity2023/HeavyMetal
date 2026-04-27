@@ -9,8 +9,7 @@ public class CarControl: MonoBehaviour
     [SerializeField] private float steeringRange = 30f;
     [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
-    private float _angularDampingMultipler = 6.5f;
-    //private float _speedForward;
+    private float _angularDampingMultipler = 6.5f;    
     private Car _car;
     private float _angularDampingStart;
     //Calculate current speed along the car's forward axis

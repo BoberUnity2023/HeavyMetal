@@ -35,11 +35,11 @@ public class SavesContoller : MonoBehaviour
 
     public string KeyBoughtCar => "BoughtCar";
 
-    public string KeyTuningEngine => "TuningEngine";
+    public string KeyTuningEngine => "Engine";
 
-    public string KeyTuningTires => "TuningTires";
+    public string KeyTuningTires => "Tires";
 
-    public string KeyTuningNitro => "TuningNitro";
+    public string KeyTuningNitro => "Nitro";
 
     public string KeyEveryDayVisits => "EveryDayVisits";
 

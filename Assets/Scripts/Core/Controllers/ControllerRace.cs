@@ -5,7 +5,6 @@ using UnityEngine;
 public class ControllerRace : MonoBehaviour
 {
     [SerializeField] private Hub _hub;    
-    //[SerializeField] private Car _carPrefab;
     [SerializeField] private Transform[] _carPositions;
     [SerializeField] private CameraMove _cameraMove;
     [SerializeField] private List<Car> _enemies;
@@ -56,12 +55,11 @@ public class ControllerRace : MonoBehaviour
     private void InitPlayer()
     {
         int id = _carPositions.Length - 1;
-        Transform carPosition = _carPositions[id];
-        Car carPrefab = _hub.Game.CarPropses[_hub.Game.SelectedCar].Prefab;
+        Transform carPosition = _carPositions[id];        
+        Car carPrefab = _hub.Game.ConfigGame.Cars[_hub.Game.SelectedCar].Prefab;
         Car car = Instantiate(carPrefab, carPosition.position, carPosition.rotation);
-        _car = car;
-        CarType cartype = _hub.Game.CarPropses[_hub.Game.SelectedCar].CarType;
-        car.Init(_hub, InputType.Player, 0, cartype);
+        _car = car;        
+        car.Init(_hub, InputType.Player, 0);
         _cameraMove.SetTarget(car.transform);
         _cars.Add(car);
     }
@@ -71,8 +69,7 @@ public class ControllerRace : MonoBehaviour
         Transform carPosition = _carPositions[id];
         Car prefab = _hub.Level.Config.EnemyPrefabs[id];  
         Car car = Instantiate(prefab, carPosition.position, carPosition.rotation);
-        CarType cartype = _hub.Game.CarPropses[_hub.Game.SelectedCar].CarType;
-        car.Init(_hub, InputType.AI, id, cartype);
+        car.Init(_hub, InputType.AI, id);
         _enemies.Add(car);
         _cars.Add(car);
         Debug.Log("Enemy " + prefab.gameObject.name + " created");

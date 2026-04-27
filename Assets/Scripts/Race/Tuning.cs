@@ -1,13 +1,9 @@
 using System;
 using UnityEngine;
 
-[Serializable] public class TuningCategory
-{
-    [HideInInspector] public int CountBought;
-    public int CountMax;
-    public int Power;
-    public int Price;
-}
+
+
+
 
 public class Tuning : MonoBehaviour
 {

@@ -32,10 +32,22 @@ public enum CarType
     Gnom
 }
 
-[Serializable] public struct CarProps
+[Serializable] public class CarTuning
 {
-    public CarType CarType;
-    public Car Prefab;
+    [SerializeField] private TuningCategory _engine;
+    [SerializeField] private TuningCategory _tires;
+    [SerializeField] private TuningCategory _nitro;
+
+    public TuningCategory Engine => _engine;
+    public TuningCategory Tires => _tires;
+    public TuningCategory Nitro => _nitro;
+}
+
+[Serializable] public class TuningCategory
+{
+    [HideInInspector] public int CountBought;
+    public int CountMax;
+    public int Power;
     public int Price;
 }
 
@@ -58,7 +70,6 @@ public enum GroundMaterial
     public float Friction;
 }
 
-
 public class GameController : MonoBehaviour
 {
     [SerializeField] private ConfigGame _config;
@@ -70,8 +81,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private ControllerAnalitycs _controllerAnalitycs;
     [SerializeField] private Canvas _console;
     [SerializeField] private Skidmarks _prefabSkidmarks;
-
-    [SerializeField] private CarProps[] _carPropses;    
+       
     [SerializeField] private GroundProps[] _groundPropses;
     
     private bool _isMobile;
@@ -79,9 +89,20 @@ public class GameController : MonoBehaviour
     private int _currentLevel;
     private int _previousScene;
 
-    public bool HasFocus { get; set; }
+    public int Coins
+    {
+        get 
+        { 
+            return Saves.Coins; 
+        }
 
-    public CarProps[] CarPropses => _carPropses;
+        set 
+        { 
+            Saves.Coins = value; 
+        }
+    }
+    public bool HasFocus { get; set; }
+    
     public GroundProps[] GroundPropses => _groundPropses;
 
     public int SelectedCar { get; set; }
@@ -90,7 +111,7 @@ public class GameController : MonoBehaviour
     { 
         get 
         {
-            return _carPropses[SelectedCar].CarType;
+            return ConfigGame.Cars[SelectedCar].CarType;
         } 
     }
 

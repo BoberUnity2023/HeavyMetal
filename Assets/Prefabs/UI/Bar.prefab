@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 4900303261168042350}
   - component: {fileID: 3835937139380612506}
   m_Layer: 5
-  m_Name: ButtonTuningEngine
+  m_Name: ButtonTuning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4, y: 76}
+  m_SizeDelta: {x: 410, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6745743888142829254
 CanvasRenderer:
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.835
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
