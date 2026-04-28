@@ -41,6 +41,8 @@ public class SavesContoller : MonoBehaviour
 
     public string KeyTuningNitro => "Nitro";
 
+    public string KeyColor => "Color";
+
     public string KeyEveryDayVisits => "EveryDayVisits";
 
     public string KeyLastVisitTime => "LastVisitTime";
@@ -484,6 +486,17 @@ public class SavesContoller : MonoBehaviour
     public int GetTuningNitro(CarType cartype)
     {
         return PlayerPrefs.GetInt(KeyTuningNitro + cartype.ToString(), 0);
+    }
+
+    public void SetCarColor(CarType cartype, int value)
+    {
+        PlayerPrefs.SetInt(KeyColor + cartype.ToString(), value);
+        PlayerPrefs.Save();
+    }
+
+    public int GetCarColor(CarType cartype)
+    {
+        return PlayerPrefs.GetInt(KeyColor + cartype.ToString(), 0);
     }
 
     public int ConvertStringToInt(string value)

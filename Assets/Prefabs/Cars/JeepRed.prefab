@@ -7300,7 +7300,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541a6bb910a6218419cabf2bfb951ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarPaint
-  _renderer: {fileID: 5829751737964739516}
+  _renderers:
+  - {fileID: 5829751737964739516}
+  - {fileID: 218087765337629055}
+  - {fileID: 8928235004795251111}
+  - {fileID: 3432386470470081549}
+  - {fileID: 2287311916265087295}
+  - {fileID: 8732309808347463647}
+  - {fileID: 4410448896791776171}
+  - {fileID: 7912824283648543209}
+  - {fileID: 6434913890896977260}
+  - {fileID: 8786130437592725248}
+  - {fileID: 7951785223323847127}
 --- !u!1 &6263594080912551761
 GameObject:
   m_ObjectHideFlags: 0

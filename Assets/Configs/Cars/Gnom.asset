@@ -31,4 +31,6 @@ MonoBehaviour:
       CountMax: 5
       Power: 1
       Price: 280
-    _carColors: []
+    _carColors:
+    - _color: {r: 0.01913305, g: 0.61725056, b: 0.07787679, a: 1}
+      _material: {fileID: 2100000, guid: d9971a4d0ebd47f44ade7cb730bf10b2, type: 2}

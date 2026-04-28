@@ -22,7 +22,7 @@ public class Garage : MonoBehaviour
 
     private void Start()
     {
-        ShowCar(_sceneController.Game.SelectedCar);
+        ShowCar(_sceneController.Game.SelectedCar);        
     }
 
     public void ShowCar(int id)
@@ -31,7 +31,18 @@ public class Garage : MonoBehaviour
         {
             _cars[i].gameObject.SetActive(i == id);
             if (i == id)
+            {                
                 _currentCar = _cars[i];
+                SetCarColor(i);
+            }
         }
     }
+
+    private void SetCarColor(int number)
+    {
+        int id = _sceneController.Game.Saves.GetCarColor(_cars[number].CarType);
+        Material material = _sceneController.Game.ConfigGame.Cars[number].Tuning.CarColors[id].Material;
+        _cars[number].Paint.SetMaterial(material);        
+    }
+    
 }

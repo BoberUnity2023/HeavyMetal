@@ -50,8 +50,9 @@ public class ColorPanel : MonoBehaviour
         _buttons.Clear();
     }
 
-    public void PressColor(Material material)
+    public void PressColor(Material material, int id)
     {        
         _garage.CurrentCar.Paint.SetMaterial(material);
+        _sceneController.Game.Saves.SetCarColor(_sceneController.Game.SelectedCarType, id);
     }
 }

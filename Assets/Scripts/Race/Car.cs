@@ -71,8 +71,6 @@ public class Car : MonoBehaviour
 
     public float SlideForce => _slideForce;
 
-    public int Id { get; private set; }
-
     public bool IsVisible => _visible.IsVisible;
 
     public bool IsAI => _inputType == InputType.AI;    
@@ -110,6 +108,8 @@ public class Car : MonoBehaviour
         _lapsCounter.Init(this);
         _rocketGun.Init(this);
         _damageCounter.Init(this);
+        _paint.Init(this);
+
     }
 
     private void FixedUpdate()

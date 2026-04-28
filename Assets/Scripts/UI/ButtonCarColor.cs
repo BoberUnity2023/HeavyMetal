@@ -20,6 +20,6 @@ public class ButtonCarColor : MonoBehaviour
 
     public void OnPress()
     {
-        _colorPanel.PressColor(_material);
+        _colorPanel.PressColor(_material, _id);
     }
 }
