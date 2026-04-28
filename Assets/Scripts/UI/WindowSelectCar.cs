@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,9 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private Button _buttonContinue;
     [SerializeField] private Button _buttonBuy;    
     [SerializeField] private Bar _barEngine;
+    [SerializeField] private Bar _barShields;
     [SerializeField] private Bar _barTires;
+    [SerializeField] private Bar _barWeapon;
     [SerializeField] private Bar _barNitro;
     private GameController _game;    
 
@@ -18,7 +19,9 @@ public class WindowSelectCar : WindowBase
     {
         _game = _sceneController.Game;
         _barEngine.Init(_sceneController);
+        _barShields.Init(_sceneController);
         _barTires.Init(_sceneController);
+        _barWeapon.Init(_sceneController);
         _barNitro.Init(_sceneController);
         _colorPanel.Init(_sceneController, _garage);
 
@@ -63,11 +66,11 @@ public class WindowSelectCar : WindowBase
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Engine.Price;
         int max = configCar.Tuning.Engine.CountMax;
-        int current = _game.Saves.GetTuningEngine(_game.SelectedCarType);
+        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Engine);
         if (current < max && _game.Saves.Coins >= price)
         {
             _game.Coins -= price;
-            _game.Saves.SetTuningEngine(_game.SelectedCarType, current + 1);
+            _game.Saves.SetTuning(_game.SelectedCarType, TuningType.Engine, current + 1);
             SetButtonsByCar();
         }
     }
@@ -77,11 +80,11 @@ public class WindowSelectCar : WindowBase
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Tires.Price;
         int max = configCar.Tuning.Tires.CountMax;
-        int current = _game.Saves.GetTuningTires(_game.SelectedCarType);
+        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires);
         if (current < max && _game.Saves.Coins >= price)
         {
             _game.Coins -= price;
-            _game.Saves.SetTuningTires(_game.SelectedCarType, current + 1);
+            _game.Saves.SetTuning(_game.SelectedCarType, TuningType.Tires, current + 1);
             SetButtonsByCar();
         }
     }
@@ -91,11 +94,11 @@ public class WindowSelectCar : WindowBase
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Nitro.Price;
         int max = configCar.Tuning.Nitro.CountMax;
-        int current = _game.Saves.GetTuningNitro(_game.SelectedCarType);
+        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Nitro);
         if (current < max && _game.Saves.Coins >= price)
         {
             _game.Coins -= price;
-            _game.Saves.SetTuningNitro(_game.SelectedCarType, current + 1);
+            _game.Saves.SetTuning(_game.SelectedCarType, TuningType.Nitro, current + 1);
             SetButtonsByCar();
         }
     }
@@ -124,22 +127,34 @@ public class WindowSelectCar : WindowBase
     private void SetBars()
     {
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int current = _game.Saves.GetTuningEngine(_game.SelectedCarType);
-        int max = configCar.Tuning.Engine.CountMax;
+        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Engine);
+        int max = configCar.Tuning.Engine.CountMax;        
+        float value = (float)current / max;
         int price = configCar.Tuning.Engine.Price;
-        float value = (float)current / max;        
         _barEngine.Set(value, price);
 
-        current = _game.Saves.GetTuningTires(_game.SelectedCarType);
-        max = configCar.Tuning.Tires.CountMax;
-        price = configCar.Tuning.Tires.Price;
+        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shields);
+        max = configCar.Tuning.Shields.CountMax;        
         value = (float)current / max;
+        price = configCar.Tuning.Shields.Price;
+        _barShields.Set(value, price);
+
+        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires);
+        max = configCar.Tuning.Tires.CountMax;        
+        value = (float)current / max;
+        price = configCar.Tuning.Tires.Price;
         _barTires.Set(value, price);
 
-        current = _game.Saves.GetTuningNitro(_game.SelectedCarType);
-        max = configCar.Tuning.Nitro.CountMax;
-        price = configCar.Tuning.Nitro.Price;
+        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Weapons);
+        max = configCar.Tuning.Weapon.CountMax;        
         value = (float)current / max;
+        price = configCar.Tuning.Weapon.Price;
+        _barWeapon.Set(value, price);
+
+        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Nitro);
+        max = configCar.Tuning.Nitro.CountMax;        
+        value = (float)current / max;
+        price = configCar.Tuning.Nitro.Price;
         _barNitro.Set(value, price);
     }
 }

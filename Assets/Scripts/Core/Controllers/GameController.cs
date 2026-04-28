@@ -45,12 +45,20 @@ public enum CarType
 [Serializable] public class CarTuning
 {
     [SerializeField] private TuningCategory _engine;
+    [SerializeField] private TuningCategory _shields;
     [SerializeField] private TuningCategory _tires;
+    [SerializeField] private TuningCategory _weapon;
     [SerializeField] private TuningCategory _nitro;
     [SerializeField] private CarColor[] _carColors;
 
     public TuningCategory Engine => _engine;
+
+    public TuningCategory Shields => _shields;
+
     public TuningCategory Tires => _tires;
+
+    public TuningCategory Weapon => _weapon;
+
     public TuningCategory Nitro => _nitro;
 
     public CarColor[] CarColors => _carColors;

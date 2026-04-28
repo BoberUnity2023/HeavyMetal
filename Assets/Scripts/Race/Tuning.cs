@@ -1,27 +1,20 @@
-using System;
 using UnityEngine;
-
-
-
-
 
 public class Tuning : MonoBehaviour
 {
-    [SerializeField] private TuningCategory _engine;
-    [SerializeField] private TuningCategory _tires;
-    [SerializeField] private TuningCategory _nitro;
+    [SerializeField] private GameObject[] _engines;
+    [SerializeField] private GameObject[] _shields;
+    [SerializeField] private GameObject[] _weapons;
     private Car _car;
-
-    public TuningCategory Engine => _engine;
-    public TuningCategory Tires => _tires;
-    public TuningCategory Nitro => _nitro;
     
     public void Init(Car car)
     {
         _car = car;
         
-        _engine.CountBought = _car.Hub.Game.Saves.GetTuningEngine(_car.CarType);
-        _tires.CountBought = _car.Hub.Game.Saves.GetTuningTires(_car.CarType);
-        _nitro.CountBought = _car.Hub.Game.Saves.GetTuningNitro(_car.CarType);
+        int engine = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Engine);
+        int shields = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Shields);        
+        int tires = _car.Hub.Game.Saves.GetTuning(_car.CarType,TuningType.Tires);
+        int weapons = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Weapons);
+        int nitro = _car.Hub.Game.Saves.GetTuning(_car.CarType,TuningType.Nitro);
     }
 }

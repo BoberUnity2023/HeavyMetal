@@ -35,11 +35,7 @@ public class SavesContoller : MonoBehaviour
 
     public string KeyBoughtCar => "BoughtCar";
 
-    public string KeyTuningEngine => "Engine";
-
-    public string KeyTuningTires => "Tires";
-
-    public string KeyTuningNitro => "Nitro";
+    public string KeyTuning => "Tuning";
 
     public string KeyColor => "Color";
 
@@ -455,37 +451,15 @@ public class SavesContoller : MonoBehaviour
         return PlayerPrefs.GetInt(KeyBoughtCar + cartype.ToString()) == 1;        
     }
 
-    public void SetTuningEngine(CarType cartype, int value)
+    public int GetTuning(CarType cartype, TuningType tuningType)
     {
-        PlayerPrefs.SetInt(KeyTuningEngine + cartype.ToString(), value);
+        return PlayerPrefs.GetInt(KeyTuning + tuningType.ToString() + cartype.ToString(), 0);
+    }
+
+    public void SetTuning(CarType cartype, TuningType tuningType, int value)
+    {
+        PlayerPrefs.SetInt(KeyTuning + tuningType.ToString() + cartype.ToString(), value);
         PlayerPrefs.Save();
-    }
-
-    public int GetTuningEngine(CarType cartype)
-    {
-        return PlayerPrefs.GetInt(KeyTuningEngine + cartype.ToString(), 0);
-    }
-
-    public void SetTuningTires(CarType cartype, int value)
-    {
-        PlayerPrefs.SetInt(KeyTuningTires + cartype.ToString(), value);
-        PlayerPrefs.Save();
-    }
-
-    public int GetTuningTires(CarType cartype)
-    {
-        return PlayerPrefs.GetInt(KeyTuningTires + cartype.ToString(), 0);
-    }
-
-    public void SetTuningNitro(CarType cartype, int value)
-    {
-        PlayerPrefs.SetInt(KeyTuningNitro + cartype.ToString(), value);
-        PlayerPrefs.Save();
-    }
-
-    public int GetTuningNitro(CarType cartype)
-    {
-        return PlayerPrefs.GetInt(KeyTuningNitro + cartype.ToString(), 0);
     }
 
     public void SetCarColor(CarType cartype, int value)

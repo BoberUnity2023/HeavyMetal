@@ -61,12 +61,7 @@ public class WindowSettings : MonoBehaviour
 
             return WindowSettingsState.MainMenu;
         }
-    }    
-
-    private void OnDestroy()
-    {
-        
-    }
+    }     
 
     private void OnEnable()
     {

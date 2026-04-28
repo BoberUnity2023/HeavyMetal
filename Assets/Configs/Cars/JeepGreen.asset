@@ -21,11 +21,21 @@ MonoBehaviour:
       CountMax: 5
       Power: 200
       Price: 220
+    _shields:
+      CountBought: 0
+      CountMax: 5
+      Power: 1
+      Price: 300
     _tires:
       CountBought: 0
       CountMax: 3
       Power: 1
       Price: 180
+    _weapon:
+      CountBought: 0
+      CountMax: 4
+      Power: 1
+      Price: 250
     _nitro:
       CountBought: 0
       CountMax: 5

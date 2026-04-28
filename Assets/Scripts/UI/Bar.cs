@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public enum TuningType
 {
     Engine,
+    Shields,
     Tires,
+    Weapons,
     Nitro
 }
 
@@ -48,13 +50,19 @@ public class Bar : MonoBehaviour
             bool isMax = false;
             ConfigCar _configCar = _game.ConfigGame.Cars[_game.SelectedCar];
             if (_type == TuningType.Engine)
-                isMax = _game.Saves.GetTuningEngine(_game.SelectedCarType) == _configCar.Tuning.Engine.CountMax;
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Engine) == _configCar.Tuning.Engine.CountMax;
+
+            if (_type == TuningType.Shields)
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shields) == _configCar.Tuning.Shields.CountMax;
 
             if (_type == TuningType.Tires)
-                isMax = _game.Saves.GetTuningTires(_game.SelectedCarType) == _configCar.Tuning.Tires.CountMax;
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires) == _configCar.Tuning.Tires.CountMax;
+
+            if (_type == TuningType.Weapons)
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Weapons) == _configCar.Tuning.Weapon.CountMax;
 
             if (_type == TuningType.Nitro)
-                isMax = _game.Saves.GetTuningNitro(_game.SelectedCarType) == _configCar.Tuning.Nitro.CountMax;
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Nitro) == _configCar.Tuning.Nitro.CountMax;
 
             return !isMax;
         }
