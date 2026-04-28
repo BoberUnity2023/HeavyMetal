@@ -66,13 +66,23 @@ public class WindowSelectCar : WindowBase
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Engine.Price;
         int max = configCar.Tuning.Engine.CountMax;
-        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Engine);
-        if (current < max && _game.Saves.Coins >= price)
-        {
-            _game.Coins -= price;
-            _game.Saves.SetTuning(_game.SelectedCarType, TuningType.Engine, current + 1);
-            SetButtonsByCar();
-        }
+        TryBuyTuning(TuningType.Engine, price, max);
+    }
+
+    public void PressBuyTuningShields()
+    {
+        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
+        int price = configCar.Tuning.Shields.Price;
+        int max = configCar.Tuning.Shields.CountMax;
+        TryBuyTuning(TuningType.Shields, price, max);
+    }
+
+    public void PressBuyTuningWeapon()
+    {
+        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
+        int price = configCar.Tuning.Weapon.Price;
+        int max = configCar.Tuning.Weapon.CountMax;
+        TryBuyTuning(TuningType.Weapons, price, max);
     }
 
     public void PressBuyTuningTires()
@@ -80,13 +90,7 @@ public class WindowSelectCar : WindowBase
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Tires.Price;
         int max = configCar.Tuning.Tires.CountMax;
-        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires);
-        if (current < max && _game.Saves.Coins >= price)
-        {
-            _game.Coins -= price;
-            _game.Saves.SetTuning(_game.SelectedCarType, TuningType.Tires, current + 1);
-            SetButtonsByCar();
-        }
+        TryBuyTuning(TuningType.Tires, price, max);
     }
 
     public void PressBuyTuningNitro()
@@ -94,11 +98,17 @@ public class WindowSelectCar : WindowBase
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Nitro.Price;
         int max = configCar.Tuning.Nitro.CountMax;
-        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Nitro);
+        TryBuyTuning(TuningType.Nitro, price, max);
+    }
+
+    public void TryBuyTuning(TuningType tuningType, int price, int max)
+    {        
+        int current = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
         if (current < max && _game.Saves.Coins >= price)
         {
             _game.Coins -= price;
-            _game.Saves.SetTuning(_game.SelectedCarType, TuningType.Nitro, current + 1);
+            _game.Saves.SetTuning(_game.SelectedCarType, tuningType, current + 1);
+            _garage.CurrentCar.Tuning.SetTuning();
             SetButtonsByCar();
         }
     }

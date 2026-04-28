@@ -341,7 +341,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000059604645, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.111, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1532580404893097404}
@@ -7833,7 +7833,7 @@ GameObject:
   - component: {fileID: 8534404491845417155}
   - component: {fileID: 4789119249719021234}
   - component: {fileID: -7534694214258213320}
-  - component: {fileID: 4142788925139355657}
+  - component: {fileID: 1841997868685368737}
   - component: {fileID: 7085787564322592434}
   - component: {fileID: 1228678545467683298}
   - component: {fileID: 6455621255536215378}
@@ -7906,7 +7906,7 @@ MonoBehaviour:
   _hub: {fileID: 0}
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
-  _tuning: {fileID: 4142788925139355657}
+  _tuning: {fileID: 1841997868685368737}
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: 9112534829010888652}
   _damageCounter: {fileID: 5952033291620079489}
@@ -7965,7 +7965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarAI
   _fullForceSpeed: 24
---- !u!114 &4142788925139355657
+--- !u!114 &1841997868685368737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7976,22 +7976,28 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3c6ef6dbfcc67841884c103ceff1e10, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tunning
-  _engine:
-    CountBought: 0
-    CountMax: 5
-    Power: 200
-    Price: 150
+  m_EditorClassIdentifier: Assembly-CSharp::Tuning
+  _engines:
+  - {fileID: 5760805685569476384}
+  - {fileID: 1439884462757903628}
+  - {fileID: 5380500555142828602}
+  - {fileID: 2201028611941092272}
+  _shields:
+  - {fileID: 9181740363598355038}
+  - {fileID: 3534568183290249674}
+  - {fileID: 1261304766677453502}
+  - {fileID: 7961947885133883686}
+  - {fileID: 6177637341933279311}
+  - {fileID: 7660569385534958101}
+  _weapons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _tires:
-    CountBought: 0
-    CountMax: 5
-    Power: 1
-    Price: 170
-  _nitro:
-    CountBought: 0
-    CountMax: 5
-    Power: 1
-    Price: 220
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!54 &7085787564322592434
 Rigidbody:
   m_ObjectHideFlags: 0

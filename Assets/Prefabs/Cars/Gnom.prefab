@@ -5735,21 +5735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c6ef6dbfcc67841884c103ceff1e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tunning
-  _engine:
-    CountBought: 0
-    CountMax: 3
-    Power: 200
-    Price: 150
-  _tires:
-    CountBought: 0
-    CountMax: 3
-    Power: 1
-    Price: 170
-  _nitro:
-    CountBought: 0
-    CountMax: 3
-    Power: 1
-    Price: 220
+  _engines: []
+  _shields: []
+  _weapons: []
+  _tires: []
 --- !u!54 &3973057290476016625
 Rigidbody:
   m_ObjectHideFlags: 0

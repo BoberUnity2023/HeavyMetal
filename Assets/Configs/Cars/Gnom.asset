@@ -18,27 +18,27 @@ MonoBehaviour:
   _tuning:
     _engine:
       CountBought: 0
-      CountMax: 5
+      CountMax: 0
       Power: 200
       Price: 220
     _shields:
       CountBought: 0
-      CountMax: 5
+      CountMax: 0
       Power: 1
       Price: 320
     _tires:
       CountBought: 0
-      CountMax: 3
+      CountMax: 0
       Power: 1
       Price: 200
     _weapon:
       CountBought: 0
-      CountMax: 4
+      CountMax: 0
       Power: 1
       Price: 500
     _nitro:
       CountBought: 0
-      CountMax: 5
+      CountMax: 0
       Power: 1
       Price: 280
     _carColors:

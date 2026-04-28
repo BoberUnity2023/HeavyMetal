@@ -104,12 +104,11 @@ public class Car : MonoBehaviour
 
         _control.Init(this);
         _aIInput.Init(this);
-        _tuning.Init(this);
+        _tuning.Init(this, Hub.Game);
         _lapsCounter.Init(this);
         _rocketGun.Init(this);
         _damageCounter.Init(this);
         _paint.Init(this);
-
     }
 
     private void FixedUpdate()

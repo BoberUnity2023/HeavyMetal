@@ -5960,7 +5960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4900303261168042350, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PressBuyTuningEngine
+      value: PressBuyTuningShields
       objectReference: {fileID: 0}
     - target: {fileID: 4900303261168042350, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -8234,7 +8234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4142788925139355657, guid: b0a5df127f477c640b281892d18da99e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4789119249719021234, guid: b0a5df127f477c640b281892d18da99e, type: 3}
       propertyPath: _car
@@ -14177,7 +14177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4900303261168042350, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PressBuyTuningNitro
+      value: PressBuyTuningWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 4900303261168042350, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

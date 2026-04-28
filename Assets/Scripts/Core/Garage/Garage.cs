@@ -16,12 +16,17 @@ public class Garage : MonoBehaviour
     {  
         foreach (Car car in _cars)
         {
-            car.enabled = false;
+            car.enabled = false;            
         }
     }
 
     private void Start()
     {
+        foreach (Car car in _cars)
+        {
+            car.Tuning.Init(car, _sceneController.Game);
+        }
+        
         ShowCar(_sceneController.Game.SelectedCar);        
     }
 
