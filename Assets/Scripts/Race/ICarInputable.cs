@@ -5,4 +5,5 @@ public interface ICarInputable
     public float Brake { get; }
     public float Handbrake { get; }
     public float Reverse { get; }
+    public bool IsNitro { get; }
 }

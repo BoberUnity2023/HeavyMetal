@@ -153,4 +153,6 @@ public class CarAI : MonoBehaviour, ICarInputable
             return 0f;
         }
     }
+
+    public bool IsNitro => false;
 }

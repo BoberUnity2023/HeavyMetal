@@ -69,14 +69,17 @@ public class PlayerInput : MonoBehaviour, ICarInputable
 
             return -_delta.y;
         }
-    }    
+    }
+
+    public bool IsNitro => _hub.Level.Race.Car.Nitro.IsOn;
 
     private void Update()
     {
         Update_KeyboardArrowcControl();
-        //Update_JoystickControl();        
-    } 
-    
+        //Update_JoystickControl();
+        //Update_Nitro();
+    }
+
     private void Update_KeyboardArrowcControl()
     {
         Vector2 inputVector = _deltaKeyboard;// new Vector2(Delta.x, Delta.y);
@@ -124,6 +127,17 @@ public class PlayerInput : MonoBehaviour, ICarInputable
         {
             _delta.x = -_hub.Joistick.Delta.y;
             _delta.y = _hub.Joistick.Delta.x;
+        }
+    }
+
+    private void Update_Nitro()
+    {
+        if (_hub.Level.Race.Car.Nitro.IsOn)
+            return;
+
+        if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
+        {
+            _hub.Level.Race.Car.Nitro.On();
         }
     }
 

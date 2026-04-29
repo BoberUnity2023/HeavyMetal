@@ -15,12 +15,15 @@ public class CarControl: MonoBehaviour
     //Calculate current speed along the car's forward axis
     public float MaxSpeed => maxSpeed;
 
+    public float MotorTorqueMultipler { get; set; }
+
     public void Init(Car car)
     {
         _car = car;
         Vector3 tensor = _car.Rigidbody.inertiaTensor;
         _car.Rigidbody.inertiaTensor = tensor * 2;
         _angularDampingStart = _car.Rigidbody.angularDamping;
+        MotorTorqueMultipler = 1;
     }    
 
     public void FixedUpdate()
@@ -31,8 +34,12 @@ public class CarControl: MonoBehaviour
 
         _car.Force = IsAccelerating && CanAccelerate ? force : 0;
 
-        // Reduce motor torque and steering at high speeds for better handling
-        float currentMotorTorque = Mathf.Lerp(motorTorque, 0, _car.SpeedFactor);//��� SpeedFactor == 0 - 1; ��� SpeedFactor.Max == 0;
+        float torque = motorTorque * MotorTorqueMultipler;
+
+        if (_car.Input.IsNitro)
+            torque *= _car.Nitro.Multipler;
+
+        float currentMotorTorque = _car.Input.IsNitro ? torque : Mathf.Lerp(torque, 0, _car.SpeedFactor);
         float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedFactor);
 
         foreach (WheelControl wheel in _car.Wheels)

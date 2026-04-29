@@ -17,6 +17,7 @@ public class Car : MonoBehaviour
     [SerializeField] private RocketGun _rocketGun;
     [SerializeField] private DamageCounter _damageCounter;
     [SerializeField] private Visible _visible;
+    [SerializeField] private Nitro _nitro;
     [SerializeField] private CarPaint _paint;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
@@ -48,6 +49,8 @@ public class Car : MonoBehaviour
     public DamageCounter DamageCounter => _damageCounter; 
     
     public CarPaint Paint => _paint;
+
+    public Nitro Nitro => _nitro;
 
     public Rigidbody Rigidbody => _rigidbody;
 
@@ -109,6 +112,7 @@ public class Car : MonoBehaviour
         _rocketGun.Init(this);
         _damageCounter.Init(this);
         _paint.Init(this);
+        _nitro.Init(this);
     }
 
     private void FixedUpdate()

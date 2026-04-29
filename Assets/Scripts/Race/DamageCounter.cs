@@ -71,7 +71,9 @@ public class DamageCounter : MonoBehaviour
     private void SecondCrash()
     {        
         Emit(_fire, true);
-        WheelDeattach(_car.Wheels[1]);            
+        int rnd = Random.Range(0, 4);
+        WheelDeattach(_car.Wheels[rnd]);
+        _car.Control.MotorTorqueMultipler = 1.5f;
     }
 
     private void ThirdCrash()
@@ -108,6 +110,7 @@ public class DamageCounter : MonoBehaviour
         }
         
         _car.IsCrashed = false;
+        _car.Control.MotorTorqueMultipler = 1.0f;
         _damage = 0;
     }
 
