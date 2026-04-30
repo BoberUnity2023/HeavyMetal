@@ -33,6 +33,13 @@ public enum CarType
     Gnom
 }
 
+public enum GameLanguage
+{
+    System,
+    English,
+    Russian
+}
+
 [Serializable] public class CarColor
 {
     [SerializeField] private Color _color;

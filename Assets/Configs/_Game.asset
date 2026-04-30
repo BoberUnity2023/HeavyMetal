@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: _Game
   m_EditorClassIdentifier: Assembly-CSharp::ConfigGame
   _platform: 4
+  _language: 2
   _startCoins: 35000
   _cars:
   - {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}

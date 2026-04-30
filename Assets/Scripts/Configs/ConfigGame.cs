@@ -5,10 +5,13 @@ using UnityEngine;
 public class ConfigGame : ScriptableObject
 {
     [SerializeField] private Platform _platform;
+    [SerializeField] private GameLanguage _language;
     [SerializeField] private int _startCoins;
     [SerializeField] private ConfigCar[] _cars;
 
     public Platform Platform => _platform;
+
+    public GameLanguage Language => _language;
 
     public int StartCoins => _startCoins;
 

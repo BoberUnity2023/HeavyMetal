@@ -14,9 +14,7 @@ public class RocketGun : MonoBehaviour
 
     public int Armo => _armo;
 
-    public int ArmoMax => 4 + _tuningArmo;
-
-    
+    public int ArmoMax => 4 + _tuningArmo;    
 
     public void Init(Car car)
     {
