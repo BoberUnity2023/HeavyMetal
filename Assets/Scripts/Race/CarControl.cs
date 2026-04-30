@@ -17,6 +17,8 @@ public class CarControl: MonoBehaviour
 
     public float EngineMultiplerDamage { get; set; }
 
+    public float TuningTorque { get; set; }
+
     public void Init(Car car)
     {
         _car = car;
@@ -34,7 +36,7 @@ public class CarControl: MonoBehaviour
 
         _car.Force = IsAccelerating && CanAccelerate ? force : 0;
 
-        float torque = _motorTorque * EngineMultiplerDamage;
+        float torque = (_motorTorque + TuningTorque) * EngineMultiplerDamage;
 
         if (_car.Input.IsNitro)
             torque *= _car.Nitro.Multipler;

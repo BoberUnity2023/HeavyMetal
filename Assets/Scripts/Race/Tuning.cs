@@ -36,7 +36,14 @@ public class Tuning : MonoBehaviour
     {
         for (int i = 0; i < _engines.Length; i++)
         {
-            _engines[i].SetActive(i == engine - 1);
+            _engines[i].SetActive(i == engine - 1);            
+        }
+
+        if (_car.Mode == Mode.Track && !_car.IsAI)
+        {
+            ConfigCar configCar = _game.ConfigGame.Car(_car.CarType);
+            int tuningTorque = engine * (int)configCar.Tuning.Engine.Power;
+            _car.Control.TuningTorque = tuningTorque;            
         }
     }
 

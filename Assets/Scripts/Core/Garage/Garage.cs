@@ -26,7 +26,7 @@ public class Garage : MonoBehaviour
 
         foreach (Car car in _cars)
         {
-            car.Tuning.Init(car, _sceneController.Game);
+            car.Init(Mode.Garage, _sceneController.Game);            
         }
     }
 

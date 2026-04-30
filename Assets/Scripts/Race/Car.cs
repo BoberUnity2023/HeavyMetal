@@ -6,6 +6,12 @@ public enum InputType
     AI
 }
 
+public enum Mode
+{
+    Garage,
+    Track
+}
+
 public class Car : MonoBehaviour
 {
     [SerializeField] private CarType _carType;
@@ -22,10 +28,10 @@ public class Car : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
     private Transform _podnosPosition;
-    private Transform _heroPosition;
-    
+    private Transform _heroPosition;    
     private ICarInputable _input;
     private InputType _inputType;
+    private Mode _mode;
     private WayPath _wayPath;
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
@@ -65,6 +71,8 @@ public class Car : MonoBehaviour
     public ICarInputable Input => _input;
 
     public InputType InputType => _inputType;  
+
+    public Mode Mode => _mode;
     
     public WayPath WayPath => _wayPath;
 
@@ -86,10 +94,11 @@ public class Car : MonoBehaviour
 
     public float Force { get; set; }
 
-    public void Init(Hub hub, InputType inputType, int id)
+    public void Init(Hub hub, InputType inputType, int id, Mode mode)
     {
         _hub = hub;
         _inputType = inputType; 
+        _mode = mode;
 
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
@@ -115,6 +124,12 @@ public class Car : MonoBehaviour
         _paint.Init(this);
         _nitro.Init(this);
         _tuning.Init(this, Hub.Game);
+    }
+
+    public void Init(Mode mode, GameController game)
+    {
+        _mode = mode;
+        Tuning.Init(this, game);
     }
 
     private void FixedUpdate()
