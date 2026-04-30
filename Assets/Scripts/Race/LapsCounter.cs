@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Build;
 using UnityEngine;
 
 public class LapsCounter : MonoBehaviour
@@ -74,6 +73,9 @@ public class LapsCounter : MonoBehaviour
                 _currentPoint = 0;
                 _lap++;
                 OnLapStart?.Invoke(_lap);
+
+                if (!_car.IsAI)
+                    _car.Hub.Level.Race.LapCompleted(_lap);
             }
         }
     }    

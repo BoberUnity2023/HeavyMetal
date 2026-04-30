@@ -15,7 +15,8 @@ public class ControllerRace : MonoBehaviour
 
     public bool IsStarted { get; private set; }
 
-    public event Action OnFinish;
+    public event Action<int> OnLapCompleted;
+    public event Action OnFinish;    
 
     public void StartRace()//3-2-1 Completed
     {
@@ -39,6 +40,11 @@ public class ControllerRace : MonoBehaviour
     private void Awake()
     {
         CreateCars();
+    }
+
+    public void LapCompleted(int lap)
+    {
+        OnLapCompleted?.Invoke(lap);
     }
 
     private void CreateCars()
