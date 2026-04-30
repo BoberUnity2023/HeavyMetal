@@ -22,12 +22,12 @@ public class Garage : MonoBehaviour
 
     private void Start()
     {
+        ShowCar(_sceneController.Game.SelectedCar);
+
         foreach (Car car in _cars)
         {
             car.Tuning.Init(car, _sceneController.Game);
         }
-        
-        ShowCar(_sceneController.Game.SelectedCar);        
     }
 
     public void ShowCar(int id)

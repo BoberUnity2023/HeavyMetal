@@ -39,7 +39,7 @@ MonoBehaviour:
     _nitro:
       CountBought: 0
       CountMax: 5
-      Power: 1
+      Power: 0.2
       Price: 290
     _carColors:
     - _color: {r: 0.04918185, g: 0.81132066, b: 0.04701721, a: 0.98039216}

@@ -5,6 +5,7 @@ public class Tuning : MonoBehaviour
     [SerializeField] private GameObject[] _engines;
     [SerializeField] private GameObject[] _shields;
     [SerializeField] private GameObject[] _weapons;
+    [SerializeField] private GameObject[] _defaultTires;
     [SerializeField] private GameObject[] _tires;
     private Car _car;
     private GameController _game;
@@ -25,15 +26,33 @@ public class Tuning : MonoBehaviour
         int weapons = _game.Saves.GetTuning(_car.CarType, TuningType.Weapons);
         int nitro = _game.Saves.GetTuning(_car.CarType, TuningType.Nitro);
 
+        SetEngine(engine);
+        SetShields(shields);
+
+        SetNitro(nitro);
+    }
+
+    private void SetEngine(int engine)
+    {
         for (int i = 0; i < _engines.Length; i++)
         {
             _engines[i].SetActive(i == engine - 1);
         }
+    }
 
+    private void SetShields(int shields)
+    {
         for (int i = 0; i < _shields.Length; i++)
         {
             _shields[i].SetActive(i < shields);
         }
+    }
+
+    private void SetNitro(int nitro)
+    {
+        ConfigCar configCar = _game.ConfigGame.Car(_car.CarType);
+        float time = configCar.Tuning.Nitro.Power * nitro;
+        _car.Nitro.AddTuningTime(time);
     }
 
     private void CheckByConfig()

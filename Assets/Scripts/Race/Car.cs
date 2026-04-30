@@ -36,6 +36,8 @@ public class Car : MonoBehaviour
 
     public Hub Hub => _hub;
 
+    public ConfigCar Config => _hub.Game.ConfigGame.Car(_carType);
+
     public CarControl Control => _control;
 
     public CarAI AIInput => _aIInput;
@@ -106,13 +108,13 @@ public class Car : MonoBehaviour
         }
 
         _control.Init(this);
-        _aIInput.Init(this);
-        _tuning.Init(this, Hub.Game);
+        _aIInput.Init(this);        
         _lapsCounter.Init(this);
         _rocketGun.Init(this);
         _damageCounter.Init(this);
         _paint.Init(this);
         _nitro.Init(this);
+        _tuning.Init(this, Hub.Game);
     }
 
     private void FixedUpdate()

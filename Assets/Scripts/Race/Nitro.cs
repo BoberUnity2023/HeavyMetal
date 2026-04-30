@@ -19,6 +19,11 @@ public class Nitro : MonoBehaviour
     {
         _car = car;
     }
+
+    public void AddTuningTime(float time)
+    {
+        _time += time;
+    }
     
     public void On()
     {

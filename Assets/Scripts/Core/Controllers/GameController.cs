@@ -68,7 +68,7 @@ public enum CarType
 {
     [HideInInspector] public int CountBought;
     public int CountMax;
-    public int Power;
+    public float Power;
     public int Price;
 }
 

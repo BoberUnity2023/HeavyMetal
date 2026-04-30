@@ -8061,6 +8061,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _defaultTires: []
   _tires:
   - {fileID: 0}
   - {fileID: 0}
@@ -8276,7 +8277,7 @@ MonoBehaviour:
   - {fileID: 3672130575113633137}
   - {fileID: 3641243057189956507}
   _audioSource: {fileID: 8828836657904677260}
-  _time: 1.2
+  _time: 1
   _multipler: 1.3
 --- !u!1 &6188593264528043108
 GameObject:
