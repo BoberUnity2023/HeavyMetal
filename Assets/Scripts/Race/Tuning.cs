@@ -4,6 +4,7 @@ public class Tuning : MonoBehaviour
 {
     [SerializeField] private GameObject[] _engines;
     [SerializeField] private GameObject[] _shields;
+    [SerializeField] private GameObject _defaultWeapon;
     [SerializeField] private GameObject[] _weapons;
     [SerializeField] private GameObject[] _defaultTires;
     [SerializeField] private GameObject[] _tires;
@@ -28,7 +29,8 @@ public class Tuning : MonoBehaviour
 
         SetEngine(engine);
         SetShields(shields);
-
+        SetTires(tires);
+        SetWeapons(weapons);
         SetNitro(nitro);
     }
 
@@ -53,6 +55,23 @@ public class Tuning : MonoBehaviour
         {
             _shields[i].SetActive(i < shields);
         }
+    }
+
+    private void SetTires(int tires)
+    {
+        if (_car.Mode == Mode.Track)
+        {
+            for (int i = 0; i < _car.WheelSkids.Length; i++)
+            {
+                _car.WheelSkids[i].TuningFactor = 1 + tires * 0.1f;
+            }
+        }      
+    }
+
+    private void SetWeapons(int weapons)
+    {
+        if (_car.Mode == Mode.Track)
+            _car.RocketGun.SetTuningWeapon(weapons);
     }
 
     private void SetNitro(int nitro)

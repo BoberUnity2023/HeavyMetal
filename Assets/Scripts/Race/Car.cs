@@ -76,7 +76,9 @@ public class Car : MonoBehaviour
     
     public WayPath WayPath => _wayPath;
 
-    public WheelControl[] Wheels => _wheels;    
+    public WheelControl[] Wheels => _wheels;
+
+    public WheelSkid[] WheelSkids => _wheelSkids;
 
     public float Speed => Vector3.Dot(transform.forward, _rigidbody.linearVelocity); //from -Max to Max
 

@@ -58,26 +58,13 @@ MonoBehaviour:
   _controllerAnalitycs: {fileID: 0}
   _console: {fileID: 0}
   _prefabSkidmarks: {fileID: 6130739728617072297, guid: 632e25f0cf8de734ea127112aa6ca2a5, type: 3}
-  _carPropses:
-  - CarType: 0
-    Prefab: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
-    Price: 5000
-  - CarType: 2
-    Prefab: {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
-    Price: 10000
-  - CarType: 1
-    Prefab: {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
-    Price: 50000
-  - CarType: 3
-    Prefab: {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
-    Price: 100000
   _groundPropses:
   - GroundMaterial: 1
     PhysicMaterial: {fileID: 13400000, guid: ce1e6fe960420124b8b74090bb5697b7, type: 2}
     Color: {r: 0, g: 0, b: 0, a: 0}
     PrefabParticles: {fileID: 5221816439557420030, guid: 0fd8c9138336dac43bd56fae0b7abc00, type: 3}
     RateOverTimeMax: 20
-    Friction: 1.5
+    Friction: 1.3
   - GroundMaterial: 0
     PhysicMaterial: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
     Color: {r: 0, g: 0, b: 0, a: 0}

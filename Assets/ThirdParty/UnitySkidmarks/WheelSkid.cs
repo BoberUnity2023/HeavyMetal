@@ -32,6 +32,8 @@ public class WheelSkid : MonoBehaviour
 
     public float Intensity => _intensity;
 
+    public float TuningFactor {  get; set; }//1.0, 1.1, 1.2, 1.3
+
     public bool IsGrounded => _isGrounded;
 
     protected void Start() 
@@ -103,11 +105,11 @@ public class WheelSkid : MonoBehaviour
     {
         WheelFrictionCurve wheelFrictionCurve;
         wheelFrictionCurve = _wheelCollider.forwardFriction;
-        wheelFrictionCurve.stiffness = groundProps.Friction;
+        wheelFrictionCurve.stiffness = groundProps.Friction * TuningFactor;
         _wheelCollider.forwardFriction = wheelFrictionCurve;
 
         wheelFrictionCurve = _wheelCollider.sidewaysFriction;
-        wheelFrictionCurve.stiffness = groundProps.Friction;
+        wheelFrictionCurve.stiffness = groundProps.Friction * TuningFactor;
         _wheelCollider.sidewaysFriction = wheelFrictionCurve;
     }
 

@@ -5871,6 +5871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tunning
   _engines: []
   _shields: []
+  _defaultWeapon: {fileID: 0}
   _weapons: []
   _defaultTires: []
   _tires: []

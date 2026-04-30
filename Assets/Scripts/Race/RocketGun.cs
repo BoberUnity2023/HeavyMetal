@@ -2,24 +2,35 @@ using System.Collections;
 using UnityEngine;
 
 public class RocketGun : MonoBehaviour
-{
-    
+{    
     [SerializeField] private Transform _transformGun;
-    [SerializeField] private Rocket _prefabRocket;    
+    [SerializeField] private Rocket _prefabRocket;
     [SerializeField] private float _tryAIShootTime;
     private Car _car;
-    private int _armo = 4;
+    private int _armo;
+    private int _tuningArmo;
     private bool _waitingNextPatron;
     private bool _isInited;
 
     public int Armo => _armo;
 
+    public int ArmoMax => 4 + _tuningArmo;
+
+    
+
     public void Init(Car car)
     {
         _car = car;
         _isInited = true;
+        _armo = 4;
         _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
         StartCoroutine(WaitAITryShoot(_tryAIShootTime));        
+    }
+
+    public void SetTuningWeapon(int weapons)
+    {
+        _tuningArmo = weapons;
+        _armo = ArmoMax;
     }
 
     private void OnDestroy()
@@ -30,7 +41,7 @@ public class RocketGun : MonoBehaviour
 
     private void LapsCounter_OnLapStart(int obj)
     {
-        _armo = 4;
+        _armo = ArmoMax;
     }
 
     private void Update()
@@ -86,7 +97,7 @@ public class RocketGun : MonoBehaviour
             //rocket.Shoot(); 
         }
 
-        StartCoroutine(WaitPatron(1.5f));
+        StartCoroutine(WaitPatron(0.8f));
     }
 
     private bool CanShooted(Car enemy)
