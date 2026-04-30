@@ -11,19 +11,7 @@ public class DamageCounter : MonoBehaviour
     private Transform _wheelsParent;
     private Vector3[] _wheelPositions = new Vector3[4];
     private int _damage;
-
-    //private void Update()
-    //{
-        //if (_car.IsAI)
-        //    return;
-
-        //if (Input.GetKeyDown(KeyCode.M))
-        //    SecondCrash();
-
-        //if (Input.GetKeyDown(KeyCode.N))
-        //    ThirdCrash();
-    //}
-
+    
     public void Init(Car car)
     {  
         _car = car;
@@ -73,7 +61,7 @@ public class DamageCounter : MonoBehaviour
         Emit(_fire, true);
         int rnd = Random.Range(0, 4);
         WheelDeattach(_car.Wheels[rnd]);
-        _car.Control.MotorTorqueMultipler = 1.5f;
+        _car.Control.EngineMultiplerDamage = 1.4f;
     }
 
     private void ThirdCrash()
@@ -99,7 +87,7 @@ public class DamageCounter : MonoBehaviour
         Restart();
     }
 
-    private void Restart()
+    public void Restart()
     {
         Emit(_smoke, false);
         Emit(_fire, false);
@@ -110,7 +98,7 @@ public class DamageCounter : MonoBehaviour
         }
         
         _car.IsCrashed = false;
-        _car.Control.MotorTorqueMultipler = 1.0f;
+        _car.Control.EngineMultiplerDamage = 1.0f;
         _damage = 0;
     }
 

@@ -6989,7 +6989,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 5056564515923819001, guid: 9977ea93e9a2def4e9c1d0d3699d3c7d, type: 3}
+  m_Mesh: {fileID: 5056564515923819001, guid: 0eba9bc6917fc8743b8aec9ba513da0c, type: 3}
 --- !u!1 &5991423570696891637
 GameObject:
   m_ObjectHideFlags: 0
@@ -7190,11 +7190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68048bf4158a244c868094bcbe44fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 4900
-  brakeTorque: 4000
-  maxSpeed: 45
-  steeringRange: 42
-  steeringRangeAtMaxSpeed: 30
+  _motorTorque: 4900
+  _brakeTorque: 4000
+  _maxSpeed: 45
+  _steeringRange: 42
+  _steeringRangeAtMaxSpeed: 30
   _downForce: 40000
 --- !u!114 &4789119249719021234
 MonoBehaviour:
@@ -7585,7 +7585,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1550026729220326002, guid: 9977ea93e9a2def4e9c1d0d3699d3c7d, type: 3}
+  m_Mesh: {fileID: 1550026729220326002, guid: 0eba9bc6917fc8743b8aec9ba513da0c, type: 3}
 --- !u!1 &6349423820713006932
 GameObject:
   m_ObjectHideFlags: 0
@@ -12534,7 +12534,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -1493623658105553845, guid: 9977ea93e9a2def4e9c1d0d3699d3c7d, type: 3}
+  m_Mesh: {fileID: -1493623658105553845, guid: 0eba9bc6917fc8743b8aec9ba513da0c, type: 3}
 --- !u!1 &6545927419284699128
 GameObject:
   m_ObjectHideFlags: 0
@@ -14005,7 +14005,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -78122290439093665, guid: 9977ea93e9a2def4e9c1d0d3699d3c7d, type: 3}
+  m_Mesh: {fileID: -78122290439093665, guid: 0eba9bc6917fc8743b8aec9ba513da0c, type: 3}
 --- !u!1001 &517825235595903670
 PrefabInstance:
   m_ObjectHideFlags: 0

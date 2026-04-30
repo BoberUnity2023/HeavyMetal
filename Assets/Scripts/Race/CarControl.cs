@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class CarControl: MonoBehaviour
 {    
-    [Header("Car Properties")]        
-    [SerializeField] private float motorTorque = 2000f;
-    [SerializeField] private float brakeTorque = 2000f;
-    [SerializeField] private float maxSpeed = 20f;
-    [SerializeField] private float steeringRange = 30f;
-    [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
+    [Header("Car Properties")] 
+    [SerializeField] private float _motorTorque = 2000f;
+    [SerializeField] private float _brakeTorque = 2000f;
+    [SerializeField] private float _maxSpeed = 20f;
+    [SerializeField] private float _steeringRange = 30f;
+    [SerializeField] private float _steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
     private float _angularDampingMultipler = 6.5f;    
     private Car _car;
     private float _angularDampingStart;
     //Calculate current speed along the car's forward axis
-    public float MaxSpeed => maxSpeed;
+    public float MaxSpeed => _maxSpeed;
 
-    public float MotorTorqueMultipler { get; set; }
+    public float EngineMultiplerDamage { get; set; }
 
     public void Init(Car car)
     {
@@ -23,7 +23,7 @@ public class CarControl: MonoBehaviour
         Vector3 tensor = _car.Rigidbody.inertiaTensor;
         _car.Rigidbody.inertiaTensor = tensor * 2;
         _angularDampingStart = _car.Rigidbody.angularDamping;
-        MotorTorqueMultipler = 1;
+        EngineMultiplerDamage = 1;
     }    
 
     public void FixedUpdate()
@@ -34,17 +34,17 @@ public class CarControl: MonoBehaviour
 
         _car.Force = IsAccelerating && CanAccelerate ? force : 0;
 
-        float torque = motorTorque * MotorTorqueMultipler;
+        float torque = _motorTorque * EngineMultiplerDamage;
 
         if (_car.Input.IsNitro)
             torque *= _car.Nitro.Multipler;
 
         float currentMotorTorque = _car.Input.IsNitro ? torque : Mathf.Lerp(torque, 0, _car.SpeedFactor);
-        float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, _car.SpeedFactor);
+        float currentSteerRange = Mathf.Lerp(_steeringRange, _steeringRangeAtMaxSpeed, _car.SpeedFactor);
 
         foreach (WheelControl wheel in _car.Wheels)
         {
-            float _brakeTorque = 0;
+            float brakeTorque = 0;
 
             // Apply steering to wheels that support steering
             if (wheel.IsSteerable)
@@ -65,10 +65,10 @@ public class CarControl: MonoBehaviour
                 // Apply brakes when reversing direction
                 wheel.WheelCollider.motorTorque = 0f;
 
-                _brakeTorque = _car.Input.Brake * brakeTorque; 
+                brakeTorque = _car.Input.Brake * _brakeTorque; 
                 
                 if (!CanAccelerate)
-                    _brakeTorque = brakeTorque;                               
+                    brakeTorque = _brakeTorque;                               
             }
             
             if (!wheel.IsSteerable)
@@ -79,10 +79,10 @@ public class CarControl: MonoBehaviour
                 if (isAutoHandbrake || _car.IsFinished)
                     _handbrake = 1;
 
-                _brakeTorque += _handbrake * brakeTorque;
+                brakeTorque += _handbrake * _brakeTorque;
             }
             
-            wheel.WheelCollider.brakeTorque = _brakeTorque;            
+            wheel.WheelCollider.brakeTorque = brakeTorque;            
         }
 
         FixedUpdate_AddDownForce();

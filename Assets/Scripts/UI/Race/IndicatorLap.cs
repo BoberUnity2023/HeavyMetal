@@ -51,7 +51,7 @@ public class IndicatorLap : MonoBehaviour
     private void SetText(int lap)
     {
         int laps = _hub.Level.Level.Laps;
-        _indicator.text = "" + Mathf.Min(lap, laps).ToString() + ":" + laps.ToString();
+        _indicator.text = "" + Mathf.Min(lap, laps).ToString() + "/" + laps.ToString();
     }
 }
 
