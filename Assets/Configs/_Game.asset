@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConfigGame
   _platform: 4
   _language: 2
-  _startCoins: 35000
+  _startCoins: 12000
   _cars:
   - {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
   - {fileID: 11400000, guid: 7077ed3aa1f4b9c449637204a6204d92, type: 2}

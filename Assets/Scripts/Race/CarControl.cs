@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CarControl: MonoBehaviour
 {    
-    [Header("Car Properties")] 
-    [SerializeField] private float _motorTorque = 2000f;
-    [SerializeField] private float _brakeTorque = 2000f;
-    [SerializeField] private float _maxSpeed = 20f;
+    [Header("Car Properties")]     
     [SerializeField] private float _steeringRange = 30f;
     [SerializeField] private float _steeringRangeAtMaxSpeed = 10f;
     [SerializeField] private float _downForce = 2000;
+    private float _motorTorque;
+    private float _brakeTorque;
+    private float _maxSpeed;
     private float _angularDampingMultipler = 6.5f;    
     private Car _car;
     private float _angularDampingStart;
@@ -26,6 +26,10 @@ public class CarControl: MonoBehaviour
         _car.Rigidbody.inertiaTensor = tensor * 2;
         _angularDampingStart = _car.Rigidbody.angularDamping;
         EngineMultiplerDamage = 1;
+        
+        _motorTorque = _car.Config.MotorTorque;
+        _brakeTorque = _car.Config.BrakeTorque;
+        _maxSpeed = _car.Config.MaxSpeed;
     }    
 
     public void FixedUpdate()

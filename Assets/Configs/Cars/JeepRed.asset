@@ -15,6 +15,9 @@ MonoBehaviour:
   _carType: 1
   _prefab: {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
   _price: 40000
+  _motorTorque: 4900
+  _brakeTorque: 4000
+  _maxSpeed: 45
   _tuning:
     _engine:
       CountBought: 0
