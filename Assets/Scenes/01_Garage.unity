@@ -4267,6 +4267,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+      propertyPath: _weaponMines
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
       propertyPath: _damageCounter
       value: 
       objectReference: {fileID: 0}
@@ -4369,6 +4373,7 @@ PrefabInstance:
     - {fileID: 4267113096230820148, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
     - {fileID: 7452255551785258427, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
     - {fileID: 3123870421995100251, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
+    - {fileID: -893627492277073359, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8328,6 +8333,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
+      propertyPath: _weaponMines
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
       propertyPath: _damageCounter
       value: 
       objectReference: {fileID: 0}
@@ -8422,6 +8431,7 @@ PrefabInstance:
     - {fileID: 4267113096230820148, guid: b0a5df127f477c640b281892d18da99e, type: 3}
     - {fileID: 7452255551785258427, guid: b0a5df127f477c640b281892d18da99e, type: 3}
     - {fileID: 3155519493677330075, guid: b0a5df127f477c640b281892d18da99e, type: 3}
+    - {fileID: -6768940386585234396, guid: b0a5df127f477c640b281892d18da99e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9981,6 +9991,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
+      propertyPath: _weaponMines
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
       propertyPath: _damageCounter
       value: 
       objectReference: {fileID: 0}
@@ -10014,6 +10028,7 @@ PrefabInstance:
     - {fileID: 1039124971662639895, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
     - {fileID: 7950702294521991105, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
     - {fileID: 2555060570549583426, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
+    - {fileID: 6513871764248414650, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10461,6 +10476,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
+      propertyPath: _weaponMines
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
       propertyPath: _damageCounter
       value: 
       objectReference: {fileID: 0}
@@ -10547,6 +10566,7 @@ PrefabInstance:
     - {fileID: 4267113096230820148, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
     - {fileID: 7452255551785258427, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
     - {fileID: 7826974083990024445, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
+    - {fileID: 4319442550626094248, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

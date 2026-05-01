@@ -2260,6 +2260,37 @@ MonoBehaviour:
   _mark_width: 0.3
   _groundMaterial: 0
   _groundMaterialID: 0
+--- !u!1 &4694975528522067472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2930219596667740511}
+  m_Layer: 11
+  m_Name: MinePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2930219596667740511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694975528522067472}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: -3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1445235045075204917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4812818840633712280
 GameObject:
   m_ObjectHideFlags: 0
@@ -7970,6 +8001,7 @@ GameObject:
   - component: {fileID: 8433288325025400582}
   - component: {fileID: 1935695550632082182}
   - component: {fileID: 9112534829010888652}
+  - component: {fileID: -6768940386585234396}
   - component: {fileID: 5952033291620079489}
   - component: {fileID: 2619338596475475530}
   - component: {fileID: 3155519493677330075}
@@ -8007,6 +8039,7 @@ Transform:
   - {fileID: 6526192108085764677}
   - {fileID: 3751221350095406176}
   - {fileID: 3015240056592623300}
+  - {fileID: 2930219596667740511}
   - {fileID: 8012909724973155213}
   - {fileID: 6159089245106069145}
   - {fileID: 7343239410339146340}
@@ -8042,6 +8075,7 @@ MonoBehaviour:
   _tuning: {fileID: 1841997868685368737}
   _lapsCounter: {fileID: 4789119249719021234}
   _rocketGun: {fileID: 9112534829010888652}
+  _weaponMines: {fileID: -6768940386585234396}
   _damageCounter: {fileID: 5952033291620079489}
   _visible: {fileID: 8540619745159850575}
   _nitro: {fileID: 8973616920448367259}
@@ -8258,6 +8292,21 @@ MonoBehaviour:
   _transformGun: {fileID: 3015240056592623300}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
   _tryAIShootTime: 0.3
+--- !u!114 &-6768940386585234396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dc8671db9f9af4e95436550b94f94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponMines
+  _transformGun: {fileID: 2930219596667740511}
+  _prefabMine: {fileID: 7097791101124671886, guid: 715aae0b608ea7e48a436eea21635bc7, type: 3}
+  _tryAIShootTime: 1
 --- !u!114 &5952033291620079489
 MonoBehaviour:
   m_ObjectHideFlags: 0

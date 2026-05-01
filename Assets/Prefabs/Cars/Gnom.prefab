@@ -5733,6 +5733,7 @@ GameObject:
   - component: {fileID: 1943130335612439320}
   - component: {fileID: 3233635533432212158}
   - component: {fileID: 3930983298962315897}
+  - component: {fileID: 6513871764248414650}
   - component: {fileID: 2133264978317198086}
   - component: {fileID: -4303322087925471485}
   - component: {fileID: -3263639599032819825}
@@ -5765,6 +5766,7 @@ Transform:
   - {fileID: 5570452456972095920}
   - {fileID: 2349235376602597877}
   - {fileID: 3862068699154400802}
+  - {fileID: 5129955805538043520}
   - {fileID: 8787705607949683578}
   - {fileID: 1456092594922989742}
   - {fileID: 3770500232870755456}
@@ -5800,6 +5802,7 @@ MonoBehaviour:
   _tuning: {fileID: -8015021772909496865}
   _lapsCounter: {fileID: 2313992211572780358}
   _rocketGun: {fileID: 3930983298962315897}
+  _weaponMines: {fileID: 6513871764248414650}
   _damageCounter: {fileID: 2133264978317198086}
   _visible: {fileID: 8551986998073348888}
   _nitro: {fileID: 8848959205160165673}
@@ -5999,6 +6002,21 @@ MonoBehaviour:
   _transformGun: {fileID: 3862068699154400802}
   _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
   _tryAIShootTime: 0.3
+--- !u!114 &6513871764248414650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136799944968247584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dc8671db9f9af4e95436550b94f94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponMines
+  _transformGun: {fileID: 5129955805538043520}
+  _prefabMine: {fileID: 7097791101124671886, guid: 715aae0b608ea7e48a436eea21635bc7, type: 3}
+  _tryAIShootTime: 1
 --- !u!114 &2133264978317198086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7450,6 +7468,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2af1312e1ab38c4bb05badd7d38751e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Visible
+--- !u!1 &7758397450371000483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5129955805538043520}
+  m_Layer: 11
+  m_Name: MinePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5129955805538043520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758397450371000483}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3751836023865850735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8765198105547059116
 GameObject:
   m_ObjectHideFlags: 0

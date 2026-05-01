@@ -21,6 +21,7 @@ public class Car : MonoBehaviour
     [SerializeField] private Tuning _tuning;
     [SerializeField] private LapsCounter _lapsCounter;
     [SerializeField] private RocketGun _rocketGun;
+    [SerializeField] private WeaponMines _weaponMines;
     [SerializeField] private DamageCounter _damageCounter;
     [SerializeField] private Visible _visible;
     [SerializeField] private Nitro _nitro;
@@ -53,6 +54,8 @@ public class Car : MonoBehaviour
     public LapsCounter LapsCounter => _lapsCounter;
 
     public RocketGun RocketGun => _rocketGun;
+
+    public WeaponMines WeaponMines => _weaponMines;
 
     public DamageCounter DamageCounter => _damageCounter; 
     
@@ -122,6 +125,7 @@ public class Car : MonoBehaviour
         _aIInput.Init(this);        
         _lapsCounter.Init(this);
         _rocketGun.Init(this);
+        _weaponMines.Init(this);
         _damageCounter.Init(this);
         _paint.Init(this);
         _nitro.Init(this);
