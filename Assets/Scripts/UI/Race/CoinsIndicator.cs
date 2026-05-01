@@ -14,7 +14,7 @@ public class CoinsIndicator : MonoBehaviour
     {
         _hub.Game.Saves.OnCoinsChanged += OnCoinsChanged;
         _previousCoins = _hub.Game.Saves.Coins;
-        OnCoinsChanged(_hub.Game.Saves.Coins);
+        _indicator.text = _hub.Game.Saves.Coins.ToString();
         _indicatorAdd.gameObject.SetActive(false);
     }
 
