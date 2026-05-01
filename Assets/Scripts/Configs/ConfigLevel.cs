@@ -13,6 +13,8 @@ public class ConfigLevel : ScriptableObject
 
     [SerializeField] private Car[] _enemyPrefabs;
 
+    [SerializeField] private int[] _finishCoins;
+
     public Sprite Icon => _icon;
 
     public int SceneBuildIndex => _sceneBuildIndex;
@@ -22,4 +24,6 @@ public class ConfigLevel : ScriptableObject
     public int StarsForOpen => _starsForOpen;
 
     public Car[] EnemyPrefabs => _enemyPrefabs;
+
+    public int[] FinishCoins => _finishCoins;
 }

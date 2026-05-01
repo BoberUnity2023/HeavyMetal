@@ -30,6 +30,8 @@ public class ControllerRace : MonoBehaviour
               
         _hub.Game.Saves.SaveLevelStars(StarsForLevel);
 
+        AddFinishCoins();
+
         if (!_car.IsAI)
             OnFinish?.Invoke();
     }
@@ -96,5 +98,15 @@ public class ControllerRace : MonoBehaviour
 
             return 0;
         }        
+    }
+
+    private void AddFinishCoins() 
+    {
+        int place = _hub.Result.Place;        
+        if (place <= 3)
+        {
+            int prize = _hub.Level.Level.FinishCoins[place - 1];
+            _hub.Game.Saves.Coins += prize;
+        }       
     }
 }

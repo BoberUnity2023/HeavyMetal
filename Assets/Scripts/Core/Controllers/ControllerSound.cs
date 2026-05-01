@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public enum SoundClip
 {
     Click,
+    Coins,
     Checkpoint,
     WaterSplash,
     Jump,
@@ -24,6 +26,7 @@ public class ControllerSound : MonoBehaviour
     [SerializeField] private GameController _game;
     [SerializeField] private AudioSource _audioSourceMusic;
     [SerializeField] private AudioClip _click;
+    [SerializeField] private AudioClip _coins;
     [SerializeField] private AudioClip _checkpoint;
     [SerializeField] private AudioClip _waterSplash;
     [SerializeField] private AudioClip _clipJump;
@@ -119,7 +122,7 @@ public class ControllerSound : MonoBehaviour
         _audioSourceMusic.volume = volume * 0.5f;
     }    
 
-    public AudioSource Play(SoundClip soundClip)//void
+    public AudioSource Play(SoundClip soundClip, float volume = 1)//void
     {
         if (!IsOn || !_game.HasFocus)
             return null;
@@ -133,7 +136,7 @@ public class ControllerSound : MonoBehaviour
             DontDestroyOnLoad(sound.gameObject);
             AudioSource audioSource = sound.AddComponent<AudioSource>();
             audioSource.clip = Clip(soundClip);
-            audioSource.volume = PlayerPrefs.GetFloat("SoundVolume", 1);
+            audioSource.volume = PlayerPrefs.GetFloat("SoundVolume", 1) * volume;
             audioSource.Play();
             Destroy(sound, audioSource.clip.length);
             return audioSource;
@@ -164,6 +167,9 @@ public class ControllerSound : MonoBehaviour
         {
             case SoundClip.Click:
                 return _click;
+
+            case SoundClip.Coins:
+                return _coins;
 
             case SoundClip.Checkpoint:
                 return _checkpoint;

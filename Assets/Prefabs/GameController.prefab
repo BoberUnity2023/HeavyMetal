@@ -692,6 +692,7 @@ MonoBehaviour:
   _game: {fileID: 5279882291150218642}
   _audioSourceMusic: {fileID: 3260994046429105363}
   _click: {fileID: 8300000, guid: bd50593f3c468be43a9789621516b62e, type: 3}
+  _coins: {fileID: 8300000, guid: 529e5bcf60c959a43b442c5a07c3f687, type: 3}
   _checkpoint: {fileID: 8300000, guid: a0c29e878bbdbc14a965b9c3912fb0e0, type: 3}
   _waterSplash: {fileID: 8300000, guid: 8921993209789444f9ed72bc778da93d, type: 3}
   _clipJump: {fileID: 8300000, guid: 51ad64e24ff245e448d38fd7083f5c76, type: 3}

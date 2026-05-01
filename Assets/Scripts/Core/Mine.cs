@@ -28,7 +28,7 @@ public class Mine : MonoBehaviour
 
         Vector3 direction = (car.transform.position - transform.position).normalized;
         car.Rigidbody.AddForce(direction * _blastForce);
-        car.DamageCounter.DamageAdd(34);
+        car.DamageCounter.DamageAdd(34, false);
 
         gameObject.SetActive(false);
     }

@@ -51,7 +51,7 @@ public class Rocket : MonoBehaviour
                 if (distance < 2.5)
                 {
                     Blast(car);
-                    Destroy(gameObject);
+                    Destroy(gameObject);                    
                 }
             }
         }
@@ -67,7 +67,8 @@ public class Rocket : MonoBehaviour
         Instantiate(_prefabBlast, transform.position, Quaternion.identity, car.transform);
         Vector3 direction = (car.transform.position - transform.position).normalized;
         car.Rigidbody.AddForce(direction * _blastForce);
-        car.DamageCounter.DamageAdd(34);
+        bool fromPlayer = !_attacker.IsAI;
+        car.DamageCounter.DamageAdd(34, fromPlayer);
     }
 
     private float RayDistance

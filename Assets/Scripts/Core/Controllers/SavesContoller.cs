@@ -423,6 +423,7 @@ public class SavesContoller : MonoBehaviour
         {
             PlayerPrefs.SetInt(KeyCoins, value);
             PlayerPrefs.Save();
+            _game.Sound.Play(SoundClip.Coins, 0.10f);
 
             if (_game.Platform == Platform.Yandex)
             {

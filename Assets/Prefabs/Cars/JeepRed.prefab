@@ -7248,6 +7248,7 @@ MonoBehaviour:
   - {fileID: 1053696605530883405}
   - {fileID: 41188546412719157}
   - {fileID: 8268457807212371241}
+  _defaultWeapon: {fileID: 0}
   _weapons:
   - {fileID: 0}
   - {fileID: 0}
@@ -7396,6 +7397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageCounter
   _smoke: {fileID: 2626045109962905586}
   _fire: {fileID: 6945838842099785288}
+  _rewards: 64000000c80000002c010000
 --- !u!114 &6943483865636845664
 MonoBehaviour:
   m_ObjectHideFlags: 0

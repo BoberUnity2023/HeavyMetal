@@ -6,6 +6,7 @@ public class DamageCounter : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _smoke;
     [SerializeField] private ParticleSystem _fire;
+    [SerializeField] private int[] _rewards;
     private Spirit _spirit;
     private Car _car;
     private Transform _wheelsParent;
@@ -28,7 +29,7 @@ public class DamageCounter : MonoBehaviour
         private set => _damage = value;  
     }
     
-    public void DamageAdd(int value)
+    public void DamageAdd(int value, bool fromPlayer)
     {
         if (_car.IsCrashed)
             return;
@@ -37,42 +38,50 @@ public class DamageCounter : MonoBehaviour
 
         if (_damage < 35)
         {
-            FirstCrash();
+            FirstCrash(fromPlayer);
         }
 
         if (_damage > 60 && _damage < 90)
         {
-            SecondCrash();
+            SecondCrash(fromPlayer);
         }
 
         if (_damage >= 100)         
         {
-            ThirdCrash();
+            ThirdCrash(fromPlayer);
         }
     }
 
-    private void FirstCrash()
+    private void FirstCrash(bool fromPlayer)
     {        
-        Emit(_smoke, true);              
+        Emit(_smoke, true);
+
+        if (fromPlayer)
+            _car.Hub.Game.Saves.Coins += _rewards[0];
     }
 
-    private void SecondCrash()
+    private void SecondCrash(bool fromPlayer)
     {        
         Emit(_fire, true);
         int rnd = Random.Range(0, 4);
         WheelDeattach(_car.Wheels[rnd]);
         _car.Control.EngineMultiplerDamage = 1.4f;
+
+        if (fromPlayer)
+            _car.Hub.Game.Saves.Coins += _rewards[1];
     }
 
-    private void ThirdCrash()
+    private void ThirdCrash(bool fromPlayer)
     {
         foreach (var wheel in _car.Wheels)
         {            
             WheelDeattach(wheel);
         }
         _car.IsCrashed = true;
-
         StartCoroutine(WaitHide(1));
+        
+        if (fromPlayer)
+            _car.Hub.Game.Saves.Coins += _rewards[2];
     }
 
     private IEnumerator WaitHide(float time)

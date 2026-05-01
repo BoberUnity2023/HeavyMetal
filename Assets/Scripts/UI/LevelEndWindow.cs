@@ -8,6 +8,7 @@ public class LevelEndWindow : MonoBehaviour
     [SerializeField] private Hub _hub;    
     [SerializeField] private GameObject _window;
     [SerializeField] private TMP_Text _finishText;
+    [SerializeField] private TMP_Text _indicatorAddCoins;
     [SerializeField] private Button _buttonRestartFromCheckpoint;
     [SerializeField] private Button _buttonRestart;
     [SerializeField] private Button _buttonNextLevel;
@@ -37,6 +38,12 @@ public class LevelEndWindow : MonoBehaviour
         _stars[0].SetActive(place <= 3);
         _stars[1].SetActive(place <= 2);
         _stars[2].SetActive(place == 1);
+
+        if (place <= 3)
+        {
+            int prize = _hub.Level.Level.FinishCoins[place - 1];
+            _indicatorAddCoins.text = "+" + prize;
+        }
     }
 
     private void OnDestroy()
