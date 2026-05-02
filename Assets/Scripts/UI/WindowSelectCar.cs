@@ -35,8 +35,7 @@ public class WindowSelectCar : WindowBase
             _game.SelectedCar = 0;
 
         _garage.ShowCar(_game.SelectedCar);
-        SetButtonsByCar();
-        
+        SetButtonsByCar();        
     }
 
     public void PressPreviousCar()
