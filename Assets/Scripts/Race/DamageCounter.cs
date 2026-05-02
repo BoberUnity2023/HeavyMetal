@@ -55,7 +55,7 @@ public class DamageCounter : MonoBehaviour
     private void FirstCrash(bool fromPlayer)
     {        
         Emit(_smoke, true);
-
+        _car.Control.EngineMultiplerDamage = 0.85f;
         if (fromPlayer)
             _car.Hub.Game.Saves.Coins += _rewards[0];
     }
@@ -65,7 +65,7 @@ public class DamageCounter : MonoBehaviour
         Emit(_fire, true);
         int rnd = Random.Range(0, 4);
         WheelDeattach(_car.Wheels[rnd]);
-        _car.Control.EngineMultiplerDamage = 1.4f;
+        _car.Control.EngineMultiplerDamage = 1.3f;
 
         if (fromPlayer)
             _car.Hub.Game.Saves.Coins += _rewards[1];

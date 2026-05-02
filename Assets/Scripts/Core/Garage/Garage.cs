@@ -48,6 +48,5 @@ public class Garage : MonoBehaviour
         int id = _sceneController.Game.Saves.GetCarColor(_cars[number].CarType);
         Material material = _sceneController.Game.ConfigGame.Cars[number].Tuning.CarColors[id].Material;
         _cars[number].Paint.SetMaterial(material);        
-    }
-    
+    }    
 }

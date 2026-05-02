@@ -70,6 +70,13 @@ public class Tuning : MonoBehaviour
 
     private void SetWeapons(int weapons)
     {
+        _defaultWeapon.SetActive(weapons == 0);
+
+        for (int i = 0; i < _weapons.Length; i++)
+        {
+            _weapons[i].SetActive(i == weapons - 1);
+        }
+
         if (_car.Mode == Mode.Track)
             _car.RocketGun.SetTuningWeapon(weapons);
     }
