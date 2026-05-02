@@ -41,9 +41,12 @@ public class CameraMove : MonoBehaviour
             //float dist = Mathf.Min(_distanceToTarget, _freeDist);
             if (_state == CameraState.Izometry)
                 return _target.position + _offsetIzometry;
-            
+
             if (_state == CameraState.Follow)
-                return _cameraPosition.position;
+            {
+                float y = Mathf.Max(_cameraPosition.position.y, _target.position.y + 1);
+                return new Vector3(_cameraPosition.position.x, y, _cameraPosition.position.z); 
+            }
 
             return _cameraPosition.position;
         }
