@@ -11,7 +11,8 @@ public class PathSelector : MonoBehaviour
     {
         //WayPath[] paths = gameObject.GetComponentsInChildren<WayPath>();
         //Array.Resize(ref _wayPaths, paths.Length - 1);
-        _level = _hub.Game.CurrentLevel - 1;
+        int track = _hub.Level.Config.Track - 1;
+        _level = track;// _hub.Game.CurrentLevel - 1;
     }
 
     public WayPath RandomWayPath
@@ -24,7 +25,8 @@ public class PathSelector : MonoBehaviour
     }
 
     public WayPath WayPath(int id)
-    {        
+    {
+        
         return _levelPaths[_level].WayPaths[id];
     }
 }

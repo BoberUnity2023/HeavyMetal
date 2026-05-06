@@ -31,15 +31,17 @@ public class Map : MonoBehaviour
 
     private void SetPointToCar(Transform point, Car car)
     {
-        Vector2 offset = _offsets[_hub.Game.CurrentLevel - 1];
+        int track = _hub.Level.Config.Track - 1;
+        Vector2 offset = _offsets[track/*_hub.Game.CurrentLevel - 1*/];
         point.localPosition = new Vector3(-car.transform.position.x + offset.x, -car.transform.position.z + offset.y, 0);
     }
 
     private void ShowMap()
     {
+        int track = _hub.Level.Config.Track - 1;
         for (int i = 0; i < _maps.Length; i++)
         {
-            _maps[i].SetActive(i == _hub.Game.CurrentLevel - 1);
+            _maps[i].SetActive(i == track/*_hub.Game.CurrentLevel - 1*/);
         }
     }
 }

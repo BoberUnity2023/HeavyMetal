@@ -5,6 +5,12 @@ public class IndicatorPlace : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
     [SerializeField] private TMP_Text _indicator;
+    private int _countPlayers;
+
+    private void Start()
+    {
+        _countPlayers = _hub.Level.Config.Enemies.Length + 1;
+    }
 
     private void Update()
     {
@@ -13,8 +19,7 @@ public class IndicatorPlace : MonoBehaviour
             _indicator.text = "---";
             return;
         }
-
-        int countPlayers = _hub.Level.Config.EnemyPrefabs.Length + 1;
-        _indicator.text = "" + _hub.Place.Place + "/" + countPlayers.ToString();
+        
+        _indicator.text = "" + _hub.Level.Race.Car.Place + "/" + _countPlayers.ToString();
     }
 }

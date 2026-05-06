@@ -19,11 +19,11 @@ public class ControllerLevel : MonoBehaviour
 
     public Hub Hub => _hub;
 
-    public ConfigLevel Config => _config.Level(1);
+    public ConfigLevel Config => _config.Level(_hub.Game.CurrentLevel);
 
-    public ConfigLevel Level => _config.Level(_hub.Game.CurrentLevel);     
+    public ControllerRace Race => _race;
 
-    public ControllerRace Race => _race;    
+    public GameObject[] Tracks => _tracks;
 
     public bool IsComplete { get; private set; }
 
@@ -56,6 +56,7 @@ public class ControllerLevel : MonoBehaviour
 
     private void StartLevel()
     {
+        Debug.Log("StartLevel: " + _hub.Game.CurrentLevel);
         _hub.Game.LastPlayedLevel = _hub.Game.CurrentLevel;           
         //_hub.Joistick.ResetCenter();  
         _timeStart = Time.time;
@@ -73,10 +74,12 @@ public class ControllerLevel : MonoBehaviour
     private void SetTrack()
     {
         int level = _hub.Game.CurrentLevel;
+        ConfigLevel configLevel = _hub.Level.Config;
         for (int i = 0; i < _tracks.Length; i++)
         {
-            _tracks[i].SetActive(level == i + 1);
+            _tracks[i].SetActive(configLevel.Track == i + 1);
         }
+        Debug.Log("SetTrack: " + _hub.Game.CurrentLevel);
     }
 
     public void RestartFromCheckpoint()

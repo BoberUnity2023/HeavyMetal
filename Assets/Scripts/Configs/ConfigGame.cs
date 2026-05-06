@@ -27,5 +27,20 @@ public class ConfigGame : ScriptableObject
 
         Debug.LogError("Config " + carType.ToString() + " was not founded!");
         return null;
-    }    
+    } 
+    
+    public int MaxPower
+    {
+        get
+        {
+            int output = 0;
+            foreach(ConfigCar car in _cars)
+            {
+                int maxPower = car.MotorTorque + (int)(car.Tuning.Engine.Power * car.Tuning.Engine.CountMax);
+                output = Mathf.Max(output, maxPower);
+            }
+
+            return output;
+        }
+    }
 }

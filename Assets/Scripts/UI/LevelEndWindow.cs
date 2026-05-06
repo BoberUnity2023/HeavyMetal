@@ -41,7 +41,7 @@ public class LevelEndWindow : MonoBehaviour
 
         if (place <= 3)
         {
-            int prize = _hub.Level.Level.FinishCoins[place - 1];
+            int prize = _hub.Level.Config.FinishCoins[place - 1];
             _indicatorAddCoins.text = "+" + prize;
         }
     }

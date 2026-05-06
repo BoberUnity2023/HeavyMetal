@@ -157,4 +157,34 @@ public class Car : MonoBehaviour
 
         _slideForce = force /= 4;
     }
+
+    public int Place
+    {
+        get
+        {
+            int output = 1;
+            int points = LapsCounter.Points;
+
+            foreach (Car car in Hub.Level.Race.Cars)
+            {
+                bool isI = car == this;
+                if (!isI)
+                {
+                    if (car.LapsCounter.Points > points)
+                        output++;
+
+                    if (car.LapsCounter.Points == points)
+                    {
+                        float distThis = Vector3.Distance(transform.position, LapsCounter.CurrentPointPosition);
+                        float distEnemy = Vector3.Distance(car.transform.position, car.LapsCounter.CurrentPointPosition);
+
+                        if (distThis > distEnemy)
+                            output++;
+                    }
+                }
+            }
+
+            return output;
+        }
+    }
 }

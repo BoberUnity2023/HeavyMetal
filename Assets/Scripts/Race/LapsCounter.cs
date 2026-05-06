@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 
 public class LapsCounter : MonoBehaviour
-{
-    
+{    
     [SerializeField] private int _lap = 1;
     [SerializeField] private int _currentPoint;
     [SerializeField] private int _targetPoint;
@@ -24,6 +23,8 @@ public class LapsCounter : MonoBehaviour
     }
 
     public int CurrentPoint => _currentPoint;
+
+    public Vector3 CurrentPointPosition => _wayPath.Points[_currentPoint].position;
 
     public Vector3 RelativePointPosition => _relativePointPosition;    
 

@@ -75,12 +75,22 @@ public class ControllerRace : MonoBehaviour
     private void InitEnemy(int id)
     {        
         Transform carPosition = _carPositions[id];
-        Car prefab = _hub.Level.Config.EnemyPrefabs[id];  
+        ConfigEnemy configEnemy = _hub.Level.Config.Enemies[id];
+        Car prefab = configEnemy.Car.Prefab;  
         Car car = Instantiate(prefab, carPosition.position, carPosition.rotation);
         car.Init(_hub, InputType.AI, id, Mode.Track);
+        car.Tuning.SetEngine(configEnemy.TuningEngine);
+        car.Tuning.SetShields(configEnemy.TuningShields);
+        car.Tuning.SetTires(configEnemy.TuningTires);
+        car.Tuning.SetWeapons(configEnemy.TuningWeapon);
+        car.Tuning.SetNitro(configEnemy.TuningNitro);
+        ConfigCar configCar = configEnemy.Car;
+        Material material = configCar.Tuning.CarColors[configEnemy.TuningColor].Material;
+        car.Paint.SetMaterial(material);
+
         _enemies.Add(car);
         _cars.Add(car);
-        Debug.Log("Enemy " + prefab.gameObject.name + " created");
+        Debug.Log("Enemy " + prefab.gameObject.name + " created. Config: " + configEnemy.name);
     }
 
     private int StarsForLevel
@@ -105,7 +115,7 @@ public class ControllerRace : MonoBehaviour
         int place = _hub.Result.Place;        
         if (place <= 3)
         {
-            int prize = _hub.Level.Level.FinishCoins[place - 1];
+            int prize = _hub.Level.Config.FinishCoins[place - 1];
             _hub.Game.Saves.Coins += prize;
         }       
     }

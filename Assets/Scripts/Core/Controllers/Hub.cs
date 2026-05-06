@@ -14,8 +14,7 @@ public class Hub : SceneController
     [SerializeField] private ResultController _resultController;
     [SerializeField] private PathSelector _pathSelector;
     [SerializeField] private RaceStarter _raceStarter;
-    [SerializeField] private AudioListenerMovier _audioListenerMovier;
-    private PlaceController _placeController;
+    [SerializeField] private AudioListenerMovier _audioListenerMovier;    
     //public GameController Game { get; set; }
 
     public SceneLoader SceneLoader => Game.SceneLoader;       
@@ -25,8 +24,6 @@ public class Hub : SceneController
     public ScreenController Screen => _screenController;
 
     public InputController Input => _input;
-
-    public PlaceController Place => _placeController;
 
     public ControllerSoundLevel Sound => _sound;
 
@@ -49,9 +46,4 @@ public class Hub : SceneController
     public RaceStarter RaceStarter => _raceStarter;
 
     public AudioListenerMovier AudioListenerMovier => _audioListenerMovier;
-
-    private void Awake()
-    {
-        _placeController = new PlaceController(this);
-    }
 }

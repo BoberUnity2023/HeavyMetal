@@ -34,7 +34,7 @@ public class Tuning : MonoBehaviour
         SetNitro(nitro);
     }
 
-    private void SetEngine(int engine)
+    public void SetEngine(int engine)
     {
         for (int i = 0; i < _engines.Length; i++)
         {
@@ -49,7 +49,7 @@ public class Tuning : MonoBehaviour
         }
     }
 
-    private void SetShields(int shields)
+    public void SetShields(int shields)
     {
         for (int i = 0; i < _shields.Length; i++)
         {
@@ -57,7 +57,7 @@ public class Tuning : MonoBehaviour
         }
     }
 
-    private void SetTires(int tires)
+    public void SetTires(int tires)
     {
         if (_car.Mode == Mode.Track)
         {
@@ -68,7 +68,7 @@ public class Tuning : MonoBehaviour
         }      
     }
 
-    private void SetWeapons(int weapons)
+    public void SetWeapons(int weapons)
     {
         _defaultWeapon.SetActive(weapons == 0);
 
@@ -81,7 +81,7 @@ public class Tuning : MonoBehaviour
             _car.RocketGun.SetTuningWeapon(weapons);
     }
 
-    private void SetNitro(int nitro)
+    public void SetNitro(int nitro)
     {
         ConfigCar configCar = _game.ConfigGame.Car(_car.CarType);
         float time = configCar.Tuning.Nitro.Power * nitro;
