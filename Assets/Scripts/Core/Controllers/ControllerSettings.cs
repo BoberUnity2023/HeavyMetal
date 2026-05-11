@@ -25,23 +25,21 @@ public class ControllerSettings : MonoBehaviour
         bool pss = false;
         int index = 0;  
 
-        if (level <= 2)
+        if (level == 2)
         {
-            index = level; ;
-            pss = false;
+            index = 0;             
         }
 
-        if (level == 3)
+        if (level == 1)
         {
             index = 1;
-            pss = true;
         }
 
-        if (level == 4)
+        if (level == 0)
         {
-            index = 3;
-            pss = true;
+            index = 2;
         }
+        Debug.Log("SetQuality: " + index);
         QualitySettings.SetQualityLevel(index, true);
         SetVolume();
 
