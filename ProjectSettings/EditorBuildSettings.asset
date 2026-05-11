@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/02_LevelMenu.unity
     guid: c92169fa70d35414baaa1c4927203200
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_Smoke_City2.unity
+    path: Assets/Scenes/Levels/Level_1_Smoke_City.unity
     guid: fbf32e617bd167049a85845d94ec0854
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
