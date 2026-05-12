@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1de094c6213a9ff4586e810116d8abb1, type: 3}
       propertyPath: m_Name
-      value: Track_07_End
+      value: Track_07_L_End
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8373266511928400681, guid: 1de094c6213a9ff4586e810116d8abb1, type: 3}
@@ -77,7 +77,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7694150418582861035}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -104,7 +104,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8892149150089883899}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3b3649b534eb19c42b0dcf1fcd2654f6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

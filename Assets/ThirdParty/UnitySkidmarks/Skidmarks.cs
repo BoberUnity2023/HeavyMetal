@@ -17,7 +17,7 @@ public class Skidmarks : MonoBehaviour
 	const float GROUND_OFFSET = 0.02f;  // Distance above surface in metres
 	const float MIN_DISTANCE = 0.25f; // Distance between skid texture sections in metres. Bigger = better performance, less smooth
 	const float MIN_SQR_DISTANCE = MIN_DISTANCE * MIN_DISTANCE;
-	const float MAX_OPACITY = 0.6f; // Max skidmark opacity
+	const float MAX_OPACITY = 0.7f; // Max skidmark opacity
 
 	// Info for each mark created. Needed to generate the correct mesh
 	class MarkSection 

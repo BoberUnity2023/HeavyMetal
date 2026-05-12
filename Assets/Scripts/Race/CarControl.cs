@@ -121,7 +121,8 @@ public class CarControl: MonoBehaviour
 
     private void FixedUpdate_AddDownForce()
     {
-        _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedFactor);
+        if (_car.GroundedWheels > 0)
+            _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedFactor);
         //if (_car.SlideForce > 0.25f)
         //    _car.Rigidbody.AddForce(-transform.up * _downForce * _car.SpeedFactor * (_car.SlideForce - 0.25f));
     }

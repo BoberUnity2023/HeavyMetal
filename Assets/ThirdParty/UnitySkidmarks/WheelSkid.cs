@@ -131,7 +131,7 @@ public class WheelSkid : MonoBehaviour
 
         WheelHit wheelHitInfo;
         _isGrounded = _wheelCollider.GetGroundHit(out wheelHitInfo);
-        if (!_isGrounded || _carSpeed < 0.1f)
+        if (!_isGrounded || Mathf.Abs(_carSpeed) < 0.1f)
         {
             _lastSkid = -1;
             return;

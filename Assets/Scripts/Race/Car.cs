@@ -187,4 +187,18 @@ public class Car : MonoBehaviour
             return output;
         }
     }
+
+    public int GroundedWheels
+    {
+        get
+        {
+            int output = 0;
+            foreach (WheelSkid wheel in _wheelSkids)
+            {
+                if (wheel.IsGrounded)
+                    output++;
+            }
+            return output;
+        }
+    }
 }
