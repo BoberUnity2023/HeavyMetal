@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
   _icon: {fileID: 21300000, guid: 610af9c58d8d6a54c99a81ba7d37e546, type: 3}
-  _sceneBuildIndex: 4
+  _sceneBuildIndex: 3
   _track: 3
   _laps: 3
   _starsForOpen: 4

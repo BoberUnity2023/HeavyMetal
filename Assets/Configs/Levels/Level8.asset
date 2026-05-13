@@ -16,7 +16,7 @@ MonoBehaviour:
   _sceneBuildIndex: 3
   _track: 8
   _laps: 3
-  _starsForOpen: 14
+  _starsForOpen: 12
   _enemies:
   - {fileID: 11400000, guid: 5a8574ea770baea4c955ca33111419cf, type: 2}
   - {fileID: 11400000, guid: 9611b74d042387d4a8ed95c40618a1cb, type: 2}
