@@ -23,7 +23,7 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 1
       Power: 200
-      Price: 220
+      Price: 2200
     _shields:
       CountBought: 0
       CountMax: 1
@@ -33,17 +33,17 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 1
       Power: 1
-      Price: 200
+      Price: 2000
     _weapon:
       CountBought: 0
       CountMax: 7
       Power: 1
-      Price: 500
+      Price: 5000
     _nitro:
       CountBought: 0
       CountMax: 1
       Power: 0.2
-      Price: 280
+      Price: 2800
     _carColors:
     - _color: {r: 0.01913305, g: 0.61725056, b: 0.07787679, a: 1}
       _material: {fileID: 2100000, guid: d9971a4d0ebd47f44ade7cb730bf10b2, type: 2}
