@@ -20,7 +20,7 @@ public class Rocket : MonoBehaviour
         transform.parent = car.transform;
         float distance = Vector3.Distance(transform.position, car.transform.position);
         float time = distance / _speed;
-        transform.DOLocalJump(Vector3.zero, 2f, 1, 1.0f).OnComplete(() => Blast(car));
+        transform.DOLocalJump(Vector3.zero, 0f, 1, 1.0f).OnComplete(() => Blast(car));
     }
 
     public void Shoot()

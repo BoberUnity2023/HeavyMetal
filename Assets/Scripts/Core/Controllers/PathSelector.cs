@@ -7,7 +7,7 @@ public class PathSelector : MonoBehaviour
     [SerializeField] private LevelPaths[] _levelPaths;    
     private int _level;
 
-    private void Awake()
+    public void Init()
     {
         //WayPath[] paths = gameObject.GetComponentsInChildren<WayPath>();
         //Array.Resize(ref _wayPaths, paths.Length - 1);
@@ -25,8 +25,7 @@ public class PathSelector : MonoBehaviour
     }
 
     public WayPath WayPath(int id)
-    {
-        
+    {        
         return _levelPaths[_level].WayPaths[id];
     }
 }

@@ -36,13 +36,13 @@ public class MainMenuController : SceneController
         SetButtonLevels(_canvas);
         SetScreen(LevelLocation.SmokeCity);
         
-        if (fromLevel) 
+        /*if (fromLevel) 
         {
             _windowMain.SetActive(false);
             _windowLevels.SetActive(true);
             _canvasScroll.SetActive(true);            
             LoadScrollPosition();            
-        }  
+        } */ 
     }
 
     public void LoadScene(int buildIndex)

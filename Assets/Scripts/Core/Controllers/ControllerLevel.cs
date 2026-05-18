@@ -45,7 +45,7 @@ public class ControllerLevel : MonoBehaviour
     public event Action OnLevelLost;
     public event Action OnLevelRestartFromCheckpoint;
 
-    private void Start()
+    public void Init()
     {
         //GC.Collect();
         //SetAmbient();

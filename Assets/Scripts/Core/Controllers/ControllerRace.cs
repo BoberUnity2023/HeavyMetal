@@ -41,6 +41,8 @@ public class ControllerRace : MonoBehaviour
 
     private void Awake()
     {
+        _hub.Level.Init();
+        _hub.PathSelector.Init();
         CreateCars();
     }
 

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69a1b9bfad04834bb0cbd7598d191b7, type: 3}
   m_Name: Level5
   m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
+  _levelLocation: 0
   _icon: {fileID: 21300000, guid: 60d6a03f8ec55684fa98647fcbb2f3ea, type: 3}
   _sceneBuildIndex: 3
   _track: 5
-  _laps: 3
+  _laps: 1
   _starsForOpen: 6
   _enemies:
   - {fileID: 11400000, guid: 8494a254c6ae5704ca9c4e842a9fc339, type: 2}
