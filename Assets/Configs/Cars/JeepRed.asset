@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb4d9028118f2c47956d0356ec11dc3, type: 3}
-  m_Name: Jeep
+  m_Name: JeepRed
   m_EditorClassIdentifier: Assembly-CSharp::ConfigCar
-  _carType: 0
-  _prefab: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
-  _price: 10000
-  _motorTorque: 4000
+  _carType: 1
+  _prefab: {fileID: 3335092485689057933, guid: ff1fc703afbdbab438d4ffede8c706d6, type: 3}
+  _price: 40000
+  _motorTorque: 4900
   _brakeTorque: 4000
-  _maxSpeed: 40
+  _maxSpeed: 45
   _tuning:
     _engine:
       CountBought: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 6
       Power: 1
-      Price: 3000
+      Price: 3200
     _tires:
       CountBought: 0
       CountMax: 3
@@ -38,18 +38,12 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 7
       Power: 1
-      Price: 2500
+      Price: 5000
     _nitro:
       CountBought: 0
       CountMax: 5
       Power: 0.2
       Price: 2900
     _carColors:
-    - _color: {r: 0.04918185, g: 0.81132066, b: 0.04701721, a: 0.98039216}
-      _material: {fileID: 2100000, guid: adb11a9f43d7f0c488cbd247e44cbee6, type: 2}
-    - _color: {r: 0.8392157, g: 0, b: 0, a: 1}
+    - _color: {r: 0.8706199, g: 0.022293435, b: 0.022293435, a: 1}
       _material: {fileID: 2100000, guid: ad4ca4058e4f2944bb27df721ad58079, type: 2}
-    - _color: {r: 0.011764719, g: 0.50428236, b: 0.9098039, a: 1}
-      _material: {fileID: 2100000, guid: 135a9fae85e24d74489dc8758c3e2681, type: 2}
-    - _color: {r: 0.84905654, g: 0.6872846, b: 0.02631839, a: 1}
-      _material: {fileID: 2100000, guid: de6f1faac61531d4ead8986fcff8dd3e, type: 2}
