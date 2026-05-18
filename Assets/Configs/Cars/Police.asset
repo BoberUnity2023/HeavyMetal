@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb4d9028118f2c47956d0356ec11dc3, type: 3}
   m_Name: Police
   m_EditorClassIdentifier: Assembly-CSharp::ConfigCar
-  _carType: 2
+  _carType: 1
   _prefab: {fileID: 3335092485689057933, guid: 0e1c530c33e91594c965c25a1c864b2e, type: 3}
   _price: 12000
   _motorTorque: 4500

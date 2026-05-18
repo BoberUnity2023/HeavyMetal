@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927f968d6f12b99438534903a05d762a, type: 3}
   m_Name: JeepRedMiddle
   m_EditorClassIdentifier: Assembly-CSharp::ConfigEnemy
-  _car: {fileID: 11400000, guid: 2ddc919d37130a840a353d7ceecf08fe, type: 2}
+  _car: {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
   _tuningEngine: 2
   _tuningShields: 3
   _tuningTires: 2
   _tuningWeapon: 3
   _tuningNitro: 0
-  _tuningColor: 0
+  _tuningColor: 1

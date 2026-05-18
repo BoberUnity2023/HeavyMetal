@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb4d9028118f2c47956d0356ec11dc3, type: 3}
   m_Name: Gnom
   m_EditorClassIdentifier: Assembly-CSharp::ConfigCar
-  _carType: 3
+  _carType: 2
   _prefab: {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
   _price: 200000
   _motorTorque: 4500

@@ -8,7 +8,8 @@ public class MainMenuController : SceneController
     [SerializeField] private GameObject _windowMain;
     [SerializeField] private GameObject _hero;
     [SerializeField] private GameObject _startHand;    
-    [SerializeField] private Transform _canvasScrollContent;
+    [SerializeField] private Transform _canvas;
+    [SerializeField] private Transform[] _locations;
     [SerializeField] private ButtonLevel _buttonLevelPrefab;
     [SerializeField] private RectTransform _content;
     
@@ -32,14 +33,15 @@ public class MainMenuController : SceneController
         //return;
         Game = game;
         CreateButtons();
-        SetButtonLevels();
+        SetButtonLevels(_canvas);
+        SetScreen(LevelLocation.SmokeCity);
+        
         if (fromLevel) 
         {
             _windowMain.SetActive(false);
             _windowLevels.SetActive(true);
             _canvasScroll.SetActive(true);            
-            LoadScrollPosition();
-            
+            LoadScrollPosition();            
         }  
     }
 
@@ -82,11 +84,11 @@ public class MainMenuController : SceneController
         PressLoadLevel(Game.LastPlayedLevel);
     }
 
-    public void SetButtonLevels()
+    public void SetButtonLevels(Transform canvasScroll)
     {
         //int stars = YandexGame.savesData.Stars + YandexGame.savesData.PurchasedStars;
         //Debug.Log("Stars: " + stars);
-        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
+        ButtonLevel[] buttonLevels = canvasScroll.GetComponentsInChildren<ButtonLevel>();
 
         for (int i = 0; i < buttonLevels.Length; i++)
         {            
@@ -98,6 +100,12 @@ public class MainMenuController : SceneController
         }
     }
 
+    private void SetScreen(LevelLocation levelLocation)
+    {
+        _locations[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
+        _locations[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
+    }
+
     public void PressSound()
     {
         Game.Sound.Play(SoundClip.Click);
@@ -107,10 +115,23 @@ public class MainMenuController : SceneController
     {
         for (int i = 1; i <= Game.Levels.Levels.Length; i++)        
         {
-            ButtonLevel buttonLevel = Instantiate(_buttonLevelPrefab, _canvasScrollContent);
+            Transform parent = LevelScreen(Game.Levels.Levels[i - 1].LevelLocation);
+            ButtonLevel buttonLevel = Instantiate(_buttonLevelPrefab, parent);
             int iCopy = i;
             buttonLevel.GetComponent<Button>().onClick.AddListener(() => PressLoadLevel(iCopy));
         }
+    }
+
+    private Transform LevelScreen(LevelLocation levelLocation)
+    {
+        switch (levelLocation)
+        {
+            case LevelLocation.SmokeCity:
+                return _locations[0];
+            case LevelLocation.Paradize: 
+                return _locations[1];
+        }
+        return _locations[0];
     }
 
     public bool IsLevelLock(int level)

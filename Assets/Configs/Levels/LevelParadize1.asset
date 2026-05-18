@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69a1b9bfad04834bb0cbd7598d191b7, type: 3}
   m_Name: LevelParadize1
   m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
+  _levelLocation: 1
   _icon: {fileID: 21300000, guid: a44d348839fb4cf44bd7332daf1996ef, type: 3}
   _sceneBuildIndex: 4
   _track: 1

@@ -18,5 +18,4 @@ MonoBehaviour:
   _cars:
   - {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
   - {fileID: 11400000, guid: 7077ed3aa1f4b9c449637204a6204d92, type: 2}
-  - {fileID: 11400000, guid: 2ddc919d37130a840a353d7ceecf08fe, type: 2}
   - {fileID: 11400000, guid: c6e78ec8d34297c4a93557b6542a72f7, type: 2}

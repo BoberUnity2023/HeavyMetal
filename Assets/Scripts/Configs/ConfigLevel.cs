@@ -1,8 +1,16 @@
 using UnityEngine;
 
+public enum LevelLocation
+{
+    SmokeCity = 0,
+    Paradize = 1
+}
+
 [CreateAssetMenu(fileName = "Level", menuName = "Configs/ConfigLevel")]
 public class ConfigLevel : ScriptableObject
-{    
+{
+    [SerializeField] private LevelLocation _levelLocation;
+
     [SerializeField] private Sprite _icon;
 
     [SerializeField] private int _sceneBuildIndex;
@@ -16,6 +24,8 @@ public class ConfigLevel : ScriptableObject
     [SerializeField] private ConfigEnemy[] _enemies;
 
     [SerializeField] private int[] _finishCoins;
+
+    public LevelLocation LevelLocation => _levelLocation;
 
     public Sprite Icon => _icon;
 

@@ -18,8 +18,8 @@ public class ConfigGame : ScriptableObject
     public ConfigCar[] Cars => _cars;  
     
     public ConfigCar Car(CarType carType)
-    {
-        foreach(ConfigCar car in _cars)
+    {        
+        foreach (ConfigCar car in _cars)
         {
             if (car.CarType == carType)
                 return car;

@@ -27,8 +27,7 @@ public enum Platform
 
 public enum CarType
 {
-    JeepGreen,
-    JeepRed,
+    Jeep,
     Police,
     Gnom
 }

@@ -13,6 +13,7 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private Bar _barTires;
     [SerializeField] private Bar _barWeapon;
     [SerializeField] private Bar _barNitro;
+    [SerializeField] private GameObject _lock;
     private GameController _game;    
 
     private void Start()
@@ -31,7 +32,7 @@ public class WindowSelectCar : WindowBase
     public void PressNextCar()
     {
         _game.SelectedCar++;
-        if (_game.SelectedCar == 4)
+        if (_game.SelectedCar == 3)
             _game.SelectedCar = 0;
 
         _garage.ShowCar(_game.SelectedCar);
@@ -42,7 +43,7 @@ public class WindowSelectCar : WindowBase
     {
         _game.SelectedCar--;
         if (_game.SelectedCar < 0)
-            _game.SelectedCar = 3;
+            _game.SelectedCar = 2;
 
         _garage.ShowCar(_game.SelectedCar);
         SetButtonsByCar();        
@@ -50,6 +51,9 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuy()
     {
+        if (_game.SelectedCarType == CarType.Gnom)
+            return;
+
         bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
         int price = Price();
         if (!hasCar && _game.Saves.Coins >= price)
@@ -126,6 +130,8 @@ public class WindowSelectCar : WindowBase
             _colorPanel.Show();
         else
             _colorPanel.Hide();
+
+        _lock.SetActive(_game.SelectedCarType == CarType.Gnom);
     }
 
     private int Price()

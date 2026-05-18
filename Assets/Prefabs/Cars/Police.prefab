@@ -8108,7 +8108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0aabda2407ba554fa92dee0de92fc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carType: 2
+  _carType: 1
   _hub: {fileID: 0}
   _control: {fileID: 8534404491845417155}
   _aIInput: {fileID: -7534694214258213320}
