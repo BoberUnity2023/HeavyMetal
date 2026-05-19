@@ -74,12 +74,10 @@ public class WheelSkid : MonoBehaviour
         RaycastHit hit;        
 
         if (Physics.Raycast(transform.position, -transform.up, out hit))
-        {
-            PhysicsMaterial physicMaterial = hit.collider.material;
-            
+        {            
             foreach (GroundProps groundProps in _car.Hub.Game.GroundPropses)
             {                
-                if (physicMaterial.name.Contains(groundProps.PhysicMaterial.name))
+                if (_car.Hub.Game.IsEqualPhysicsMaterials(hit.collider.material, groundProps.PhysicMaterial))                
                 {
                     _groundMaterial = groundProps.GroundMaterial;
                     if (_groundMaterial != _groundMaterialPrevious)

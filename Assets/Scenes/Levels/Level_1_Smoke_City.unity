@@ -9351,7 +9351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6494553259386581564, guid: 7d2bac936f64d0347aab3fb0f9804075, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6494553259386581564, guid: 7d2bac936f64d0347aab3fb0f9804075, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19673,7 +19673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1152759948
 Transform:
   m_ObjectHideFlags: 0
@@ -25660,6 +25660,33 @@ MonoBehaviour:
   wayColor: {r: 1, g: 1, b: 1, a: 1}
   Points: []
   MaxSpeeds: []
+--- !u!1 &1505948332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5052619300924536389, guid: 77a686ab1b365a44bab76ced9f0fc447, type: 3}
+  m_PrefabInstance: {fileID: 1670544323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1505948336
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505948332}
+  m_Material: {fileID: 13400000, guid: 9ba9f895beaa4a74bb15f80c9f86aa91, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2128599272216676504, guid: 5b54e70655f4d52419b407c11f4c8eee, type: 3}
 --- !u!1 &1507385969
 GameObject:
   m_ObjectHideFlags: 0
@@ -28364,6 +28391,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7983814944351667490, guid: 77a686ab1b365a44bab76ced9f0fc447, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1736393947}
+    - targetCorrespondingSourceObject: {fileID: 5052619300924536389, guid: 77a686ab1b365a44bab76ced9f0fc447, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1505948336}
   m_SourcePrefab: {fileID: 100100000, guid: 77a686ab1b365a44bab76ced9f0fc447, type: 3}
 --- !u!4 &1670544324 stripped
 Transform:
@@ -28758,7 +28788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1690863248
 Transform:
   m_ObjectHideFlags: 0

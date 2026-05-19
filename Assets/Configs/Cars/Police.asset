@@ -18,6 +18,8 @@ MonoBehaviour:
   _motorTorque: 4500
   _brakeTorque: 4000
   _maxSpeed: 50
+  _damageSpeed: 20
+  _damageImpulse: 30000
   _tuning:
     _engine:
       CountBought: 0

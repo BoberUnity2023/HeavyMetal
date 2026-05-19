@@ -336,5 +336,11 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }     
+    }
+
+    public bool IsEqualPhysicsMaterials(PhysicsMaterial material1, PhysicsMaterial material2)
+    {
+        return material1.dynamicFriction == material2.dynamicFriction &&
+            material1.frictionCombine == material2.frictionCombine;
+    }
 }

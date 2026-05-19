@@ -37,7 +37,8 @@ public class Car : MonoBehaviour
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
     private float _speedFactor;
-    private float _slideForce;    
+    private float _slideForce;   
+    private float _speed;
 
     public CarType CarType => _carType;    
 
@@ -83,7 +84,7 @@ public class Car : MonoBehaviour
 
     public WheelSkid[] WheelSkids => _wheelSkids;
 
-    public float Speed => Vector3.Dot(transform.forward, _rigidbody.linearVelocity); //from -Max to Max
+    public float Speed => _speed;
 
     public float SpeedFactor => _speedFactor; //From 0 to 1
 
@@ -139,7 +140,8 @@ public class Car : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {        
+    {
+        _speed = Vector3.Dot(transform.forward, _rigidbody.linearVelocity); //from -Max to Max
         _speedFactor = Mathf.InverseLerp(0, Control.MaxSpeed, Mathf.Abs(Speed));      // From 0 to 1 
         FixedUpdate_CalculateSlideForce();
     }    
