@@ -9,9 +9,11 @@ public class MainMenuController : SceneController
     [SerializeField] private GameObject _hero;
     [SerializeField] private GameObject _startHand;    
     [SerializeField] private Transform _canvas;
+    [SerializeField] private Transform[] _titles;
     [SerializeField] private Transform[] _locations;
     [SerializeField] private ButtonLevel _buttonLevelPrefab;
     [SerializeField] private RectTransform _content;
+    private const string _keyLocations = "Location";
     
     private void OnEnable()
     {
@@ -34,15 +36,18 @@ public class MainMenuController : SceneController
         Game = game;
         CreateButtons();
         SetButtonLevels(_canvas);
-        SetScreen(LevelLocation.SmokeCity);
-        
+
+        int id = PlayerPrefs.GetInt(_keyLocations);
+        LevelLocation levelLocation = LevelLocationById(id);
+        SetScreen(levelLocation);
+
         /*if (fromLevel) 
         {
             _windowMain.SetActive(false);
             _windowLevels.SetActive(true);
             _canvasScroll.SetActive(true);            
             LoadScrollPosition();            
-        } */ 
+        } */
     }
 
     public void LoadScene(int buildIndex)
@@ -104,6 +109,25 @@ public class MainMenuController : SceneController
     {
         _locations[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
         _locations[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
+
+        _titles[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
+        _titles[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
+
+        if (levelLocation == LevelLocation.SmokeCity)
+            PlayerPrefs.SetInt(_keyLocations, 0);
+
+        if (levelLocation == LevelLocation.Paradize)
+            PlayerPrefs.SetInt(_keyLocations, 1);
+    }
+
+    public void PressScreenNext()
+    {
+        SetScreen(LevelLocation.Paradize);
+    }
+
+    public void PressScreenPrev()
+    {
+        SetScreen(LevelLocation.SmokeCity);
     }
 
     public void PressSound()
@@ -169,5 +193,13 @@ public class MainMenuController : SceneController
         float x = _content.anchoredPosition.x;
         float y = PlayerPrefs.GetInt("ScrollPosition");
         _content.anchoredPosition = new Vector2(x, y);        
+    }
+
+    private LevelLocation LevelLocationById(int id)
+    {
+        if (id == 0)
+            return LevelLocation.SmokeCity;
+
+        return LevelLocation.Paradize;
     }
 }
