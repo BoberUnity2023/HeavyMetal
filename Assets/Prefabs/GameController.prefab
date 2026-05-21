@@ -822,6 +822,7 @@ MonoBehaviour:
   _audioSourceMusic: {fileID: 3260994046429105363}
   _click: {fileID: 8300000, guid: bd50593f3c468be43a9789621516b62e, type: 3}
   _coins: {fileID: 8300000, guid: 529e5bcf60c959a43b442c5a07c3f687, type: 3}
+  _upgrade: {fileID: 8300000, guid: 0992a9e89e8dbe84cbd367bf4fb6b395, type: 3}
   _checkpoint: {fileID: 8300000, guid: a0c29e878bbdbc14a965b9c3912fb0e0, type: 3}
   _waterSplash: {fileID: 8300000, guid: 8921993209789444f9ed72bc778da93d, type: 3}
   _clipJump: {fileID: 8300000, guid: 51ad64e24ff245e448d38fd7083f5c76, type: 3}
@@ -831,7 +832,7 @@ MonoBehaviour:
   _levelComplete: {fileID: 8300000, guid: ea72a2991b07fc04d8c4a3e6c2785ba9, type: 3}
   _clipFootStepGround: {fileID: 8300000, guid: 2d03d32faea5cfa4d89c7513579e8cf9, type: 3}
   _clipFootStepWater: {fileID: 8300000, guid: cc1e057caf75b694da3ee8758ca980d2, type: 3}
-  _mushroom: {fileID: 8300000, guid: 25351ece524b41c45be18e9fa7eaf639, type: 3}
+  _threeTwoOneGo: {fileID: 8300000, guid: e9c378ca50839514da92e9d8308a4288, type: 3}
   _butterflyOut: {fileID: 8300000, guid: ea72a2991b07fc04d8c4a3e6c2785ba9, type: 3}
   _batDead: {fileID: 8300000, guid: 31707147446b87d40be0812b6439c01a, type: 3}
   _musics:

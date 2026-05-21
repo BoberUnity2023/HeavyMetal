@@ -11,28 +11,29 @@ public class RaceStarter : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Show3(0.3f));
+        StartCoroutine(Show3(0.8f));
     }    
 
     private IEnumerator Show3(float time)
     {
         yield return new WaitForSeconds(time);
         OnTimer?.Invoke(3);
-        StartCoroutine(Show2(0.6f));
+        StartCoroutine(Show2(0.7f));
+        _hub.Game.Sound.Play(SoundClip.ThreeTwoOneGo);
     }
 
     private IEnumerator Show2(float time)
     {
         yield return new WaitForSeconds(time);
         OnTimer?.Invoke(2);
-        StartCoroutine(Show1(0.6f));
+        StartCoroutine(Show1(0.7f));
     }
 
     private IEnumerator Show1(float time)
     {
         yield return new WaitForSeconds(time);
         OnTimer?.Invoke(1);
-        StartCoroutine(Show0(0.6f));
+        StartCoroutine(Show0(0.7f));
     }
     private IEnumerator Show0(float time)
     {

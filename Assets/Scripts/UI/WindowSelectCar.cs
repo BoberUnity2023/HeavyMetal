@@ -59,6 +59,7 @@ public class WindowSelectCar : WindowBase
         if (!hasCar && _game.Saves.Coins >= price)
         {
             _game.Coins -= price;
+            _game.Sound.Play(SoundClip.Upgrade);
             _game.Saves.SetBoughtCar(_game.SelectedCarType);
             SetButtonsByCar();            
         }
@@ -110,6 +111,7 @@ public class WindowSelectCar : WindowBase
         if (current < max && _game.Saves.Coins >= price)
         {
             _game.Coins -= price;
+            _game.Sound.Play(SoundClip.Upgrade);
             _game.Saves.SetTuning(_game.SelectedCarType, tuningType, current + 1);
             _garage.CurrentCar.Tuning.SetTuning();
             SetButtonsByCar();

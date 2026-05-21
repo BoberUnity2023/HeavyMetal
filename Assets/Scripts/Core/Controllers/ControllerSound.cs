@@ -7,6 +7,7 @@ public enum SoundClip
 {
     Click,
     Coins,
+    Upgrade,
     Checkpoint,
     WaterSplash,
     Jump,
@@ -16,7 +17,7 @@ public enum SoundClip
     LevelComplete,
     FootStepGround,
     FootStepWater,
-    Mushroom,
+    ThreeTwoOneGo,
     ButterflyOut,
     BatDead
 }
@@ -27,6 +28,7 @@ public class ControllerSound : MonoBehaviour
     [SerializeField] private AudioSource _audioSourceMusic;
     [SerializeField] private AudioClip _click;
     [SerializeField] private AudioClip _coins;
+    [SerializeField] private AudioClip _upgrade;
     [SerializeField] private AudioClip _checkpoint;
     [SerializeField] private AudioClip _waterSplash;
     [SerializeField] private AudioClip _clipJump;
@@ -36,7 +38,7 @@ public class ControllerSound : MonoBehaviour
     [SerializeField] private AudioClip _levelComplete;
     [SerializeField] private AudioClip _clipFootStepGround;
     [SerializeField] private AudioClip _clipFootStepWater;
-    [SerializeField] private AudioClip _mushroom;
+    [SerializeField] private AudioClip _threeTwoOneGo;
     [SerializeField] private AudioClip _butterflyOut;
     [SerializeField] private AudioClip _batDead;
     [SerializeField] private AudioClip[] _musics;
@@ -171,6 +173,9 @@ public class ControllerSound : MonoBehaviour
             case SoundClip.Coins:
                 return _coins;
 
+            case SoundClip.Upgrade:
+                return _upgrade;
+
             case SoundClip.Checkpoint:
                 return _checkpoint;
 
@@ -198,8 +203,8 @@ public class ControllerSound : MonoBehaviour
             case SoundClip.FootStepWater:
                 return _clipFootStepWater;
 
-            case SoundClip.Mushroom:
-                return _mushroom;
+            case SoundClip.ThreeTwoOneGo:
+                return _threeTwoOneGo;
 
             case SoundClip.ButterflyOut: 
                 return _butterflyOut;
