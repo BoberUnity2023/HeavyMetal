@@ -75,9 +75,17 @@ public class PlayerInput : MonoBehaviour, ICarInputable
 
     private void Update()
     {
-        Update_KeyboardArrowcControl();
+        Update_GamePad();
+        //Update_KeyboardArrowcControl();//TODO: REturn
         //Update_JoystickControl();
         //Update_Nitro();
+    }
+
+    private void Update_GamePad()
+    {
+        Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _deltaKeyboard = inputVector;
+        _delta = inputVector;
     }
 
     private void Update_KeyboardArrowcControl()

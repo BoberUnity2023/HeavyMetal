@@ -8057,6 +8057,7 @@ MonoBehaviour:
   m_Script: {fileID: 1380575957}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.SceneObjectIDMapSceneAsset
+  m_Entries: []
 --- !u!4 &1245419322
 Transform:
   m_ObjectHideFlags: 19
@@ -15149,6 +15150,7 @@ MonoBehaviour:
   _garage: {fileID: 3376163179810544259}
   _window: {fileID: 2052951030}
   _sceneController: {fileID: 5793896059732163739}
+  _mainMenuController: {fileID: 5793896059732163739}
   _colorPanel: {fileID: 1409311732}
   _priceIndicator: {fileID: 1542764490}
   _buttonContinue: {fileID: 3091340880918236423}
@@ -18407,6 +18409,7 @@ MonoBehaviour:
   _hero: {fileID: 0}
   _startHand: {fileID: 0}
   _canvas: {fileID: 0}
+  _titles: []
   _locations: []
   _buttonLevelPrefab: {fileID: 0}
   _content: {fileID: 0}

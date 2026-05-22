@@ -380,6 +380,28 @@ MonoBehaviour:
       - LOADING...
       Flags: 0000000000
       Languages_Touch: []
+    - Term: location_smoke_city
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0414\u044B\u043C\u043D\u044B\u0439 \u0433\u043E\u0440\u043E\u0434"
+      - Smoke city
+      - Smoke city
+      - Smoke city
+      - Smoke city
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: location_paradize
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0430\u0439"
+      - Paradize
+      - Paradize
+      - Paradize
+      - Paradize
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

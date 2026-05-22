@@ -60,7 +60,7 @@ public class MainMenuController : SceneController
         LoadLevel(level);
     }
 
-    private void PressLoadLevel(int level)
+    public void PressLoadLevel(int level)
     {
         //Game.Sound.Play(SoundClip.Click);
 

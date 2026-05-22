@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class WindowSelectCar : WindowBase
 {
     [SerializeField] private SceneController _sceneController;
+    [SerializeField] private MainMenuController _mainMenuController;
     [SerializeField] private ColorPanel _colorPanel;
     [SerializeField] private PriceIndicator _priceIndicator;
     [SerializeField] private Button _buttonContinue;
@@ -27,6 +28,30 @@ public class WindowSelectCar : WindowBase
         _colorPanel.Init(_sceneController, _garage);
 
         SetButtonsByCar();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Joystick1Button15))
+        {
+            PressNextCar();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button14))
+        {
+            PressPreviousCar();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        {
+            bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
+            if (hasCar)
+            {
+                _mainMenuController.PressLoadLevel(2);
+            }
+            else
+                PressBuy();
+        }
     }
 
     public void PressNextCar()
