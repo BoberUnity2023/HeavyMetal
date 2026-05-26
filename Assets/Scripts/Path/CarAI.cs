@@ -112,7 +112,7 @@ public class CarAI : MonoBehaviour, ICarInputable
             if (_isReversing)
                 return -1;
 
-            if (_car.Speed < _fullForceSpeed)
+            if (_car.Speed < _fullForceSpeed || _car.IsOnEscalator)
             {
                 _car.Force = 1;
                 return 1;

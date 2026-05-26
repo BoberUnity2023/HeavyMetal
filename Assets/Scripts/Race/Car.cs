@@ -98,6 +98,8 @@ public class Car : MonoBehaviour
 
     public bool IsCrashed;
 
+    public bool IsOnEscalator { get; set; }
+
     public float Force { get; set; }
 
     public void Init(Hub hub, InputType inputType, int id, Mode mode)
