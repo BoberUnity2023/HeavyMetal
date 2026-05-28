@@ -21,6 +21,9 @@ public class WheelSkid : MonoBehaviour
     [SerializeField] private GroundMaterial _groundMaterial;
     [SerializeField] private int _groundMaterialID;
     private GroundMaterial _groundMaterialPrevious;
+    private PhysicsMaterial _physicMaterial;
+    private PhysicsMaterial _physicMaterialPrevious;
+    private GroundProps _groundProps;
 
     private int _lastSkid = -1; // Array index for the skidmarks controller. Index of last skidmark piece this wheel used
     private float _lastFixedUpdateTime;
@@ -74,40 +77,61 @@ public class WheelSkid : MonoBehaviour
         RaycastHit hit;        
 
         if (Physics.Raycast(transform.position, -transform.up, out hit))
-        {            
-            foreach (GroundProps groundProps in _car.Hub.Game.GroundPropses)
-            {                
-                if (_car.Hub.Game.IsEqualPhysicsMaterials(hit.collider.material, groundProps.PhysicMaterial))                
+        {
+            _physicMaterial = hit.collider.material;
+            if (_physicMaterial != _physicMaterialPrevious)
+            {
+                foreach (GroundProps groundProps in _car.Hub.Game.GroundPropses)
                 {
-                    _groundMaterial = groundProps.GroundMaterial;
-                    if (_groundMaterial != _groundMaterialPrevious)
+                    if (_car.Hub.Game.IsEqualPhysicsMaterials(hit.collider.material, groundProps.PhysicMaterial))
                     {
-                        SetSkidColor(groundProps);
-                        SetFriction(groundProps);
-                        _groundMaterialPrevious = _groundMaterial;
-                        break;
-                    }
+                        _groundMaterial = groundProps.GroundMaterial;
+                        _groundProps = groundProps;
+                        if (_groundMaterial != _groundMaterialPrevious)
+                        {
+                            SetSkidColor(groundProps.Color);
+                            SetFriction(groundProps.Friction);
+                            _groundMaterialPrevious = _groundMaterial;
+                            break;
+                        }
 
-                    _groundMaterialPrevious = _groundMaterial;
-                }                
+                        _groundMaterialPrevious = _groundMaterial;
+                    }
+                }
             }
+            _physicMaterialPrevious = _physicMaterial;
         }
     }
 
-    private void SetSkidColor(GroundProps groundProps)
+    public void SetSkidColor(Color color)
     {
-        _skidmarksController.SetColor(groundProps.Color);
+        _skidmarksController.SetColor(color);
     }
 
-    private void SetFriction(GroundProps groundProps)
+    public void SetSkidColor()
+    {
+        _skidmarksController.SetColor(_groundProps.Color);
+    }
+
+    public void SetFriction()
+    {
+        SetFriction(_groundProps.Friction);
+    }
+
+    public void SetFrictionWithIntensity(float intensity)
+    {
+        SetFriction(_groundProps.Friction * intensity);
+    }
+
+    private void SetFriction(float friction)
     {
         WheelFrictionCurve wheelFrictionCurve;
         wheelFrictionCurve = _wheelCollider.forwardFriction;
-        wheelFrictionCurve.stiffness = groundProps.Friction * TuningFactor;
+        wheelFrictionCurve.stiffness = friction * TuningFactor;
         _wheelCollider.forwardFriction = wheelFrictionCurve;
 
         wheelFrictionCurve = _wheelCollider.sidewaysFriction;
-        wheelFrictionCurve.stiffness = groundProps.Friction * TuningFactor;
+        wheelFrictionCurve.stiffness = friction * TuningFactor;
         _wheelCollider.sidewaysFriction = wheelFrictionCurve;
     }
 
@@ -121,7 +145,7 @@ public class WheelSkid : MonoBehaviour
     private void LateUpdate_Mark()
     {
         _intensity = 0;
-        if (!_wheelControl.IsAttached)
+        if (!_wheelControl.IsAttached || !_car.IsVisible)
         {
             _lastSkid = -1;
             return;
@@ -134,7 +158,12 @@ public class WheelSkid : MonoBehaviour
             _lastSkid = -1;
             return;
         }
-        _intensity = Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide);
+
+        float oilIntensity = _car.Oil.Intensity;
+        if (oilIntensity > 0)
+            _intensity = oilIntensity;
+        else
+            _intensity = Mathf.Max(oilIntensity, Mathf.Clamp01(SideSlide + BrakeSlide + HandbrakeSlide + ForwardSlide));
 
         if (_intensity < _skidSlideStart)
         {
@@ -172,9 +201,8 @@ public class WheelSkid : MonoBehaviour
     private float SideSlide
     {
         get
-        {
-            Vector3 localVelocity = transform.InverseTransformDirection(_car.Rigidbody.linearVelocity);
-            float sideSlide = Mathf.Abs(localVelocity.x); //[0...infinity]
+        {            
+            float sideSlide = Mathf.Abs(_car.LocalVelocity.x); //[0...infinity]
             sideSlide = Mathf.Min(sideSlide, _sideSlideMax);//[0..._sideSlideMax]
             sideSlide = (sideSlide - _sideSlideMin) / (_sideSlideMax - _sideSlideMin);//[0...1]  
             return sideSlide;

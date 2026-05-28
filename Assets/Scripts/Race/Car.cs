@@ -25,6 +25,7 @@ public class Car : MonoBehaviour
     [SerializeField] private DamageCounter _damageCounter;
     [SerializeField] private Visible _visible;
     [SerializeField] private Nitro _nitro;
+    [SerializeField] private CarOil _oil;
     [SerializeField] private CarPaint _paint;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
@@ -33,6 +34,7 @@ public class Car : MonoBehaviour
     private ICarInputable _input;
     private InputType _inputType;
     private Mode _mode;
+    private Vector3 _localVelocity;
     private WayPath _wayPath;
     private WheelControl[] _wheels;
     private WheelSkid[] _wheelSkids = new WheelSkid[4];
@@ -64,6 +66,8 @@ public class Car : MonoBehaviour
 
     public Nitro Nitro => _nitro;
 
+    public CarOil Oil => _oil;
+
     public Rigidbody Rigidbody => _rigidbody;
 
     public GameObject[] PrefabsSparks => _prefabsSparks;
@@ -83,6 +87,8 @@ public class Car : MonoBehaviour
     public WheelControl[] Wheels => _wheels;
 
     public WheelSkid[] WheelSkids => _wheelSkids;
+
+    public Vector3 LocalVelocity => _localVelocity;
 
     public float Speed => _speed;
 
@@ -133,6 +139,7 @@ public class Car : MonoBehaviour
         _paint.Init(this);
         _nitro.Init(this);
         _tuning.Init(this, Hub.Game);
+        _oil.Init(this);
     }
 
     public void Init(Mode mode, GameController game)
@@ -146,6 +153,7 @@ public class Car : MonoBehaviour
         _speed = Vector3.Dot(transform.forward, _rigidbody.linearVelocity); //from -Max to Max
         _speedFactor = Mathf.InverseLerp(0, Control.MaxSpeed, Mathf.Abs(Speed));      // From 0 to 1 
         FixedUpdate_CalculateSlideForce();
+        _localVelocity = transform.InverseTransformDirection(Rigidbody.linearVelocity);
     }    
 
     private void FixedUpdate_CalculateSlideForce()

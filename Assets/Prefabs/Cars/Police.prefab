@@ -8047,6 +8047,7 @@ GameObject:
   - component: {fileID: 3123870421995100251}
   - component: {fileID: 2164162522870847796}
   - component: {fileID: 8854919828548170255}
+  - component: {fileID: 8300895542385792162}
   m_Layer: 11
   m_Name: Police
   m_TagString: Car
@@ -8119,6 +8120,7 @@ MonoBehaviour:
   _damageCounter: {fileID: -7760443612287598961}
   _visible: {fileID: 6666120620835564644}
   _nitro: {fileID: 8854919828548170255}
+  _oil: {fileID: 8300895542385792162}
   _paint: {fileID: 2164162522870847796}
   _rigidbody: {fileID: 7085787564322592434}
   _prefabsSparks:
@@ -8435,6 +8437,18 @@ MonoBehaviour:
   _audioSource: {fileID: 8828836657904677260}
   _time: 1
   _multipler: 1.3
+--- !u!114 &8300895542385792162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154094227074116931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd620a6a1d2f85f44a9d366c8f5e30d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarOil
 --- !u!1 &6188593264528043108
 GameObject:
   m_ObjectHideFlags: 0

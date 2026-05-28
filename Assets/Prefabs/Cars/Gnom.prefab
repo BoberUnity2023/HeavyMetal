@@ -5806,6 +5806,7 @@ GameObject:
   - component: {fileID: -4303322087925471485}
   - component: {fileID: -3263639599032819825}
   - component: {fileID: 8848959205160165673}
+  - component: {fileID: -6560274839800775155}
   m_Layer: 11
   m_Name: Gnom
   m_TagString: Car
@@ -5880,6 +5881,7 @@ MonoBehaviour:
   _damageCounter: {fileID: 2133264978317198086}
   _visible: {fileID: 8551986998073348888}
   _nitro: {fileID: 8848959205160165673}
+  _oil: {fileID: -6560274839800775155}
   _paint: {fileID: -3263639599032819825}
   _rigidbody: {fileID: 3973057290476016625}
   _prefabsSparks:
@@ -6162,6 +6164,18 @@ MonoBehaviour:
   _audioSource: {fileID: 9189650284215711968}
   _time: 1
   _multipler: 1.3
+--- !u!114 &-6560274839800775155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136799944968247584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd620a6a1d2f85f44a9d366c8f5e30d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarOil
 --- !u!1 &2243941709484906782
 GameObject:
   m_ObjectHideFlags: 0
