@@ -109,6 +109,10 @@ public class DamageCounter : MonoBehaviour
         _car.IsCrashed = false;
         _car.Control.EngineMultiplerDamage = 1.0f;
         _damage = 0;
+
+        bool inWater = transform.position.y < -10;
+        if (inWater)
+            _car.ReturnOnRoad.MoveToNearestReturnPoint();
     }
 
     private void Emit(ParticleSystem particleSystem, bool value)

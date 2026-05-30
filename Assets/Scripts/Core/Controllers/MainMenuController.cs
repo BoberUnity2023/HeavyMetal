@@ -14,7 +14,8 @@ public class MainMenuController : SceneController
     [SerializeField] private ButtonLevel _buttonLevelPrefab;
     [SerializeField] private RectTransform _content;
     private const string _keyLocations = "Location";
-    
+    private int _selectedByGamepadLevel;
+
     private void OnEnable()
     {
         //int sceneIndex = Game != null ? Game.LastCompleteLevel : 2;
@@ -118,6 +119,8 @@ public class MainMenuController : SceneController
 
         if (levelLocation == LevelLocation.Paradize)
             PlayerPrefs.SetInt(_keyLocations, 1);
+
+        _selectedByGamepadLevel = 0;
     }
 
     public void PressScreenNext()
@@ -128,6 +131,30 @@ public class MainMenuController : SceneController
     public void PressScreenPrev()
     {
         SetScreen(LevelLocation.SmokeCity);
+    }
+
+    public void SelectLevelByGamepadNext()
+    {
+        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
+
+        _selectedByGamepadLevel++;
+        if (_selectedByGamepadLevel > buttonLevels.Length)
+            _selectedByGamepadLevel = 1;
+        
+        Button button = buttonLevels[_selectedByGamepadLevel - 1].GetComponent<Button>();
+        button.Select();
+    }
+
+    public void SelectLevelByGamepadPrev()
+    {
+        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
+
+        _selectedByGamepadLevel--;
+        if (_selectedByGamepadLevel < 1)
+            _selectedByGamepadLevel = buttonLevels.Length;
+
+        Button button = buttonLevels[_selectedByGamepadLevel - 1].GetComponent<Button>();
+        button.Select();
     }
 
     public void PressSound()
@@ -185,7 +212,8 @@ public class MainMenuController : SceneController
 
     private void SaveScrollPosition()
     {
-        PlayerPrefs.SetInt("ScrollPosition", (int)_content.anchoredPosition.y);
+        if (_content != null)//Del
+            PlayerPrefs.SetInt("ScrollPosition", (int)_content.anchoredPosition.y);
     }
 
     private void LoadScrollPosition()

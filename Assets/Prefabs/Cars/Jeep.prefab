@@ -8183,6 +8183,7 @@ MonoBehaviour:
   _rocketGun: {fileID: 9112534829010888652}
   _weaponMines: {fileID: -6768940386585234396}
   _damageCounter: {fileID: 5952033291620079489}
+  _returnOnRoad: {fileID: 2619338596475475530}
   _visible: {fileID: 8540619745159850575}
   _nitro: {fileID: 8973616920448367259}
   _oil: {fileID: -7280446931197089112}
@@ -8518,6 +8519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd620a6a1d2f85f44a9d366c8f5e30d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarOil
+  _oilDistance: 0
+  _oilDistanceCurrent: 0
 --- !u!1 &6177637341933279311
 GameObject:
   m_ObjectHideFlags: 0

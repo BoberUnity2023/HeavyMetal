@@ -49,11 +49,11 @@ public class ReturnOnRoad : MonoBehaviour
     {
         if (other.gameObject.name == "Dead")
         {
-            MoveToNearestReturnPoint();
+            _car.DamageCounter.DamageAdd(100, false);            
         }
     }
 
-    private void MoveToNearestReturnPoint()
+    public void MoveToNearestReturnPoint()
     {
         _car.Rigidbody.linearVelocity = Vector3.zero;
         _currentCollapsTime = 0;

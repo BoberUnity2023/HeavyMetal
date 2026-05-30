@@ -23,6 +23,7 @@ public class Car : MonoBehaviour
     [SerializeField] private RocketGun _rocketGun;
     [SerializeField] private WeaponMines _weaponMines;
     [SerializeField] private DamageCounter _damageCounter;
+    [SerializeField] private ReturnOnRoad _returnOnRoad;
     [SerializeField] private Visible _visible;
     [SerializeField] private Nitro _nitro;
     [SerializeField] private CarOil _oil;
@@ -61,7 +62,9 @@ public class Car : MonoBehaviour
     public WeaponMines WeaponMines => _weaponMines;
 
     public DamageCounter DamageCounter => _damageCounter; 
-    
+
+    public ReturnOnRoad ReturnOnRoad => _returnOnRoad;
+
     public CarPaint Paint => _paint;
 
     public Nitro Nitro => _nitro;

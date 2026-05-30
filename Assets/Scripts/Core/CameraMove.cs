@@ -20,6 +20,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private float _distanceFinishState;    
     [SerializeField] private float _distanceScaler;
     [SerializeField] private float _distanceGame;
+    [SerializeField] private float _minimalY;
     //[SerializeField] private float _freeDist;
     [SerializeField] private Vector3 _offsetIzometry;
     [SerializeField] private Vector3 _offsetFollow;
@@ -39,16 +40,21 @@ public class CameraMove : MonoBehaviour
         {
             //Vector3 heroToCamera = (_target.position - _hub.Hero.CameraTarget.position).normalized;
             //float dist = Mathf.Min(_distanceToTarget, _freeDist);
+            Vector3 output = Vector3.zero;
+
             if (_state == CameraState.Izometry)
-                return _target.position + _offsetIzometry;
+                output = _target.position + _offsetIzometry;
 
             if (_state == CameraState.Follow)
             {
                 float y = Mathf.Max(_cameraPosition.position.y, _target.position.y + 1);
-                return new Vector3(_cameraPosition.position.x, y, _cameraPosition.position.z); 
+                output = new Vector3(_cameraPosition.position.x, y, _cameraPosition.position.z); 
             }
 
-            return _cameraPosition.position;
+            if (output.y < _minimalY)
+                output = new Vector3(output.x, _minimalY, output.z);
+            //output = _cameraPosition.position;
+            return output;
         }
     }
 

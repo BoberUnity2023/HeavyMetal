@@ -16265,6 +16265,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputController
   _hub: {fileID: 1862994659}
   _playerInput: {fileID: 1306370074}
+  _btn0: 0
+  _btn1: 0
+  _btn2: 0
+  _btn3: 0
+  _btn4: 0
+  _btn5: 0
+  _btn6: 0
+  _btn7: 0
+  _btn8: 0
+  _btn9: 0
+  _btn10: 0
+  _btn11: 0
+  _btn12: 0
+  _btn13: 0
+  _btn14: 0
+  _btn15: 0
+  _horizontal: 0
+  _vertical: 0
+  _fire1: 0
+  _fire2: 0
 --- !u!114 &1306370074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21252,7 +21272,9 @@ MonoBehaviour:
   _windowMain: {fileID: 0}
   _hero: {fileID: 0}
   _startHand: {fileID: 0}
-  _canvasScrollContent: {fileID: 0}
+  _canvas: {fileID: 0}
+  _titles: []
+  _locations: []
   _buttonLevelPrefab: {fileID: 0}
   _content: {fileID: 0}
 --- !u!4 &1737786013
@@ -22758,6 +22780,7 @@ MonoBehaviour:
   _distanceFinishState: 0
   _distanceScaler: 0
   _distanceGame: 5
+  _minimalY: -10
   _offsetIzometry: {x: 0, y: 24, z: 24}
   _offsetFollow: {x: 4, y: 4, z: -10}
   _offsetInEyes: {x: -0.4, y: 1.58, z: 0}

@@ -32,22 +32,22 @@ public class WindowSelectCar : WindowBase
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button15))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             PressNextCar();
         }
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button14))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             PressPreviousCar();
         }
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
             if (hasCar)
             {
-                _mainMenuController.PressLoadLevel(2);
+                _mainMenuController.LoadScene(2);
             }
             else
                 PressBuy();
