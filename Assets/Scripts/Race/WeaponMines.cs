@@ -47,7 +47,7 @@ public class WeaponMines : MonoBehaviour
         if (_car.IsAI)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             TryShoot();
         }
