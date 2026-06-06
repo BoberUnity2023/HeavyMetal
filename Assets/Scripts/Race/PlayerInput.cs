@@ -83,7 +83,13 @@ public class PlayerInput : MonoBehaviour, ICarInputable
 
     private void Update_GamePad()
     {
-        Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        bool brake = Input.GetKey(KeyCode.Joystick1Button4);
+        bool force = Input.GetKey(KeyCode.Joystick1Button5);
+        float vertical = force ? 1 : Input.GetAxis("Vertical");
+        if (brake)
+            vertical = -1;        
+
+        Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), vertical);
         _deltaKeyboard = inputVector;
         _delta = inputVector;
     }
