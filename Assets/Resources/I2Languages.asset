@@ -402,6 +402,17 @@ MonoBehaviour:
       - Paradize
       Flags: 0000000000
       Languages_Touch: []
+    - Term: location_alien
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0427\u0443\u0436\u043E\u0439"
+      - Alien
+      - Alien
+      - Alien
+      - Alien
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

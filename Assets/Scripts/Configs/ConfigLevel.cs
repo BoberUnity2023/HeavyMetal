@@ -3,7 +3,8 @@ using UnityEngine;
 public enum LevelLocation
 {
     SmokeCity = 0,
-    Paradize = 1
+    Paradize = 1,
+    Alien = 2
 }
 
 [CreateAssetMenu(fileName = "Level", menuName = "Configs/ConfigLevel")]

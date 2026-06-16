@@ -83,8 +83,8 @@ public enum GroundMaterial
     Blocker = 0,
     Asphalt = 1,
     Sand = 2,
-    Grass = 3,
-    Snow = 4
+    Snow = 3,
+    Grass = 4    
 }
 
 [Serializable] public struct GroundProps

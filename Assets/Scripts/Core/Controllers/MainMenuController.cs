@@ -110,9 +110,11 @@ public class MainMenuController : SceneController
     {
         _locations[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
         _locations[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
+        _locations[2].gameObject.SetActive(levelLocation == LevelLocation.Alien);
 
         _titles[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
         _titles[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
+        _titles[2].gameObject.SetActive(levelLocation == LevelLocation.Alien);
 
         if (levelLocation == LevelLocation.SmokeCity)
             PlayerPrefs.SetInt(_keyLocations, 0);
@@ -120,17 +122,34 @@ public class MainMenuController : SceneController
         if (levelLocation == LevelLocation.Paradize)
             PlayerPrefs.SetInt(_keyLocations, 1);
 
+        if (levelLocation == LevelLocation.Alien)
+            PlayerPrefs.SetInt(_keyLocations, 2);
+
         _selectedByGamepadLevel = 0;
     }
 
     public void PressScreenNext()
     {
-        SetScreen(LevelLocation.Paradize);
+        int id = PlayerPrefs.GetInt(_keyLocations);
+        LevelLocation levelLocation = LevelLocationById(id);
+        
+        if (levelLocation == LevelLocation.Paradize)
+            SetScreen(LevelLocation.Alien);
+
+        if (levelLocation == LevelLocation.SmokeCity)
+            SetScreen(LevelLocation.Paradize);
     }
 
     public void PressScreenPrev()
     {
-        SetScreen(LevelLocation.SmokeCity);
+        int id = PlayerPrefs.GetInt(_keyLocations);
+        LevelLocation levelLocation = LevelLocationById(id);
+
+        if (levelLocation == LevelLocation.Paradize)
+            SetScreen(LevelLocation.SmokeCity);
+
+        if (levelLocation == LevelLocation.Alien)
+            SetScreen(LevelLocation.Paradize);
     }
 
     public void SelectLevelByGamepadNext()
@@ -181,6 +200,8 @@ public class MainMenuController : SceneController
                 return _locations[0];
             case LevelLocation.Paradize: 
                 return _locations[1];
+            case LevelLocation.Alien:
+                return _locations[2];
         }
         return _locations[0];
     }
@@ -228,6 +249,10 @@ public class MainMenuController : SceneController
         if (id == 0)
             return LevelLocation.SmokeCity;
 
-        return LevelLocation.Paradize;
+        if (id == 1)
+            return LevelLocation.Paradize;
+
+        else
+            return LevelLocation.Alien;
     }
 }
