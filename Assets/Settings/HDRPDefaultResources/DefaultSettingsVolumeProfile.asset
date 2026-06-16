@@ -89,6 +89,22 @@ MonoBehaviour:
   ambientProbeDimmer:
     m_OverrideState: 1
     m_Value: 0.5
+--- !u!114 &-8718439025096485431
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4ca3f87079ba246a93410400bb24c4, type: 3}
+  m_Name: ChromaKeying
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.Compositor.ChromaKeying
+  active: 1
+  activate:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-8411254284665532600
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -677,6 +693,44 @@ MonoBehaviour:
     m_Value:
       serializedVersion: 0
       m_Bits: 1
+--- !u!114 &-2324265242724430038
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a93fc1619b1174a9e2ee1094fe1496, type: 3}
+  m_Name: UnderwaterPostProcessHDRP
+  m_EditorClassIdentifier: Crest::Crest.UnderwaterPostProcessHDRP
+  active: 1
+  _version: 0
+  _enable:
+    m_OverrideState: 1
+    m_Value: 0
+  _copyOceanMaterialParamsEachFrame:
+    m_OverrideState: 1
+    m_Value: 1
+  _filterOceanData:
+    m_OverrideState: 1
+    m_Value: 13
+  _meniscus:
+    m_OverrideState: 1
+    m_Value: 1
+  _depthFogDensityFactor:
+    m_OverrideState: 1
+    m_Value: 1
+  _viewOceanMask:
+    m_OverrideState: 1
+    m_Value: 0
+  _disableOceanMask:
+    m_OverrideState: 1
+    m_Value: 0
+  _farPlaneMultiplier:
+    m_OverrideState: 1
+    m_Value: 0.68
 --- !u!114 &-1690843376316100356
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -999,6 +1053,9 @@ MonoBehaviour:
   - {fileID: 5209654830869776486}
   - {fileID: 2093145817332289070}
   - {fileID: 4787548265516041765}
+  - {fileID: 6558134762022936660}
+  - {fileID: -8718439025096485431}
+  - {fileID: -2324265242724430038}
 --- !u!114 &101753091306345740
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1107,6 +1164,19 @@ MonoBehaviour:
   includeSunInBaking:
     m_OverrideState: 1
     m_Value: 0
+  m_SkyVersion: 1
+  enableDistortion:
+    m_OverrideState: 1
+    m_Value: 0
+  procedural:
+    m_OverrideState: 1
+    m_Value: 1
+  scrollDirection:
+    m_OverrideState: 1
+    m_Value: 0
+  m_ObsoleteScrollSpeed:
+    m_OverrideState: 1
+    m_Value: 1
   hdriSky:
     m_OverrideState: 1
     m_Value: {fileID: 8900000, guid: 8253d41e6e8b11a4cbe77a4f8f82934d, type: 3}
@@ -1178,19 +1248,6 @@ MonoBehaviour:
   rectLightShadow:
     m_OverrideState: 1
     m_Value: 0
-  m_SkyVersion: 1
-  enableDistortion:
-    m_OverrideState: 1
-    m_Value: 0
-  procedural:
-    m_OverrideState: 1
-    m_Value: 1
-  scrollDirection:
-    m_OverrideState: 1
-    m_Value: 0
-  m_ObsoleteScrollSpeed:
-    m_OverrideState: 1
-    m_Value: 1
 --- !u!114 &1501199423866068322
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1250,6 +1307,7 @@ MonoBehaviour:
   m_Name: VisualEnvironment
   m_EditorClassIdentifier: 
   active: 1
+  m_Version: 1
   skyType:
     m_OverrideState: 1
     m_Value: 1
@@ -1280,7 +1338,6 @@ MonoBehaviour:
   fogType:
     m_OverrideState: 1
     m_Value: 0
-  m_Version: 1
 --- !u!114 &2093145817332289070
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1547,6 +1604,25 @@ MonoBehaviour:
   m_Name: VolumetricClouds
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.VolumetricClouds
   active: 1
+  m_Version: 3
+  localClouds:
+    m_OverrideState: 1
+    m_Value: 0
+  m_ObsoleteWindSpeed:
+    m_OverrideState: 1
+    m_Value: 1
+  m_ObsoleteOrientation:
+    m_OverrideState: 1
+    m_Value: 0
+  m_ObsoleteShapeOffsetX:
+    m_OverrideState: 1
+    m_Value: 0
+  m_ObsoleteShapeOffsetY:
+    m_OverrideState: 1
+    m_Value: 0
+  m_ObsoleteShapeOffsetZ:
+    m_OverrideState: 1
+    m_Value: 0
   enable:
     m_OverrideState: 1
     m_Value: 0
@@ -1831,25 +1907,6 @@ MonoBehaviour:
   shadowOpacityFallback:
     m_OverrideState: 1
     m_Value: 0
-  m_Version: 3
-  localClouds:
-    m_OverrideState: 1
-    m_Value: 0
-  m_ObsoleteWindSpeed:
-    m_OverrideState: 1
-    m_Value: 1
-  m_ObsoleteOrientation:
-    m_OverrideState: 1
-    m_Value: 0
-  m_ObsoleteShapeOffsetX:
-    m_OverrideState: 1
-    m_Value: 0
-  m_ObsoleteShapeOffsetY:
-    m_OverrideState: 1
-    m_Value: 0
-  m_ObsoleteShapeOffsetZ:
-    m_OverrideState: 1
-    m_Value: 0
 --- !u!114 &3412884382670445805
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2098,6 +2155,16 @@ MonoBehaviour:
   includeSunInBaking:
     m_OverrideState: 1
     m_Value: 0
+  m_SkyVersion: 3
+  m_ObsoleteEarthPreset:
+    m_OverrideState: 1
+    m_Value: 1
+  planetaryRadius:
+    m_OverrideState: 1
+    m_Value: 6378100
+  planetCenterPosition:
+    m_OverrideState: 1
+    m_Value: {x: 0, y: -6378100, z: 0}
   type:
     m_OverrideState: 1
     m_Value: 1
@@ -2188,16 +2255,6 @@ MonoBehaviour:
   horizonZenithShift:
     m_OverrideState: 1
     m_Value: 0
-  m_SkyVersion: 3
-  m_ObsoleteEarthPreset:
-    m_OverrideState: 1
-    m_Value: 1
-  planetaryRadius:
-    m_OverrideState: 1
-    m_Value: 6378100
-  planetCenterPosition:
-    m_OverrideState: 1
-    m_Value: {x: 0, y: -6378100, z: 0}
 --- !u!114 &5209654830869776486
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2402,6 +2459,19 @@ MonoBehaviour:
   proceduralSoftness:
     m_OverrideState: 1
     m_Value: 0.5
+--- !u!114 &6558134762022936660
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da907761ad48a684aa45e5dc639d9304, type: 3}
+  m_Name: AlphaInjection
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.Compositor.AlphaInjection
+  active: 1
 --- !u!114 &6664521890354127804
 MonoBehaviour:
   m_ObjectHideFlags: 3
