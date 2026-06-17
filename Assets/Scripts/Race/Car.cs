@@ -123,7 +123,7 @@ public class Car : MonoBehaviour
         if (!IsAI)
             Hub.AudioListenerMovier.Init(transform);
 
-        _wayPath = Hub.PathSelector.WayPath(id);
+        _wayPath = _hub.Level.CurrentLevelObjects.WayPath(id);
         LapsCounter.SetWayPath(_wayPath);
 
         _wheels = GetComponentsInChildren<WheelControl>();

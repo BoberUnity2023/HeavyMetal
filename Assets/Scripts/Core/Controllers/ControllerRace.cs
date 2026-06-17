@@ -5,10 +5,10 @@ using UnityEngine;
 public class ControllerRace : MonoBehaviour
 {
     [SerializeField] private Hub _hub;    
-    [SerializeField] private Transform[] _carPositions;
+    //[SerializeField] private Transform[] _carPositions;
     [SerializeField] private CameraMove _cameraMove;
-    [SerializeField] private List<Car> _enemies;
-    [SerializeField] private List<Car> _cars;
+    private List<Car> _enemies = new List<Car>();
+    private List<Car> _cars = new List<Car>();
 
     private Car _car;
     public Car Car => _car;
@@ -41,8 +41,13 @@ public class ControllerRace : MonoBehaviour
 
     private void Awake()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         _hub.Level.Init();
-        _hub.PathSelector.Init();
+        InitWays();
         CreateCars();
     }
 
@@ -53,19 +58,19 @@ public class ControllerRace : MonoBehaviour
 
     private void CreateCars()
     {
-        for (int i = 0; i < _carPositions.Length; i++)
-        {            
-            if (i < _carPositions.Length - 1)            
-                InitEnemy(i);            
-            else            
-                InitPlayer();            
+        for (int i = 0; i < _hub.Level.CurrentLevelObjects.CarPositions.Count; i++)
+        {
+            if (i < _hub.Level.CurrentLevelObjects.CarPositions.Count - 1)
+                InitEnemy(i);
+            else
+                InitPlayer();
         }
     }
 
     private void InitPlayer()
     {
-        int id = _carPositions.Length - 1;
-        Transform carPosition = _carPositions[id];        
+        int id = _hub.Level.CurrentLevelObjects.CarPositions.Count - 1;
+        Transform carPosition = _hub.Level.CurrentLevelObjects.CarPositions.Position(id);        
         Car carPrefab = _hub.Game.ConfigGame.Cars[_hub.Game.SelectedCar].Prefab;
         Car car = Instantiate(carPrefab, carPosition.position, carPosition.rotation);
         _car = car;        
@@ -76,7 +81,7 @@ public class ControllerRace : MonoBehaviour
 
     private void InitEnemy(int id)
     {        
-        Transform carPosition = _carPositions[id];
+        Transform carPosition = _hub.Level.CurrentLevelObjects.CarPositions.Position(id);
         ConfigEnemy configEnemy = _hub.Level.Config.Enemies[id];
         Car prefab = configEnemy.Car.Prefab;  
         Car car = Instantiate(prefab, carPosition.position, carPosition.rotation);
@@ -93,6 +98,14 @@ public class ControllerRace : MonoBehaviour
         _enemies.Add(car);
         _cars.Add(car);
         Debug.Log("Enemy " + prefab.gameObject.name + " created. Config: " + configEnemy.name);
+    }
+
+    private void InitWays()
+    {
+        foreach (WayPath wayPath in _hub.Level.CurrentLevelObjects.WayPaths)
+        {
+            wayPath.Init(_hub.Level.CurrentLevelObjects.Finish, _hub.Level.CurrentLevelObjects.Finish);
+        }
     }
 
     private int StarsForLevel

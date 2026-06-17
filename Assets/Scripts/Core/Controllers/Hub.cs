@@ -12,7 +12,6 @@ public class Hub : SceneController
     [SerializeField] private Joistick _joistick = null;
     [SerializeField] private WindowSettings _windowSettings;
     [SerializeField] private ResultController _resultController;
-    [SerializeField] private PathSelector _pathSelector;
     [SerializeField] private RaceStarter _raceStarter;
     [SerializeField] private AudioListenerMovier _audioListenerMovier;    
     //public GameController Game { get; set; }
@@ -40,8 +39,6 @@ public class Hub : SceneController
     public WindowSettings WindowSettings => _windowSettings;
 
     public ResultController Result => _resultController;
-
-    public PathSelector PathSelector => _pathSelector;
 
     public RaceStarter RaceStarter => _raceStarter;
 

@@ -92,6 +92,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputController
   _hub: {fileID: 5701359670598920817}
   _playerInput: {fileID: 5023327546179501806}
+  _btn0: 0
+  _btn1: 0
+  _btn2: 0
+  _btn3: 0
+  _btn4: 0
+  _btn5: 0
+  _btn6: 0
+  _btn7: 0
+  _btn8: 0
+  _btn9: 0
+  _btn10: 0
+  _btn11: 0
+  _btn12: 0
+  _btn13: 0
+  _btn14: 0
+  _btn15: 0
+  _horizontal: 0
+  _vertical: 0
+  _fire1: 0
+  _fire2: 0
 --- !u!114 &5023327546179501806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +228,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _levelKeys: []
 --- !u!114 &3732659542539295285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,11 +242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerRace
   _hub: {fileID: 5701359670598920817}
-  _carPositions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _cameraMove: {fileID: 0}
   _enemies: []
   _cars: []
@@ -282,60 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a338a4eaba410634d999e5c0ec436741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioListenerMovier
---- !u!1 &7616279374708750236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6751284788296605118}
-  - component: {fileID: 4976275705373101449}
-  m_Layer: 0
-  m_Name: PathSelector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6751284788296605118
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7616279374708750236}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2992990654716736742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4976275705373101449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7616279374708750236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21793064d67c6564fb12330a25d9bd29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PathSelector
-  _hub: {fileID: 5701359670598920817}
-  _levelPaths:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &8877809658833887363
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +331,6 @@ Transform:
   - {fileID: 3379643531122023085}
   - {fileID: 1502162971221948063}
   - {fileID: 6121298530005642538}
-  - {fileID: 6751284788296605118}
   - {fileID: 8889125307479234937}
   - {fileID: 255143302503593073}
   m_Father: {fileID: 0}
@@ -397,6 +358,6 @@ MonoBehaviour:
   _joistick: {fileID: 0}
   _windowSettings: {fileID: 0}
   _resultController: {fileID: 8023077266928492072}
-  _pathSelector: {fileID: 4976275705373101449}
+  _pathSelector: {fileID: 0}
   _raceStarter: {fileID: 8981033670872923446}
   _audioListenerMovier: {fileID: 7893341731463463367}

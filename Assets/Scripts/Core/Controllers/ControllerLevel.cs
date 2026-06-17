@@ -2,6 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class LevelKey
+{
+    [SerializeField] private string _key;
+    [SerializeField] private LevelObjects _levelObjects;
+
+    public string Key => _key;
+    public LevelObjects LevelObjects => _levelObjects;
+}
+
 public enum GameType
 {
     Podnos,
@@ -15,6 +26,8 @@ public class ControllerLevel : MonoBehaviour
     [SerializeField] private GameObject _screenFromShadowEffect;  
     [SerializeField] private ControllerRace _race;
     [SerializeField] private GameObject[] _tracks;
+    [SerializeField] private LevelKey[] _levelKeys;
+    private LevelObjects _currentLevelObjects;
     private float _timeStart;
 
     public Hub Hub => _hub;
@@ -23,7 +36,7 @@ public class ControllerLevel : MonoBehaviour
 
     public ControllerRace Race => _race;
 
-    public GameObject[] Tracks => _tracks;
+    public LevelObjects CurrentLevelObjects => _currentLevelObjects;
 
     public bool IsComplete { get; private set; }
 
@@ -68,6 +81,7 @@ public class ControllerLevel : MonoBehaviour
             //_hub.Analitycs.SendLevelStartFirst((int)_timeStart);
         }
 
+        SetLevelObjectsByKey();
         SetTrack();
     }
 
@@ -165,6 +179,18 @@ public class ControllerLevel : MonoBehaviour
         //RenderSettings.ambientLight = config.AmbientColor;
         //RenderSettings.fogColor = config.FogColor;
         //RenderSettings.fogDensity = config.FogDensity;
-    }    
+    }
+
+    private void SetLevelObjectsByKey()
+    {
+        foreach (LevelKey levelKey in _levelKeys)
+        {
+            bool isActive = levelKey.Key == Config.Key;
+            levelKey.LevelObjects.gameObject.SetActive(isActive);
+
+            if (isActive)
+                _currentLevelObjects = levelKey.LevelObjects;
+        }
+    }
 }
         

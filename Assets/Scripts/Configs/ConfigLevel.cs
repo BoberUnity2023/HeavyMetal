@@ -16,6 +16,8 @@ public class ConfigLevel : ScriptableObject
 
     [SerializeField] private int _sceneBuildIndex;
 
+    [SerializeField] private string _key;
+
     [SerializeField] private int _track;
 
     [SerializeField] private int _laps;
@@ -31,6 +33,8 @@ public class ConfigLevel : ScriptableObject
     public Sprite Icon => _icon;
 
     public int SceneBuildIndex => _sceneBuildIndex;
+
+    public string Key => _key;
 
     public int Track => _track; 
 
