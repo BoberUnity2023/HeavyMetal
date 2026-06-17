@@ -44,7 +44,9 @@ public class LapsCounter : MonoBehaviour
     private void FixedUpdate()
     {
         FixedUpdate_CalculateRelativePointPosition();
-        FixedUpdate_CheckPoint();
+        FixedUpdate_CheckPoint(_targetPoint);
+        FixedUpdate_CheckPoint(_targetPoint + 1);
+        FixedUpdate_CheckPoint(_targetPoint + 2);
         //_p = Points;
     }
 
@@ -81,19 +83,16 @@ public class LapsCounter : MonoBehaviour
         }
     }    
 
-    private void FixedUpdate_CheckPoint()
+    private void FixedUpdate_CheckPoint(int id)
     {
+        if (id >= _wayPath.PointsCount)
+            return;
+
         float checkDistance = _car.IsAI ? 20 : 25;
         
-        if (_relativePointPosition.magnitude < checkDistance)
+        if (DistanceToPint(id) < checkDistance)
         {            
-            _currentPoint = Mathf.Min(_currentPoint + 1, _wayPath.PointsCount - 1);
-
-            //if (resultController != null && resultController.Results.Length > 0)
-            //{
-            //    resultController.Results[_currentPoint + (Laps - 1) * waypoint.Waypoints.Length] += 1;
-            //    resultController.CheckResults(); //
-            //}
+            _currentPoint = Mathf.Min(id + 1, _wayPath.PointsCount - 1);            
 
             bool isPointLast = _currentPoint == _wayPath.PointsCount - 1;
             if (isPointLast)
@@ -113,5 +112,11 @@ public class LapsCounter : MonoBehaviour
         Transform point = _wayPath.Points[_targetPoint].transform;
         Vector3 _pointPosition = new Vector3(point.position.x, transform.position.y, point.position.z);
         _relativePointPosition = transform.InverseTransformPoint(_pointPosition);
+    }
+
+    private float DistanceToPint(int id)
+    {
+        Transform point = _wayPath.Points[id].transform;
+        return Vector3.Distance(transform.position, point.position);
     }
 }
