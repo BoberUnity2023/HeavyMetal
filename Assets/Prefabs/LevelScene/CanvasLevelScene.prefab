@@ -5610,6 +5610,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2509951165762445772}
+  - {fileID: 5533206823056708640}
   - {fileID: 5137067233325536676}
   - {fileID: 1889366147270858486}
   - {fileID: 5959769087726211278}
@@ -5619,7 +5620,6 @@ RectTransform:
   - {fileID: 4854662509651871496}
   - {fileID: 6702038584299143798}
   - {fileID: 4678070272184708792}
-  - {fileID: 5533206823056708640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7078,6 +7078,7 @@ MonoBehaviour:
   _hero: {fileID: 0}
   _startHand: {fileID: 0}
   _canvas: {fileID: 0}
+  _titles: []
   _locations: []
   _buttonLevelPrefab: {fileID: 0}
   _content: {fileID: 0}
