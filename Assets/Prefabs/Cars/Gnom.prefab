@@ -6180,9 +6180,12 @@ MonoBehaviour:
   - {fileID: 1412519034842512985}
   - {fileID: 5787968046213752211}
   - {fileID: 1464514209149001497}
-  _defaultTires: []
-  _tires:
-  - {fileID: 0}
+  _tireArrays:
+  - _tires:
+    - {fileID: 8823887755650536329}
+    - {fileID: 2092968073197912911}
+    - {fileID: 1069395026868195242}
+    - {fileID: 5513355670732161882}
 --- !u!54 &3973057290476016625
 Rigidbody:
   m_ObjectHideFlags: 0

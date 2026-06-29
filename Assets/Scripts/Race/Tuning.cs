@@ -1,13 +1,19 @@
+using System;
 using UnityEngine;
+
+[Serializable] public class TiresArray
+{ 
+    [SerializeField] private GameObject[] _tires;
+    public GameObject[] Tires => _tires;
+}
 
 public class Tuning : MonoBehaviour
 {
     [SerializeField] private GameObject[] _engines;
     [SerializeField] private GameObject[] _shields;
     [SerializeField] private GameObject _defaultWeapon;
-    [SerializeField] private GameObject[] _weapons;
-    [SerializeField] private GameObject[] _defaultTires;
-    [SerializeField] private GameObject[] _tires;
+    [SerializeField] private GameObject[] _weapons;    
+    [SerializeField] private TiresArray[] _tireArrays;
     private Car _car;
     private GameController _game;
 
@@ -63,9 +69,19 @@ public class Tuning : MonoBehaviour
         {
             for (int i = 0; i < _car.WheelSkids.Length; i++)
             {
-                _car.WheelSkids[i].TuningFactor = 1 + tires * 0.1f;
+                _car.WheelSkids[i].TuningFactor = 1 + tires * 0.1f;               
             }
-        }      
+        }
+
+        for (int i = 0; i < _tireArrays.Length; i++)
+        {
+            bool isActive = tires == i;
+            
+            foreach (GameObject tire in _tireArrays[i].Tires)
+            {
+                tire.SetActive(isActive);
+            }
+        }
     }
 
     public void SetWeapons(int weapons)
@@ -105,7 +121,7 @@ public class Tuning : MonoBehaviour
             Debug.LogError("No Equal Settings Car!" + carType + "  Weapon: Prefab: " + _weapons.Length + "/ Config: " + weaponsMax);
 
         int tiresMax = configCar.Tuning.Tires.CountMax;
-        if (_tires.Length != tiresMax)
-            Debug.LogError("No Equal Settings Car!" + carType + "  Tires: Prefab: " + _tires.Length + "/ Config: " + tiresMax);
+        if (_tireArrays.Length != tiresMax)
+            Debug.LogError("No Equal Settings Car!" + carType + "  Tires: Prefab: " + _tireArrays.Length + "/ Config: " + tiresMax);
     }
 }

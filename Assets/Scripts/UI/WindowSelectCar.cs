@@ -182,7 +182,7 @@ public class WindowSelectCar : WindowBase
         _barShields.Set(value, price);
 
         current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires);
-        max = configCar.Tuning.Tires.CountMax;        
+        max = configCar.Tuning.Tires.CountMax - 1;        
         value = (float)current / max;
         price = configCar.Tuning.Tires.Price;
         _barTires.Set(value, price);
