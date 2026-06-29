@@ -288,7 +288,7 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _mark_width: 0.3
+  _mark_width: 0.4
   _groundMaterial: 0
   _groundMaterialID: 0
 --- !u!1 &1192208725952705973
@@ -3055,7 +3055,7 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _mark_width: 0.3
+  _mark_width: 0.4
   _groundMaterial: 0
   _groundMaterialID: 0
 --- !u!1 &4694975528522067472
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _mark_width: 0.3
+  _mark_width: 0.4
   _groundMaterial: 0
   _groundMaterialID: 0
 --- !u!1 &4820851445765918321
@@ -3638,7 +3638,7 @@ MonoBehaviour:
   _brakeFadeSpeed: 40
   _forceFadeStartSpeed: 7
   _forceFadeEndSpeed: 12
-  _mark_width: 0.3
+  _mark_width: 0.4
   _groundMaterial: 0
   _groundMaterialID: 0
 --- !u!1 &5033800190468027935
