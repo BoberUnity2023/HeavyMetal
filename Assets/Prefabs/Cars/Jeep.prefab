@@ -9413,6 +9413,7 @@ MonoBehaviour:
   _audioSource: {fileID: 7990885263025497659}
   _time: 1
   _multipler: 1.3
+  _fullTime: 2
 --- !u!114 &-7280446931197089112
 MonoBehaviour:
   m_ObjectHideFlags: 0

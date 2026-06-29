@@ -84,7 +84,7 @@ public class PlayerInput : MonoBehaviour, ICarInputable
         Update_GamePad();
         //Update_KeyboardArrowcControl();//TODO: REturn
         //Update_JoystickControl();
-        //Update_Nitro();
+        Update_Nitro();
         _gamePause.Update_CkeckInput();
     }
 
@@ -153,12 +153,14 @@ public class PlayerInput : MonoBehaviour, ICarInputable
 
     private void Update_Nitro()
     {
-        if (_hub.Level.Race.Car.Nitro.IsOn)
-            return;
-
-        if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
-            _hub.Level.Race.Car.Nitro.On();
+            PointerDownNitro();
+        }
+
+        if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.Joystick1Button5))
+        {
+            PointerUpNitro();
         }
     }
 
@@ -210,5 +212,15 @@ public class PlayerInput : MonoBehaviour, ICarInputable
     public void PointerUpHandbrake()
     {
         _isPressedHandbrake = false;
+    }
+
+    public void PointerDownNitro()
+    {
+        _hub.Level.Race.Car.Nitro.OnManual();
+    }
+
+    public void PointerUpNitro()
+    {
+        _hub.Level.Race.Car.Nitro.Off();
     }
 }
