@@ -3,6 +3,7 @@ using UnityEngine;
 public class WheelControl : MonoBehaviour
 {
     [SerializeField] private Transform _wheelModel;
+    [SerializeField] private Transform _wheelBody;
     private WheelCollider _wheelCollider;    
     private MeshCollider _modelMeshCollider;
 
@@ -28,7 +29,18 @@ public class WheelControl : MonoBehaviour
         WheelCollider.GetWorldPose(out position, out rotation);
         _wheelModel.transform.position = position;
         _wheelModel.transform.rotation = rotation;
-    } 
+    }
+
+    public void DamageRotationSet()
+    {
+        float rnd = Random.Range(0, 10);
+        _wheelBody.localRotation = Quaternion.Euler(0, rnd, 0);
+    }
+
+    public void DamageRotationReset()
+    {
+        _wheelBody.localRotation = Quaternion.identity;
+    }
 
     public bool IsAttached
     {

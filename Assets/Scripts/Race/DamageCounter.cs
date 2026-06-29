@@ -58,6 +58,11 @@ public class DamageCounter : MonoBehaviour
         _car.Control.EngineMultiplerDamage = 0.85f;
         if (fromPlayer)
             _car.Hub.Game.Saves.Coins += _rewards[0];
+
+        foreach (WheelControl wheel in _car.Wheels)
+        {
+            wheel.DamageRotationSet();
+        }
     }
 
     private void SecondCrash(bool fromPlayer)
@@ -105,7 +110,12 @@ public class DamageCounter : MonoBehaviour
         {            
             WheelAttach(_car.Wheels[i], i);
         }
-        
+
+        foreach (WheelControl wheel in _car.Wheels)
+        {
+            wheel.DamageRotationReset();
+        }
+
         _car.IsCrashed = false;
         _car.Control.EngineMultiplerDamage = 1.0f;
         _damage = 0;
