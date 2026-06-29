@@ -33,7 +33,7 @@ MonoBehaviour:
       Price: 3000
     _tires:
       CountBought: 0
-      CountMax: 3
+      CountMax: 4
       Power: 1
       Price: 1800
     _weapon:
