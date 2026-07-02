@@ -1,11 +1,20 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StopLights : MonoBehaviour
-{
-    [SerializeField] private Car _car;
+{    
     [SerializeField] private Light[] _lights;
     [SerializeField] private float _intensityMin;
     [SerializeField] private float _intensityMax;
+    private Car _car;
+
+    public void Init(Car car)
+    {
+        _car = car;
+
+        if (_car.Mode == Mode.Track)
+            enabled = true;
+    }
 
     private void Update()
     {

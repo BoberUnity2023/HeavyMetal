@@ -7,6 +7,12 @@ public class SteeringWheel : MonoBehaviour
 
     void Update()
     {
+        if (_car.Mode == Mode.Garage)
+        {
+            enabled = false;
+            return;
+        }
+
         Update_AnimationsTurn();
     }
 

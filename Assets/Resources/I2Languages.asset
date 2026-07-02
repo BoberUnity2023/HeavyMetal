@@ -413,6 +413,28 @@ MonoBehaviour:
       - Alien
       Flags: 0000000000
       Languages_Touch: []
+    - Term: pause
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0430\u0443\u0437\u0430"
+      - Pause
+      - Pause
+      - Pause
+      - Pause
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: quit
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u044B\u0445\u043E\u0434"
+      - Quit
+      - Quit
+      - Quit
+      - Quit
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

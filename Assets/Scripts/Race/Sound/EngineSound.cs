@@ -1,9 +1,7 @@
-using DG.Tweening;
 using UnityEngine;
 
-public class EngineSound : MonoBehaviour
-{
-    [SerializeField] private Car _car;
+public class EngineSound : VolumeSound
+{    
     [SerializeField] private AudioSource _audioSource;
     [Range(0, 1)][SerializeField] private float _scale;
 

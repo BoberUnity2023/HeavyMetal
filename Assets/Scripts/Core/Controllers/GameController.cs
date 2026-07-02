@@ -1,7 +1,4 @@
-using JetBrains.Annotations;
 using System;
-using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -39,16 +36,37 @@ public enum GameLanguage
     Russian
 }
 
-[Serializable] public class CarColor
+public enum GroundMaterial
+{  
+    Blocker = 0,
+    Asphalt = 1,
+    Sand = 2,
+    Snow = 3,
+    Grass = 4    
+}
+
+[Serializable] public struct GroundProps
+{
+    public GroundMaterial GroundMaterial;
+    public PhysicsMaterial PhysicMaterial;
+    public Color Color;
+    public ParticleSystem PrefabParticles;
+    public int RateOverTimeMax;
+    public float Friction;
+}
+
+[Serializable]
+public class CarColor
 {
     [SerializeField] private Color _color;
-    [SerializeField] private Material _material;    
+    [SerializeField] private Material _material;
 
     public Color Color => _color;
     public Material Material => _material;
 }
 
-[Serializable] public class CarTuning
+[Serializable]
+public class CarTuning
 {
     [SerializeField] private TuningCategory _engine;
     [SerializeField] private TuningCategory _shields;
@@ -70,31 +88,13 @@ public enum GameLanguage
     public CarColor[] CarColors => _carColors;
 }
 
-[Serializable] public class TuningCategory
+[Serializable]
+public class TuningCategory
 {
     [HideInInspector] public int CountBought;
     public int CountMax;
     public float Power;
     public int Price;
-}
-
-public enum GroundMaterial
-{  
-    Blocker = 0,
-    Asphalt = 1,
-    Sand = 2,
-    Snow = 3,
-    Grass = 4    
-}
-
-[Serializable] public struct GroundProps
-{
-    public GroundMaterial GroundMaterial;
-    public PhysicsMaterial PhysicMaterial;
-    public Color Color;
-    public ParticleSystem PrefabParticles;
-    public int RateOverTimeMax;
-    public float Friction;
 }
 
 public class GameController : MonoBehaviour
