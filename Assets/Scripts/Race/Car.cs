@@ -28,6 +28,9 @@ public class Car : MonoBehaviour
     [SerializeField] private Nitro _nitro;
     [SerializeField] private CarOil _oil;
     [SerializeField] private CarPaint _paint;
+    [SerializeField] private SkidSound _skidSound;
+    [SerializeField] private EngineSound _engineSound;
+    [SerializeField] private StopLights _stopLights;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
     private Transform _podnosPosition;
@@ -116,6 +119,7 @@ public class Car : MonoBehaviour
         _hub = hub;
         _inputType = inputType; 
         _mode = mode;
+        enabled = true;
 
         bool _isAI = InputType == InputType.AI;
         _input = _isAI ? AIInput : _hub.Input.PlayerInput;
@@ -141,6 +145,9 @@ public class Car : MonoBehaviour
         _damageCounter.Init(this);
         _paint.Init(this);
         _nitro.Init(this);
+        _skidSound.Init(this);
+        _engineSound.Init(this);
+        _stopLights.Init(this);
         _tuning.Init(this, Hub.Game);
         _oil.Init(this);
     }
@@ -148,6 +155,19 @@ public class Car : MonoBehaviour
     public void Init(Mode mode, GameController game)
     {
         _mode = mode;
+        if (_mode == Mode.Garage)
+        {
+            Rigidbody.isKinematic = true;
+
+            SetLightByGarage();
+
+            _wheels = GetComponentsInChildren<WheelControl>();
+            foreach (WheelControl wheel in Wheels)
+            {
+                wheel.enabled = false;
+            }
+        }
+
         Tuning.Init(this, game);
     }
 
@@ -171,6 +191,16 @@ public class Car : MonoBehaviour
             force *= Speed;
 
         _slideForce = force /= 4;
+    }
+
+    private void SetLightByGarage()
+    {
+        Light[] lights = GetComponentsInChildren<Light>();
+        foreach (Light light in lights)
+        {
+            if (light.type == LightType.Spot || light.type == LightType.Point)
+                light.range = 0.15f;
+        }
     }
 
     public int Place

@@ -40,7 +40,13 @@ public class WheelSkid : MonoBehaviour
     public bool IsGrounded => _isGrounded;
 
     protected void Start() 
-    {		
+    {
+        if (_car.Mode == Mode.Garage)
+        {
+            enabled = false;
+            return;
+        }
+
         _wheelControl = GetComponent<WheelControl>();
         _wheelCollider = _wheelControl.WheelCollider;
         _lastFixedUpdateTime = Time.time;

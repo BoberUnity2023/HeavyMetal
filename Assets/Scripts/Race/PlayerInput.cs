@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour, ICarInputable
 {
-    [SerializeField] private Hub _hub;
-    private GamePause _gamePause;
+    [SerializeField] private Hub _hub;    
 
     private Vector2 _delta;
     private Vector2 _deltaKeyboard;
@@ -72,20 +71,14 @@ public class PlayerInput : MonoBehaviour, ICarInputable
         }
     }
 
-    public bool IsNitro => _hub.Level.Race.Car.Nitro.IsOn;
-
-    private void Start()
-    {
-        _gamePause = new GamePause();
-    }
+    public bool IsNitro => _hub.Level.Race.Car.Nitro.IsOn;    
 
     private void Update()
     {
         Update_GamePad();
         //Update_KeyboardArrowcControl();//TODO: REturn
         //Update_JoystickControl();
-        Update_Nitro();
-        _gamePause.Update_CkeckInput();
+        Update_Nitro();        
     }
 
     private void Update_GamePad()

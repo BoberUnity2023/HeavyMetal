@@ -19,6 +19,9 @@ public class CarAI : MonoBehaviour, ICarInputable
     public void Init(Car car)
     {
         _car = car;
+
+        if (_car.Mode == Mode.Track)
+            enabled = true;
     }
 
     public void FixedUpdate()

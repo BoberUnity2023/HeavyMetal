@@ -5,28 +5,28 @@ public class Garage : MonoBehaviour
     [SerializeField] private SceneController _sceneController;
     [SerializeField] private Car[] _cars = new Car[4];
     [SerializeField] private WindowSelectCar _windowSelectCar;
+    [SerializeField] private Transform _carPosition;
     private Car _currentCar;
 
     public SceneController SceneController => _sceneController;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
 
-    public Car CurrentCar => _currentCar;
-
-    private void Awake()
-    {  
-        foreach (Car car in _cars)
-        {
-            car.enabled = false;            
-        }
-    }
+    public Car CurrentCar => _currentCar;    
 
     private void Start()
     {
-        ShowCar(_sceneController.Game.SelectedCar);
-
-        foreach (Car car in _cars)
+        for (int i = 0; i < _sceneController.Game.ConfigGame.Cars.Length; i++)
         {
-            car.Init(Mode.Garage, _sceneController.Game);            
+            Car carPrefab = _sceneController.Game.ConfigGame.Cars[i].Prefab;
+            _cars[i] = Instantiate(carPrefab, _carPosition.position, _carPosition.rotation, _carPosition);
+            _cars[i].Init(Mode.Garage, _sceneController.Game);
+            bool isSeleced = i == _sceneController.Game.SelectedCar;
+            _cars[i].gameObject.SetActive(isSeleced);
+            if (isSeleced)
+            {                
+                _currentCar = _cars[_sceneController.Game.SelectedCar];
+            }
+            //ShowCar(_sceneController.Game.SelectedCar);
         }
     }
 
