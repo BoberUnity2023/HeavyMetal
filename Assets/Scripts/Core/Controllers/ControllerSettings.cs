@@ -64,11 +64,11 @@ public class ControllerSettings : MonoBehaviour
 
     private void SetVolume()
     {
-        if (_volume == null)
-            return;
+        //if (_volume == null)
+        //    return;
 
-        int level = PlayerPrefs.GetInt("QualityLevel", 2);
-        _volume.gameObject.SetActive(level > 0);        
+        //int level = PlayerPrefs.GetInt("QualityLevel", 2);
+        //_volume.gameObject.SetActive(level > 0);        
     }
 
 }
