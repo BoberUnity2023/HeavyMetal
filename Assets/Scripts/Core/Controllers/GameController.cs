@@ -73,6 +73,7 @@ public class CarTuning
     [SerializeField] private TuningCategory _tires;
     [SerializeField] private TuningCategory _weapon;
     [SerializeField] private TuningCategory _nitro;
+    [SerializeField] private TuningCategory _shield;
     [SerializeField] private CarColor[] _carColors;
 
     public TuningCategory Engine => _engine;
@@ -84,6 +85,8 @@ public class CarTuning
     public TuningCategory Weapon => _weapon;
 
     public TuningCategory Nitro => _nitro;
+
+    public TuningCategory Shield => _shield;
 
     public CarColor[] CarColors => _carColors;
 }
@@ -312,9 +315,16 @@ public class GameController : MonoBehaviour
                 SceneLoader.LoadScene(1);
         }
 
+        if (scene.buildIndex == 1)
+        {
+            Garage garage = FindFirstObjectByType<Garage>();
+            bool fromLevel = _previousScene >= 2;
+            garage.Init(this, fromLevel);
+        }
+
         if (scene.buildIndex == 2)
         {
-            MainMenuController mainMenuController = FindObjectOfType<MainMenuController>();
+            MainMenuController mainMenuController = FindFirstObjectByType<MainMenuController>();
             bool fromLevel = _previousScene >= 2;
             mainMenuController.Init(this, fromLevel);
             Settings.SetGrafics();

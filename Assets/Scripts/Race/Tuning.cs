@@ -14,6 +14,7 @@ public class Tuning : MonoBehaviour
     [SerializeField] private GameObject _defaultWeapon;
     [SerializeField] private GameObject[] _weapons;    
     [SerializeField] private TiresArray[] _tireArrays;
+    [SerializeField] private GameObject[] _shield;
     private Car _car;
     private GameController _game;
 
@@ -32,12 +33,14 @@ public class Tuning : MonoBehaviour
         int tires = _game.Saves.GetTuning(_car.CarType, TuningType.Tires);
         int weapons = _game.Saves.GetTuning(_car.CarType, TuningType.Weapons);
         int nitro = _game.Saves.GetTuning(_car.CarType, TuningType.Nitro);
+        int shield = _game.Saves.GetTuning(_car.CarType, TuningType.Shield);
 
         SetEngine(engine);
         SetShields(shields);
         SetTires(tires);
         SetWeapons(weapons);
         SetNitro(nitro);
+        SetShield(shield);
     }
 
     public void SetEngine(int engine)
@@ -104,6 +107,11 @@ public class Tuning : MonoBehaviour
         _car.Nitro.AddTuningTime(time);
     }
 
+    public void SetShield(int shields)
+    {
+        //TODO
+    }
+
     private void CheckByConfig()
     {
         string carType = _car.CarType.ToString();
@@ -123,5 +131,10 @@ public class Tuning : MonoBehaviour
         int tiresMax = configCar.Tuning.Tires.CountMax;
         if (_tireArrays.Length != tiresMax)
             Debug.LogError("No Equal Settings Car!" + carType + "  Tires: Prefab: " + _tireArrays.Length + "/ Config: " + tiresMax);
+
+        int shieldMax = configCar.Tuning.Shield.CountMax;
+        if (_shield.Length != shieldMax)
+            Debug.LogError("No Equal Settings Car!:" + carType + " Shield: Prefab: " + _shield.Length + "/ Config: " + shieldMax);
+
     }
 }

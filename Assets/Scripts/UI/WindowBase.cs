@@ -9,7 +9,7 @@ public class WindowBase : MonoBehaviour
         _window.SetActive(true);
     }
 
-    public virtual void hide()
+    public virtual void Hide()
     {
         _window.SetActive(false);
     }

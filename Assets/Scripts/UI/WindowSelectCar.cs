@@ -14,6 +14,7 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private Bar _barTires;
     [SerializeField] private Bar _barWeapon;
     [SerializeField] private Bar _barNitro;
+    [SerializeField] private Bar _barShield;
     [SerializeField] private GameObject _lock;
     private GameController _game;    
 
@@ -25,6 +26,7 @@ public class WindowSelectCar : WindowBase
         _barTires.Init(_sceneController);
         _barWeapon.Init(_sceneController);
         _barNitro.Init(_sceneController);
+        _barShield.Init(_sceneController);
         _colorPanel.Init(_sceneController, _garage);
 
         SetButtonsByCar();
@@ -130,6 +132,14 @@ public class WindowSelectCar : WindowBase
         TryBuyTuning(TuningType.Nitro, price, max);
     }
 
+    public void PressBuyTuningShield()
+    {
+        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
+        int price = configCar.Tuning.Shield.Price;
+        int max = configCar.Tuning.Shield.CountMax;
+        TryBuyTuning(TuningType.Shield, price, max);
+    }
+
     public void TryBuyTuning(TuningType tuningType, int price, int max)
     {        
         int current = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
@@ -198,5 +208,11 @@ public class WindowSelectCar : WindowBase
         value = (float)current / max;
         price = configCar.Tuning.Nitro.Price;
         _barNitro.Set(value, price);
+
+        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shield);
+        max = configCar.Tuning.Shield.CountMax;
+        value = (float)current / max;
+        price = configCar.Tuning.Shield.Price;
+        _barShield.Set(value, price);
     }
 }

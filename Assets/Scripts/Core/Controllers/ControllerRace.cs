@@ -91,6 +91,7 @@ public class ControllerRace : MonoBehaviour
         car.Tuning.SetTires(configEnemy.TuningTires);
         car.Tuning.SetWeapons(configEnemy.TuningWeapon);
         car.Tuning.SetNitro(configEnemy.TuningNitro);
+        car.Tuning.SetShield(configEnemy.TuningShield);
         ConfigCar configCar = configEnemy.Car;
         Material material = configCar.Tuning.CarColors[configEnemy.TuningColor].Material;
         car.Paint.SetMaterial(material);

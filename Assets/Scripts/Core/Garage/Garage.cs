@@ -3,19 +3,48 @@ using UnityEngine;
 public class Garage : MonoBehaviour
 {
     [SerializeField] private SceneController _sceneController;
-    [SerializeField] private Car[] _cars = new Car[4];
+    [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private WindowSelectCar _windowSelectCar;
+    [SerializeField] private GarageSettingsMenu _windowSettings;
     [SerializeField] private Transform _carPosition;
+    private Car[] _cars;
     private Car _currentCar;
 
     public SceneController SceneController => _sceneController;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
+    public GarageSettingsMenu WindowSettings => _windowSettings;
 
     public Car CurrentCar => _currentCar;    
 
     private void Start()
     {
-        for (int i = 0; i < _sceneController.Game.ConfigGame.Cars.Length; i++)
+        //CreateCars();        
+    }
+
+    public void Init(GameController game, bool fromLevel)
+    {
+        if (fromLevel)
+        { 
+            _mainMenu.Hide();
+            _windowSelectCar.Show();
+            CreateCars();
+        }
+        else
+            _windowSelectCar.Hide();
+    }
+
+    public void PressGame()
+    {
+        CreateCars();
+        WindowSelectCar.Show();
+    }
+
+    private void CreateCars()
+    {
+        int count = _sceneController.Game.ConfigGame.Cars.Length;
+        _cars = new Car[count];
+
+        for (int i = 0; i < count; i++)
         {
             Car carPrefab = _sceneController.Game.ConfigGame.Cars[i].Prefab;
             _cars[i] = Instantiate(carPrefab, _carPosition.position, _carPosition.rotation, _carPosition);
@@ -23,10 +52,9 @@ public class Garage : MonoBehaviour
             bool isSeleced = i == _sceneController.Game.SelectedCar;
             _cars[i].gameObject.SetActive(isSeleced);
             if (isSeleced)
-            {                
+            {
                 _currentCar = _cars[_sceneController.Game.SelectedCar];
             }
-            //ShowCar(_sceneController.Game.SelectedCar);
         }
     }
 

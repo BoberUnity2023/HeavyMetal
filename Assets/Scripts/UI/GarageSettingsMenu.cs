@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GarageSettingsMenu : MonoBehaviour
+public class GarageSettingsMenu : WindowBase
 {
     [SerializeField] private SceneController _sceneController;
     [SerializeField] private Slider _sliderMusicVolume;
@@ -33,5 +33,10 @@ public class GarageSettingsMenu : MonoBehaviour
         PlayerPrefs.Save();
 
         _sceneController.Game.Settings.SetGrafics();
+    }
+
+    public void PressClose()
+    {
+        Hide();
     }
 }

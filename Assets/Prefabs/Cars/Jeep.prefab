@@ -8875,7 +8875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6526192108085764677}
   m_Layer: 11
-  m_Name: Shield
+  m_Name: Shields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9050,6 +9050,7 @@ Transform:
   - {fileID: 7929538890263172464}
   - {fileID: 3610367723711150726}
   - {fileID: 2619412872182476508}
+  - {fileID: 1288436788842937271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7085787564322592434
@@ -9233,6 +9234,8 @@ MonoBehaviour:
     - {fileID: 4771671158878213060}
     - {fileID: 7081419496033292318}
     - {fileID: 6376279222187934787}
+  _shield:
+  - {fileID: 6451863659422930598}
 --- !u!114 &1228678545467683298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14444,6 +14447,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6451863659422930598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1288436788842937271}
+  m_Layer: 0
+  m_Name: Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1288436788842937271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451863659422930598}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1445235045075204917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6567251793203411153
 GameObject:
   m_ObjectHideFlags: 0

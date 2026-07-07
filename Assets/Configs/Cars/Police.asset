@@ -46,6 +46,11 @@ MonoBehaviour:
       CountMax: 5
       Power: 0.2
       Price: 2900
+    _shield:
+      CountBought: 0
+      CountMax: 1
+      Power: 1
+      Price: 50000
     _carColors:
     - _color: {r: 0, g: 0.2509804, b: 0.8392157, a: 1}
       _material: {fileID: 2100000, guid: d19d8485af2884e4081364fb3d8cec8e, type: 2}

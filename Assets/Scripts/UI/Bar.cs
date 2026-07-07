@@ -10,7 +10,8 @@ public enum TuningType
     Shields,
     Tires,
     Weapons,
-    Nitro
+    Nitro,
+    Shield
 }
 
 public class Bar : MonoBehaviour
@@ -63,6 +64,9 @@ public class Bar : MonoBehaviour
 
             if (_type == TuningType.Nitro)
                 isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Nitro) == _configCar.Tuning.Nitro.CountMax;
+
+            if (_type == TuningType.Shield)
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shield) == _configCar.Tuning.Shield.CountMax;
 
             return !isMax;
         }
