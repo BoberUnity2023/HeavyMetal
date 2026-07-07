@@ -3129,6 +3129,10 @@ PrefabInstance:
       value: 28000
       objectReference: {fileID: 0}
     - target: {fileID: 927387833580175420, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1299
+      objectReference: {fileID: 0}
+    - target: {fileID: 927387833580175420, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.39
       objectReference: {fileID: 0}
@@ -3893,6 +3897,10 @@ PrefabInstance:
     - target: {fileID: 4869091219250718745, guid: 524f8e9f064b24e468e47874bb00f3f9, type: 3}
       propertyPath: m_Name
       value: Sky
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869091219250718745, guid: 524f8e9f064b24e468e47874bb00f3f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5249415982662415011, guid: 524f8e9f064b24e468e47874bb00f3f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9908,6 +9916,10 @@ PrefabInstance:
       value: 28000
       objectReference: {fileID: 0}
     - target: {fileID: 927387833580175420, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1798
+      objectReference: {fileID: 0}
+    - target: {fileID: 927387833580175420, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
       objectReference: {fileID: 0}
@@ -12818,6 +12830,10 @@ PrefabInstance:
     - target: {fileID: 701729987792714655, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
       propertyPath: _speed
       value: 28000
+      objectReference: {fileID: 0}
+    - target: {fileID: 927387833580175420, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2204
       objectReference: {fileID: 0}
     - target: {fileID: 927387833580175420, guid: 0e7376b9abd66fb429c1b1d7aa51341f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69432,7 +69448,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 286327fea15e9d143823a8d4c236e19a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: f04457073ac151f4a804c5c4f9759615, type: 2}
 --- !u!1001 &7090515422011937061
 PrefabInstance:
   m_ObjectHideFlags: 0

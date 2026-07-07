@@ -62504,6 +62504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky
       objectReference: {fileID: 0}
+    - target: {fileID: 4869091219250718745, guid: 524f8e9f064b24e468e47874bb00f3f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5249415982662415011, guid: 524f8e9f064b24e468e47874bb00f3f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -64785,7 +64789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6578690841220330140, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6861650887781503525, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: mLocalizeTarget
@@ -64912,7 +64916,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 6b4e0cbc93e73f440af3fe998949dbfe, type: 2}
+  sharedProfile: {fileID: 11400000, guid: f04457073ac151f4a804c5c4f9759615, type: 2}
 --- !u!33 &7092709779492015927
 MeshFilter:
   m_ObjectHideFlags: 0
