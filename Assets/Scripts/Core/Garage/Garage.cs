@@ -11,6 +11,8 @@ public class Garage : MonoBehaviour
     private Car _currentCar;
 
     public SceneController SceneController => _sceneController;
+
+    public MainMenu MainMenu => _mainMenu;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
     public GarageSettingsMenu WindowSettings => _windowSettings;
 
@@ -24,13 +26,16 @@ public class Garage : MonoBehaviour
     public void Init(GameController game, bool fromLevel)
     {
         if (fromLevel)
-        { 
+        {
             _mainMenu.Hide();
             _windowSelectCar.Show();
             CreateCars();
         }
         else
+        {
             _windowSelectCar.Hide();
+            _mainMenu.Show();
+        }
     }
 
     public void PressGame()

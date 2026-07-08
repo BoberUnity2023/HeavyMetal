@@ -16,10 +16,10 @@ public class IndicatorPlace : MonoBehaviour
     {
         if (_hub.Level.Race.Car.IsFinished)
         {
-            _indicator.text = "---";
+            _indicator.text = "";
             return;
         }
         
-        _indicator.text = "" + _hub.Level.Race.Car.Place + "/" + _countPlayers.ToString();
+        _indicator.text = "" + _hub.Level.Race.Car.Place + "   " + _countPlayers.ToString();
     }
 }

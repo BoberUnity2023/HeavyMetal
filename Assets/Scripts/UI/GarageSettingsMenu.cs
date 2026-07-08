@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class GarageSettingsMenu : WindowBase
 {
-    [SerializeField] private SceneController _sceneController;
+    [SerializeField] private SceneController _sceneController;    
     [SerializeField] private Slider _sliderMusicVolume;
     [SerializeField] private GameObject _iconMusicOn;
     [SerializeField] private GameObject _iconMusicOff;
@@ -38,5 +38,6 @@ public class GarageSettingsMenu : WindowBase
     public void PressClose()
     {
         Hide();
+        _garage.MainMenu.Show();
     }
 }

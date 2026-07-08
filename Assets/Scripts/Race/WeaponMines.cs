@@ -19,6 +19,8 @@ public class WeaponMines : MonoBehaviour
     public void Init(Car car)
     {
         _car = car;
+        if (_car.Mode == Mode.Track)
+            enabled = true;
         _isInited = true;
         _armo = 4;
         _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;

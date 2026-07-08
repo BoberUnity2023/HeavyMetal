@@ -68779,11 +68779,11 @@ PrefabInstance:
       objectReference: {fileID: 1862994659}
     - target: {fileID: 2863306603315568315, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2886460808456740541, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
@@ -68791,11 +68791,19 @@ PrefabInstance:
       objectReference: {fileID: 1862994659}
     - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _offsets.Array.data[2].x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _offsets.Array.data[2].y
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _offsets.Array.data[3].x
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _offsets.Array.data[3].y
-      value: -65
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _offsets.Array.data[4].x
@@ -68815,7 +68823,7 @@ PrefabInstance:
       objectReference: {fileID: 1862994659}
     - target: {fileID: 3393211912639335203, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3728510437433264477, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_SizeDelta.x
@@ -68831,7 +68839,7 @@ PrefabInstance:
       objectReference: {fileID: 1452780009}
     - target: {fileID: 4048784812803159056, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4097468731624093673, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
@@ -68855,7 +68863,7 @@ PrefabInstance:
       objectReference: {fileID: 1862994659}
     - target: {fileID: 5101826334740048360, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5274165417111756033, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_SizeDelta.x
@@ -68871,7 +68879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5274165417111756033, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5868478465166862798, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Sprite
@@ -68903,11 +68911,7 @@ PrefabInstance:
       objectReference: {fileID: 213958851}
     - target: {fileID: 7590032528193222673, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7853717136006974660, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -340
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8008641419090428032, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Sprite
@@ -68915,7 +68919,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: df31991dcaa574844a5053d0356af380, type: 3}
     - target: {fileID: 8606966819097127935, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8695657254948506612, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub

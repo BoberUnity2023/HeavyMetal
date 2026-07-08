@@ -20,6 +20,7 @@ public class MainMenu : WindowBase
     public void OnPressSettings()
     {
         Debug.Log("Press Settings");
+        Hide();
         _garage.WindowSettings.Show();
     }
 

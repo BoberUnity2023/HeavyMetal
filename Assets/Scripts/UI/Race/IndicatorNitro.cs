@@ -5,9 +5,11 @@ public class IndicatorNitro : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
     [SerializeField] private Image _indicatorNitro;
+    [SerializeField] private GameObject _iconOn;
 
     private void Update()
     {
         _indicatorNitro.fillAmount = _hub.Level.Race.Car.Nitro.FillProgress;
+        _iconOn.SetActive(_hub.Level.Race.Car.Nitro.FillProgress > 0);
     }
 }
