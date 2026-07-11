@@ -10,11 +10,10 @@ public class NitroBaloon : MonoBehaviour
         {
             Car car = other.GetComponentInParent<Car>();            
             gameObject.SetActive(false);
+            car.Nitro.Add();
 
             if (_isFiring || car.IsAI)
                 car.Nitro.OnAuto();
-            else
-                car.Nitro.Add();
         }
     }
 }

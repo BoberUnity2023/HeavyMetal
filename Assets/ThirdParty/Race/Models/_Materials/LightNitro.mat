@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LightMedic
+  m_Name: LightNitro
   m_Shader: {fileID: 4800000, guid: 429a2d066bf7f5049a72b49699002770, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,7 +41,7 @@ Material:
     - _TimeOffDuration: 0.8
     - _TimeOnDuration: 0.6
     m_Colors:
-    - _Color: {r: 0.021389388, g: 0.68733144, b: 0, a: 1}
+    - _Color: {r: 0, g: 0.5320384, b: 0.6862745, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1002 &2100001
