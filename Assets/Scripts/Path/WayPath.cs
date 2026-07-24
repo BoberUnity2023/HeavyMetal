@@ -68,11 +68,14 @@ public class WayPath : MonoBehaviour
         var points = gameObject.GetComponentsInChildren<Transform>();
         if (!Application.isPlaying)
         {
+            Gizmos.color = wayColor;
             foreach (Transform point in points)
             {
-                Gizmos.color = wayColor;
-                Gizmos.DrawWireSphere(point.position, 15);
+                bool isI = point == transform;
+                if (!isI)                    
+                    Gizmos.DrawWireSphere(point.position, 15);
             }
+            Gizmos.DrawWireSphere(points[1].position, 25);
         }
 
         for (int i = 0; i < points.Length; i++)
