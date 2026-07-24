@@ -203,7 +203,7 @@ MonoBehaviour:
   active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1
   tintColor:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -332,7 +332,7 @@ MonoBehaviour:
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.68490565, g: 0.8331853, b: 1, a: 1}
+    m_Value: {r: 0, g: 0.7905302, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 0
     m_Value: 1000
@@ -353,13 +353,13 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 297.68
+    m_Value: 77
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.3696903, g: 0.42612198, b: 0.5169811, a: 1}
+    m_Value: {r: 0.8259793, g: 0.62352943, b: 1, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 0
     m_Value: 1
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88178bb13f64a54f90d6cd6ef7aa9a1, type: 3}
   m_Name: CloudLayer
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   opacity:
     m_OverrideState: 0
     m_Value: 1
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
   m_Name: Exposure
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
     m_Value: 4
@@ -780,7 +780,7 @@ MonoBehaviour:
     m_Value: -2
   limitMax:
     m_OverrideState: 1
-    m_Value: 13.5
+    m_Value: 10.5
   curveMap:
     m_OverrideState: 0
     m_Value:
