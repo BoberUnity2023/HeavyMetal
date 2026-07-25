@@ -69013,6 +69013,10 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 6382084865511431953, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _hub
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 6385948083743157554, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Sprite
       value: 

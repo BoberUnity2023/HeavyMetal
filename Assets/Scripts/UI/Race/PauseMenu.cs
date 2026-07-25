@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -37,6 +38,12 @@ public class PauseMenu : MonoBehaviour
     public void OnPressContinue()
     {
         PauseOff();
+    }
+
+    public void OnPressRestart()
+    {
+        PauseOff();
+        _hub.SceneLoader.LoadScene(_hub.Level.Config.SceneBuildIndex);
     }
 
     public void OnPressSettings()
