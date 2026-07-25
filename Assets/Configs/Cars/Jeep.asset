@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConfigCar
   _carType: 0
   _prefab: {fileID: 3335092485689057933, guid: b0a5df127f477c640b281892d18da99e, type: 3}
-  _price: 10000
+  _price: 26000
   _motorTorque: 4000
   _brakeTorque: 4000
   _maxSpeed: 40
@@ -25,38 +25,38 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 4
       Power: 200
-      Price: 2200
+      Price: 15500
     _shields:
       CountBought: 0
       CountMax: 6
-      Power: 1
-      Price: 3000
+      Power: 10
+      Price: 12500
     _tires:
       CountBought: 0
       CountMax: 4
       Power: 1
-      Price: 1800
+      Price: 11000
     _weapon:
       CountBought: 0
       CountMax: 7
       Power: 1
-      Price: 2500
+      Price: 17000
     _nitro:
       CountBought: 0
       CountMax: 5
       Power: 0.2
-      Price: 2900
+      Price: 10000
     _shield:
       CountBought: 0
       CountMax: 1
       Power: 1
-      Price: 50000
+      Price: 99999999
     _carColors:
-    - _color: {r: 0.04918185, g: 0.81132066, b: 0.04701721, a: 0.98039216}
+    - _color: {r: 0.45490196, g: 0.7372549, b: 0.24705882, a: 1}
       _material: {fileID: 2100000, guid: adb11a9f43d7f0c488cbd247e44cbee6, type: 2}
-    - _color: {r: 0.8392157, g: 0, b: 0, a: 1}
+    - _color: {r: 0.81960785, g: 0.28235295, b: 0.28235295, a: 1}
       _material: {fileID: 2100000, guid: ad4ca4058e4f2944bb27df721ad58079, type: 2}
-    - _color: {r: 0.011764719, g: 0.50428236, b: 0.9098039, a: 1}
+    - _color: {r: 0.21568628, g: 0.34117648, b: 0.6392157, a: 1}
       _material: {fileID: 2100000, guid: 135a9fae85e24d74489dc8758c3e2681, type: 2}
-    - _color: {r: 0.84905654, g: 0.6872846, b: 0.02631839, a: 1}
+    - _color: {r: 0.79607844, g: 0.6784314, b: 0.20784314, a: 1}
       _material: {fileID: 2100000, guid: de6f1faac61531d4ead8986fcff8dd3e, type: 2}

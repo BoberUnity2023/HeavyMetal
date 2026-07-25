@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConfigCar
   _carType: 2
   _prefab: {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
-  _price: 200000
+  _price: 140000
   _motorTorque: 4500
   _brakeTorque: 4000
   _maxSpeed: 40
@@ -52,5 +52,5 @@ MonoBehaviour:
       Power: 1
       Price: 50000
     _carColors:
-    - _color: {r: 0.01913305, g: 0.61725056, b: 0.07787679, a: 1}
+    - _color: {r: 0.45490196, g: 0.7372549, b: 0.24705882, a: 1}
       _material: {fileID: 2100000, guid: d9971a4d0ebd47f44ade7cb730bf10b2, type: 2}

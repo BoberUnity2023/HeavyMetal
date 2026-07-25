@@ -64452,6 +64452,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79091202969520248, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_text
+      value: 1 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 79091202969520248, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 79091202969520248, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 79091202969520248, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 146895735247957626, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 618198595683852890, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -64548,6 +64568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1766301282685359770, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 1889366147270858486, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 187
@@ -64556,6 +64580,14 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 2782318966029635769, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782318966029635769, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2806114680290584159, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -64572,6 +64604,22 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 3773037277757515558, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_text
+      value: 3 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773037277757515558, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 3773037277757515558, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773037277757515558, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4038434513017288906, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: mLocalizeTarget
       value: 
@@ -64632,6 +64680,14 @@ PrefabInstance:
       propertyPath: mLocalizeTarget
       value: 
       objectReference: {fileID: 213958851}
+    - target: {fileID: 7568162053014789954, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568162053014789954, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7853717136006974660, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.55650103
