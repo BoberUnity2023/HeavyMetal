@@ -5,6 +5,7 @@ public class IndicatorPlace : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
     [SerializeField] private TMP_Text _indicator;
+    [SerializeField] private TMP_Text _indicatorAll;
     private int _countPlayers;
 
     private void Start()
@@ -20,6 +21,7 @@ public class IndicatorPlace : MonoBehaviour
             return;
         }
         
-        _indicator.text = "" + _hub.Level.Race.Car.Place + "   " + _countPlayers.ToString();
+        _indicator.text = _hub.Level.Race.Car.Place.ToString(); ;
+        _indicatorAll.text = _countPlayers.ToString();
     }
 }

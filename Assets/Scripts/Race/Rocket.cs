@@ -5,9 +5,11 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBlast;
     [SerializeField] private float _blastForce;
+    [SerializeField] private float _verticalSpeed;
     private Hub _hub;    
     private Car _attacker;
     private const float _speed = 50f;
+    private const float _height = 1.8f;
 
     public void Init(Car attacker)
     {        
@@ -38,7 +40,14 @@ public class Rocket : MonoBehaviour
     {
         Vector3 direction = transform.forward.normalized;
         transform.position += direction * _speed * Time.fixedDeltaTime;
+        FixedUpdate_MoveOverGround();
         OnFlyUpdate();
+    }
+
+    private void FixedUpdate_MoveOverGround()
+    {
+        float heightCorrect = RayDown - _height;
+        transform.position -= Vector3.up * Mathf.Clamp(heightCorrect, -_verticalSpeed * Time.fixedDeltaTime, _verticalSpeed * Time.fixedDeltaTime);
     }
 
     private void OnFlyUpdate()
@@ -82,6 +91,20 @@ public class Rocket : MonoBehaviour
                 return hit.distance;
               
             return 100;            
+        }
+    }
+
+    private float RayDown
+    {
+        get
+        {
+            RaycastHit hit;
+            Vector3 direction = -transform.up;
+
+            if (Physics.Raycast(transform.position, direction, out hit, 100))
+                return hit.distance;
+
+            return 100;
         }
     }
 }

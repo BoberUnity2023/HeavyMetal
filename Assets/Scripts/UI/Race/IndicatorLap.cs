@@ -6,7 +6,8 @@ using UnityEngine;
 public class IndicatorLap : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
-    [SerializeField] private TMP_Text _indicator;    
+    [SerializeField] private TMP_Text _indicatorLapCurrent;
+    [SerializeField] private TMP_Text _indicatorLapAll; 
     private float _positionY;
 
     private void Start()
@@ -51,7 +52,8 @@ public class IndicatorLap : MonoBehaviour
     private void SetText(int lap)
     {
         int laps = _hub.Level.Config.Laps;
-        _indicator.text = "" + Mathf.Min(lap, laps).ToString() + "   " + laps.ToString();
+        _indicatorLapCurrent.text = Mathf.Min(lap, laps).ToString();
+        _indicatorLapAll.text = laps.ToString();
     }
 }
 
