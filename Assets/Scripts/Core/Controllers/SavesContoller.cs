@@ -11,6 +11,7 @@ public class Save
     public int PurchasedStars;
     public int EveryDayVisits;
     public int Coins;
+    public int SelectedCar;
     public string LastVisitTime;    
     public int[] LevelStars;
     public bool[] PlayedLevels;
@@ -27,7 +28,9 @@ public class SavesContoller : MonoBehaviour
 
     public string KeyLevelStars => "LevelStars";
 
-    public string KeyPlayedLevels => "PlayedLevels";    
+    public string KeyPlayedLevels => "PlayedLevels";
+
+    public string KeySelectedCar => "SelectedCar";
 
     public string KeyPurchasedStars => "PurchasedStars";  
 
@@ -52,6 +55,20 @@ public class SavesContoller : MonoBehaviour
     public bool IsStorageReceived { get; set; }
 
     public event Action<int> OnCoinsChanged;
+
+    public int SelectedCar
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(KeySelectedCar, 0);            
+        }
+
+        set
+        {
+            PlayerPrefs.SetInt(KeySelectedCar, value);
+            PlayerPrefs.Save();
+        }
+    }
 
     public int PurchasedStars
     {
@@ -629,7 +646,8 @@ public class SavesContoller : MonoBehaviour
 
         Save.LastVisitTime = PlayerPrefs.GetString(KeyLastVisitTime, "0");
         Save.Coins = PlayerPrefs.GetInt(KeyCoins, 0);        
-        Save.HasNoAds = PlayerPrefs.GetInt(KeyNoAds, 0) == 1;        
+        Save.HasNoAds = PlayerPrefs.GetInt(KeyNoAds, 0) == 1;
+        Save.SelectedCar = PlayerPrefs.GetInt(KeySelectedCar, 0);
         Save.PurchasedStars = PlayerPrefs.GetInt(KeyPurchasedStars, 0);
         Save.EveryDayVisits = PlayerPrefs.GetInt(KeyEveryDayVisits, 0);        
     }
@@ -660,7 +678,8 @@ public class SavesContoller : MonoBehaviour
         Save.LastVisitTime = Mathf.Max(fromPlayerPrefs, fromStorage).ToString();        
 
         Save.Coins = Mathf.Max(PlayerPrefs.GetInt(KeyCoins, 0), save.Coins);        
-        Save.HasNoAds = PlayerPrefs.GetInt(KeyNoAds, 0) == 1 || save.HasNoAds;        
+        Save.HasNoAds = PlayerPrefs.GetInt(KeyNoAds, 0) == 1 || save.HasNoAds;
+        Save.SelectedCar = Mathf.Max(PlayerPrefs.GetInt(KeySelectedCar, 0), save.SelectedCar);
         Save.PurchasedStars = Mathf.Max(PlayerPrefs.GetInt(KeyPurchasedStars, 0), save.PurchasedStars);
         Save.EveryDayVisits = Mathf.Max(PlayerPrefs.GetInt(KeyEveryDayVisits, 0), save.EveryDayVisits); 
         //VKManager.Instance.StorageSave();
@@ -673,7 +692,8 @@ public class SavesContoller : MonoBehaviour
         Save.TakenDayBonuses = new bool[5];  
         Save.LastVisitTime = "0";
         Save.Coins = 0;        
-        Save.HasNoAds = false;        
+        Save.HasNoAds = false;
+        Save.SelectedCar = 0;
         Save.PurchasedStars = 0;
         Save.EveryDayVisits = 0;
         StorageSave();

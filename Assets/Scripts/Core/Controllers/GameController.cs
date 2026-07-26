@@ -135,7 +135,18 @@ public class GameController : MonoBehaviour
     
     public GroundProps[] GroundPropses => _groundPropses;
 
-    public int SelectedCar { get; set; }
+    public int SelectedCar
+    {
+        get
+        {
+            return Saves.SelectedCar;
+        }
+
+        set
+        {
+            Saves.SelectedCar = value;
+        }
+    }
 
     public CarType SelectedCarType 
     { 
