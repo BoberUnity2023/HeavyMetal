@@ -46,7 +46,11 @@ public class Rocket : MonoBehaviour
 
     private void FixedUpdate_MoveOverGround()
     {
-        float heightCorrect = RayDown - _height;
+        float heightCorrect = 0;
+        
+        if (RayDown < 90)
+            heightCorrect = RayDown - _height;
+
         transform.position -= Vector3.up * Mathf.Clamp(heightCorrect, -_verticalSpeed * Time.fixedDeltaTime, _verticalSpeed * Time.fixedDeltaTime);
     }
 
@@ -97,14 +101,33 @@ public class Rocket : MonoBehaviour
     private float RayDown
     {
         get
-        {
-            RaycastHit hit;
+        {            
             Vector3 direction = -transform.up;
 
-            if (Physics.Raycast(transform.position, direction, out hit, 100))
-                return hit.distance;
+            RaycastHit[] hits;
+            hits = Physics.RaycastAll(transform.position, direction, 100.0F);
+
+            for (int i = 0; i < hits.Length - 1; i++)//Without Blocker
+            {
+                RaycastHit hit = hits[i];
+                if (IsMaterialGround(hit.collider.material))
+                {
+                    return hit.distance;
+                }
+            }
 
             return 100;
         }
+    }
+
+    private bool IsMaterialGround(PhysicsMaterial material)
+    { 
+        foreach(var m in _hub.Game.GroundPropses)
+        {
+            if (_hub.Game.IsEqualPhysicsMaterials(material, m.PhysicMaterial))
+                return true;
+        }
+
+        return false;
     }
 }
