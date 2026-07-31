@@ -80,7 +80,7 @@ public class MainMenuController : SceneController
     {
         Debug.Log("Load Level: " + level);
         SaveScrollPosition();
-        int buildIndex = Game.Levels.Level(level).SceneBuildIndex;//level + 1;
+        int buildIndex = Game.ConfigLevels.Level(level).SceneBuildIndex;//level + 1;
         Game.CurrentLevel = level;
         LoadScene(buildIndex);
     }
@@ -98,7 +98,7 @@ public class MainMenuController : SceneController
 
         for (int i = 0; i < buttonLevels.Length; i++)
         {            
-            Sprite icon = Game.Levels.Level(i + 1).Icon;
+            Sprite icon = Game.ConfigLevels.Level(i + 1).Icon;
             buttonLevels[i].SetLevel(i + 1, icon, this);
 
             if (IsLevelLock(i + 1))
@@ -183,9 +183,9 @@ public class MainMenuController : SceneController
 
     private void CreateButtons()
     {
-        for (int i = 1; i <= Game.Levels.Levels.Length; i++)        
+        for (int i = 1; i <= Game.ConfigLevels.Levels.Length; i++)        
         {
-            Transform parent = LevelScreen(Game.Levels.Levels[i - 1].LevelLocation);
+            Transform parent = LevelScreen(Game.ConfigLevels.Levels[i - 1].LevelLocation);
             ButtonLevel buttonLevel = Instantiate(_buttonLevelPrefab, parent);
             int iCopy = i;
             buttonLevel.GetComponent<Button>().onClick.AddListener(() => PressLoadLevel(iCopy));
@@ -212,7 +212,7 @@ public class MainMenuController : SceneController
             return false;
 
         int stars = Game.Saves.Stars + Game.Saves.PurchasedStars;
-        return Game.Levels.Level(level).StarsForOpen > stars;
+        return Game.ConfigLevels.Level(level).StarsForOpen > stars;
     }
 
     public bool IsLevelAvialableByVideo(int level)

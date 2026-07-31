@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   _config: {fileID: 11400000, guid: 12cf970621f105f48932b05c012e9b5c, type: 2}
-  _levels: {fileID: 11400000, guid: 1d7fba5bc6380f145af461e506af3f67, type: 2}
+  _configLevels: {fileID: 11400000, guid: 1d7fba5bc6380f145af461e506af3f67, type: 2}
   _sceneLoader: {fileID: 2894431513775640236}
   _savesContoller: {fileID: 4349069502150437515}
   _soundContoller: {fileID: 5112412991435644164}
@@ -448,6 +448,7 @@ MonoBehaviour:
     PurchasedStars: 0
     EveryDayVisits: 0
     Coins: 0
+    SelectedCar: 0
     LastVisitTime: 
     LevelStars: 
     PlayedLevels: 

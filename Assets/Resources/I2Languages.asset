@@ -435,6 +435,17 @@ MonoBehaviour:
       - Quit
       Flags: 0000000000
       Languages_Touch: []
+    - Term: about
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041E\u0411 \u0418\u0413\u0420\u0415"
+      - ABOUT GAME
+      - ABOUT GAME
+      - ABOUT GAME
+      - ABOUT GAME
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

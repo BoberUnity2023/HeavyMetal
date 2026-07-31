@@ -24,6 +24,13 @@ public class MainMenu : WindowBase
         _garage.WindowSettings.Show();
     }
 
+    public void OnPressAboutGame()
+    {
+        Debug.Log("Press About Game");
+        Hide();
+        _garage.WindowAboutGame.Show();
+    }
+
     public void OnPressQuitGame()
     {
         Debug.Log("Press Quit");

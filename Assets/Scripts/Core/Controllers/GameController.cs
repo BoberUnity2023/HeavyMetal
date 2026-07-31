@@ -103,7 +103,7 @@ public class TuningCategory
 public class GameController : MonoBehaviour
 {
     [SerializeField] private ConfigGame _config;
-    [SerializeField] private ConfigLevels _levels;
+    [SerializeField] private ConfigLevels _configLevels;
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private SavesContoller _savesContoller;
     [SerializeField] private ControllerSound _soundContoller;
@@ -182,7 +182,7 @@ public class GameController : MonoBehaviour
 
     public ConfigGame ConfigGame => _config;
 
-    public ConfigLevels Levels => _levels;
+    public ConfigLevels ConfigLevels => _configLevels;
 
     public SceneLoader SceneLoader => _sceneLoader;
 
@@ -205,9 +205,9 @@ public class GameController : MonoBehaviour
                 int levelNumber = 0;
                 string sceneName = SceneManager.GetActiveScene().name.Substring(3);//��� "04_"                
 
-                for (int i = 0; i < _levels.Levels.Length; i++)
+                for (int i = 0; i < _configLevels.Levels.Length; i++)
                 {
-                    if (_levels.Levels[i].name.Contains(sceneName))
+                    if (_configLevels.Levels[i].name.Contains(sceneName))
                     {                        
                         levelNumber = i + 1;
                         break;

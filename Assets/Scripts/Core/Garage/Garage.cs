@@ -6,16 +6,16 @@ public class Garage : MonoBehaviour
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private WindowSelectCar _windowSelectCar;
     [SerializeField] private GarageSettingsMenu _windowSettings;
+    [SerializeField] private WindowBase _windowAboutGame;
     [SerializeField] private Transform _carPosition;
     private Car[] _cars;
     private Car _currentCar;
 
     public SceneController SceneController => _sceneController;
-
     public MainMenu MainMenu => _mainMenu;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
     public GarageSettingsMenu WindowSettings => _windowSettings;
-
+    public WindowBase WindowAboutGame => _windowAboutGame;
     public Car CurrentCar => _currentCar;    
 
     private void Start()
