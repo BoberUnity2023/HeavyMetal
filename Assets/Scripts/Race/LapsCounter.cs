@@ -22,6 +22,8 @@ public class LapsCounter : MonoBehaviour
         } 
     }
 
+    public bool IsWayCompleted => _isWayCompleted;
+
     public int CurrentPoint => _currentPoint;
 
     public Vector3 CurrentPointPosition => _wayPath.Points[_currentPoint].position;
