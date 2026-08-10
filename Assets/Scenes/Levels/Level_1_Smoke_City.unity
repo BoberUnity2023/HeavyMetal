@@ -37740,6 +37740,18 @@ PrefabInstance:
       propertyPath: _minimalY
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 966144379375022562, guid: 424d18f31790cba43a8ac1e2a3ec7a77, type: 3}
+      propertyPath: _offsetIzometry.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 966144379375022562, guid: 424d18f31790cba43a8ac1e2a3ec7a77, type: 3}
+      propertyPath: _offsetIzometry.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 966144379375022562, guid: 424d18f31790cba43a8ac1e2a3ec7a77, type: 3}
+      propertyPath: _offsetIzometry.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3542380974634848713, guid: 424d18f31790cba43a8ac1e2a3ec7a77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.1
