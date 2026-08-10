@@ -22,6 +22,7 @@ public class ControllerRace : MonoBehaviour
     {
         _hub.Result.StartRace();
         IsStarted = true;
+        _hub.Game.Sound.Play(SoundClip.BattleBegin);
     }
 
     public void Finish()
@@ -31,6 +32,9 @@ public class ControllerRace : MonoBehaviour
         _hub.Game.Saves.SaveLevelStars(StarsForLevel);
 
         AddFinishCoins();
+
+        if (_hub.Result.Place == 1)
+            _hub.Game.Sound.Play(SoundClip.FirstPlace);
 
         if (!_car.IsAI)
             OnFinish?.Invoke();
@@ -54,6 +58,8 @@ public class ControllerRace : MonoBehaviour
     public void LapCompleted(int lap)
     {
         OnLapCompleted?.Invoke(lap);
+        if (lap == _hub.Level.Config.Laps - 1)
+            _hub.Game.Sound.Play(SoundClip.LastLap);
     }
 
     private void CreateCars()

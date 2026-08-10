@@ -82,7 +82,7 @@ public class LapsCounter : MonoBehaviour
                 OnLapStart?.Invoke(_lap);
 
                 if (!_car.IsAI)
-                    _car.Hub.Level.Race.LapCompleted(_lap);
+                    _car.Hub.Level.Race.LapCompleted(_lap - 1);
             }
         }
     }    

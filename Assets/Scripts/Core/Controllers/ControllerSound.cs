@@ -18,8 +18,9 @@ public enum SoundClip
     FootStepGround,
     FootStepWater,
     ThreeTwoOneGo,
-    ButterflyOut,
-    BatDead
+    BattleBegin,
+    LastLap,
+    FirstPlace
 }
 
 public class ControllerSound : MonoBehaviour
@@ -39,8 +40,9 @@ public class ControllerSound : MonoBehaviour
     [SerializeField] private AudioClip _clipFootStepGround;
     [SerializeField] private AudioClip _clipFootStepWater;
     [SerializeField] private AudioClip _threeTwoOneGo;
-    [SerializeField] private AudioClip _butterflyOut;
-    [SerializeField] private AudioClip _batDead;
+    [SerializeField] private AudioClip _battleBegin;
+    [SerializeField] private AudioClip _lastLap;
+    [SerializeField] private AudioClip _firstPlace;
     [SerializeField] private AudioClip[] _musics;
     private bool _isLocked;
     //private int _musicClip;
@@ -206,11 +208,14 @@ public class ControllerSound : MonoBehaviour
             case SoundClip.ThreeTwoOneGo:
                 return _threeTwoOneGo;
 
-            case SoundClip.ButterflyOut: 
-                return _butterflyOut;
+            case SoundClip.BattleBegin: 
+                return _battleBegin;
 
-            case SoundClip.BatDead:
-                return _batDead;
+            case SoundClip.LastLap:
+                return _lastLap;
+
+            case SoundClip.FirstPlace:
+                return _firstPlace;
         }
         return null;
     }

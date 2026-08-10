@@ -26,7 +26,7 @@ public class IndicatorLap : MonoBehaviour
     {
         float effectTime = 0.5f;
         StartScale(effectTime);
-        StartCoroutine(ChangeText(effectTime, lap));
+        StartCoroutine(ChangeText(effectTime, lap + 1));
     }
 
     private void StartScale(float effectTime)
