@@ -131,6 +131,9 @@ public class WheelSkid : MonoBehaviour
 
     private void SetFriction(float friction)
     {
+        if (!_wheelControl.IsSteerable)
+            friction *= (1 - _car.Input.Handbrake);        
+
         WheelFrictionCurve wheelFrictionCurve;
         wheelFrictionCurve = _wheelCollider.forwardFriction;
         wheelFrictionCurve.stiffness = friction * TuningFactor;

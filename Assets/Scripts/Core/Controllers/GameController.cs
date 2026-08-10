@@ -364,4 +364,15 @@ public class GameController : MonoBehaviour
         return material1.dynamicFriction == material2.dynamicFriction &&
             material1.frictionCombine == material2.frictionCombine;
     }
+
+    public bool IsMaterialGround(PhysicsMaterial material)
+    {
+        foreach (var m in GroundPropses)
+        {
+            if (IsEqualPhysicsMaterials(material, m.PhysicMaterial))
+                return true;
+        }
+
+        return false;
+    }
 }

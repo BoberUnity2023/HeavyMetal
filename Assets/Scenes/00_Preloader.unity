@@ -361,17 +361,29 @@ PrefabInstance:
       value: Loading...
       objectReference: {fileID: 0}
     - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
       propertyPath: m_fontStyle
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.4871041
+      objectReference: {fileID: 0}
+    - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.82476395
+      objectReference: {fileID: 0}
+    - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8544474
+      objectReference: {fileID: 0}
+    - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 4868449736875040087, guid: e830632efe0c1914caf89ab1c5670a40, type: 2}
+    - target: {fileID: 610508828273064413, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286370522
+      objectReference: {fileID: 0}
     - target: {fileID: 1097494149451903339, guid: eccb8676cb8823542ad5109bbbe7f77d, type: 3}
       propertyPath: m_Name
       value: GameController

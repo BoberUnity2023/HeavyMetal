@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelParadize6
   m_EditorClassIdentifier: Assembly-CSharp::ConfigLevel
   _levelLocation: 1
-  _icon: {fileID: 21300000, guid: e407dac2018b6134187fe643820c942a, type: 3}
+  _icon: {fileID: 21300000, guid: a44d348839fb4cf44bd7332daf1996ef, type: 3}
   _sceneBuildIndex: 4
   _key: 6
   _track: 6

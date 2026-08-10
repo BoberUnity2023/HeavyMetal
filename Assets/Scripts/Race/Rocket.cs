@@ -110,7 +110,7 @@ public class Rocket : MonoBehaviour
             for (int i = 0; i < hits.Length - 1; i++)//Without Blocker
             {
                 RaycastHit hit = hits[i];
-                if (IsMaterialGround(hit.collider.material))
+                if (_hub.Game.IsMaterialGround(hit.collider.material))
                 {
                     return hit.distance;
                 }
@@ -118,16 +118,5 @@ public class Rocket : MonoBehaviour
 
             return 100;
         }
-    }
-
-    private bool IsMaterialGround(PhysicsMaterial material)
-    { 
-        foreach(var m in _hub.Game.GroundPropses)
-        {
-            if (_hub.Game.IsEqualPhysicsMaterials(material, m.PhysicMaterial))
-                return true;
-        }
-
-        return false;
     }
 }

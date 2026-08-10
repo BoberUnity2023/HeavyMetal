@@ -15,11 +15,12 @@ public class ReturnOnRoad : MonoBehaviour
         //    MoveToNearestReturnPoint();
         if (!_car.Hub.Level.Race.IsStarted || 
             _car.IsFinished ||              
-            _car.IsCrashed)
+            _car.IsCrashed ||
+            _car.Input.Handbrake > 0.01f)
             return;
 
         bool isTurned = transform.eulerAngles.z > 80 && transform.eulerAngles.z < 280;
-        bool slippage = _car.Speed < 2 && _car.Input.Force > 0.5f;
+        bool slippage = Mathf.Abs(_car.Speed) < 2 && Mathf.Abs(_car.Input.Force) > 0.5f;
 
         if ((slippage || isTurned) && CanReturn)
         {
@@ -59,7 +60,9 @@ public class ReturnOnRoad : MonoBehaviour
         _currentCollapsTime = 0;
         int currentPoint = Mathf.Max(0, _car.LapsCounter.CurrentPoint - 1);
         Transform wayPoint = _car.WayPath.Points[currentPoint];
-        transform.position = wayPoint.position + Vector3.up * 2;
+        float y = PointPositionOnGround(wayPoint.position);
+        transform.localPosition = new Vector3(wayPoint.position.x, y, wayPoint.position.z);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         Debug.Log(gameObject.name + " was returned on point " + currentPoint);
     }
 
@@ -91,4 +94,21 @@ public class ReturnOnRoad : MonoBehaviour
             return !_car.IsVisible;
         }
     }
+
+    private float PointPositionOnGround(Vector3 position)
+    {
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(position + Vector3.up * 20, Vector3.down, 100.0F);
+
+        for (int i = 0; i < hits.Length - 1; i++)//Without Blocker
+        {
+            RaycastHit hit = hits[i];
+            if (_car.Hub.Game.IsMaterialGround(hit.collider.material))
+            {
+                return position.y + 20 - hit.distance + 2.5f;
+            }
+        }
+
+        return position.y;
+    }   
 }
