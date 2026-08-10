@@ -199,7 +199,7 @@ public class Car : MonoBehaviour
         foreach (Light light in lights)
         {
             if (light.type == LightType.Spot || light.type == LightType.Point)
-                light.range = 0.15f;
+                light.range = 0.0f;
         }
     }
 
