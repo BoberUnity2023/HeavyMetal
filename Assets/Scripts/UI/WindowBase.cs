@@ -4,11 +4,11 @@ using UnityEngine.EventSystems;
 
 public class WindowBase : MonoBehaviour
 {
-    [SerializeField] protected Garage _garage;
+    [SerializeField] protected SceneController _sceneController;
     [SerializeField] protected GameObject _window;
     [SerializeField] private GameObject _firstSelected;
 
-    private GameController Game => _garage.SceneController.Game;
+    private GameController Game => _sceneController.Game;
 
     public virtual void Show()
     {

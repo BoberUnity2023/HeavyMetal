@@ -1217,10 +1217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646832e82045e0f42a6f72a34f31290a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GarageSettingsMenu
-  _garage: {fileID: 3376163179810544259}
+  _sceneController: {fileID: 5793896059732163739}
   _window: {fileID: 1640709399}
   _firstSelected: {fileID: 661966868}
-  _sceneController: {fileID: 5793896059732163739}
+  _garage: {fileID: 3376163179810544259}
   _sliderMusicVolume: {fileID: 661966870}
   _iconMusicOn: {fileID: 818623212}
   _iconMusicOff: {fileID: 945628682}
@@ -4705,9 +4705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0db9d3ce43241448e05ac592b570cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GarageAboutGame
-  _garage: {fileID: 3376163179810544259}
+  _sceneController: {fileID: 5793896059732163739}
   _window: {fileID: 1265866679}
   _firstSelected: {fileID: 1947538915}
+  _garage: {fileID: 3376163179810544259}
 --- !u!224 &557829235
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11481,9 +11482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158823f69e4b081409e0371b49894b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  _garage: {fileID: 3376163179810544259}
+  _sceneController: {fileID: 5793896059732163739}
   _window: {fileID: 142344716}
   _firstSelected: {fileID: 949757115}
+  _garage: {fileID: 3376163179810544259}
   _buttonNewGame: {fileID: 793937770}
   _buttonContinue: {fileID: 949757117}
 --- !u!1 &1375983737
@@ -19061,11 +19063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6406f294d8544b94cb18efde1fbc2e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowSelectCar
-  _garage: {fileID: 3376163179810544259}
+  _sceneController: {fileID: 5793896059732163739}
   _window: {fileID: 2052951030}
   _firstSelected: {fileID: 1558228099}
-  _sceneController: {fileID: 5793896059732163739}
   _mainMenuController: {fileID: 5793896059732163739}
+  _garage: {fileID: 3376163179810544259}
   _colorPanel: {fileID: 1409311732}
   _priceIndicator: {fileID: 1542764490}
   _buttonContinue: {fileID: 3091340880918236423}

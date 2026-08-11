@@ -1,17 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : WindowBase
 {
+    [SerializeField] private Garage _garage;
     [SerializeField] private Button _buttonNewGame;
     [SerializeField] private Button _buttonContinue;
 
     protected override void Start()
     {
         base.Start();
-        bool gameStarted = IsGameStarted;
-        _buttonNewGame.interactable = !gameStarted;
+        bool gameStarted = IsGameStarted;        
         _buttonContinue.interactable = gameStarted;
     }
 
@@ -25,8 +24,7 @@ public class MainMenu : WindowBase
     {
         Debug.Log("Press New Game");
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.GetInt("GameStarted", 1);
-        //SceneManager.LoadScene(0);
+        PlayerPrefs.SetInt("GameStarted", 1);        
         OnPressContinue();
     }
 

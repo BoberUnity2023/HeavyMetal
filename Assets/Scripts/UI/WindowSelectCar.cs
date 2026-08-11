@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WindowSelectCar : WindowBase
-{
-    [SerializeField] private SceneController _sceneController;
+{    
     [SerializeField] private MainMenuController _mainMenuController;
+    [SerializeField] private Garage _garage;
     [SerializeField] private ColorPanel _colorPanel;
     [SerializeField] private PriceIndicator _priceIndicator;
     [SerializeField] private Button _buttonContinue;
@@ -16,11 +16,10 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private Bar _barNitro;
     [SerializeField] private Bar _barShield;
     [SerializeField] private GameObject _lock;
-    private GameController _game;    
+    private GameController _game;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
         _game = _sceneController.Game;
         _barEngine.Init(_sceneController);
         _barShields.Init(_sceneController);
@@ -29,6 +28,11 @@ public class WindowSelectCar : WindowBase
         _barNitro.Init(_sceneController);
         _barShield.Init(_sceneController);
         _colorPanel.Init(_sceneController, _garage);
+    }
+
+    protected override void Start()
+    {
+        base.Start(); 
 
         SetButtonsByCar();
     }
@@ -41,6 +45,12 @@ public class WindowSelectCar : WindowBase
             return;
 
         //Update_GamepadInput();
+    }
+
+    public override void Show()
+    {
+        base.Show();
+        SetButtonsByCar();
     }
 
     protected override void SelectFirst(GameObject firstSelected)
@@ -171,9 +181,9 @@ public class WindowSelectCar : WindowBase
         }
     }
 
-    private void SetButtonsByCar()
+    public void SetButtonsByCar()
     {
-        bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
+        bool hasCar = HasCar;
         _buttonContinue.gameObject.SetActive(hasCar);        
         _buttonBuy.gameObject.SetActive(!hasCar);
         _priceIndicator.gameObject.SetActive(!hasCar);

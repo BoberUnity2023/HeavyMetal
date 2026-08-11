@@ -10,10 +10,7 @@ public class ControllerUI : MonoBehaviour
     public void NavigationEnd()
     {
         _hasSelected = false;
-        Debug.LogWarning("UI Navigation End");
-        //enabled = true;
     }
-
     
     private void Update()
     {
@@ -23,17 +20,14 @@ public class ControllerUI : MonoBehaviour
 
         if (anyKey && !_hasSelected)
         {
-            _hasSelected = true;
-            //enabled = false;
-            OnNavigationStart?.Invoke();
-            Debug.LogWarning("UI Navigation Start");
+            _hasSelected = true;            
+            OnNavigationStart?.Invoke();            
         }
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter) ||
             Input.GetKeyDown(KeyCode.Return) ||
-            Input.GetKeyDown(KeyCode.JoystickButton0) ||
-            Input.GetKeyDown(KeyCode.JoystickButton8) ||
-            Input.GetKeyDown(KeyCode.JoystickButton9))
+            Input.GetKeyDown(KeyCode.JoystickButton0)
+            )
             NavigationEnd();
     }
 }
