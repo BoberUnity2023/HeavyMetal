@@ -107,6 +107,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private SavesContoller _savesContoller;
     [SerializeField] private ControllerSound _soundContoller;
+    [SerializeField] private ControllerUI _uiContoller;
     [SerializeField] private ControllerSettings _controllerSettings;
     [SerializeField] private ControllerAnalitycs _controllerAnalitycs;
     [SerializeField] private Canvas _console;
@@ -189,6 +190,8 @@ public class GameController : MonoBehaviour
     public SavesContoller Saves => _savesContoller;
 
     public ControllerSound Sound => _soundContoller;
+
+    public ControllerUI UI => _uiContoller;
 
     public ControllerSettings Settings => _controllerSettings;    
 

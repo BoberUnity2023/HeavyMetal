@@ -18,8 +18,9 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private GameObject _lock;
     private GameController _game;    
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _game = _sceneController.Game;
         _barEngine.Init(_sceneController);
         _barShields.Init(_sceneController);
@@ -32,29 +33,45 @@ public class WindowSelectCar : WindowBase
         SetButtonsByCar();
     }
 
-    private void Update()
+    protected override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
-        {
-            PressNextCar();
-        }
+        base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
-        {
-            PressPreviousCar();
-        }
+        if (!IsActive)
+            return;
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-        {
-            bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
-            if (hasCar)
-            {
-                _mainMenuController.LoadScene(2);
-            }
-            else
-                PressBuy();
-        }
+        //Update_GamepadInput();
     }
+
+    protected override void SelectFirst(GameObject firstSelected)
+    {
+        Button button = HasCar ? _buttonContinue : _buttonBuy;
+        base.SelectFirst(button.gameObject);
+    }
+
+    //private void Update_GamepadInput()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+    //    {
+    //        PressNextCar();
+    //    }
+
+    //    if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+    //    {
+    //        PressPreviousCar();
+    //    }
+
+    //    if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+    //    {
+    //        bool hasCar = HasCar;
+    //        if (hasCar)
+    //        {
+    //            _mainMenuController.LoadScene(2);
+    //        }
+    //        else
+    //            PressBuy();
+    //    }
+    //}
 
     public void PressNextCar()
     {
@@ -78,6 +95,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuy()
     {
+        Debug.Log("PressBuyCar()");
         if (_game.SelectedCarType == CarType.Gnom)
             return;
 
@@ -215,4 +233,6 @@ public class WindowSelectCar : WindowBase
         price = configCar.Tuning.Shield.Price;
         _barShield.Set(value, price);
     }
+
+    private bool HasCar => _game.Saves.HasBoughtCar(_game.SelectedCarType);
 }

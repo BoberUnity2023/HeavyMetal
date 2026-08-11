@@ -1,13 +1,33 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : WindowBase
-{  
+{
+    [SerializeField] private Button _buttonNewGame;
+    [SerializeField] private Button _buttonContinue;
+
+    protected override void Start()
+    {
+        base.Start();
+        bool gameStarted = IsGameStarted;
+        _buttonNewGame.interactable = !gameStarted;
+        _buttonContinue.interactable = gameStarted;
+    }
+
+    protected override void SelectFirst(GameObject firstSelected)
+    {
+        Button button = IsGameStarted ? _buttonContinue : _buttonNewGame;
+        base.SelectFirst(button.gameObject);
+    }
+
     public void OnPressNewGame()
     {
         Debug.Log("Press New Game");
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(0);        
+        PlayerPrefs.GetInt("GameStarted", 1);
+        //SceneManager.LoadScene(0);
+        OnPressContinue();
     }
 
     public void OnPressContinue()
@@ -36,4 +56,6 @@ public class MainMenu : WindowBase
         Debug.Log("Press Quit");
         Application.Quit();
     }
+
+    private bool IsGameStarted => PlayerPrefs.GetInt("GameStarted", 0) == 1;
 }

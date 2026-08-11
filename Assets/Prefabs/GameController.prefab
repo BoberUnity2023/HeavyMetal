@@ -80,6 +80,7 @@ Transform:
   - {fileID: 2443363160545233263}
   - {fileID: 5254419016070648386}
   - {fileID: 362665473123127146}
+  - {fileID: 5088547571056400860}
   - {fileID: 4333206145281708996}
   - {fileID: 6867715406404596844}
   m_Father: {fileID: 0}
@@ -101,6 +102,7 @@ MonoBehaviour:
   _sceneLoader: {fileID: 2894431513775640236}
   _savesContoller: {fileID: 4349069502150437515}
   _soundContoller: {fileID: 5112412991435644164}
+  _uiContoller: {fileID: 5239361893461321465}
   _controllerSettings: {fileID: 5788248675881965683}
   _controllerAnalitycs: {fileID: 0}
   _console: {fileID: 0}
@@ -1440,6 +1442,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7654935207825266736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5088547571056400860}
+  - component: {fileID: 5239361893461321465}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5088547571056400860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654935207825266736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6518803565975274952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5239361893461321465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654935207825266736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88af1e86f99474a418b6f92a1afd3274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControllerUI
 --- !u!1 &7745185582332837176
 GameObject:
   m_ObjectHideFlags: 0

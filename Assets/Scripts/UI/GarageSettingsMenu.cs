@@ -40,4 +40,9 @@ public class GarageSettingsMenu : WindowBase
         Hide();
         _garage.MainMenu.Show();
     }
+
+    public void OnLanguageChanged(int id)
+    {
+        Debug.Log("Lang:" + id);
+    }
 }
