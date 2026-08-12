@@ -37975,6 +37975,10 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 6382084865511431953, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 6484958446641827877, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

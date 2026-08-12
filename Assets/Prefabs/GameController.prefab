@@ -104,7 +104,8 @@ MonoBehaviour:
   _soundContoller: {fileID: 5112412991435644164}
   _uiContoller: {fileID: 5239361893461321465}
   _controllerSettings: {fileID: 5788248675881965683}
-  _controllerAnalitycs: {fileID: 0}
+  _localizeController: {fileID: 848702142614711600}
+  _controllerAnalitycs: {fileID: 2678730685982233644}
   _console: {fileID: 0}
   _prefabSkidmarks: {fileID: 6130739728617072297, guid: 632e25f0cf8de734ea127112aa6ca2a5, type: 3}
   _groundPropses:

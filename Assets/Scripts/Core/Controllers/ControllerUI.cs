@@ -1,11 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControllerUI : MonoBehaviour
 {
     private bool _hasSelected;
 
     public event Action OnNavigationStart;
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
     public void NavigationEnd()
     {
@@ -29,5 +40,10 @@ public class ControllerUI : MonoBehaviour
             Input.GetKeyDown(KeyCode.JoystickButton0)
             )
             NavigationEnd();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        NavigationEnd();
     }
 }

@@ -8,7 +8,7 @@ public class WindowBase : MonoBehaviour
     [SerializeField] protected GameObject _window;
     [SerializeField] private GameObject _firstSelected;
 
-    private GameController Game => _sceneController.Game;
+    public GameController Game => _sceneController.Game;
 
     public virtual void Show()
     {
@@ -45,11 +45,13 @@ public class WindowBase : MonoBehaviour
         
         EventSystem.current.SetSelectedGameObject(null);
         StartCoroutine(AfterUI_OnNavigationStart(0));
+        if (Time.timeScale < 0.1f)
+            Time.timeScale = 0.2f;
     }
 
     private IEnumerator AfterUI_OnNavigationStart(float time)
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSecondsRealtime(0);
         SelectFirst(_firstSelected);
     }
 

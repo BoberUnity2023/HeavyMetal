@@ -44,5 +44,23 @@ public class GarageSettingsMenu : WindowBase
     public void OnLanguageChanged(int id)
     {
         Debug.Log("Lang:" + id);
+        if (id == 0)        
+            _sceneController.Game.Localize.ChangeLanguage("en");
+
+        if (id == 1)
+            _sceneController.Game.Localize.ChangeLanguage("ru");
+
+        if (id == 2)
+            _sceneController.Game.Localize.ChangeLanguage("es");
+
+        if (id == 3)
+            _sceneController.Game.Localize.ChangeLanguage("tr");
+
+        if (id == 4)
+            _sceneController.Game.Localize.ChangeLanguage("de");
+
+        if (id == 5)
+            _sceneController.Game.Localize.ChangeLanguage("en");
+
     }
 }

@@ -18465,23 +18465,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4070894751325610032, guid: 3cc9c8d21e094944cbf0fdd3fdf18185, type: 3}
   m_PrefabInstance: {fileID: 727483672}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &727789516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::I2.Loc.LocalizeTarget_TextMeshPro_UGUI
-  mTarget: {fileID: 6901248928689405955}
-  mAlignment_RTL: 516
-  mAlignment_LTR: 513
-  mAlignmentWasRTL: 0
-  mInitializeAlignment: 1
 --- !u!1 &728467616
 GameObject:
   m_ObjectHideFlags: 0
@@ -69940,6 +69923,10 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 6382084865511431953, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 6385948083743157554, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -70033,17 +70020,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 061484eed728d5342b139956db07c1f5, type: 3}
---- !u!114 &6901248928689405955 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3776979982659087281, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-  m_PrefabInstance: {fileID: 6901248928689405954}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &6901248928689405956 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1130791776076617690, guid: 061484eed728d5342b139956db07c1f5, type: 3}

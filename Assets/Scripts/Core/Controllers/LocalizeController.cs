@@ -13,7 +13,7 @@ public class LocalizeController : MonoBehaviour
 {
     [SerializeField] private GameController _game;
     [SerializeField] private List<string> _langs;
-    public event Action<string> ChangeLanguage;
+    public event Action<string> OnChangeLanguage;
 
     public string Language { get; private set; }
 
@@ -33,7 +33,7 @@ public class LocalizeController : MonoBehaviour
 #endif
 
 #if UNITY_EDITOR
-        OnChangeLanguage("ru");
+        ChangeLanguage("ru");
 #endif
         string language = "en";
         if (_game.ConfigGame.Language == GameLanguage.System)
@@ -45,7 +45,7 @@ public class LocalizeController : MonoBehaviour
         if (_game.ConfigGame.Language == GameLanguage.English)
             language = "en";
 
-        OnChangeLanguage(language);
+        ChangeLanguage(language);
     }
 
     private void Update()
@@ -63,7 +63,13 @@ public class LocalizeController : MonoBehaviour
         GP_Language.OnChangeLanguage -= GPOnChangeLanguage;
 #endif
     }
-    private void OnChangeLanguage(string lang)
+
+    //public void ChangeLanguage(string lang)
+    //{
+    //    OnChangeLanguage(lang);
+    //}
+
+    public void ChangeLanguage(string lang)
     {
         Debug.Log("Language: " + lang);
         Language = lang;
@@ -99,7 +105,7 @@ public class LocalizeController : MonoBehaviour
             I2.Loc.LocalizationManager.CurrentLanguage = _langs[id];
         else
             Debug.LogError("Language " + lang + " was not founded!");
-        ChangeLanguage?.Invoke(lang);
+        OnChangeLanguage?.Invoke(lang);
     }
 
 #if GAME_PUSH
@@ -167,19 +173,19 @@ public class LocalizeController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.K))
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
-                OnChangeLanguage("ru");
+                ChangeLanguage("ru");
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
-                OnChangeLanguage("en");
+                ChangeLanguage("en");
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
-                OnChangeLanguage("tr");
+                ChangeLanguage("tr");
 
             if (Input.GetKeyDown(KeyCode.Alpha5))
-                OnChangeLanguage("es");
+                ChangeLanguage("es");
 
             if (Input.GetKeyDown(KeyCode.Alpha6))
-                OnChangeLanguage("de");
+                ChangeLanguage("de");
         }
     }
 }

@@ -1,13 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : WindowBase
 {
-    [SerializeField] private Hub _hub;
-    [SerializeField] private GameObject _window;
-    private bool _isPaused;    
+    [SerializeField] private Hub _hub;    
+    private bool _isPaused;
 
-    public void Update()
+    protected override void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) ||
             Input.GetKeyDown(KeyCode.Joystick1Button7))

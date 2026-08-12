@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class GamepadSelectLevel : MonoBehaviour
 {
-    [SerializeField] private MainMenuController _mainMenuController;
+    [SerializeField] private WindowSelectLevel _windowSelectLevel;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-            _mainMenuController.SelectLevelByGamepadNext();
+            _windowSelectLevel.SelectLevelByGamepadNext();
+            _windowSelectLevel.Game.UI.NavigationEnd();
         }
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
-            _mainMenuController.SelectLevelByGamepadPrev();
+            _windowSelectLevel.SelectLevelByGamepadPrev();
+            _windowSelectLevel.Game.UI.NavigationEnd();
         }
     }
 }

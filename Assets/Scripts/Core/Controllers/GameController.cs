@@ -109,6 +109,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private ControllerSound _soundContoller;
     [SerializeField] private ControllerUI _uiContoller;
     [SerializeField] private ControllerSettings _controllerSettings;
+    [SerializeField] private LocalizeController _localizeController;
     [SerializeField] private ControllerAnalitycs _controllerAnalitycs;
     [SerializeField] private Canvas _console;
     [SerializeField] private Skidmarks _prefabSkidmarks;
@@ -193,7 +194,9 @@ public class GameController : MonoBehaviour
 
     public ControllerUI UI => _uiContoller;
 
-    public ControllerSettings Settings => _controllerSettings;    
+    public ControllerSettings Settings => _controllerSettings;
+
+    public LocalizeController Localize => _localizeController;
 
     public Canvas Console => _console;
 
@@ -340,7 +343,7 @@ public class GameController : MonoBehaviour
         {
             MainMenuController mainMenuController = FindFirstObjectByType<MainMenuController>();
             bool fromLevel = _previousScene >= 2;
-            mainMenuController.Init(this, fromLevel);
+            //mainMenuController.Init(this, fromLevel);
             Settings.SetGrafics();
         }
         if (scene.buildIndex >= 3)

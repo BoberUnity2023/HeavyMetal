@@ -1,55 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 public class MainMenuController : SceneController
 {    
-    [SerializeField] private GameObject _canvasScroll;
-    [SerializeField] private GameObject _windowLevels;
-    [SerializeField] private GameObject _windowMain;
-    [SerializeField] private GameObject _hero;
-    [SerializeField] private GameObject _startHand;    
-    [SerializeField] private Transform _canvas;
-    [SerializeField] private Transform[] _titles;
-    [SerializeField] private Transform[] _locations;
-    [SerializeField] private ButtonLevel _buttonLevelPrefab;
-    [SerializeField] private RectTransform _content;
-    private const string _keyLocations = "Location";
-    private int _selectedByGamepadLevel;
-
-    private void OnEnable()
-    {
-        //int sceneIndex = Game != null ? Game.LastCompleteLevel : 2;
-        //Game.SceneLoader.SceneIndex = sceneIndex;
-        //SetButtonLevels();
-        //if (Application.platform == RuntimePlatform.WindowsEditor)
-        //{
-        //    GameController game = FindObjectOfType<GameController>();
-        //    if ( game == null)
-        //    {
-        //        SceneManager.LoadScene(0);
-        //    }
-        //}        
-    }
-
-    public void Init(GameController game, bool fromLevel = false)
-    {
-        //return;
-        Game = game;
-        CreateButtons();
-        SetButtonLevels(_canvas);
-
-        int id = PlayerPrefs.GetInt(_keyLocations);
-        LevelLocation levelLocation = LevelLocationById(id);
-        SetScreen(levelLocation);
-
-        /*if (fromLevel) 
-        {
-            _windowMain.SetActive(false);
-            _windowLevels.SetActive(true);
-            _canvasScroll.SetActive(true);            
-            LoadScrollPosition();            
-        } */
-    }
+    [SerializeField] private RectTransform _content; 
 
     public void LoadScene(int buildIndex)
     {        
@@ -63,7 +16,7 @@ public class MainMenuController : SceneController
 
     public void PressLoadLevel(int level)
     {
-        //Game.Sound.Play(SoundClip.Click);
+        Game.Sound.Play(SoundClip.Click);
 
         if (IsLevelLock(level) && IsLevelAvialableByVideo(level))
         {            
@@ -76,9 +29,9 @@ public class MainMenuController : SceneController
         LoadLevel(level);
     } 
     
-    private void LoadLevel(int level)
+    public void LoadLevel(int level)
     {
-        Debug.Log("Load Level: " + level);
+        Debug.Log("Load Level: " + level);        
         SaveScrollPosition();
         int buildIndex = Game.ConfigLevels.Level(level).SceneBuildIndex;//level + 1;
         Game.CurrentLevel = level;
@@ -90,120 +43,9 @@ public class MainMenuController : SceneController
         PressLoadLevel(Game.LastPlayedLevel);
     }
 
-    public void SetButtonLevels(Transform canvasScroll)
-    {
-        //int stars = YandexGame.savesData.Stars + YandexGame.savesData.PurchasedStars;
-        //Debug.Log("Stars: " + stars);
-        ButtonLevel[] buttonLevels = canvasScroll.GetComponentsInChildren<ButtonLevel>();
-
-        for (int i = 0; i < buttonLevels.Length; i++)
-        {            
-            Sprite icon = Game.ConfigLevels.Level(i + 1).Icon;
-            buttonLevels[i].SetLevel(i + 1, icon, this);
-
-            if (IsLevelLock(i + 1))
-                buttonLevels[i].Lock();
-        }
-    }
-
-    private void SetScreen(LevelLocation levelLocation)
-    {
-        _locations[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
-        _locations[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
-        _locations[2].gameObject.SetActive(levelLocation == LevelLocation.Alien);
-
-        _titles[0].gameObject.SetActive(levelLocation == LevelLocation.SmokeCity);
-        _titles[1].gameObject.SetActive(levelLocation == LevelLocation.Paradize);
-        _titles[2].gameObject.SetActive(levelLocation == LevelLocation.Alien);
-
-        if (levelLocation == LevelLocation.SmokeCity)
-            PlayerPrefs.SetInt(_keyLocations, 0);
-
-        if (levelLocation == LevelLocation.Paradize)
-            PlayerPrefs.SetInt(_keyLocations, 1);
-
-        if (levelLocation == LevelLocation.Alien)
-            PlayerPrefs.SetInt(_keyLocations, 2);
-
-        _selectedByGamepadLevel = 0;
-    }
-
-    public void PressScreenNext()
-    {
-        int id = PlayerPrefs.GetInt(_keyLocations);
-        LevelLocation levelLocation = LevelLocationById(id);
-        
-        if (levelLocation == LevelLocation.Paradize)
-            SetScreen(LevelLocation.Alien);
-
-        if (levelLocation == LevelLocation.SmokeCity)
-            SetScreen(LevelLocation.Paradize);
-    }
-
-    public void PressScreenPrev()
-    {
-        int id = PlayerPrefs.GetInt(_keyLocations);
-        LevelLocation levelLocation = LevelLocationById(id);
-
-        if (levelLocation == LevelLocation.Paradize)
-            SetScreen(LevelLocation.SmokeCity);
-
-        if (levelLocation == LevelLocation.Alien)
-            SetScreen(LevelLocation.Paradize);
-    }
-
-    public void SelectLevelByGamepadNext()
-    {
-        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
-
-        _selectedByGamepadLevel++;
-        if (_selectedByGamepadLevel > buttonLevels.Length)
-            _selectedByGamepadLevel = 1;
-        
-        Button button = buttonLevels[_selectedByGamepadLevel - 1].GetComponent<Button>();
-        button.Select();
-    }
-
-    public void SelectLevelByGamepadPrev()
-    {
-        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
-
-        _selectedByGamepadLevel--;
-        if (_selectedByGamepadLevel < 1)
-            _selectedByGamepadLevel = buttonLevels.Length;
-
-        Button button = buttonLevels[_selectedByGamepadLevel - 1].GetComponent<Button>();
-        button.Select();
-    }
-
     public void PressSound()
     {
         Game.Sound.Play(SoundClip.Click);
-    }
-
-    private void CreateButtons()
-    {
-        for (int i = 1; i <= Game.ConfigLevels.Levels.Length; i++)        
-        {
-            Transform parent = LevelScreen(Game.ConfigLevels.Levels[i - 1].LevelLocation);
-            ButtonLevel buttonLevel = Instantiate(_buttonLevelPrefab, parent);
-            int iCopy = i;
-            buttonLevel.GetComponent<Button>().onClick.AddListener(() => PressLoadLevel(iCopy));
-        }
-    }
-
-    private Transform LevelScreen(LevelLocation levelLocation)
-    {
-        switch (levelLocation)
-        {
-            case LevelLocation.SmokeCity:
-                return _locations[0];
-            case LevelLocation.Paradize: 
-                return _locations[1];
-            case LevelLocation.Alien:
-                return _locations[2];
-        }
-        return _locations[0];
     }
 
     public bool IsLevelLock(int level)
@@ -235,24 +77,5 @@ public class MainMenuController : SceneController
     {
         if (_content != null)//Del
             PlayerPrefs.SetInt("ScrollPosition", (int)_content.anchoredPosition.y);
-    }
-
-    private void LoadScrollPosition()
-    {
-        float x = _content.anchoredPosition.x;
-        float y = PlayerPrefs.GetInt("ScrollPosition");
-        _content.anchoredPosition = new Vector2(x, y);        
-    }
-
-    private LevelLocation LevelLocationById(int id)
-    {
-        if (id == 0)
-            return LevelLocation.SmokeCity;
-
-        if (id == 1)
-            return LevelLocation.Paradize;
-
-        else
-            return LevelLocation.Alien;
     }
 }

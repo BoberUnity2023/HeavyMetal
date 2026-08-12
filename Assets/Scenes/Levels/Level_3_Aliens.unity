@@ -64456,6 +64456,10 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 1184327007668894842, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 099c6fb5b382d7746a295a45dd2ce411, type: 3}
     - target: {fileID: 1501419393712854099, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Color.b
       value: 0.65948725
@@ -64548,6 +64552,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2028385133525509348, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be8debd2094fb5e45ad960a039a3b6ee, type: 3}
+    - target: {fileID: 2655970510242646039, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1eceb22ee8d60cf48845c19141677402, type: 3}
     - target: {fileID: 2678641424116270007, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -64588,6 +64600,10 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 4984431954108066477, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fa40a60c10aa8d4088e7d2c2bac4399, type: 3}
     - target: {fileID: 5056740230688576263, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -64604,6 +64620,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -146
       objectReference: {fileID: 0}
+    - target: {fileID: 5868478465166862798, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 573e75b2f851dcf409d543fb074cf070, type: 3}
     - target: {fileID: 6204872754029138250, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -64612,6 +64632,14 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 6382084865511431953, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 1862994659}
+    - target: {fileID: 6385948083743157554, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b19ed76b56b72ec4f96463c282fb1722, type: 3}
     - target: {fileID: 6578690841220330140, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Name
       value: CanvasLevelScene
@@ -64620,6 +64648,10 @@ PrefabInstance:
       propertyPath: mLocalizeTarget
       value: 
       objectReference: {fileID: 504526709}
+    - target: {fileID: 6881084743535481649, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cff8225e824d22040ab5155163da5a44, type: 3}
     - target: {fileID: 7062763839025865612, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -64664,6 +64696,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -116.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8008641419090428032, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5ebd1b42b06ac44eb9eb62a5e2f288f, type: 3}
     - target: {fileID: 8225476465527481214, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.84445
