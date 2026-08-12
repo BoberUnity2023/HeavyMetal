@@ -20,6 +20,7 @@ public class GarageSettingsMenu : WindowBase
 
     public void OnMusicVolumeChanged(float value)
     {
+        Game.Sound.Play(SoundClip.Click);
         PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.Save();
         _sceneController.Game.Sound.SetMusicVolume(value);
@@ -29,6 +30,7 @@ public class GarageSettingsMenu : WindowBase
 
     public void OnGraficChanged(float value)
     {
+        Game.Sound.Play(SoundClip.Click);
         PlayerPrefs.SetInt("QualityLevel", (int)value);
         PlayerPrefs.Save();
 
@@ -37,6 +39,7 @@ public class GarageSettingsMenu : WindowBase
 
     public void PressClose()
     {
+        Game.Sound.Play(SoundClip.Click);
         Hide();
         _garage.MainMenu.Show();
     }
@@ -44,6 +47,7 @@ public class GarageSettingsMenu : WindowBase
     public void OnLanguageChanged(int id)
     {
         Debug.Log("Lang:" + id);
+        Game.Sound.Play(SoundClip.Click);
         if (id == 0)        
             _sceneController.Game.Localize.ChangeLanguage("en");
 

@@ -85,6 +85,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressNextCar()
     {
+        Game.Sound.Play(SoundClip.Click);
         _game.SelectedCar++;
         if (_game.SelectedCar == 3)
             _game.SelectedCar = 0;
@@ -95,6 +96,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressPreviousCar()
     {
+        Game.Sound.Play(SoundClip.Click);
         _game.SelectedCar--;
         if (_game.SelectedCar < 0)
             _game.SelectedCar = 2;
@@ -106,6 +108,8 @@ public class WindowSelectCar : WindowBase
     public void PressBuy()
     {
         Debug.Log("PressBuyCar()");
+        Game.Sound.Play(SoundClip.Click);
+
         if (_game.SelectedCarType == CarType.Gnom)
             return;
 
@@ -122,6 +126,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuyTuningEngine()
     {
+        Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Engine.Price;
         int max = configCar.Tuning.Engine.CountMax;
@@ -130,6 +135,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuyTuningShields()
     {
+        Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Shields.Price;
         int max = configCar.Tuning.Shields.CountMax;
@@ -138,6 +144,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuyTuningWeapon()
     {
+        Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Weapon.Price;
         int max = configCar.Tuning.Weapon.CountMax;
@@ -146,6 +153,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuyTuningTires()
     {
+        Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Tires.Price;
         int max = configCar.Tuning.Tires.CountMax;
@@ -154,6 +162,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuyTuningNitro()
     {
+        Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Nitro.Price;
         int max = configCar.Tuning.Nitro.CountMax;
@@ -162,6 +171,7 @@ public class WindowSelectCar : WindowBase
 
     public void PressBuyTuningShield()
     {
+        Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         int price = configCar.Tuning.Shield.Price;
         int max = configCar.Tuning.Shield.CountMax;

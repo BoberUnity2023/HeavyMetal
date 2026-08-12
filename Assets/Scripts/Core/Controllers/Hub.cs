@@ -45,4 +45,6 @@ public class Hub : SceneController
     public AudioListenerMovier AudioListenerMovier => _audioListenerMovier;
 
     public ControllerRace Race => Level.Race;
+
+    public bool IsPaused { get; set; }
 }

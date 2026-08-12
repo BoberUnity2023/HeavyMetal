@@ -38,10 +38,7 @@ public class WindowSelectLevel : WindowBase
         if (IsLevelLock(level) && _mainMenuController.IsLevelAvialableByVideo(level))
         {
             return;
-        }
-
-        if (IsLevelLock(level))
-            return;
+        }        
 
         _mainMenuController.LoadLevel(level);
     }
@@ -164,9 +161,8 @@ public class WindowSelectLevel : WindowBase
 
     public void SelectLevelByGamepadNext()
     {
-        Debug.Log("SelectLevelByGamepadNext()");
         ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
-        Debug.Log("buttonLevels: " + buttonLevels.Length);
+        
         _selectedByGamepadLevel++;
         if (_selectedByGamepadLevel > buttonLevels.Length)
             _selectedByGamepadLevel = 1;
@@ -177,10 +173,7 @@ public class WindowSelectLevel : WindowBase
 
     public void SelectLevelByGamepadPrev()
     {
-        Debug.Log("SelectLevelByGamepadPrev()");
-
-        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();
-        Debug.Log("buttonLevels: " + buttonLevels.Length);
+        ButtonLevel[] buttonLevels = _canvasScroll.GetComponentsInChildren<ButtonLevel>();        
 
         _selectedByGamepadLevel--;
         if (_selectedByGamepadLevel < 1)

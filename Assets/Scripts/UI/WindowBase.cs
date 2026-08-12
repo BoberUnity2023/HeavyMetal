@@ -44,9 +44,7 @@ public class WindowBase : MonoBehaviour
             return;
         
         EventSystem.current.SetSelectedGameObject(null);
-        StartCoroutine(AfterUI_OnNavigationStart(0));
-        if (Time.timeScale < 0.1f)
-            Time.timeScale = 0.2f;
+        StartCoroutine(AfterUI_OnNavigationStart(0));        
     }
 
     private IEnumerator AfterUI_OnNavigationStart(float time)
@@ -59,6 +57,4 @@ public class WindowBase : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(firstSelected);
     }
-
-
 }

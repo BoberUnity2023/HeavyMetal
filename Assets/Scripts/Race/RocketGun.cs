@@ -46,8 +46,8 @@ public class RocketGun : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (_car.IsAI)
+    {        
+        if (Time.timeScale == 0 || _car.Hub.IsPaused || _car.IsAI)
             return;
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button0))

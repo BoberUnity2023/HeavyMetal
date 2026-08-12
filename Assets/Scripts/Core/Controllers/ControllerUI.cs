@@ -18,11 +18,17 @@ public class ControllerUI : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    public void NavigationStart()
+    {
+        _hasSelected = true;
+        OnNavigationStart?.Invoke();
+    }
+
     public void NavigationEnd()
     {
         _hasSelected = false;
     }
-    
+
     private void Update()
     {
         bool anyKey = Input.GetKeyDown(KeyCode.DownArrow) ||
@@ -31,8 +37,7 @@ public class ControllerUI : MonoBehaviour
 
         if (anyKey && !_hasSelected)
         {
-            _hasSelected = true;            
-            OnNavigationStart?.Invoke();            
+            NavigationStart();
         }
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter) ||
