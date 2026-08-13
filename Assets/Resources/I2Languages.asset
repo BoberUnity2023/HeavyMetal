@@ -17,59 +17,15 @@ MonoBehaviour:
     UserAgreesToHaveItInsideThePluginsFolder: 0
     GoogleLiveSyncIsUptoDate: 1
     mTerms:
-    - Term: ads
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0420\u0415\u041A\u041B\u0410\u041C\u0410 \u0427\u0415\u0420\u0415\u0417:"
-      - 'AD IN:'
-      - "REKLAM \u0130LE:"
-      - "PUBLICIDAD A TRAV\xC9S DE:"
-      - "WERBUNG \xDCBER:"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: again
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0417\u0410\u041D\u041E\u0412\u041E?"
-      - RESTART?
-      - "YEN\u0130DEN?"
-      - "\xBFREINICIAR?"
-      - NOCHMAL?
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: best_time
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041B\u0423\u0427\u0428\u0415\u0415 \u0412\u0420\u0415\u041C\u042F"
-      - BEST TIME
-      - "EN \u0130Y\u0130 S\xDCRE"
-      - MEJOR TIEMPO
-      - BESTE ZEIT
-      Flags: 0000000000
-      Languages_Touch: []
     - Term: buy
       TermType: 0
       Description: 
       Languages:
       - "\u041A\u0423\u041F\u0418\u0422\u042C"
       - BUY
-      - SATIN
       - COMPRAR
       - KAUFEN
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: cancel
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041E\u0422\u041C\u0415\u041D\u0410"
-      - CANCEL
-      - "\u0130PTAL"
-      - CANCELAR
-      - ABBRECHEN
+      - 'ACHETER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: coins
@@ -78,9 +34,9 @@ MonoBehaviour:
       Languages:
       - "\u041C\u041E\u041D\u0415\u0422\u042B"
       - COINS
-      - PARALAR
       - MONEDAS
       - "M\xDCNZEN"
+      - "PI\xC8CES "
       Flags: 0000000000
       Languages_Touch: []
     - Term: congratulations
@@ -89,9 +45,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u041E\u0417\u0414\u0420\u0410\u0412\u041B\u042F\u0415\u041C!"
       - CONGRATULATIONS!
-      - "TEBR\u0130KLER!"
       - "\xA1FELICIDADES!"
       - "GL\xDCCKWUNSCH!"
+      - "F\xC9LICITATIONS\_! "
       Flags: 0000000000
       Languages_Touch: []
     - Term: daily_bonus
@@ -100,9 +56,9 @@ MonoBehaviour:
       Languages:
       - "\u0414\u041D\u0415\u0412\u041D\u0410\u042F \u041D\u0410\u0413\u0420\u0410\u0414\u0410"
       - DAILY REWARD
-      - "G\xDCNL\xDCK \xD6D\xDCL"
       - RECOMPENSA DIARIA
       - "T\xC4GLICHE BELOHNUNG"
+      - "R\xC9COMPENSE QUOTIDIENNE "
       Flags: 0000000000
       Languages_Touch: []
     - Term: day
@@ -111,9 +67,9 @@ MonoBehaviour:
       Languages:
       - "\u0414\u0415\u041D\u042C"
       - DAY
-      - "G\xDCN"
       - "D\xCDA"
       - TAG
+      - 'JOUR '
       Flags: 0000000000
       Languages_Touch: []
     - Term: get
@@ -122,9 +78,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C"
       - COLLECT
-      - KAZAN
-      - OBTENER
+      - RECOGER
       - ERHALTEN
+      - 'COLLECTER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: new_game
@@ -133,9 +89,9 @@ MonoBehaviour:
       Languages:
       - "\u041D\u041E\u0412\u0410\u042F \u0418\u0413\u0420\u0410"
       - NEW GAME
-      - "YEN\u0130 OYUN"
       - NUEVO JUEGO
       - NEUES SPIEL
+      - 'NOUVELLE PARTIE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: no
@@ -144,9 +100,9 @@ MonoBehaviour:
       Languages:
       - "\u041D\u0415\u0422"
       - NO
-      - HAYIR
       - NO
       - NEIN
+      - 'NON '
       Flags: 0000000000
       Languages_Touch: []
     - Term: personal_record
@@ -155,9 +111,9 @@ MonoBehaviour:
       Languages:
       - "\u041B\u0418\u0427\u041D\u042B\u0419 \u0420\u0415\u041A\u041E\u0420\u0414"
       - PERSONAL BEST
-      - "K\u0130\u015E\u0130SEL REKOR"
       - "R\xC9CORD PERSONAL"
       - "PERS\xD6NLICHER REKORD"
+      - 'MEILLEUR PERFORMANT '
       Flags: 0000000000
       Languages_Touch: []
     - Term: play
@@ -166,9 +122,9 @@ MonoBehaviour:
       Languages:
       - "\u0418\u0413\u0420\u0410\u0422\u042C"
       - PLAY
-      - OYNAT
       - JUGAR
       - SPIELEN
+      - 'JOUER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: rating
@@ -177,9 +133,9 @@ MonoBehaviour:
       Languages:
       - "\u0420\u0415\u0419\u0422\u0418\u041D\u0413"
       - LEADERBOARD
-      - SIRALAMA
       - "CLASIFICACI\xD3N"
       - RANGLISTE
+      - 'CLASSEMENT '
       Flags: 0000000000
       Languages_Touch: []
     - Term: restart
@@ -188,9 +144,9 @@ MonoBehaviour:
       Languages:
       - "\u0420\u0415\u0421\u0422\u0410\u0420\u0422"
       - RESTART
-      - "YEN\u0130DEN BA\u015ELAT"
       - REINICIAR
       - NEUSTART
+      - 'REMARQUER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: rules
@@ -199,9 +155,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0420\u0410\u0412\u0418\u041B\u0410 \u0418\u0413\u0420\u042B"
       - GAME RULES
-      - OYUN KURALLARI
       - REGLAS DEL JUEGO
       - SPIELREGELN
+      - "R\xC8GLES DU JEU "
       Flags: 0000000000
       Languages_Touch: []
     - Term: score
@@ -210,9 +166,9 @@ MonoBehaviour:
       Languages:
       - "\u041E\u0427\u041A\u0418"
       - Score
-      - PUAN
       - PUNTOS
       - PUNKTE
+      - 'Score '
       Flags: 0000000000
       Languages_Touch: []
     - Term: sec
@@ -221,9 +177,9 @@ MonoBehaviour:
       Languages:
       - "\u0421\u0415\u041A"
       - SEC
-      - SN
       - SEG
       - SEK
+      - 'SEC '
       Flags: 0000000000
       Languages_Touch: []
     - Term: settings
@@ -232,9 +188,9 @@ MonoBehaviour:
       Languages:
       - "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
       - SETTINGS
-      - AYARLAR
       - AJUSTES
       - EINSTELLUNGEN
+      - "PARAM\xC8TRES "
       Flags: 0000000000
       Languages_Touch: []
     - Term: sound
@@ -243,9 +199,9 @@ MonoBehaviour:
       Languages:
       - "\u0417\u0412\u0423\u041A"
       - SOUND
-      - SES
       - SONIDO
       - TON
+      - 'SON '
       Flags: 0000000000
       Languages_Touch: []
     - Term: time
@@ -254,9 +210,9 @@ MonoBehaviour:
       Languages:
       - "\u0412\u0420\u0415\u041C\u042F"
       - TIME
-      - "S\xDCRE"
       - TIEMPO
       - ZEIT
+      - 'TEMPS '
       Flags: 0000000000
       Languages_Touch: []
     - Term: time_bonus
@@ -265,9 +221,9 @@ MonoBehaviour:
       Languages:
       - "\u0411\u041E\u041D\u0423\u0421 \u0417\u0410 \u0412\u0420\u0415\u041C\u042F"
       - TIME BONUS
-      - "S\xDCRE BONUSU"
       - BONO DE TIEMPO
       - ZEITBONUS
+      - 'BONUS DE TEMPS '
       Flags: 0000000000
       Languages_Touch: []
     - Term: x2
@@ -276,9 +232,9 @@ MonoBehaviour:
       Languages:
       - "\u0423\u0414\u0412\u041E\u0418\u0422\u042C"
       - DOUBLE
-      - "\u0130K\u0130YE KATLA"
       - DUPLICAR
       - VERDOPPELN
+      - 'DOUBLE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: yes
@@ -287,9 +243,9 @@ MonoBehaviour:
       Languages:
       - "\u0414\u0410"
       - YES
-      - EVET
       - "S\xCD"
       - JA
+      - 'OUI '
       Flags: 0000000000
       Languages_Touch: []
     - Term: purchase
@@ -298,9 +254,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u041E\u041A\u0423\u041F\u041A\u0410"
       - PURCHASE
-      - SATIN ALIM
       - COMPRA
       - KAUF
+      - 'ACHETER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: shop
@@ -309,9 +265,9 @@ MonoBehaviour:
       Languages:
       - "\u041C\u0410\u0413\u0410\u0417\u0418\u041D"
       - STORE
-      - "MA\u011EAZA"
       - TIENDA
-      - SHOP
+      - LADEN
+      - 'BOUTIQUE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: garage
@@ -320,9 +276,9 @@ MonoBehaviour:
       Languages:
       - "\u0413\u0410\u0420\u0410\u0416"
       - GARAGE
-      - GARAGE
-      - GARAGE
-      - GARAGE
+      - GARAJE
+      - 'GARAGE '
+      - 'GARAGE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: lap
@@ -331,9 +287,9 @@ MonoBehaviour:
       Languages:
       - "\u041A\u0420\u0423\u0413"
       - LAP
-      - LAP
-      - LAP
-      - LAP
+      - 'VUELTA '
+      - 'RUNDE '
+      - 'TOUR '
       Flags: 0000000000
       Languages_Touch: []
     - Term: place
@@ -342,9 +298,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u041E\u0417\u0418\u0426\u0418\u042F"
       - PLACE
-      - PLACE
-      - PLACE
-      - PLACE
+      - "UBICACI\xD3N"
+      - 'PLATZ '
+      - 'PLACE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: speed
@@ -353,9 +309,9 @@ MonoBehaviour:
       Languages:
       - "\u0421\u041A\u041E\u0420\u041E\u0421\u0422\u042C"
       - SPEED
-      - SPEED
-      - SPEED
-      - SPEED
+      - VELOCIDAD
+      - 'GESCHWINDIGKEIT '
+      - 'VITESSE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: continue
@@ -364,9 +320,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
       - CONTINUE
-      - CONTINUE
-      - CONTINUE
-      - CONTINUE
+      - 'CONTINUAR '
+      - 'FORTSETZEN '
+      - 'CONTINUER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: loading
@@ -375,9 +331,9 @@ MonoBehaviour:
       Languages:
       - "\u0417\u0410\u0413\u0420\u0423\u0417\u041A\u0410..."
       - LOADING...
-      - LOADING...
-      - LOADING...
-      - LOADING...
+      - 'CARGANDO... '
+      - "L\xC4DT... "
+      - "CHARGEMENT\u2026 "
       Flags: 0000000000
       Languages_Touch: []
     - Term: location_smoke_city
@@ -386,9 +342,9 @@ MonoBehaviour:
       Languages:
       - "\u0414\u042B\u041C\u041D\u042B\u0419 \u0413\u041E\u0420\u041E\u0414"
       - SMOKE CITY
-      - Smoke city
-      - Smoke city
-      - Smoke city
+      - 'CIUDAD DE HUMO '
+      - 'SMOKE CITY '
+      - 'SMOKE CITY '
       Flags: 0000000000
       Languages_Touch: []
     - Term: location_paradize
@@ -397,9 +353,9 @@ MonoBehaviour:
       Languages:
       - "\u0420\u0410\u0419"
       - PARADIZE
-      - Paradize
-      - Paradize
-      - Paradize
+      - "PARA\xCDSO "
+      - 'PARADIES '
+      - 'PARADIZE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: location_alien
@@ -408,9 +364,9 @@ MonoBehaviour:
       Languages:
       - "\u0427\u0423\u0416\u041E\u0419"
       - ALIEN
-      - Alien
-      - Alien
-      - Alien
+      - "ALIEN\xCDGENA "
+      - 'ALIEN '
+      - 'ALIEN '
       Flags: 0000000000
       Languages_Touch: []
     - Term: pause
@@ -419,9 +375,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0410\u0423\u0417\u0410"
       - PAUSE
-      - Pause
-      - Pause
-      - Pause
+      - 'PAUSA '
+      - 'PAUSE '
+      - 'PAUSE '
       Flags: 0000000000
       Languages_Touch: []
     - Term: quit
@@ -430,9 +386,9 @@ MonoBehaviour:
       Languages:
       - "\u0412\u042B\u0425\u041E\u0414"
       - QUIT
-      - Quit
-      - Quit
-      - Quit
+      - 'SALIR '
+      - 'BEENDEN '
+      - 'QUITTER '
       Flags: 0000000000
       Languages_Touch: []
     - Term: about
@@ -441,9 +397,9 @@ MonoBehaviour:
       Languages:
       - "\u041E\u0411 \u0418\u0413\u0420\u0415"
       - ABOUT GAME
-      - ABOUT GAME
-      - ABOUT GAME
-      - ABOUT GAME
+      - 'ACERCA DEL JUEGO '
+      - "\xDCBER DAS SPIEL "
+      - "\xC0 PROPOS DU JEU "
       Flags: 0000000000
       Languages_Touch: []
     - Term: color
@@ -452,9 +408,9 @@ MonoBehaviour:
       Languages:
       - "\u0426\u0412\u0415\u0422"
       - COLOR
-      - COLOR
-      - COLOR
-      - COLOR
+      - 'COLOR '
+      - 'FARBE '
+      - 'COULEUR '
       Flags: 0000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
@@ -467,14 +423,14 @@ MonoBehaviour:
     - Name: English
       Code: en
       Flags: 0
-    - Name: Turkish
-      Code: tr
-      Flags: 0
     - Name: Spanish
       Code: es
       Flags: 0
     - Name: German
       Code: de
+      Flags: 0
+    - Name: France
+      Code: fr-FR
       Flags: 0
     IgnoreDeviceLanguage: 0
     _AllowUnloadingLanguages: 0
