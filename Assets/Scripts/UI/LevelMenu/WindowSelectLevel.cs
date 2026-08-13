@@ -48,7 +48,7 @@ public class WindowSelectLevel : WindowBase
         int id = LocationId;
         LevelLocation levelLocation = LevelLocationById(id);
 
-        if (levelLocation == LevelLocation.Paradize)
+        if (Game.ConfigGame.GameVersion == GameVersion.Full && levelLocation == LevelLocation.Paradize)
             SetScreen(LevelLocation.Alien);
 
         if (levelLocation == LevelLocation.SmokeCity)

@@ -2370,12 +2370,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2356170963461601780}
   m_Layer: 11
-  m_Name: Weapon_1
+  m_Name: Weapon_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2356170963461601780
 Transform:
   m_ObjectHideFlags: 0
@@ -2869,12 +2869,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4755513064914883540}
   m_Layer: 11
-  m_Name: Weapon_6
+  m_Name: Weapon_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4755513064914883540
 Transform:
   m_ObjectHideFlags: 0
@@ -2964,12 +2964,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2645626493370393975}
   m_Layer: 11
-  m_Name: Weapon_4
+  m_Name: Weapon_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2645626493370393975
 Transform:
   m_ObjectHideFlags: 0
@@ -3451,12 +3451,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4514801058238750229}
   m_Layer: 11
-  m_Name: Weapon_3
+  m_Name: Weapon_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4514801058238750229
 Transform:
   m_ObjectHideFlags: 0
@@ -9097,12 +9097,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2127798423063383223}
   m_Layer: 11
-  m_Name: Weapon_0
+  m_Name: Weapon_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2127798423063383223
 Transform:
   m_ObjectHideFlags: 0
@@ -9171,13 +9171,13 @@ Transform:
   - {fileID: 1513933286491174265}
   - {fileID: 5922349348538936337}
   - {fileID: 482552335560980166}
+  - {fileID: 5449893833877908098}
+  - {fileID: 4755513064914883540}
   - {fileID: 2127798423063383223}
   - {fileID: 2356170963461601780}
-  - {fileID: 5449893833877908098}
   - {fileID: 4514801058238750229}
   - {fileID: 2645626493370393975}
   - {fileID: 7661811192518754719}
-  - {fileID: 4755513064914883540}
   - {fileID: 6324692033466306818}
   - {fileID: 8301043297913605746}
   - {fileID: 8012909724973155213}
@@ -9346,14 +9346,14 @@ MonoBehaviour:
   - {fileID: 2247655566935154955}
   - {fileID: 8829440544429916183}
   - {fileID: 3515899736583684908}
-  _defaultWeapon: {fileID: 5954926273329909454}
+  _defaultWeapon: {fileID: 8096518251338533769}
   _weapons:
+  - {fileID: 3769445517285574932}
+  - {fileID: 5954926273329909454}
   - {fileID: 2995558778692943308}
-  - {fileID: 8096518251338533769}
   - {fileID: 4828560317336221648}
   - {fileID: 4354129268651548667}
   - {fileID: 8612987415207662302}
-  - {fileID: 3769445517285574932}
   - {fileID: 8092901556020163486}
   _tireArrays:
   - _tires:
@@ -9450,8 +9450,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketGun
   _transformGun: {fileID: 2127798423063383223}
-  _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
+  _prefabRocket: {fileID: 5727110844089552867, guid: a24da5a3beb243040aa3b3fcb630cf94, type: 3}
   _tryAIShootTime: 0.3
+  _queue: 1
 --- !u!114 &-893627492277073359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14856,7 +14857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6324692033466306818
 Transform:
   m_ObjectHideFlags: 0
@@ -14884,7 +14885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5449893833877908098}
   m_Layer: 11
-  m_Name: Weapon_2
+  m_Name: Weapon_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15422,12 +15423,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7661811192518754719}
   m_Layer: 11
-  m_Name: Weapon_5
+  m_Name: Weapon_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7661811192518754719
 Transform:
   m_ObjectHideFlags: 0

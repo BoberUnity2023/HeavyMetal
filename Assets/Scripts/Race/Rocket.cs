@@ -4,11 +4,13 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBlast;
+    [SerializeField] private float _speed;
+    [SerializeField] private int _damage;
     [SerializeField] private float _blastForce;
     [SerializeField] private float _verticalSpeed;
+    [SerializeField] private bool _isMoveOverGround;
     private Hub _hub;    
-    private Car _attacker;
-    private const float _speed = 50f;
+    private Car _attacker;    
     private const float _height = 1.8f;
 
     public void Init(Car attacker)
@@ -46,6 +48,9 @@ public class Rocket : MonoBehaviour
 
     private void FixedUpdate_MoveOverGround()
     {
+        if (!_isMoveOverGround)
+            return;
+
         float heightCorrect = 0;
         
         if (RayDown < 90)
@@ -81,7 +86,7 @@ public class Rocket : MonoBehaviour
         Vector3 direction = (car.transform.position - transform.position).normalized;
         car.Rigidbody.AddForce(direction * _blastForce);
         bool fromPlayer = !_attacker.IsAI;
-        car.DamageCounter.DamageAdd(34, fromPlayer);
+        car.DamageCounter.DamageAdd(_damage, fromPlayer);
     }
 
     private float RayDistance

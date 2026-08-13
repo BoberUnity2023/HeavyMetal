@@ -6,10 +6,11 @@ public class RocketGun : MonoBehaviour
     [SerializeField] private Transform _transformGun;
     [SerializeField] private Rocket _prefabRocket;
     [SerializeField] private float _tryAIShootTime;
+    [SerializeField] private int _queue;
     private Car _car;
     private int _armo;
     private int _tuningArmo;
-    private bool _waitingNextPatron;
+    private bool _waitingReload;
     private bool _isInited;
 
     public int Armo => _armo;
@@ -50,7 +51,10 @@ public class RocketGun : MonoBehaviour
         if (Time.timeScale == 0 || _car.Hub.IsPaused || _car.IsAI)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button0))
+        if (Input.GetKeyDown(KeyCode.E) || 
+            Input.GetKeyDown(KeyCode.Return) ||
+            Input.GetKeyDown(KeyCode.KeypadEnter) ||
+            Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             TryShoot();
         }
@@ -73,14 +77,19 @@ public class RocketGun : MonoBehaviour
         if(_car.IsFinished || !_car.Hub.Level.IsPlaying)
             return;
 
-        if (_waitingNextPatron)
+        if (_waitingReload)
             return;
 
         _armo--;
         //Debug.Log("Shoot");
-        bool _isShooted = false;
+       // bool _isShooted = false;
         Rocket rocket = Instantiate(_prefabRocket, _transformGun.position, _transformGun.rotation);
         rocket.Init(_car);
+
+        for (int i = 0; i < _queue; i++)
+        {
+            StartCoroutine(NextShoot(0.1f * i));
+        }
         //foreach (Car enemy in _car.Hub.Level.Race.Enemies)
         //{            
         //    if (CanShooted(enemy))
@@ -92,13 +101,22 @@ public class RocketGun : MonoBehaviour
         //    }            
         //}
 
-        if (!_isShooted)
-        {
+        //if (!_isShooted)
+        //{
             //Debug.Log("ShootFail:");
             //rocket.Shoot(); 
-        }
+        //}
 
         StartCoroutine(WaitPatron(0.8f));
+    }
+
+    private IEnumerator NextShoot(float time)
+    {
+        yield return new WaitForSeconds(time);
+        {
+            Rocket rocket = Instantiate(_prefabRocket, _transformGun.position, _transformGun.rotation);
+            rocket.Init(_car);
+        }
     }
 
     private bool CanShooted(Car enemy)
@@ -129,9 +147,9 @@ public class RocketGun : MonoBehaviour
 
     private IEnumerator WaitPatron(float time)
     {
-        _waitingNextPatron = true;
+        _waitingReload = true;
         yield return new WaitForSeconds(time);
-        _waitingNextPatron = false;
+        _waitingReload = false;
     }
 
     private IEnumerator WaitAITryShoot(float time)

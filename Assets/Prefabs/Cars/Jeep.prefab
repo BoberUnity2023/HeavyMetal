@@ -1356,12 +1356,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6233398121114675973}
   m_Layer: 11
-  m_Name: Weapon_6
+  m_Name: Weapon_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6233398121114675973
 Transform:
   m_ObjectHideFlags: 0
@@ -2054,7 +2054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3731412852505828774
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,12 +2860,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4020956347623031077}
   m_Layer: 11
-  m_Name: Weapon_1
+  m_Name: Weapon_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4020956347623031077
 Transform:
   m_ObjectHideFlags: 0
@@ -3659,12 +3659,12 @@ GameObject:
   m_Component:
   - component: {fileID: 790652330798216294}
   m_Layer: 11
-  m_Name: Weapon_0
+  m_Name: Weapon_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &790652330798216294
 Transform:
   m_ObjectHideFlags: 0
@@ -8925,7 +8925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3015240056592623300
 Transform:
   m_ObjectHideFlags: 0
@@ -9035,13 +9035,13 @@ Transform:
   - {fileID: 2663388525243021148}
   - {fileID: 1532580404893097404}
   - {fileID: 6526192108085764677}
-  - {fileID: 790652330798216294}
-  - {fileID: 4020956347623031077}
   - {fileID: 6691903668125028947}
+  - {fileID: 6233398121114675973}
+  - {fileID: 4020956347623031077}
   - {fileID: 3015240056592623300}
   - {fileID: 3731412852505828774}
   - {fileID: 9019509185002010958}
-  - {fileID: 6233398121114675973}
+  - {fileID: 790652330798216294}
   - {fileID: 4664131187333867987}
   - {fileID: 2930219596667740511}
   - {fileID: 8012909724973155213}
@@ -9212,14 +9212,14 @@ MonoBehaviour:
   - {fileID: 7961947885133883686}
   - {fileID: 6177637341933279311}
   - {fileID: 7660569385534958101}
-  _defaultWeapon: {fileID: 5033800190468027935}
+  _defaultWeapon: {fileID: 7431817949425152856}
   _weapons:
+  - {fileID: 2535598906715500997}
   - {fileID: 4534526320894280989}
-  - {fileID: 7431817949425152856}
   - {fileID: 6088300971249946369}
   - {fileID: 3103959805203638058}
   - {fileID: 6987608689717242383}
-  - {fileID: 2535598906715500997}
+  - {fileID: 5033800190468027935}
   - {fileID: 7435513805285755727}
   _tireArrays:
   - _tires:
@@ -9315,9 +9315,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5609f944b451e041a6dd267f79091ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketGun
-  _transformGun: {fileID: 790652330798216294}
-  _prefabRocket: {fileID: 5727110844089552867, guid: 33015bc821888424e98eff2096b8a43a, type: 3}
+  _transformGun: {fileID: 6691903668125028947}
+  _prefabRocket: {fileID: 5727110844089552867, guid: a24da5a3beb243040aa3b3fcb630cf94, type: 3}
   _tryAIShootTime: 0.3
+  _queue: 1
 --- !u!114 &-6768940386585234396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14752,7 +14753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9019509185002010958
 Transform:
   m_ObjectHideFlags: 0
@@ -14905,7 +14906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6691903668125028947}
   m_Layer: 11
-  m_Name: Weapon_2
+  m_Name: Weapon_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14942,7 +14943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4664131187333867987
 Transform:
   m_ObjectHideFlags: 0

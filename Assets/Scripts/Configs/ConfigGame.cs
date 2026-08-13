@@ -1,13 +1,22 @@
 using UnityEngine;
 
+public enum GameVersion
+{
+    Demo,
+    Full
+}
+
 [CreateAssetMenu(fileName = "Game", menuName = "Configs/ConfigGame")]
 
 public class ConfigGame : ScriptableObject
 {
+    [SerializeField] private GameVersion _gameVersion;
     [SerializeField] private Platform _platform;
     [SerializeField] private GameLanguage _language;
     [SerializeField] private int _startCoins;
     [SerializeField] private ConfigCar[] _cars;
+
+    public GameVersion GameVersion => _gameVersion;
 
     public Platform Platform => _platform;
 
