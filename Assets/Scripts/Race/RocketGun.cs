@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 
 public class RocketGun : MonoBehaviour
-{    
-    [SerializeField] private Transform _transformGun;
+{ 
+    [SerializeField] private Transform[] _shootPositions;
     [SerializeField] private Rocket _prefabRocket;
     [SerializeField] private float _tryAIShootTime;
     [SerializeField] private int _queue;
@@ -82,9 +82,11 @@ public class RocketGun : MonoBehaviour
 
         _armo--;
         //Debug.Log("Shoot");
-       // bool _isShooted = false;
-        Rocket rocket = Instantiate(_prefabRocket, _transformGun.position, _transformGun.rotation);
-        rocket.Init(_car);
+        // bool _isShooted = false;
+        foreach (Transform shootPosition in _shootPositions)
+        {
+            CreateRocket(shootPosition);
+        }        
 
         for (int i = 0; i < _queue; i++)
         {
@@ -110,12 +112,20 @@ public class RocketGun : MonoBehaviour
         StartCoroutine(WaitPatron(0.8f));
     }
 
+    private void CreateRocket(Transform shootPosition)
+    {
+        Rocket rocket = Instantiate(_prefabRocket, shootPosition.position, shootPosition.rotation);
+        rocket.Init(_car);
+    }
+
     private IEnumerator NextShoot(float time)
     {
         yield return new WaitForSeconds(time);
         {
-            Rocket rocket = Instantiate(_prefabRocket, _transformGun.position, _transformGun.rotation);
-            rocket.Init(_car);
+            foreach (Transform shootPosition in _shootPositions)
+            {
+                CreateRocket(shootPosition);
+            }
         }
     }
 
@@ -132,7 +142,7 @@ public class RocketGun : MonoBehaviour
         get
         {
             RaycastHit hit;
-            Vector3 from = _transformGun.position + transform.forward * 3;
+            Vector3 from = _shootPositions[0].position + transform.forward * 3;
             Vector3 direction = transform.forward;
             LayerMask layerMask = 1 << 11;//Layer Car
 

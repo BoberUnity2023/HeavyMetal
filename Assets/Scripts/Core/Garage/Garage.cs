@@ -59,6 +59,7 @@ public class Garage : MonoBehaviour
             if (isSeleced)
             {
                 _currentCar = _cars[_sceneController.Game.SelectedCar];
+                SetCarColor(i);
             }
         }
     }
