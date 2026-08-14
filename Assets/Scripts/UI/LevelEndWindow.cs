@@ -1,19 +1,13 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelEndWindow : MonoBehaviour
 {
     [SerializeField] private Hub _hub;    
     [SerializeField] private GameObject _window;
     [SerializeField] private TMP_Text _finishText;
-    [SerializeField] private TMP_Text _indicatorAddCoins;
-    [SerializeField] private Button _buttonRestartFromCheckpoint;
-    [SerializeField] private Button _buttonRestart;
-    [SerializeField] private Button _buttonNextLevel;
-    [SerializeField] private Button _buttonGarage;
-    [SerializeField] private GameObject _iconVideo;
+    [SerializeField] private TMP_Text _indicatorAddCoins;    
     [SerializeField] private GameObject[] _stars;
 
     private void Start()
@@ -31,7 +25,7 @@ public class LevelEndWindow : MonoBehaviour
     private void Race_OnFinish()
     {
         Show();
-        _buttonGarage.gameObject.SetActive(false);
+        
         _finishText.gameObject.SetActive(true);
         int place = _hub.Result.Place;
         _finishText.text = place.ToString();
@@ -59,25 +53,5 @@ public class LevelEndWindow : MonoBehaviour
     public void Hide()
     {
         _window.gameObject.SetActive(false);
-    }
-
-    private void OnLevelComplete(int cakes)
-    {        
-        //_buttonNextLevel.gameObject.SetActive(true);
-        //_buttonRestart.gameObject.SetActive(false);
-        //_buttonRestartFromCheckpoint.gameObject.SetActive(false);
-    }
-
-    private void OnLevelLost()
-    {
-        Show();
-        _buttonNextLevel.gameObject.SetActive(false);
-        _buttonRestart.gameObject.SetActive(true);
-        //_buttonRestartFromCheckpoint.gameObject.SetActive(_hub.Level.HasCheckpoint);        
-    }
-
-    private void OnLevelRestartFromCheckpoint()
-    {
-        Hide();
     }
 }
