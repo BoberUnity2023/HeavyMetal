@@ -66,9 +66,9 @@ public class MainMenuController : SceneController
         if (!Game.IsTutorialShown)
             return false;
 
-        //int stars = Game.Saves.Stars + Game.Saves.PurchasedStars;
-        //if (Game.Levels.Level(level).StarsForOpen <= stars + 9)
-        //    return true;
+        int stars = Game.Saves.Stars + Game.Saves.PurchasedStars;
+        if (Game.ConfigLevels.Level(level).StarsForOpen <= stars + 9)
+           return true;
 
         return false;
     }

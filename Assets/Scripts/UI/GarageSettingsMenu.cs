@@ -58,12 +58,15 @@ public class GarageSettingsMenu : WindowBase
             _sceneController.Game.Localize.ChangeLanguage("es");
 
         if (id == 3)
-            _sceneController.Game.Localize.ChangeLanguage("tr");
+            _sceneController.Game.Localize.ChangeLanguage("fr");
 
         if (id == 4)
             _sceneController.Game.Localize.ChangeLanguage("de");
 
         if (id == 5)
+            _sceneController.Game.Localize.ChangeLanguage("en");
+
+        if (id == 7)
             _sceneController.Game.Localize.ChangeLanguage("en");
 
     }

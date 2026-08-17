@@ -35,7 +35,7 @@ public class WindowSelectLevel : WindowBase
     {
         Game.Sound.Play(SoundClip.Click);
 
-        if (IsLevelLock(level) && _mainMenuController.IsLevelAvialableByVideo(level))
+        if (IsLevelLock(level)/* && _mainMenuController.IsLevelAvialableByVideo(level)*/)
         {
             return;
         }        

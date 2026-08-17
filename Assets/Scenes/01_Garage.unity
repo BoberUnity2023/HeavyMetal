@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::I2.Loc.LocalizeTarget_TextMeshPro_UGUI
-  mTarget: {fileID: 54465047}
+  mTarget: {fileID: 1786688717}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -5034,7 +5034,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -170, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &620629637
 MonoBehaviour:
@@ -5056,7 +5056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb7289f72baecd74ca3cd05a22adb3b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31246b3cd37b2f64382e39af9a04ab9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9028,22 +9028,25 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: English
-      m_Image: {fileID: 21300000, guid: bb7289f72baecd74ca3cd05a22adb3b6, type: 3}
+      m_Image: {fileID: 21300000, guid: 31246b3cd37b2f64382e39af9a04ab9f, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
-      m_Image: {fileID: 21300000, guid: 8ddfd2d11182a784c8aed9ce5c6a452c, type: 3}
+      m_Image: {fileID: 21300000, guid: 93d2df2b77da4bf4eacf0213bb6be6e9, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: Spain
-      m_Image: {fileID: 21300000, guid: 6766fa53cb3ca7144800ebc30e8e1fae, type: 3}
+      m_Image: {fileID: 21300000, guid: 0c448b65809a64049806bd3a71a272bd, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: "Fran\u0441e"
-      m_Image: {fileID: 21300000, guid: 429ad8a045414af4baa58cb480f47530, type: 3}
+      m_Image: {fileID: 21300000, guid: c53737c1d32016b4f8033ad4f6714cc8, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Deutsch
-      m_Image: {fileID: 21300000, guid: 8107f937da39a48499b534632bf10427, type: 3}
+    - m_Text: Germany
+      m_Image: {fileID: 21300000, guid: 33a238075f0df7842855b2c21c474b09, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: Portuguesa
-      m_Image: {fileID: 21300000, guid: 603ca50469e0b6c468fccc38979668c3, type: 3}
+      m_Image: {fileID: 21300000, guid: 84725fe25e7bed84fbff5d574d6aae00, type: 3}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    - m_Text: China
+      m_Image: {fileID: 21300000, guid: b72349fa53fa25442b6f808a17177a16, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18136,7 +18139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AJUSTES
+  m_text: SETTINGS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e830632efe0c1914caf89ab1c5670a40, type: 2}
   m_sharedMaterial: {fileID: 4868449736875040087, guid: e830632efe0c1914caf89ab1c5670a40, type: 2}

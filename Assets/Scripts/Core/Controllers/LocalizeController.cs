@@ -85,11 +85,11 @@ public class LocalizeController : MonoBehaviour
                 id = 1; 
                 break;
 
-            case "tr":
+            case "es":
                 id = 2;
                 break;
 
-            case "es":
+            case "fs":
                 id = 3;
                 break;
 

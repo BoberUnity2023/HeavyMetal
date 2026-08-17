@@ -32,7 +32,7 @@ public class ButtonLevel : MonoBehaviour
         _icon.sprite = icon;
         _iconLight.sprite = icon;
         _lock.SetActive(false);
-        _video.SetActive(mainMenuController.IsLevelAvialableByVideo(level));
+        //_video.SetActive(mainMenuController.IsLevelAvialableByVideo(level));
 
         bool isLevelplayed = IsLevelPlayed(level);
         _plus.SetActive(!isLevelplayed);        
@@ -57,7 +57,7 @@ public class ButtonLevel : MonoBehaviour
         //_iconUIEffect.effectFactor = 0.6f; 
         _lock.SetActive(true);
         _plus.SetActive(false);
-        _video.SetActive(_mainMenuController.IsLevelAvialableByVideo(_level));
+        //_video.SetActive(_mainMenuController.IsLevelAvialableByVideo(_level));
         _iconLight.gameObject.SetActive(false);
         for (int i = 0; i < _uIStars.Length; i++)
         {

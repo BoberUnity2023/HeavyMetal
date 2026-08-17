@@ -5,6 +5,7 @@ public class RocketGun : MonoBehaviour
 { 
     [SerializeField] private Transform[] _shootPositions;
     [SerializeField] private Rocket _prefabRocket;
+    [SerializeField] private int _startPatrons;
     [SerializeField] private float _tryAIShootTime;
     [SerializeField] private int _queue;
     private Car _car;
@@ -15,7 +16,7 @@ public class RocketGun : MonoBehaviour
 
     public int Armo => _armo;
 
-    public int ArmoMax => 4 + _tuningArmo;    
+    public int ArmoMax => _startPatrons + _tuningArmo;    
 
     public void Init(Car car)
     {
@@ -24,7 +25,7 @@ public class RocketGun : MonoBehaviour
             enabled = true;
 
         _isInited = true;
-        _armo = 4;
+        _armo = _startPatrons;
         _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
         StartCoroutine(WaitAITryShoot(_tryAIShootTime));        
     }

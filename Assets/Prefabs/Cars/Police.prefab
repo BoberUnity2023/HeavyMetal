@@ -1852,7 +1852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2610075259839497516
 Transform:
   m_ObjectHideFlags: 0
@@ -9484,6 +9484,7 @@ MonoBehaviour:
   - {fileID: 6333064775672610756}
   - {fileID: 3055365227488459879}
   _prefabRocket: {fileID: 5727110844089552867, guid: a24da5a3beb243040aa3b3fcb630cf94, type: 3}
+  _startPatrons: 3
   _tryAIShootTime: 0.3
   _queue: 0
 --- !u!114 &-893627492277073359
@@ -15405,7 +15406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2562854295618570793
 Transform:
   m_ObjectHideFlags: 0
