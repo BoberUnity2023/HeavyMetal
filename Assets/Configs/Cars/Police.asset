@@ -38,7 +38,7 @@ MonoBehaviour:
       Price: 11000
     _weapon:
       CountBought: 0
-      CountMax: 7
+      CountMax: 5
       Power: 1
       Price: 15500
     _nitro:

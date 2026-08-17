@@ -14,8 +14,7 @@ public enum Mode
 
 public class Car : MonoBehaviour
 {
-    [SerializeField] private CarType _carType;
-    [SerializeField] private Hub _hub;
+    [SerializeField] private CarType _carType;    
     [SerializeField] private CarControl _control;
     [SerializeField] private CarAI _aIInput;
     [SerializeField] private Tuning _tuning;
@@ -33,6 +32,8 @@ public class Car : MonoBehaviour
     [SerializeField] private StopLights _stopLights;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private GameObject[] _prefabsSparks;
+    private Hub _hub;
+    private GameController _game;
     private Transform _podnosPosition;
     private Transform _heroPosition;    
     private ICarInputable _input;
@@ -49,6 +50,8 @@ public class Car : MonoBehaviour
     public CarType CarType => _carType;    
 
     public Hub Hub => _hub;
+
+    public GameController Game => _game;
 
     public ConfigCar Config => _hub.Game.ConfigGame.Car(_carType);
 
@@ -117,6 +120,7 @@ public class Car : MonoBehaviour
     public void Init(Hub hub, InputType inputType, int id, Mode mode)
     {
         _hub = hub;
+        _game = _hub.Game;
         _inputType = inputType; 
         _mode = mode;
         enabled = true;
@@ -154,6 +158,7 @@ public class Car : MonoBehaviour
 
     public void Init(Mode mode, GameController game)
     {
+        _game = game;
         _mode = mode;
         if (_mode == Mode.Garage)
         {
@@ -168,6 +173,7 @@ public class Car : MonoBehaviour
             }
         }
 
+        _rocketGun.Init(this);
         Tuning.Init(this, game);
     }
 

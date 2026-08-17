@@ -1,17 +1,18 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RocketGun : MonoBehaviour
-{ 
-    [SerializeField] private Transform[] _shootPositions;
-    [SerializeField] private Rocket _prefabRocket;
+{
+    [SerializeField] private Transform _rayPosition;
+    [SerializeField] private Transform[] _armoPlaces;
     [SerializeField] private int _startPatrons;
-    [SerializeField] private float _tryAIShootTime;
-    [SerializeField] private int _queue;
+    [SerializeField] private float _tryAIShootTime;    
     private Car _car;
+    private List<Weapon> _weapons = new List<Weapon>();
     private int _armo;
     private int _tuningArmo;
-    private bool _waitingReload;
     private bool _isInited;
 
     public int Armo => _armo;
@@ -21,19 +22,38 @@ public class RocketGun : MonoBehaviour
     public void Init(Car car)
     {
         _car = car;
+
+        Weapon prefab = _car.Game.ConfigGame.WeaponPrefabs[0];
+        CreateWeapon(prefab, _armoPlaces[0]);
+        CreateWeapon(prefab, _armoPlaces[1]);
+
         if (_car.Mode == Mode.Track)
+        {
             enabled = true;
 
-        _isInited = true;
-        _armo = _startPatrons;
-        _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
-        StartCoroutine(WaitAITryShoot(_tryAIShootTime));        
+            _isInited = true;
+            _armo = _startPatrons;
+            _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
+            StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+        }
+    }    
+
+    private void CreateWeapon(Weapon prefab, Transform armoPlace)
+    {        
+        Weapon weapon = Instantiate(prefab, armoPlace.position, armoPlace.rotation, transform);
+        weapon.Init(_car);
+        _weapons.Add(weapon);        
     }
 
     public void SetTuningWeapon(int weapons)
     {
         _tuningArmo = weapons;
         _armo = ArmoMax;
+
+        foreach (Weapon weapon in _weapons)
+        {
+            weapon.SetTuning(weapons);
+        }
     }
 
     private void OnDestroy()
@@ -76,60 +96,17 @@ public class RocketGun : MonoBehaviour
             return;
 
         if(_car.IsFinished || !_car.Hub.Level.IsPlaying)
-            return;
+            return;        
 
-        if (_waitingReload)
-            return;
-
-        _armo--;
-        //Debug.Log("Shoot");
-        // bool _isShooted = false;
-        foreach (Transform shootPosition in _shootPositions)
+        foreach (Weapon weapon in _weapons)
         {
-            CreateRocket(shootPosition);
-        }        
-
-        for (int i = 0; i < _queue; i++)
-        {
-            StartCoroutine(NextShoot(0.1f * i));
+            weapon.TryShoot();
         }
-        //foreach (Car enemy in _car.Hub.Level.Race.Enemies)
-        //{            
-        //    if (CanShooted(enemy))
-        //    {
-        //        //Debug.Log("ShootBy: " + enemy.gameObject.name);
-        //        rocket.Shoot(enemy);
-        //        _isShooted = true;
-        //        break;
-        //    }            
-        //}
 
-        //if (!_isShooted)
-        //{
-            //Debug.Log("ShootFail:");
-            //rocket.Shoot(); 
-        //}
-
-        StartCoroutine(WaitPatron(0.8f));
+        _armo--;        
     }
 
-    private void CreateRocket(Transform shootPosition)
-    {
-        Rocket rocket = Instantiate(_prefabRocket, shootPosition.position, shootPosition.rotation);
-        rocket.Init(_car);
-    }
-
-    private IEnumerator NextShoot(float time)
-    {
-        yield return new WaitForSeconds(time);
-        {
-            foreach (Transform shootPosition in _shootPositions)
-            {
-                CreateRocket(shootPosition);
-            }
-        }
-    }
-
+    
     private bool CanShooted(Car enemy)
     {
         Vector3 toEnemy = transform.InverseTransformPoint(enemy.transform.position);
@@ -143,7 +120,7 @@ public class RocketGun : MonoBehaviour
         get
         {
             RaycastHit hit;
-            Vector3 from = _shootPositions[0].position + transform.forward * 3;
+            Vector3 from = _rayPosition.position + transform.forward * 3;
             Vector3 direction = transform.forward;
             LayerMask layerMask = 1 << 11;//Layer Car
 
@@ -154,14 +131,7 @@ public class RocketGun : MonoBehaviour
 
             return 100;
         }
-    }
-
-    private IEnumerator WaitPatron(float time)
-    {
-        _waitingReload = true;
-        yield return new WaitForSeconds(time);
-        _waitingReload = false;
-    }
+    }    
 
     private IEnumerator WaitAITryShoot(float time)
     {        

@@ -15,6 +15,7 @@ public class ConfigGame : ScriptableObject
     [SerializeField] private GameLanguage _language;
     [SerializeField] private int _startCoins;
     [SerializeField] private ConfigCar[] _cars;
+    [SerializeField] private Weapon[] _weaponPrefabs;
 
     public GameVersion GameVersion => _gameVersion;
 
@@ -25,7 +26,9 @@ public class ConfigGame : ScriptableObject
     public int StartCoins => _startCoins;
 
     public ConfigCar[] Cars => _cars;  
-    
+
+    public Weapon[] WeaponPrefabs => _weaponPrefabs;
+
     public ConfigCar Car(CarType carType)
     {        
         foreach (ConfigCar car in _cars)
