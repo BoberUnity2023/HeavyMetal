@@ -4,7 +4,7 @@ using UnityEngine;
 public class WeaponMines : MonoBehaviour
 {
     [SerializeField] private Transform _transformGun;
-    [SerializeField] private Mine _prefabMine;
+    [SerializeField] private Mine _prefabMine;    
     [SerializeField] private float _tryAIShootTime;
     private Car _car;
     private int _armo;
@@ -14,17 +14,20 @@ public class WeaponMines : MonoBehaviour
 
     public int Armo => _armo;
 
-    public int ArmoMax => 4 + _tuningArmo;
+    public int ArmoMax => _car.Game.ConfigGame.Car(_car.CarType).StartMines + _tuningArmo;
 
     public void Init(Car car)
     {
         _car = car;
         if (_car.Mode == Mode.Track)
+        {
             enabled = true;
-        _isInited = true;
-        _armo = 4;
-        _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
-        StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+            _isInited = true;
+            ConfigCar configCar = _car.Game.ConfigGame.Car(_car.CarType);
+            _armo = configCar.StartMines;
+            _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
+            StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+        }
     }
 
     public void SetTuningWeapon(int weapons)

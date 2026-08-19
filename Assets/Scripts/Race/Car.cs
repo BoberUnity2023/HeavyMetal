@@ -174,6 +174,7 @@ public class Car : MonoBehaviour
         }
 
         _rocketGun.Init(this);
+        _weaponMines.Init(this);
         Tuning.Init(this, game);
     }
 

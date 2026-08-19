@@ -13,6 +13,7 @@ public class ConfigCar : ScriptableObject
     [SerializeField] private int _maxSpeed;
     [SerializeField] private int _damageSpeed;
     [SerializeField] private int _damageImpulse;
+    [SerializeField] private int _startMines;
     [SerializeField] private CarTuning _tuning;
     
     public CarType CarType => _carType;
@@ -30,6 +31,8 @@ public class ConfigCar : ScriptableObject
     public int DamageSpeed => _damageSpeed;
 
     public int DamageImpulse => _damageImpulse;
+
+    public int StartMines => _startMines;
 
     public CarTuning Tuning => _tuning;
 }

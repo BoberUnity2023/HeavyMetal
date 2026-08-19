@@ -17,5 +17,7 @@ MonoBehaviour:
   _tuningShields: 4
   _tuningTires: 2
   _tuningWeapon: 5
+  _tuningMines: 4
   _tuningNitro: 1
+  _tuningShield: 0
   _tuningColor: 2

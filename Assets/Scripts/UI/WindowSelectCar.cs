@@ -14,7 +14,8 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private Bar _barTires;
     [SerializeField] private Bar _barWeapon;
     [SerializeField] private Bar _barNitro;
-    [SerializeField] private Bar _barShield;
+    [SerializeField] private Bar _barMines;
+    //[SerializeField] private Bar _barShield;
     [SerializeField] private GameObject _lock;
     private GameController _game;
 
@@ -26,7 +27,7 @@ public class WindowSelectCar : WindowBase
         _barTires.Init(_sceneController);
         _barWeapon.Init(_sceneController);
         _barNitro.Init(_sceneController);
-        _barShield.Init(_sceneController);
+        _barMines.Init(_sceneController);
         _colorPanel.Init(_sceneController, _garage);
     }
 
@@ -58,30 +59,6 @@ public class WindowSelectCar : WindowBase
         Button button = HasCar ? _buttonContinue : _buttonBuy;
         base.SelectFirst(button.gameObject);
     }
-
-    //private void Update_GamepadInput()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Joystick1Button1))
-    //    {
-    //        PressNextCar();
-    //    }
-
-    //    if (Input.GetKeyDown(KeyCode.Joystick1Button2))
-    //    {
-    //        PressPreviousCar();
-    //    }
-
-    //    if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-    //    {
-    //        bool hasCar = HasCar;
-    //        if (hasCar)
-    //        {
-    //            _mainMenuController.LoadScene(2);
-    //        }
-    //        else
-    //            PressBuy();
-    //    }
-    //}
 
     public void PressNextCar()
     {
@@ -151,6 +128,15 @@ public class WindowSelectCar : WindowBase
         TryBuyTuning(TuningType.Weapons, price, max);
     }
 
+    public void PressBuyTuningMines()
+    {
+        Game.Sound.Play(SoundClip.Click);
+        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
+        int price = configCar.Tuning.Mines.Price;
+        int max = configCar.Tuning.Mines.CountMax;
+        TryBuyTuning(TuningType.Mines, price, max);
+    }
+
     public void PressBuyTuningTires()
     {
         Game.Sound.Play(SoundClip.Click);
@@ -206,7 +192,7 @@ public class WindowSelectCar : WindowBase
         else
             _colorPanel.Hide();
 
-        _lock.SetActive(_game.SelectedCarType == CarType.Gnom);
+        _lock.SetActive(_game.SelectedCarType == CarType.Gnom && _game.ConfigGame.GameVersion == GameVersion.Demo);
     }
 
     private int Price()
@@ -247,11 +233,11 @@ public class WindowSelectCar : WindowBase
         price = configCar.Tuning.Nitro.Price;
         _barNitro.Set(value, price);
 
-        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shield);
-        max = configCar.Tuning.Shield.CountMax;
+        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Mines);
+        max = configCar.Tuning.Mines.CountMax;
         value = (float)current / max;
-        price = configCar.Tuning.Shield.Price;
-        _barShield.Set(value, price);
+        price = configCar.Tuning.Mines.Price;
+        _barMines.Set(value, price);
     }
 
     private bool HasCar => _game.Saves.HasBoughtCar(_game.SelectedCarType);

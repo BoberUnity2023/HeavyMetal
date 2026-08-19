@@ -73,6 +73,7 @@ public class CarTuning
     [SerializeField] private TuningCategory _tires;
     [SerializeField] private TuningCategory _weapon;
     [SerializeField] private TuningCategory _nitro;
+    [SerializeField] private TuningCategory _mines;
     [SerializeField] private TuningCategory _shield;
     [SerializeField] private CarColor[] _carColors;
 
@@ -85,6 +86,8 @@ public class CarTuning
     public TuningCategory Weapon => _weapon;
 
     public TuningCategory Nitro => _nitro;
+
+    public TuningCategory Mines => _mines;
 
     public TuningCategory Shield => _shield;
 

@@ -11,6 +11,7 @@ public enum TuningType
     Tires,
     Weapons,
     Nitro,
+    Mines,
     Shield
 }
 

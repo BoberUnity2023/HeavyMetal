@@ -12906,7 +12906,7 @@ PrefabInstance:
     - target: {fileID: 502036395721123098, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 658b08ab0fd56e343abb48ab11f4d6e2, type: 3}
+      objectReference: {fileID: 21300000, guid: 6990cf4821609544b99f4649a5c1e4fb, type: 3}
     - target: {fileID: 793474892329033435, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -12937,7 +12937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485824038341597086, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_Name
-      value: BarShield
+      value: BarMines
       objectReference: {fileID: 0}
     - target: {fileID: 2485824038341597086, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_IsActive
@@ -13053,7 +13053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4900303261168042350, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PressBuyTuningShield
+      value: PressBuyTuningMines
       objectReference: {fileID: 0}
     - target: {fileID: 4900303261168042350, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -13065,7 +13065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6108527724459631160, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: _type
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9141147238444359655, guid: 8efaba1252ed78f45a41bad9e0a98f8c, type: 3}
       propertyPath: m_sharedMaterial
@@ -19088,7 +19088,7 @@ MonoBehaviour:
   _barTires: {fileID: 1130115243}
   _barWeapon: {fileID: 1916846847}
   _barNitro: {fileID: 1576133105}
-  _barShield: {fileID: 1496851221}
+  _barMines: {fileID: 1496851221}
   _lock: {fileID: 772626349}
 --- !u!1 &1992448131
 GameObject:
@@ -19376,7 +19376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2052951031
 RectTransform:
   m_ObjectHideFlags: 0

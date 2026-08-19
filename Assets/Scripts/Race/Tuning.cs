@@ -33,6 +33,7 @@ public class Tuning : MonoBehaviour
         int tires = _game.Saves.GetTuning(_car.CarType, TuningType.Tires);
         int weapons = _game.Saves.GetTuning(_car.CarType, TuningType.Weapons);
         int nitro = _game.Saves.GetTuning(_car.CarType, TuningType.Nitro);
+        int mines = _game.Saves.GetTuning(_car.CarType, TuningType.Mines);
         int shield = _game.Saves.GetTuning(_car.CarType, TuningType.Shield);
 
         SetEngine(engine);
@@ -40,6 +41,7 @@ public class Tuning : MonoBehaviour
         SetTires(tires);
         SetWeapons(weapons);
         SetNitro(nitro);
+        SetMines(mines);
         SetShield(shield);
     }
 
@@ -99,6 +101,13 @@ public class Tuning : MonoBehaviour
         _car.Nitro.AddTuningTime(time);
     }
 
+    public void SetMines(int weapons)
+    {
+        ConfigCar configCar = _game.ConfigGame.Car(_car.CarType);
+        float time = configCar.Tuning.Mines.Power * weapons;
+        _car.WeaponMines.SetTuningWeapon(weapons);
+    }
+
     public void SetShield(int shields)
     {
         //TODO
@@ -120,7 +129,6 @@ public class Tuning : MonoBehaviour
         int armoPrefabMax = _game.ConfigGame.WeaponPrefabs[0].Tunings.Length;
         if (armoPrefabMax - 1 != weaponsMax)
             Debug.LogError("No Equal Settings Car!" + carType + "  Weapon: Prefab: " + (armoPrefabMax - 1) + "/ Config: " + weaponsMax);
-
 
         int tiresMax = configCar.Tuning.Tires.CountMax;
         if (_tireArrays.Length != tiresMax)

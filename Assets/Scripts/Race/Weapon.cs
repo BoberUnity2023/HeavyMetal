@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum WeaponType
@@ -64,8 +63,7 @@ public class Weapon : MonoBehaviour
     private IEnumerator NextShoot(float time, Transform shootPosition)
     {
         yield return new WaitForSeconds(time);
-        CreateRocket(shootPosition);
-        
+        CreateRocket(shootPosition);        
     }
 
     private IEnumerator WaitPatron(float time)

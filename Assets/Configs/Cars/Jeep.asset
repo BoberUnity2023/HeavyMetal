@@ -20,6 +20,7 @@ MonoBehaviour:
   _maxSpeed: 40
   _damageSpeed: 20
   _damageImpulse: 32000
+  _startMines: 1
   _tuning:
     _engine:
       CountBought: 0
@@ -46,6 +47,11 @@ MonoBehaviour:
       CountMax: 5
       Power: 0.2
       Price: 10000
+    _mines:
+      CountBought: 0
+      CountMax: 5
+      Power: 1
+      Price: 11000
     _shield:
       CountBought: 0
       CountMax: 1

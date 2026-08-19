@@ -10,7 +10,8 @@ public class ConfigEnemy : ScriptableObject
     [SerializeField] private int _tuningShields;
     [SerializeField] private int _tuningTires;
     [SerializeField] private int _tuningWeapon;
-    [SerializeField] private int _tuningNitro;
+    [SerializeField] private int _tuningMines;
+    [SerializeField] private int _tuningNitro;    
     [SerializeField] private int _tuningShield;
     [SerializeField] private int _tuningColor;
 
@@ -23,6 +24,8 @@ public class ConfigEnemy : ScriptableObject
     public int TuningTires => _tuningTires;
 
     public int TuningWeapon => _tuningWeapon;
+
+    public int TuningMines => _tuningMines;
 
     public int TuningNitro => _tuningNitro;
 
