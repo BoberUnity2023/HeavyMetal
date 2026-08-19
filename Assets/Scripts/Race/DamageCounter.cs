@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -68,8 +70,12 @@ public class DamageCounter : MonoBehaviour
     private void SecondCrash(bool fromPlayer)
     {        
         Emit(_fire, true);
-        int rnd = Random.Range(0, 4);
-        WheelDeattach(_car.Wheels[rnd]);
+
+        if (_car.IsAI)
+            WheelDeattachAny();
+        else
+            WheelDeattachRear();
+
         _car.Control.EngineMultiplerDamage = 1.3f;
 
         if (fromPlayer)
@@ -130,6 +136,27 @@ public class DamageCounter : MonoBehaviour
         ParticleSystem.EmissionModule emission = particleSystem.emission;
         emission.enabled = value;
     }
+
+    private void WheelDeattachAny()
+    {        
+        int rnd = Random.Range(0, _car.Wheels.Count());
+        WheelDeattach(_car.Wheels[rnd]);
+    }
+
+    private void WheelDeattachRear()
+    {
+        bool isIdRear = false;
+        int rnd = 0;
+        while (!isIdRear) 
+        {
+            rnd = Random.Range(0, _car.Wheels.Count());
+            if (!_car.Wheels[rnd].IsSteerable)
+                isIdRear = true;
+        }        
+        WheelDeattach(_car.Wheels[rnd]);
+    }
+
+
 
     private void WheelDeattach(WheelControl wheelControl)
     {
