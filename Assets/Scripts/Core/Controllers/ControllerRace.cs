@@ -14,6 +14,7 @@ public class ControllerRace : MonoBehaviour
     public Car Car => _car;
 
     public bool IsStarted { get; private set; }
+    public bool IsFinished => _hub.Level.Race.Car.IsFinished;
 
     public event Action<int> OnLapCompleted;
     public event Action OnFinish;    
