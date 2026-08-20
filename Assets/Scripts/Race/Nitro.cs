@@ -14,6 +14,7 @@ public class Nitro : MonoBehaviour
     private Car _car;
     private Coroutine _coroutine;
     private bool _isOn;
+    private bool _isInited;
 
     public bool IsOn => _isOn;
 
@@ -25,6 +26,8 @@ public class Nitro : MonoBehaviour
     {
         _car = car;
         enabled = false;
+        _fill = _fullTime;
+        _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
     }
 
     private void Update()
@@ -34,6 +37,17 @@ public class Nitro : MonoBehaviour
         {
             Off();
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (_isInited)
+            _car.LapsCounter.OnLapStart -= LapsCounter_OnLapStart;
+    }
+
+    private void LapsCounter_OnLapStart(int obj)
+    {
+        _fill = _fullTime;
     }
 
     public void AddTuningTime(float time)

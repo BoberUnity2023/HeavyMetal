@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28301b476fcaf348818b020ba74f3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleLine
-  _prefab: {fileID: 857695951508268424, guid: 2f2928adf185a8e498a20cb1110b83ed, type: 3}
+  _prefab: {fileID: 857695951508268424, guid: 7a20897048dc92d4f8042ca2dc8e1f51, type: 3}
   _size: 9
