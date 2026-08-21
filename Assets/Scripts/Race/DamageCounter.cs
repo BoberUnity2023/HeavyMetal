@@ -36,7 +36,16 @@ public class DamageCounter : MonoBehaviour
         if (_car.IsCrashed)
             return;
 
-        _damage += value;
+        int shields = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Shields);
+        value -= shields;
+
+        if (value <= 0)
+        {
+            Debug.Log("Damage was not added. Shield more than damage");
+            return;
+        }
+
+        _damage += Mathf.Max(0, value);
 
         if (_damage < 35)
         {
