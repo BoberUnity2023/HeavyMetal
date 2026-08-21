@@ -16,8 +16,7 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private Bar _barNitro;
     [SerializeField] private Bar _barMines;
     //[SerializeField] private Bar _barShield;
-    [SerializeField] private GameObject _lock;
-    private GameController _game;
+    [SerializeField] private GameObject _lock;    
 
     private void Awake()
     {
