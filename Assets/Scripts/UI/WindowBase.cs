@@ -7,12 +7,27 @@ public class WindowBase : MonoBehaviour
     [SerializeField] protected SceneController _sceneController;
     [SerializeField] protected GameObject _window;
     [SerializeField] private GameObject _firstSelected;
+    protected GameController _game;
+    private bool _isInited;
 
     public GameController Game => _sceneController.Game;
+
+    public virtual void Init(GameController game)
+    {
+        _isInited = true;
+        _game = game;
+        _game.UI.OnNavigationStart += UI_OnNavigationStart;
+    }
 
     public virtual void Show()
     {
         _window.SetActive(true);
+    }
+
+    public virtual void Show(GameController game)
+    {
+        Init(game);
+        Show();
     }
 
     public virtual void Hide()
@@ -24,12 +39,13 @@ public class WindowBase : MonoBehaviour
 
     protected virtual void Start()
     {
-        Game.UI.OnNavigationStart += UI_OnNavigationStart;
+        
     }
 
     protected virtual void OnDestroy()
     {
-        Game.UI.OnNavigationStart -= UI_OnNavigationStart;
+        if (_isInited)
+            _game.UI.OnNavigationStart -= UI_OnNavigationStart;
     }
 
     protected virtual void Update()

@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class PauseMenu : WindowBase
 {
-    [SerializeField] private Hub _hub;    
+    [SerializeField] private CanvasLevel _canvasLevel;
+    private Hub _hub;
     private bool _isPaused;
+
+    public override void Init(GameController game)
+    {
+        base.Init(game);
+        _hub = _canvasLevel.Hub;
+    }
 
     protected override void Update()
     {
@@ -23,6 +30,7 @@ public class PauseMenu : WindowBase
         _isPaused = true;
         Time.timeScale = 0.0f;
         AudioListener.pause = true;
+        _hub.Game.UI.NavigationEnd();
     }
 
     private void PauseOff()
@@ -47,6 +55,9 @@ public class PauseMenu : WindowBase
     public void OnPressSettings()
     {
         Debug.Log("Press Settings");
+        Hide();
+        _hub.CanvasLevel.WindowSettings.Show();
+        _hub.Game.UI.NavigationEnd();
     }
 
     public void OnPressGarage()

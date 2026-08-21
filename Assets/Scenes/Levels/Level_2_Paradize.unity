@@ -78351,6 +78351,14 @@ PrefabInstance:
       propertyPath: _levelKeys.Array.data[7]._levelObjects
       value: 
       objectReference: {fileID: 1556934958}
+    - target: {fileID: 5701359670598920817, guid: 751cbaad5c1cf4f4dbdcc157b2f7d8a7, type: 3}
+      propertyPath: _canvasLevel
+      value: 
+      objectReference: {fileID: 6901248928689405955}
+    - target: {fileID: 5701359670598920817, guid: 751cbaad5c1cf4f4dbdcc157b2f7d8a7, type: 3}
+      propertyPath: _windowSettings
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8877809658833887363, guid: 751cbaad5c1cf4f4dbdcc157b2f7d8a7, type: 3}
       propertyPath: m_Name
       value: Hub
@@ -87740,6 +87748,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2971826545542584024, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _hub
+      value: 
+      objectReference: {fileID: 1862994659}
+    - target: {fileID: 2971826545542584024, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 3282419720526303567, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -87796,6 +87812,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3755742060895755699, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _hub
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 4038434513017288906, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: mLocalizeTarget
       value: 
@@ -87969,6 +87989,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+--- !u!114 &6901248928689405955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3755742060895755699, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+  m_PrefabInstance: {fileID: 6901248928689405954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f8a8a1f9b960148af8ba2caa98d1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasLevel
 --- !u!114 &6901248928689405956 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1130791776076617690, guid: 061484eed728d5342b139956db07c1f5, type: 3}

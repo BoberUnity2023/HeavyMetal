@@ -21,6 +21,7 @@ public class WindowSelectLevel : WindowBase
 
     protected override void Start()
     {
+        Init(_mainMenuController.Game);
         base.Start();        
         
         CreateButtons();

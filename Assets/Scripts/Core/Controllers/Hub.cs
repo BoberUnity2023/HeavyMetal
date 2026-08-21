@@ -47,4 +47,10 @@ public class Hub : SceneController
     public ControllerRace Race => Level.Race;
 
     public bool IsPaused { get; set; }
+
+    public void Init(GameController game)
+    {
+        _game = game;
+        CanvasLevel.Init();
+    }
 }

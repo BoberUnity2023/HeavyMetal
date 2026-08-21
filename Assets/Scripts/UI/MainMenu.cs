@@ -23,8 +23,8 @@ public class MainMenu : WindowBase
     public void OnPressNewGame()
     {
         Debug.Log("Press New Game");
-        Game.Sound.Play(SoundClip.Click);
-        Game.UI.NavigationEnd();
+        _game.Sound.Play(SoundClip.Click);
+        _game.UI.NavigationEnd();
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("GameStarted", 1);        
         OnPressContinue();
@@ -33,8 +33,8 @@ public class MainMenu : WindowBase
     public void OnPressContinue()
     {
         Debug.Log("Press Continue");
-        Game.Sound.Play(SoundClip.Click);
-        Game.UI.NavigationEnd();
+        _game.Sound.Play(SoundClip.Click);
+        _game.UI.NavigationEnd();
         Hide();
         _garage.PressGame();
     }
@@ -42,8 +42,8 @@ public class MainMenu : WindowBase
     public void OnPressSettings()
     {
         Debug.Log("Press Settings");
-        Game.Sound.Play(SoundClip.Click);
-        Game.UI.NavigationEnd();
+        _game.Sound.Play(SoundClip.Click);
+        _game.UI.NavigationEnd();
         Hide();
         _garage.WindowSettings.Show();
     }
@@ -51,8 +51,8 @@ public class MainMenu : WindowBase
     public void OnPressAboutGame()
     {
         Debug.Log("Press About Game");
-        Game.Sound.Play(SoundClip.Click);
-        Game.UI.NavigationEnd();
+        _game.Sound.Play(SoundClip.Click);
+        _game.UI.NavigationEnd();
         Hide();
         _garage.WindowAboutGame.Show();
     }
@@ -60,7 +60,7 @@ public class MainMenu : WindowBase
     public void OnPressQuitGame()
     {
         Debug.Log("Press Quit");
-        Game.Sound.Play(SoundClip.Click);
+        _game.Sound.Play(SoundClip.Click);
         Application.Quit();
     }
 

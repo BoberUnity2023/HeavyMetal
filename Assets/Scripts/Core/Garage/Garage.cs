@@ -5,7 +5,7 @@ public class Garage : MonoBehaviour
     [SerializeField] private SceneController _sceneController;
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private WindowSelectCar _windowSelectCar;
-    [SerializeField] private GarageSettingsMenu _windowSettings;
+    [SerializeField] private WindowSettings _windowSettings;
     [SerializeField] private WindowBase _windowAboutGame;
     [SerializeField] private Transform _carPosition;
     private Car[] _cars;
@@ -14,7 +14,7 @@ public class Garage : MonoBehaviour
     public SceneController SceneController => _sceneController;
     public MainMenu MainMenu => _mainMenu;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
-    public GarageSettingsMenu WindowSettings => _windowSettings;
+    public WindowSettings WindowSettings => _windowSettings;
     public WindowBase WindowAboutGame => _windowAboutGame;
     public Car CurrentCar => _currentCar;    
 
@@ -25,6 +25,11 @@ public class Garage : MonoBehaviour
 
     public void Init(GameController game, bool fromLevel)
     {
+        _mainMenu.Init(game);
+        _windowSelectCar.Init(game);
+        _windowSettings.Init(game);
+        _windowAboutGame.Init(game);
+
         if (fromLevel)
         {
             _mainMenu.Hide();

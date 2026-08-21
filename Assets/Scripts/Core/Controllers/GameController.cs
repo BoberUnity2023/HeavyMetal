@@ -352,6 +352,7 @@ public class GameController : MonoBehaviour
         if (scene.buildIndex >= 3)
         {
             Hub = FindObjectOfType<Hub>();
+            Hub.Init(this);
             Hub.Game = this;
             Settings.SetGrafics();
         }
