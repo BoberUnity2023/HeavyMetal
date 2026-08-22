@@ -7,7 +7,9 @@ public class Garage : MonoBehaviour
     [SerializeField] private WindowSelectCar _windowSelectCar;
     [SerializeField] private WindowSettings _windowSettings;
     [SerializeField] private WindowBase _windowAboutGame;
+    [SerializeField] private CameraMovier _cameraMovier;
     [SerializeField] private Transform _carPosition;
+    
     private Car[] _cars;
     private Car _currentCar;
 
@@ -17,11 +19,7 @@ public class Garage : MonoBehaviour
     public WindowSettings WindowSettings => _windowSettings;
     public WindowBase WindowAboutGame => _windowAboutGame;
     public Car CurrentCar => _currentCar;    
-
-    private void Start()
-    {
-        //CreateCars();        
-    }
+    public CameraMovier CameraMovier => _cameraMovier;    
 
     public void Init(GameController game, bool fromLevel)
     {
@@ -40,12 +38,19 @@ public class Garage : MonoBehaviour
         {
             _windowSelectCar.Hide();
             _mainMenu.Show();
+            _cameraMovier.SetToCups();
         }
     }
 
     public void PressGame()
     {
-        CreateCars();
+        CreateCars();        
+        _cameraMovier.MoveToCar();
+        Invoke("ShowWindowSelectCar", 1);
+    }
+
+    private void ShowWindowSelectCar()
+    {
         WindowSelectCar.Show();
     }
 

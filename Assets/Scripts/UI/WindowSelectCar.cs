@@ -100,6 +100,20 @@ public class WindowSelectCar : WindowBase
         }
     }
 
+    public void PressBack()
+    {
+        Debug.Log("PressBack");
+        Game.Sound.Play(SoundClip.Click);
+        _garage.CameraMovier.MoveToCups();
+        Hide();
+        Invoke("MainMenuShow", 1);
+    }
+
+    private void MainMenuShow()
+    {
+        _garage.MainMenu.Show(); ;
+    }
+
     public void PressBuyTuningEngine()
     {
         Game.Sound.Play(SoundClip.Click);
