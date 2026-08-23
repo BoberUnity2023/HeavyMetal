@@ -37,12 +37,17 @@ public class DamageCounter : MonoBehaviour
             return;
 
         int shields = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Shields);
-        value -= shields;
+        value -= shields * (int)_car.Config.Tuning.Shields.Power;
 
         if (value <= 0)
         {
             Debug.Log("Damage was not added. Shield more than damage");
             return;
+        }
+        else
+        {
+            string t = _car.IsAI ? "AI " : "Player ";
+            Debug.Log("Car " + t + _car.CarType.ToString() + ". Damage: " + value); 
         }
 
         _damage += Mathf.Max(0, value);

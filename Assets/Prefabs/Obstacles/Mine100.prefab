@@ -102,5 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mine
   _blastPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _damage: 34
   _blastForce: 1600000
   _createChance: 100

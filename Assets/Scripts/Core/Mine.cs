@@ -3,6 +3,7 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     [SerializeField] private GameObject _blastPrefab;
+    [SerializeField] private int _damage;
     [SerializeField] private float _blastForce;
     [Range(0, 100)][SerializeField] private int _createChance;    
 
@@ -28,7 +29,7 @@ public class Mine : MonoBehaviour
 
         Vector3 direction = (car.transform.position - transform.position).normalized;
         car.Rigidbody.AddForce(direction * _blastForce);
-        car.DamageCounter.DamageAdd(34, false);
+        car.DamageCounter.DamageAdd(_damage, false);
 
         gameObject.SetActive(false);
     }
