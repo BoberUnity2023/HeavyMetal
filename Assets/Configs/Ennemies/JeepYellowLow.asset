@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: JeepYellowLow
   m_EditorClassIdentifier: Assembly-CSharp::ConfigEnemy
   _car: {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
-  _tuningEngine: 0
+  _tuningEngine: 2
   _tuningShields: 0
-  _tuningTires: 0
-  _tuningWeapon: 0
+  _tuningTires: 2
+  _tuningWeapon: 2
+  _tuningMines: 2
   _tuningNitro: 0
+  _tuningShield: 0
   _tuningColor: 3

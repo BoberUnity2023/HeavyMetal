@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: PoliceBlueLow
   m_EditorClassIdentifier: Assembly-CSharp::ConfigEnemy
   _car: {fileID: 11400000, guid: 7077ed3aa1f4b9c449637204a6204d92, type: 2}
-  _tuningEngine: 0
+  _tuningEngine: 4
   _tuningShields: 0
-  _tuningTires: 0
-  _tuningWeapon: 0
+  _tuningTires: 2
+  _tuningWeapon: 3
+  _tuningMines: 4
   _tuningNitro: 0
+  _tuningShield: 0
   _tuningColor: 0

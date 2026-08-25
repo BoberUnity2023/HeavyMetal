@@ -18,7 +18,7 @@ MonoBehaviour:
   _key: 4
   _track: 4
   _laps: 3
-  _starsForOpen: 5
+  _starsForOpen: 38
   _enemies:
   - {fileID: 11400000, guid: 7c39c0532f6610b4fa8463d1799d2bfe, type: 2}
   - {fileID: 11400000, guid: 8494a254c6ae5704ca9c4e842a9fc339, type: 2}

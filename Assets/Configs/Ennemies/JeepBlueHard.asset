@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConfigEnemy
   _car: {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
   _tuningEngine: 3
-  _tuningShields: 4
+  _tuningShields: 0
   _tuningTires: 2
   _tuningWeapon: 5
   _tuningMines: 4

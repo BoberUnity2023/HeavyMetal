@@ -34,14 +34,14 @@ Material:
     - _FadeOutDistFar: 200
     - _FadeOutDistNear: 5
     - _MaxGrowSize: 1
-    - _Multiplier: 0.7
+    - _Multiplier: 0.1
     - _NoiseAmount: 0.5
     - _SizeGrowEndDist: 5
     - _SizeGrowStartDist: 0
     - _TimeOffDuration: 0.8
     - _TimeOnDuration: 0.6
     m_Colors:
-    - _Color: {r: 1, g: 0.8627451, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.8627451, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1002 &2100001

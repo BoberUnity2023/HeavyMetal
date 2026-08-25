@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Rocket
   _prefabBlast: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
   _speed: 90
-  _damage: 17
+  _damage: 16
   _blastForce: 160000
   _verticalSpeed: 0
   _isMoveOverGround: 0
