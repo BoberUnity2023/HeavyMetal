@@ -125,6 +125,9 @@ public class WeaponMines : MonoBehaviour
         TryAIShoot();
 
         if (!_car.Hub.Level.Race.Car.IsFinished)
-            StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+        { 
+            float shootTime = _car.LapsCounter.Lap == 1 ? _tryAIShootTime * 3 : _tryAIShootTime;
+            StartCoroutine(WaitAITryShoot(shootTime)); 
+        }
     }
 }
