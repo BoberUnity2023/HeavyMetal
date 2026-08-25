@@ -10091,14 +10091,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1760830018523986253}
     m_Modifications:
-    - target: {fileID: 109645859588050466, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2971826545542584024}
-    - target: {fileID: 109645859588050466, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WindowSettings, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 431829021550512309, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -10106,18 +10098,6 @@ PrefabInstance:
     - target: {fileID: 431829021550512309, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604382880958412039, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604382880958412039, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2971826545542584024}
-    - target: {fileID: 2604382880958412039, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WindowSettings, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3280020398086436479, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10258,18 +10238,6 @@ PrefabInstance:
     - target: {fileID: 7315641194109301737, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
       propertyPath: m_AnchorMin.x
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8470210526764500446, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8470210526764500446, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2971826545542584024}
-    - target: {fileID: 8470210526764500446, guid: 5bd591733342dfe448680dd09fe3d985, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WindowSettings, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

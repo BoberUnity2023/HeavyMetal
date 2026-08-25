@@ -29,7 +29,7 @@ MonoBehaviour:
       Price: 16500
     _shields:
       CountBought: 0
-      CountMax: 6
+      CountMax: 4
       Power: 4
       Price: 12500
     _tires:
