@@ -7,10 +7,10 @@ public class MainMenu : WindowBase
     [SerializeField] private Button _buttonNewGame;
     [SerializeField] private Button _buttonContinue;
 
-    protected override void Start()
+    public override void Show()
     {
-        base.Start();
-        bool gameStarted = IsGameStarted;        
+        base .Show();
+        bool gameStarted = IsGameStarted;
         _buttonContinue.interactable = gameStarted;
     }
 
@@ -25,8 +25,10 @@ public class MainMenu : WindowBase
         Debug.Log("Press New Game");
         _game.Sound.Play(SoundClip.Click);
         _game.UI.NavigationEnd();
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("GameStarted", 1);        
+        _garage.RemoveCars();        
+        PlayerPrefs.DeleteAll();               
+        PlayerPrefs.SetInt("GameStarted", 1);
+        _game.Saves.Coins = _game.ConfigGame.StartCoins;
         OnPressContinue();
     }
 

@@ -10,7 +10,7 @@ public class Garage : MonoBehaviour
     [SerializeField] private CameraMovier _cameraMovier;
     [SerializeField] private Transform _carPosition;
     
-    private Car[] _cars;
+    private Car[] _cars = new Car[0];
     private Car _currentCar;
 
     public SceneController SceneController => _sceneController;
@@ -84,6 +84,14 @@ public class Garage : MonoBehaviour
                 _currentCar = _cars[i];
                 SetCarColor(i);
             }
+        }
+    }
+
+    public void RemoveCars()
+    {
+        foreach (Car car in _cars)
+        {
+            Destroy(car.gameObject);
         }
     }
 
