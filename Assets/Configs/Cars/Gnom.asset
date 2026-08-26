@@ -24,9 +24,9 @@ MonoBehaviour:
   _tuning:
     _engine:
       CountBought: 0
-      CountMax: 1
+      CountMax: 4
       Power: 200
-      Price: 2200
+      Price: 12500
     _shields:
       CountBought: 0
       CountMax: 1
@@ -34,9 +34,9 @@ MonoBehaviour:
       Price: 320
     _tires:
       CountBought: 0
-      CountMax: 1
+      CountMax: 4
       Power: 1
-      Price: 2000
+      Price: 12000
     _weapon:
       CountBought: 0
       CountMax: 5
@@ -49,9 +49,9 @@ MonoBehaviour:
       Price: 2800
     _mines:
       CountBought: 0
-      CountMax: 0
-      Power: 0
-      Price: 0
+      CountMax: 5
+      Power: 1
+      Price: 15000
     _shield:
       CountBought: 0
       CountMax: 1
@@ -60,3 +60,7 @@ MonoBehaviour:
     _carColors:
     - _color: {r: 0.45490196, g: 0.7372549, b: 0.24705882, a: 1}
       _material: {fileID: 2100000, guid: d9971a4d0ebd47f44ade7cb730bf10b2, type: 2}
+    - _color: {r: 0.13333334, g: 0.5137255, b: 0.8156863, a: 1}
+      _material: {fileID: 2100000, guid: a2185ffee497f7e4980a76503679c79c, type: 2}
+    - _color: {r: 0.800539, g: 0.080916956, b: 0.080916956, a: 1}
+      _material: {fileID: 2100000, guid: 61d51a24c3730294e986cfc763f5d57b, type: 2}
