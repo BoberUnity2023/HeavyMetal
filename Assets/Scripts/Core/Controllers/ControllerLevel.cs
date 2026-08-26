@@ -73,12 +73,12 @@ public class ControllerLevel : MonoBehaviour
         _hub.Game.LastPlayedLevel = _hub.Game.CurrentLevel;           
         //_hub.Joistick.ResetCenter();  
         _timeStart = Time.time;
-        //_hub.Analitycs.SendLevelStart((int)_timeStart);
+        _hub.Analitycs.SendLevelStart((int)_timeStart);
         bool isFirstStart = !_hub.Game.Saves.GetPlayedLevels(_hub.Game.CurrentLevel - 1);
         if (isFirstStart)
         {
             _hub.Game.Saves.SetPlayedLevels(_hub.Game.CurrentLevel - 1, true);
-            //_hub.Analitycs.SendLevelStartFirst((int)_timeStart);
+            _hub.Analitycs.SendLevelStartFirst((int)_timeStart);
         }
 
         SetLevelObjectsByKey();

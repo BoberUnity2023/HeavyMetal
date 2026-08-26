@@ -149,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5254419016070648386
 Transform:
   m_ObjectHideFlags: 0
@@ -1488,7 +1488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerUI
   _game: {fileID: 5279882291150218642}
-  _hasSelected: 0
 --- !u!1 &7745185582332837176
 GameObject:
   m_ObjectHideFlags: 0

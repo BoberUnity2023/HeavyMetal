@@ -72,8 +72,7 @@ public class LapsCounter : MonoBehaviour
                 if (!_car.IsAI)
                     _car.Hub.Level.Race.Finish();
 
-                OnFinish?.Invoke(_car);
-                Debug.LogWarning("Finished");
+                OnFinish?.Invoke(_car);                
             }
             else
             {   //Debug.LogWarning("Lap: " + Lap);

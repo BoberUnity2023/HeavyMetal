@@ -11,6 +11,12 @@ public class ControllerAnalitycs : MonoBehaviour
         SendDeviceType(_game.Device);
     }
 
+    public void SendGameStart()
+    {
+        string eventName = "GameStart";
+        GameAnalytics.NewDesignEvent(eventName);
+    }
+
     public void SendDeviceType(Device device)
     {
         string eventName = "Device:" + device.ToString();
@@ -41,13 +47,16 @@ public class ControllerAnalitycs : MonoBehaviour
         //Debug.LogWarning(eventName);
     }
 
-    public void SendLevelComplete(int time)
+    public void SendLevelComplete(int place)
     {
         int level = _game.CurrentLevel;
-        string eventName = "Level_" + level + ":Complete";
-        GameAnalytics.NewDesignEvent(eventName, time);
+
+        string eventName = "Level_" + level + ":Complete:" + place;
+        GameAnalytics.NewDesignEvent(eventName);
         //Debug.LogWarning(eventName);
     }
+
+
 
     public void SendLevelRestartFromCheckpoint(int time)
     {
@@ -100,32 +109,26 @@ public class ControllerAnalitycs : MonoBehaviour
         GameAnalytics.NewDesignEvent(eventName);
     }
 
+    public void SendBuyCar(CarType carType)
+    {
+        string eventName = "BuyCar:" + carType.ToString();
+        GameAnalytics.NewDesignEvent(eventName);
+        //Debug.LogWarning(eventName);
+    }
+
+    public void SendTuning(CarType carType, TuningType tuningType, int value)
+    {
+        string eventName = "Tuning:" + carType.ToString() + ":" + tuningType.ToString() + ":" + value;
+        GameAnalytics.NewDesignEvent(eventName);
+        //Debug.LogWarning(eventName);
+    }
+
     public void SendBuy(string id)
     {
         string eventName = "Buy:" + id;
         GameAnalytics.NewDesignEvent(eventName);
     }
-
-    public void SendHatTake()
-    {
-        string eventName = "Hat:Taken";
-        GameAnalytics.NewDesignEvent(eventName);
-        //Debug.LogWarning(eventName);
-    }
-    public void SendHatCompleteLevel()
-    {
-        string eventName = "Hat:CompleteLevel";
-        GameAnalytics.NewDesignEvent(eventName);
-        //Debug.LogWarning(eventName);
-    }
-
-    public void SendHeroForced(string enemy)
-    {
-        int level = _game.CurrentLevel;
-        string eventName = "Level_" + level + ":HeroForced:" + enemy;
-        GameAnalytics.NewDesignEvent(eventName);
-    }
-
+    
     public void SendVisit(string type)
     {        
         string eventName = "Visit:" + type;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
 
 public class WindowSelectCar : WindowBase
 {    
@@ -96,7 +97,8 @@ public class WindowSelectCar : WindowBase
             _game.Coins -= price;
             _game.Sound.Play(SoundClip.Upgrade);
             _game.Saves.SetBoughtCar(_game.SelectedCarType);
-            SetButtonsByCar();            
+            SetButtonsByCar();
+            Game.Analitycs.SendBuyCar(_game.SelectedCarType);
         }
     }
 
@@ -187,6 +189,7 @@ public class WindowSelectCar : WindowBase
             _game.Saves.SetTuning(_game.SelectedCarType, tuningType, current + 1);
             _garage.CurrentCar.Tuning.SetTuning();
             SetButtonsByCar();
+            _game.Analitycs.SendTuning(_garage.CurrentCar.CarType, tuningType, current + 1);
         }
     }
 

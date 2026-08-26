@@ -34,11 +34,12 @@ public class ControllerRace : MonoBehaviour
 
         AddFinishCoins();
 
+        _hub.Game.Analitycs.SendLevelComplete(_hub.Result.Place);
+
         if (_hub.Result.Place == 1)
             _hub.Game.Sound.Play(SoundClip.FirstPlace);
 
-        if (!_car.IsAI)
-            OnFinish?.Invoke();
+        OnFinish?.Invoke();
     }
 
     public List<Car> Enemies => _enemies;
