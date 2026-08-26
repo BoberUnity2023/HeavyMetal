@@ -9266,7 +9266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageCounter
   _smoke: {fileID: 2941240523914696912}
   _fire: {fileID: 7837502575181107562}
-  _rewards: 64000000c80000002c010000
+  _reward: 300
 --- !u!114 &2619338596475475530
 MonoBehaviour:
   m_ObjectHideFlags: 0
