@@ -32587,15 +32587,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753090892306362111, guid: 276330fe249f2cb448f64c1c61b30350, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5753090892306362111, guid: 276330fe249f2cb448f64c1c61b30350, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5753090892306362111, guid: 276330fe249f2cb448f64c1c61b30350, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5962915669833418922, guid: 276330fe249f2cb448f64c1c61b30350, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
