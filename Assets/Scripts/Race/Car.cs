@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum InputType
 {
@@ -46,6 +47,8 @@ public class Car : MonoBehaviour
     private float _speedFactor;
     private float _slideForce;   
     private float _speed;
+
+    public event Action<Mode> OnInit;
 
     public CarType CarType => _carType;    
 
@@ -154,6 +157,7 @@ public class Car : MonoBehaviour
         _stopLights.Init(this);
         _tuning.Init(this, Hub.Game);
         _oil.Init(this);
+        OnInit?.Invoke(mode);
     }
 
     public void Init(Mode mode, GameController game)
@@ -176,6 +180,7 @@ public class Car : MonoBehaviour
         _rocketGun.Init(this);
         _weaponMines.Init(this);
         Tuning.Init(this, game);
+        OnInit?.Invoke(mode);
     }
 
     private void FixedUpdate()

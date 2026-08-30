@@ -48,10 +48,10 @@ public class LocalizeController : MonoBehaviour
         ChangeLanguage(language);
     }
 
-    private void Update()
-    {
-        Update_HotKeys();
-    }
+    //private void Update()
+    //{
+    //    Update_HotKeys();
+    //}
 
     private void OnDestroy()
     {
@@ -89,12 +89,16 @@ public class LocalizeController : MonoBehaviour
                 id = 2;
                 break;
 
-            case "fs":
+            case "fr":
                 id = 3;
                 break;
 
             case "de":
                 id = 4;
+                break;
+
+            case "pt":
+                id = 5;
                 break;
 
             default:
@@ -139,9 +143,9 @@ public class LocalizeController : MonoBehaviour
         get
         {
             string language = "en";
-            if (Application.systemLanguage == SystemLanguage.Turkish)
+            if (Application.systemLanguage == SystemLanguage.French)
             {
-                language = "tr";
+                language = "fr";
             }
 
             if (Application.systemLanguage == SystemLanguage.Spanish)
@@ -152,6 +156,11 @@ public class LocalizeController : MonoBehaviour
             if (Application.systemLanguage == SystemLanguage.German)
             {
                 language = "de";
+            }
+
+            if (Application.systemLanguage == SystemLanguage.Portuguese)
+            {
+                language = "pt";
             }
 
             if (Application.systemLanguage == SystemLanguage.Russian ||

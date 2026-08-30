@@ -26,7 +26,8 @@ MonoBehaviour:
       - COMPRAR
       - KAUFEN
       - 'ACHETER '
-      Flags: 0000000000
+      - 'COMPRAR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: coins
       TermType: 0
@@ -37,7 +38,8 @@ MonoBehaviour:
       - MONEDAS
       - "M\xDCNZEN"
       - "PI\xC8CES "
-      Flags: 0000000000
+      - 'MOEDAS '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: congratulations
       TermType: 0
@@ -48,7 +50,8 @@ MonoBehaviour:
       - "\xA1FELICIDADES!"
       - "GL\xDCCKWUNSCH!"
       - "F\xC9LICITATIONS\_! "
-      Flags: 0000000000
+      - "PARAB\xC9NS! "
+      Flags: 000000000000
       Languages_Touch: []
     - Term: daily_bonus
       TermType: 0
@@ -59,7 +62,8 @@ MonoBehaviour:
       - RECOMPENSA DIARIA
       - "T\xC4GLICHE BELOHNUNG"
       - "R\xC9COMPENSE QUOTIDIENNE "
-      Flags: 0000000000
+      - "RECOMPENSA DI\xC1RIA "
+      Flags: 000000000000
       Languages_Touch: []
     - Term: day
       TermType: 0
@@ -70,7 +74,8 @@ MonoBehaviour:
       - "D\xCDA"
       - TAG
       - 'JOUR '
-      Flags: 0000000000
+      - 'DIA '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: get
       TermType: 0
@@ -81,7 +86,8 @@ MonoBehaviour:
       - RECOGER
       - ERHALTEN
       - 'COLLECTER '
-      Flags: 0000000000
+      - 'COLETAR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: new_game
       TermType: 0
@@ -92,7 +98,8 @@ MonoBehaviour:
       - NUEVO JUEGO
       - NEUES SPIEL
       - 'NOUVELLE PARTIE '
-      Flags: 0000000000
+      - 'NOVO JOGO '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: no
       TermType: 0
@@ -103,7 +110,8 @@ MonoBehaviour:
       - NO
       - NEIN
       - 'NON '
-      Flags: 0000000000
+      - "N\xC3O "
+      Flags: 000000000000
       Languages_Touch: []
     - Term: personal_record
       TermType: 0
@@ -114,7 +122,8 @@ MonoBehaviour:
       - "R\xC9CORD PERSONAL"
       - "PERS\xD6NLICHER REKORD"
       - 'MEILLEUR PERFORMANT '
-      Flags: 0000000000
+      - 'RECORDE PESSOAL '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: play
       TermType: 0
@@ -125,7 +134,8 @@ MonoBehaviour:
       - JUGAR
       - SPIELEN
       - 'JOUER '
-      Flags: 0000000000
+      - 'JOGAR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: rating
       TermType: 0
@@ -136,7 +146,8 @@ MonoBehaviour:
       - "CLASIFICACI\xD3N"
       - RANGLISTE
       - 'CLASSEMENT '
-      Flags: 0000000000
+      - 'RANKING '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: restart
       TermType: 0
@@ -147,7 +158,8 @@ MonoBehaviour:
       - REINICIAR
       - NEUSTART
       - 'REMARQUER '
-      Flags: 0000000000
+      - 'REINICIAR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: rules
       TermType: 0
@@ -158,7 +170,8 @@ MonoBehaviour:
       - REGLAS DEL JUEGO
       - SPIELREGELN
       - "R\xC8GLES DU JEU "
-      Flags: 0000000000
+      - 'REGRAS DO JOGO '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: score
       TermType: 0
@@ -169,7 +182,8 @@ MonoBehaviour:
       - PUNTOS
       - PUNKTE
       - 'Score '
-      Flags: 0000000000
+      - 'PONTOS '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: sec
       TermType: 0
@@ -180,7 +194,8 @@ MonoBehaviour:
       - SEG
       - SEK
       - 'SEC '
-      Flags: 0000000000
+      - 'SEG '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: settings
       TermType: 0
@@ -191,7 +206,8 @@ MonoBehaviour:
       - AJUSTES
       - EINSTELLUNGEN
       - "PARAM\xC8TRES "
-      Flags: 0000000000
+      - OPCOES
+      Flags: 000000000000
       Languages_Touch: []
     - Term: sound
       TermType: 0
@@ -202,7 +218,8 @@ MonoBehaviour:
       - SONIDO
       - TON
       - 'SON '
-      Flags: 0000000000
+      - 'SOM '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: time
       TermType: 0
@@ -213,7 +230,8 @@ MonoBehaviour:
       - TIEMPO
       - ZEIT
       - 'TEMPS '
-      Flags: 0000000000
+      - 'TEMPO '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: time_bonus
       TermType: 0
@@ -224,7 +242,8 @@ MonoBehaviour:
       - BONO DE TIEMPO
       - ZEITBONUS
       - 'BONUS DE TEMPS '
-      Flags: 0000000000
+      - "B\xD4NUS DE TEMPO "
+      Flags: 000000000000
       Languages_Touch: []
     - Term: x2
       TermType: 0
@@ -235,7 +254,8 @@ MonoBehaviour:
       - DUPLICAR
       - VERDOPPELN
       - 'DOUBLE '
-      Flags: 0000000000
+      - 'DUPLICAR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: yes
       TermType: 0
@@ -246,7 +266,8 @@ MonoBehaviour:
       - "S\xCD"
       - JA
       - 'OUI '
-      Flags: 0000000000
+      - 'SIM '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: purchase
       TermType: 0
@@ -257,7 +278,8 @@ MonoBehaviour:
       - COMPRA
       - KAUF
       - 'ACHETER '
-      Flags: 0000000000
+      - 'COMPRA '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: shop
       TermType: 0
@@ -268,7 +290,8 @@ MonoBehaviour:
       - TIENDA
       - LADEN
       - 'BOUTIQUE '
-      Flags: 0000000000
+      - 'LOJA '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: garage
       TermType: 0
@@ -279,7 +302,8 @@ MonoBehaviour:
       - GARAJE
       - 'GARAGE '
       - 'GARAGE '
-      Flags: 0000000000
+      - 'GARAGEM '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: lap
       TermType: 0
@@ -290,7 +314,8 @@ MonoBehaviour:
       - 'VUELTA '
       - 'RUNDE '
       - 'TOUR '
-      Flags: 0000000000
+      - 'VOLTA '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: place
       TermType: 0
@@ -301,7 +326,8 @@ MonoBehaviour:
       - "UBICACI\xD3N"
       - 'PLATZ '
       - 'PLACE '
-      Flags: 0000000000
+      - "POSI\xC7\xC3O "
+      Flags: 000000000000
       Languages_Touch: []
     - Term: speed
       TermType: 0
@@ -312,7 +338,8 @@ MonoBehaviour:
       - VELOCIDAD
       - 'GESCHWINDIGKEIT '
       - 'VITESSE '
-      Flags: 0000000000
+      - 'VELOCIDADE '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: continue
       TermType: 0
@@ -323,7 +350,8 @@ MonoBehaviour:
       - 'CONTINUAR '
       - 'FORTSETZEN '
       - 'CONTINUER '
-      Flags: 0000000000
+      - 'CONTINUAR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: loading
       TermType: 0
@@ -334,7 +362,8 @@ MonoBehaviour:
       - 'CARGANDO... '
       - "L\xC4DT... "
       - "CHARGEMENT\u2026 "
-      Flags: 0000000000
+      - 'CARREGANDO... '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: location_smoke_city
       TermType: 0
@@ -345,7 +374,8 @@ MonoBehaviour:
       - 'CIUDAD DE HUMO '
       - 'SMOKE CITY '
       - 'SMOKE CITY '
-      Flags: 0000000000
+      - 'CIDADE NEVOENTA '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: location_paradize
       TermType: 0
@@ -356,7 +386,8 @@ MonoBehaviour:
       - "PARA\xCDSO "
       - 'PARADIES '
       - 'PARADIZE '
-      Flags: 0000000000
+      - "PARA\xCDSO "
+      Flags: 000000000000
       Languages_Touch: []
     - Term: location_alien
       TermType: 0
@@ -367,7 +398,8 @@ MonoBehaviour:
       - "ALIEN\xCDGENA "
       - 'ALIEN '
       - 'ALIEN '
-      Flags: 0000000000
+      - 'ALIEN '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: pause
       TermType: 0
@@ -378,7 +410,8 @@ MonoBehaviour:
       - 'PAUSA '
       - 'PAUSE '
       - 'PAUSE '
-      Flags: 0000000000
+      - 'PAUSA '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: quit
       TermType: 0
@@ -389,7 +422,8 @@ MonoBehaviour:
       - 'SALIR '
       - 'BEENDEN '
       - 'QUITTER '
-      Flags: 0000000000
+      - 'SAIR '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: about
       TermType: 0
@@ -400,7 +434,8 @@ MonoBehaviour:
       - 'ACERCA DEL JUEGO '
       - "\xDCBER DAS SPIEL "
       - "\xC0 PROPOS DU JEU "
-      Flags: 0000000000
+      - 'SOBRE O JOGO '
+      Flags: 000000000000
       Languages_Touch: []
     - Term: color
       TermType: 0
@@ -411,7 +446,8 @@ MonoBehaviour:
       - 'COLOR '
       - 'FARBE '
       - 'COULEUR '
-      Flags: 0000000000
+      - 'COR '
+      Flags: 000000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
@@ -431,6 +467,9 @@ MonoBehaviour:
       Flags: 0
     - Name: France
       Code: fr-FR
+      Flags: 0
+    - Name: "Portugu\xEAs "
+      Code: 
       Flags: 0
     IgnoreDeviceLanguage: 0
     _AllowUnloadingLanguages: 0

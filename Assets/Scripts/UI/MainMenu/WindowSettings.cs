@@ -76,12 +76,9 @@ public class WindowSettings : WindowBase
             _game.Localize.ChangeLanguage("fr");
 
         if (id == 4)
-            _game.Localize.ChangeLanguage("de");
+            _game.Localize.ChangeLanguage("de");        
 
         if (id == 5)
-            _game.Localize.ChangeLanguage("en");
-
-        if (id == 6)
-            _game.Localize.ChangeLanguage("en");
+            _game.Localize.ChangeLanguage("pt");
     }
 }
