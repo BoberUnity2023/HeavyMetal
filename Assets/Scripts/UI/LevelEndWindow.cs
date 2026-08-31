@@ -2,16 +2,17 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class LevelEndWindow : MonoBehaviour
+public class LevelEndWindow : WindowBase
 {
     [SerializeField] private Hub _hub;    
-    [SerializeField] private GameObject _window;
     [SerializeField] private TMP_Text _finishText;
     [SerializeField] private TMP_Text _indicatorAddCoins;    
-    [SerializeField] private GameObject[] _stars;
+    [SerializeField] private GameObject[] _stars;    
 
-    private void Start()
-    {        
+    protected override void Start()
+    {
+        Init(_hub.Game);
+        base.Start();
         Hide();        
         StartCoroutine(AfterStart(1));
     }
@@ -25,7 +26,7 @@ public class LevelEndWindow : MonoBehaviour
     private void Race_OnFinish()
     {
         Show();
-        
+        _hub.Game.UI.Finish();
         _finishText.gameObject.SetActive(true);
         int place = _hub.Result.Place;
         _finishText.text = place.ToString();
@@ -40,18 +41,9 @@ public class LevelEndWindow : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         _hub.Level.Race.OnFinish -= Race_OnFinish;
-    }
-
-    public void Show()
-    {
-        _window.gameObject.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        _window.gameObject.SetActive(false);
     }
 }

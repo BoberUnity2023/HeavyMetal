@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 public class ControllerUI : MonoBehaviour
 {
     [SerializeField] private GameController _game;
-    private bool _hasSelected;
+    [SerializeField] private bool _hasSelected;
     private int _sceneBuildIndex;
+    private bool _waitingRleaseButtosAftrFinish;
+    
 
     public event Action OnNavigationStart;
 
@@ -22,12 +24,14 @@ public class ControllerUI : MonoBehaviour
 
     public void NavigationStart()
     {
+        Debug.Log("NavigationStart");
         _hasSelected = true;
         OnNavigationStart?.Invoke();
     }
 
     public void NavigationEnd()
     {
+        Debug.Log("NavigationEnd");
         _hasSelected = false;
     }
 
@@ -40,11 +44,8 @@ public class ControllerUI : MonoBehaviour
             return;
         }
 
-        bool anyKey = Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.UpArrow) ||
-            Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f;
-
-        if (anyKey && !_hasSelected)
+        bool anyKey = AnyKey;
+        if (anyKey && !_hasSelected && !_waitingRleaseButtosAftrFinish)
         {
             NavigationStart();
         }
@@ -54,11 +55,37 @@ public class ControllerUI : MonoBehaviour
             Input.GetKeyDown(KeyCode.JoystickButton0)
             )
             NavigationEnd();
+
+        if (_waitingRleaseButtosAftrFinish && !anyKey)
+        {
+            _waitingRleaseButtosAftrFinish = false;
+            NavigationEnd(); 
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         NavigationEnd();
         _sceneBuildIndex = scene.buildIndex;
+    }
+
+    private bool AnyKey
+    {
+        get
+        {
+            return 
+            Input.GetKeyDown(KeyCode.DownArrow) ||
+            Input.GetKeyDown(KeyCode.UpArrow) ||
+            Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f;
+        }
+    }
+
+    public void Finish()
+    {
+        NavigationEnd();
+        if (AnyKey)
+        {
+            _waitingRleaseButtosAftrFinish = true;
+        }
     }
 }

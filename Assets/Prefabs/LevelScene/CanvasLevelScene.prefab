@@ -6862,6 +6862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48fc8bbbc1eb3848bdd5d866413df7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelEndWindow
+  _sceneController: {fileID: 0}
+  _window: {fileID: 206286244523526514}
+  _firstSelected: {fileID: 8301694013171019133}
   _hub: {fileID: 0}
   _window: {fileID: 206286244523526514}
   _finishText: {fileID: 2680312380584822835}
@@ -9020,6 +9023,11 @@ PrefabInstance:
 --- !u!224 &3047564383920530369 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1419468416100494561, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
+  m_PrefabInstance: {fileID: 4177625945705369376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8301694013171019133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5389790680873886301, guid: 0abdec18dc857294482148ac46fdda04, type: 3}
   m_PrefabInstance: {fileID: 4177625945705369376}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8250068695389673284

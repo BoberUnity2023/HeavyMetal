@@ -65473,6 +65473,10 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 6204872754029138250, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 6901248928689405956}
     - target: {fileID: 6382084865511431953, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -65589,6 +65593,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f8a8a1f9b960148af8ba2caa98d1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasLevel
+--- !u!114 &6901248928689405956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4553776140506804653, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+  m_PrefabInstance: {fileID: 6901248928689405954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c3901573e444c4589d9cd33b812db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
 --- !u!224 &6921253002980819220
 RectTransform:
   m_ObjectHideFlags: 0
