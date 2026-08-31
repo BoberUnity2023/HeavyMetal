@@ -6,7 +6,7 @@ public class WindowBase : MonoBehaviour
 {
     [SerializeField] protected SceneController _sceneController;
     [SerializeField] protected GameObject _window;
-    [SerializeField] private GameObject _firstSelected;
+    [SerializeField] protected GameObject _firstSelected;
     protected GameController _game;
     private bool _isInited;
 

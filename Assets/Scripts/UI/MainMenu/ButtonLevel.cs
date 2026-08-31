@@ -57,6 +57,10 @@ public class ButtonLevel : MonoBehaviour
         //_iconUIEffect.effectFactor = 0.6f; 
         _lock.SetActive(true);
         _plus.SetActive(false);
+        Button button = GetComponent<Button>();
+        Navigation navigation = button.navigation;        
+        navigation.mode = Navigation.Mode.None;
+        button.navigation = navigation;
         //_video.SetActive(_mainMenuController.IsLevelAvialableByVideo(_level));
         _iconLight.gameObject.SetActive(false);
         for (int i = 0; i < _uIStars.Length; i++)

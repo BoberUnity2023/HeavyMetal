@@ -85,6 +85,9 @@ public class WindowSelectLevel : WindowBase
             ButtonLevel buttonLevel = Instantiate(_buttonLevelPrefab, parent);
             int iCopy = i;
             buttonLevel.GetComponent<Button>().onClick.AddListener(() => PressLoadLevel(iCopy));
+
+            if (i == Game.LastPlayedLevel)
+                _firstSelected = buttonLevel.gameObject; 
         }
     }
 
