@@ -992,15 +992,17 @@ MonoBehaviour:
   _levelComplete: {fileID: 8300000, guid: ea72a2991b07fc04d8c4a3e6c2785ba9, type: 3}
   _clipFootStepGround: {fileID: 8300000, guid: 2d03d32faea5cfa4d89c7513579e8cf9, type: 3}
   _clipFootStepWater: {fileID: 8300000, guid: cc1e057caf75b694da3ee8758ca980d2, type: 3}
-  _threeTwoOneGo: {fileID: 8300000, guid: 69a98b20e3d2f0e479c1f86245bea3cf, type: 3}
+  _threeTwoOneGo: {fileID: 8300000, guid: 5a603cc1fade1f544b8453b328812752, type: 3}
   _battleBegin: {fileID: 8300000, guid: 8b8ec6cdacec7484cb39b89cb373a903, type: 3}
   _lastLap: {fileID: 8300000, guid: be8115f29a4998542819d64608bcfbba, type: 3}
   _firstPlace: {fileID: 8300000, guid: cf9f770bece146a40987daece7818847, type: 3}
   _musics:
-  - {fileID: 8300000, guid: a029ec2d5dad35d4f96d72279635753d, type: 3}
+  - {fileID: 8300000, guid: e5c9157bba89e4f4794dd0dfeb16e66f, type: 3}
   - {fileID: 8300000, guid: 2d5a6cb064f423f4791da5bb18f06c53, type: 3}
   - {fileID: 8300000, guid: 30d016a565b54c14c9478af5e2828da4, type: 3}
   - {fileID: 8300000, guid: fbea7ace3e6364e4bb10d65416a17461, type: 3}
+  - {fileID: 8300000, guid: a029ec2d5dad35d4f96d72279635753d, type: 3}
+  - {fileID: 8300000, guid: d3e171229b069a64681d51d20deeed68, type: 3}
 --- !u!82 &3260994046429105363
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1717,6 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerUI
   _game: {fileID: 5279882291150218642}
+  _hasSelected: 0
 --- !u!1 &7745185582332837176
 GameObject:
   m_ObjectHideFlags: 0
