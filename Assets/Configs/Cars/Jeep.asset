@@ -26,37 +26,37 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 4
       Power: 200
-      Price: 15500
+      Prices: 8c3c00008c3c00008c3c00008c3c0000
     _shields:
       CountBought: 0
       CountMax: 6
       Power: 4
-      Price: 12500
+      Prices: d4300000d4300000d4300000d4300000d4300000d4300000
     _tires:
       CountBought: 0
       CountMax: 4
       Power: 1
-      Price: 11000
+      Prices: 401f000010270000983a0000409c0000
     _weapon:
       CountBought: 0
       CountMax: 5
       Power: 1
-      Price: 17000
+      Prices: 6842000068420000684200006842000068420000
     _nitro:
       CountBought: 0
       CountMax: 5
       Power: 0.2
-      Price: 10000
+      Prices: 1027000010270000102700001027000010270000
     _mines:
       CountBought: 0
       CountMax: 5
       Power: 1
-      Price: 11000
+      Prices: f82a0000f82a0000f82a0000f82a0000f82a0000
     _shield:
       CountBought: 0
       CountMax: 1
       Power: 1
-      Price: 99999999
+      Prices: ffe0f505
     _carColors:
     - _color: {r: 0.45490196, g: 0.7372549, b: 0.24705882, a: 1}
       _material: {fileID: 2100000, guid: adb11a9f43d7f0c488cbd247e44cbee6, type: 2}

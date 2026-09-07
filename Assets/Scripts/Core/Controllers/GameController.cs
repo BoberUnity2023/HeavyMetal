@@ -100,7 +100,8 @@ public class TuningCategory
     [HideInInspector] public int CountBought;
     public int CountMax;
     public float Power;
-    public int Price;
+    //public int Price;
+    public int[] Prices;
 }
 
 public class GameController : MonoBehaviour

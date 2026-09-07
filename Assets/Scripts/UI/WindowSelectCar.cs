@@ -120,67 +120,58 @@ public class WindowSelectCar : WindowBase
     {
         Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Engine.Price;
-        int max = configCar.Tuning.Engine.CountMax;
-        TryBuyTuning(TuningType.Engine, price, max);
+        TryBuyTuning(configCar.Tuning.Engine, TuningType.Engine);
     }
 
     public void PressBuyTuningShields()
     {
         Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Shields.Price;
-        int max = configCar.Tuning.Shields.CountMax;
-        TryBuyTuning(TuningType.Shields, price, max);
+        TryBuyTuning(configCar.Tuning.Shields, TuningType.Shields);
     }
 
     public void PressBuyTuningWeapon()
     {
         Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Weapon.Price;
-        int max = configCar.Tuning.Weapon.CountMax;
-        TryBuyTuning(TuningType.Weapons, price, max);
+        TryBuyTuning(configCar.Tuning.Weapon, TuningType.Weapons);
     }
 
     public void PressBuyTuningMines()
     {
         Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Mines.Price;
-        int max = configCar.Tuning.Mines.CountMax;
-        TryBuyTuning(TuningType.Mines, price, max);
+        TryBuyTuning(configCar.Tuning.Mines, TuningType.Mines);
     }
 
     public void PressBuyTuningTires()
     {
         Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Tires.Price;
-        int max = configCar.Tuning.Tires.CountMax;
-        TryBuyTuning(TuningType.Tires, price, max);
+        TryBuyTuning(configCar.Tuning.Tires, TuningType.Tires);
     }
 
     public void PressBuyTuningNitro()
     {
         Game.Sound.Play(SoundClip.Click);
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Nitro.Price;
-        int max = configCar.Tuning.Nitro.CountMax;
-        TryBuyTuning(TuningType.Nitro, price, max);
+        TryBuyTuning(configCar.Tuning.Nitro, TuningType.Nitro);        
     }
 
     public void PressBuyTuningShield()
     {
         Game.Sound.Play(SoundClip.Click);
-        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int price = configCar.Tuning.Shield.Price;
-        int max = configCar.Tuning.Shield.CountMax;
-        TryBuyTuning(TuningType.Shield, price, max);
+        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];           
+        TryBuyTuning(configCar.Tuning.Shield, TuningType.Shield);
     }
 
-    public void TryBuyTuning(TuningType tuningType, int price, int max)
+    public void TryBuyTuning(TuningCategory category, TuningType tuningType)
     {        
+        CarType carType = _game.SelectedCarType;
+        int countTuning = _game.Saves.GetTuning(carType, tuningType);
+        int price = category.Prices[countTuning];
+        int max = category.CountMax;
+
         int current = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
         if (current < max && _game.Saves.Coins >= price)
         {
@@ -219,41 +210,22 @@ public class WindowSelectCar : WindowBase
     private void SetBars()
     {
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        int current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Engine);
-        int max = configCar.Tuning.Engine.CountMax;        
+        SetBar(configCar.Tuning.Engine, TuningType.Engine, _barEngine);
+        SetBar(configCar.Tuning.Shield, TuningType.Shields, _barShields);
+        SetBar(configCar.Tuning.Tires, TuningType.Tires, _barTires);
+        SetBar(configCar.Tuning.Weapon, TuningType.Weapons, _barWeapon);
+        SetBar(configCar.Tuning.Mines, TuningType.Mines, _barMines);
+        SetBar(configCar.Tuning.Nitro, TuningType.Nitro, _barNitro);
+    }
+
+    private void SetBar(TuningCategory category, TuningType tuningType, Bar bar)
+    {
+        int current = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
+        int max = category.CountMax;
         float value = (float)current / max;
-        int price = configCar.Tuning.Engine.Price;
-        _barEngine.Set(value, price);
-
-        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shields);
-        max = configCar.Tuning.Shields.CountMax;        
-        value = (float)current / max;
-        price = configCar.Tuning.Shields.Price;
-        _barShields.Set(value, price);
-
-        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires);
-        max = configCar.Tuning.Tires.CountMax - 1;        
-        value = (float)current / max;
-        price = configCar.Tuning.Tires.Price;
-        _barTires.Set(value, price);
-
-        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Weapons);
-        max = configCar.Tuning.Weapon.CountMax;        
-        value = (float)current / max;
-        price = configCar.Tuning.Weapon.Price;
-        _barWeapon.Set(value, price);
-
-        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Nitro);
-        max = configCar.Tuning.Nitro.CountMax;        
-        value = (float)current / max;
-        price = configCar.Tuning.Nitro.Price;
-        _barNitro.Set(value, price);
-
-        current = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Mines);
-        max = configCar.Tuning.Mines.CountMax;
-        value = (float)current / max;
-        price = configCar.Tuning.Mines.Price;
-        _barMines.Set(value, price);
+        int countTuning = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
+        int price = category.Prices[countTuning];
+        bar.Set(value, price);
     }
 
     private bool HasCar => _game.Saves.HasBoughtCar(_game.SelectedCarType);

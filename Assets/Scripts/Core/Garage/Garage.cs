@@ -23,6 +23,7 @@ public class Garage : MonoBehaviour
 
     public void Init(GameController game, bool fromLevel)
     {
+        CheckCarConfigsByErrors();
         _mainMenu.Init(game);
         _windowSelectCar.Init(game);
         _windowSettings.Init(game);
@@ -100,5 +101,35 @@ public class Garage : MonoBehaviour
         int id = _sceneController.Game.Saves.GetCarColor(_cars[number].CarType);
         Material material = _sceneController.Game.ConfigGame.Cars[number].Tuning.CarColors[id].Material;
         _cars[number].Paint.SetMaterial(material);        
-    }    
+    }
+
+    #region CheckCarConfigsByErrors
+    private void CheckCarConfigsByErrors()
+    {
+        int count = _sceneController.Game.ConfigGame.Cars.Length;
+        for (int i = 0; i < count; i++)
+        {
+            ConfigCar configCar = _sceneController.Game.ConfigGame.Cars[i];
+            bool hasErrors = 
+                HasTuningCategoryError(configCar.Tuning.Engine) ||
+                HasTuningCategoryError(configCar.Tuning.Shields) ||
+                HasTuningCategoryError(configCar.Tuning.Tires) ||
+                HasTuningCategoryError(configCar.Tuning.Weapon) ||
+                HasTuningCategoryError(configCar.Tuning.Mines) ||
+                HasTuningCategoryError(configCar.Tuning.Nitro) ||
+                HasTuningCategoryError(configCar.Tuning.Shield);
+
+            if (hasErrors)
+                Debug.LogError("Error CarConfig: " + configCar.CarType.ToString());
+        }
+    }
+
+    private bool HasTuningCategoryError(TuningCategory category)
+    {
+        bool hasErrors = category.Prices.Length != category.CountMax;
+        if (hasErrors)
+            Debug.LogError("Error Tuning Category! CountMax:" + category.CountMax + " Prices.Length: " + category.Prices.Length);
+        return hasErrors;            
+    }
+    #endregion
 }
