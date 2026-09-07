@@ -150,6 +150,7 @@ public class Car : MonoBehaviour
         _rocketGun.Init(this);
         _weaponMines.Init(this);
         _damageCounter.Init(this);
+        _returnOnRoad.Init(this);
         _paint.Init(this);
         _nitro.Init(this);
         _skidSound.Init(this);

@@ -49,7 +49,12 @@ public class CarAI : MonoBehaviour, ICarInputable
             _currentCollapsTime += Time.fixedDeltaTime;
             if (_currentCollapsTime > 1)
             {
-                AIReverseOn();
+                if (_car.LapsCounter.Points >= _car.Hub.Level.Race.Car.LapsCounter.Points || _car.IsVisible)
+                    AIReverseOn();
+                else
+                {                    
+                    _car.ReturnOnRoad.MoveToNearestReturnPoint(); 
+                }
             }
         }
     }

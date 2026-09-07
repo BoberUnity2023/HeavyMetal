@@ -6,8 +6,17 @@ public class ReturnOnRoad : MonoBehaviour
     [SerializeField] private Car _car;
     [SerializeField] private float _collapsTimePlayer;
     [SerializeField] private float _collapsTimeEnemy;
-    private float _currentCollapsTime = 0;
+    private float _currentCollapsTime;
     private bool isEffect = false;
+
+    public void Init(Car car)
+    {
+        _car = car;
+        if (_car.Mode == Mode.Track)
+        {
+            enabled = true;
+        }
+    }
 
     private void Update()
     {
@@ -56,14 +65,20 @@ public class ReturnOnRoad : MonoBehaviour
 
     public void MoveToNearestReturnPoint()
     {
+        int pointID = Mathf.Max(0, _car.LapsCounter.CurrentPoint - 1);
+        MoveToPoint(pointID);       
+    }
+
+    public void MoveToPoint(int pointID)
+    {
         _car.Rigidbody.linearVelocity = Vector3.zero;
         _currentCollapsTime = 0;
-        int currentPoint = Mathf.Max(0, _car.LapsCounter.CurrentPoint - 1);
-        Transform wayPoint = _car.WayPath.Points[currentPoint];
+        
+        Transform wayPoint = _car.WayPath.Points[pointID];
         float y = PointPositionOnGround(wayPoint.position);
         transform.localPosition = new Vector3(wayPoint.position.x, y, wayPoint.position.z);
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
-        Debug.Log(gameObject.name + " was returned on point " + currentPoint);
+        Debug.Log(gameObject.name + " was returned on point " + pointID);
     }
 
     private void ChangeOutlineColor()

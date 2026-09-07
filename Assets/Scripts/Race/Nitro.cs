@@ -26,7 +26,7 @@ public class Nitro : MonoBehaviour
     {
         _car = car;
         enabled = false;
-        _fill = _fullTime;
+        _fill = _fullTime/4;
         _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
     }
 
@@ -47,7 +47,7 @@ public class Nitro : MonoBehaviour
 
     private void LapsCounter_OnLapStart(int obj)
     {
-        _fill = _fullTime;
+        _fill = Mathf.Max(_fill, _fill + _fullTime / 4);
     }
 
     public void AddTuningTime(float time)

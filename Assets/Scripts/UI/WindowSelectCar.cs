@@ -211,7 +211,7 @@ public class WindowSelectCar : WindowBase
     {
         ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
         SetBar(configCar.Tuning.Engine, TuningType.Engine, _barEngine);
-        SetBar(configCar.Tuning.Shield, TuningType.Shields, _barShields);
+        SetBar(configCar.Tuning.Shields, TuningType.Shields, _barShields);
         SetBar(configCar.Tuning.Tires, TuningType.Tires, _barTires);
         SetBar(configCar.Tuning.Weapon, TuningType.Weapons, _barWeapon);
         SetBar(configCar.Tuning.Mines, TuningType.Mines, _barMines);

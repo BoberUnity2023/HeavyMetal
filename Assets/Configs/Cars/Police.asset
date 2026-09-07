@@ -26,32 +26,32 @@ MonoBehaviour:
       CountBought: 0
       CountMax: 4
       Power: 200
-      Prices: 74400000744000007440000074400000
+      Prices: 8813000010270000204e000050c30000
     _shields:
       CountBought: 0
       CountMax: 4
       Power: 4
-      Prices: d4300000d4300000d4300000d4300000
+      Prices: 8813000010270000983a0000409c0000
     _tires:
       CountBought: 0
       CountMax: 4
       Power: 1
-      Prices: f82a0000f82a0000f82a0000f82a0000
+      Prices: 8813000010270000204e0000409c0000
     _weapon:
       CountBought: 0
       CountMax: 5
       Power: 1
-      Prices: 8c3c00008c3c00008c3c00008c3c00008c3c0000
+      Prices: d00700008813000010270000983a000030750000
     _nitro:
       CountBought: 0
       CountMax: 5
       Power: 0.2
-      Prices: 1027000010270000102700001027000010270000
+      Prices: 8813000010270000983a0000a8610000b8880000
     _mines:
       CountBought: 0
       CountMax: 5
       Power: 1
-      Prices: c8320000c8320000c8320000c8320000c8320000
+      Prices: a00f0000401f0000983a0000a8610000409c0000
     _shield:
       CountBought: 0
       CountMax: 1

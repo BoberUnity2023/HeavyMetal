@@ -96,6 +96,26 @@ public class CarControl: MonoBehaviour
 
         FixedUpdate_AddDownForce();
         //FixedUpdate_AddAngularDrag();
+        FixedUpdate_AICorrector();
+    }
+
+    private void FixedUpdate_AICorrector()
+    {
+        if (_car.IsAI)
+        {
+            if (_car.IsVisible)
+            {
+                _motorTorque = _car.Config.MotorTorque;
+                _maxSpeed = _car.Config.MaxSpeed;
+            }
+            else
+            {
+                bool isForwardToPlayer = _car.LapsCounter.Points > _car.Hub.Level.Race.Car.LapsCounter.Points;
+                float multipler = isForwardToPlayer ? 0.8f : 1.2f;
+                _motorTorque = _car.Config.MotorTorque * multipler;
+                _maxSpeed = _car.Config.MaxSpeed * multipler;
+            }            
+        }        
     }
 
     private void OnTriggerEnter(Collider other)

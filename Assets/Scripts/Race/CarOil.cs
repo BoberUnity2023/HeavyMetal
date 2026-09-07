@@ -5,7 +5,8 @@ public class CarOil : MonoBehaviour
 {
     private Car _car;
     [SerializeField] private float _oilDistance;
-    [SerializeField] private float _oilDistanceCurrent;       
+    [SerializeField] private float _oilDistanceCurrent;
+    [SerializeField] private Color _skidColor;
 
     public float Intensity => _oilDistanceCurrent / _oilDistance;      
 
@@ -20,7 +21,7 @@ public class CarOil : MonoBehaviour
         if (_oilDistanceCurrent < 0)
             OilEnd();
         else
-            FixedUpdate_SetWheels(Mathf.Sqrt(Intensity));        
+            FixedUpdate_SetWheels(Mathf.Sqrt(Intensity * 2));        
     }
 
     public void Init(Car car)
@@ -57,7 +58,7 @@ public class CarOil : MonoBehaviour
         foreach (WheelSkid wheelSkid in _car.WheelSkids)
         {
             wheelSkid.SetFrictionWithIntensity(1 - intensity);            
-            wheelSkid.SetSkidColor(Color.yellow);
+            wheelSkid.SetSkidColor(_skidColor);
         }
     }
 }

@@ -6302,6 +6302,9 @@ MonoBehaviour:
   _car: {fileID: 8397304227506098460}
   _collapsTimePlayer: 2.5
   _collapsTimeEnemy: 1
+  _currentCollapsTime: 0
+  _isTurned: 0
+  _isSlippage: 0
 --- !u!114 &-7558054904584615606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6366,6 +6369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarOil
   _oilDistance: 0
   _oilDistanceCurrent: 0
+  _skidColor: {r: 0, g: 0.078431375, b: 0.27450982, a: 0}
 --- !u!1 &2243941709484906782
 GameObject:
   m_ObjectHideFlags: 0

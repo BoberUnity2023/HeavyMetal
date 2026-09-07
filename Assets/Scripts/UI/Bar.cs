@@ -58,7 +58,7 @@ public class Bar : MonoBehaviour
                 isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Shields) == _configCar.Tuning.Shields.CountMax;
 
             if (_type == TuningType.Tires)
-                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires) == _configCar.Tuning.Tires.CountMax - 1;
+                isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Tires) == _configCar.Tuning.Tires.CountMax;
 
             if (_type == TuningType.Weapons)
                 isMax = _game.Saves.GetTuning(_game.SelectedCarType, TuningType.Weapons) == _configCar.Tuning.Weapon.CountMax;

@@ -18,9 +18,9 @@ MonoBehaviour:
   _key: 3
   _track: 3
   _laps: 3
-  _starsForOpen: 0
+  _starsForOpen: 55
   _enemies:
   - {fileID: 11400000, guid: 6d94b8f37b4804448852911955472da1, type: 2}
   - {fileID: 11400000, guid: 5a8574ea770baea4c955ca33111419cf, type: 2}
   - {fileID: 11400000, guid: 9611b74d042387d4a8ed95c40618a1cb, type: 2}
-  _finishCoins: c4090000e8030000f401000000000000
+  _finishCoins: 10270000a00f0000c409000000000000
