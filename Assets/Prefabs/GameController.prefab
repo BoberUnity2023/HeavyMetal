@@ -981,12 +981,12 @@ MonoBehaviour:
   _game: {fileID: 5279882291150218642}
   _audioSourceMusic: {fileID: 3260994046429105363}
   _click: {fileID: 8300000, guid: 7b7cdd8f56aa82b4a85723dd3e4c668b, type: 3}
-  _coins: {fileID: 8300000, guid: 529e5bcf60c959a43b442c5a07c3f687, type: 3}
+  _coins: {fileID: 8300000, guid: 6fa45abff4fad0c44a32ec6a9c52d638, type: 3}
   _upgrade: {fileID: 8300000, guid: 0992a9e89e8dbe84cbd367bf4fb6b395, type: 3}
   _checkpoint: {fileID: 8300000, guid: a0c29e878bbdbc14a965b9c3912fb0e0, type: 3}
   _waterSplash: {fileID: 8300000, guid: 8921993209789444f9ed72bc778da93d, type: 3}
-  _clipJump: {fileID: 8300000, guid: 51ad64e24ff245e448d38fd7083f5c76, type: 3}
-  _clipJumpEnd: {fileID: 8300000, guid: 9951f33dec067674888a9a4d76ca72cc, type: 3}
+  _clipJump: {fileID: 8300000, guid: 393fbc46427e2b54e963246e9d89bc10, type: 3}
+  _clipJumpEnd: {fileID: 8300000, guid: 393fbc46427e2b54e963246e9d89bc10, type: 3}
   _clipCakeCrash: {fileID: 8300000, guid: 8d1701f3d47b93b48b1cbf9f68335650, type: 3}
   _podnosCollision: {fileID: 8300000, guid: 3185b72c82c67cf43b2bfbd691aaf8b7, type: 3}
   _levelComplete: {fileID: 8300000, guid: ea72a2991b07fc04d8c4a3e6c2785ba9, type: 3}
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CARREGANDO... '
+  m_text: LOADING...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e830632efe0c1914caf89ab1c5670a40, type: 2}
   m_sharedMaterial: {fileID: 4868449736875040087, guid: e830632efe0c1914caf89ab1c5670a40, type: 2}
