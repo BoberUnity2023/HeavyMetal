@@ -46,6 +46,7 @@ public class ControllerSound : MonoBehaviour
     [SerializeField] private AudioClip[] _musics;
     private bool _isLocked;
     //private int _musicClip;
+    private float _volumeSound;    
 
     public event Action OnMuteSFX;
     public event Action OnMuteMusic;
@@ -56,7 +57,7 @@ public class ControllerSound : MonoBehaviour
     {
         get
         {
-            return PlayerPrefs.GetInt("SoundVolume", 1) > 0;
+            return PlayerPrefs.GetFloat("SoundVolume", 1) > 0;
         }        
     }
 
@@ -93,6 +94,7 @@ public class ControllerSound : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     { 
         SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 0.15f));
+        _volumeSound = PlayerPrefs.GetFloat("SoundVolume", 1);
 
         if (scene.buildIndex == 1)
         {
@@ -123,7 +125,7 @@ public class ControllerSound : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {        
-        _audioSourceMusic.volume = volume * 0.5f;
+        _audioSourceMusic.volume = volume * 0.5f;        
     }    
 
     public AudioSource Play(SoundClip soundClip, float volume = 1)//void
@@ -134,22 +136,14 @@ public class ControllerSound : MonoBehaviour
         if (_isLocked)
             return null;
 
-        try
-        {
-            GameObject sound = new GameObject();
-            DontDestroyOnLoad(sound.gameObject);
-            AudioSource audioSource = sound.AddComponent<AudioSource>();
-            audioSource.clip = Clip(soundClip);
-            audioSource.volume = PlayerPrefs.GetFloat("SoundVolume", 1) * volume;
-            audioSource.Play();
-            Destroy(sound, audioSource.clip.length);
-            return audioSource;
-        }
-        catch(Exception exceprtion)
-        {
-            
-            return null;
-        }
+        GameObject sound = new GameObject();
+        DontDestroyOnLoad(sound.gameObject);
+        AudioSource audioSource = sound.AddComponent<AudioSource>();
+        audioSource.clip = Clip(soundClip);
+        audioSource.volume = _volumeSound * volume;
+        audioSource.Play();
+        Destroy(sound, audioSource.clip.length);
+        return audioSource;
     }
 
     public void Play(SoundClip soundClip, float volume, float speed)//Do not used
@@ -247,5 +241,11 @@ public class ControllerSound : MonoBehaviour
     {
         _isLocked = false;
         _audioSourceMusic.enabled = true;        
+    }
+
+    public float VolumeSound
+    {
+        get { return _volumeSound; }
+        set { _volumeSound = value; }
     }
 }

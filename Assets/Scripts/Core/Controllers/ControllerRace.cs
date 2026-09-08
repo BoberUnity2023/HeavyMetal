@@ -23,7 +23,7 @@ public class ControllerRace : MonoBehaviour
     {
         _hub.Result.StartRace();
         IsStarted = true;
-        _hub.Game.Sound.Play(SoundClip.BattleBegin);
+        _hub.Game.Sound.Play(SoundClip.BattleBegin, 0.8f);
     }
 
     public void Finish()

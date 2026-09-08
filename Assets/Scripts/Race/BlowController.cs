@@ -24,7 +24,8 @@ public class BlowController : MonoBehaviour
                     GameObject prefab = SparkPrefab(impulse);
                     GameObject spark = Instantiate(prefab, contact.point, Quaternion.identity);
                     AudioSource sparkAudioSource = spark.GetComponent<AudioSource>();
-                    sparkAudioSource.volume = Mathf.Min(impulse / 5000, 1);
+                    float volume = Mathf.Min(impulse / 5000, 1) * _car.Hub.Game.Sound.VolumeSound;
+                    sparkAudioSource.volume = volume;
 
                     if (!isBorder && _car.Hub.Game.IsEqualPhysicsMaterials(contact.otherCollider.material, _car.Hub.Game.GroundPropses[_car.Hub.Game.GroundPropses.Length - 1].PhysicMaterial))
                         isBorder = true;                    

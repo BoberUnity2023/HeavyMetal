@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rocket
   _prefabBlast: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _audioSource: {fileID: 695100463036843369}
   _speed: 50
   _damage: 34
   _blastForce: 1600000

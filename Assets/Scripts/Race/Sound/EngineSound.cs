@@ -9,7 +9,7 @@ public class EngineSound : VolumeSound
     private float _volume;
     private float _volumeTarget;
     private float _pitch;
-    private float _pitchTarget;
+    private float _pitchTarget;    
 
     private void Update()
     {        
@@ -35,8 +35,8 @@ public class EngineSound : VolumeSound
             _isFun = true;
         }
 
-        _volume = Mathf.Lerp(_volume, _volumeTarget, Time.deltaTime*3);
-        _pitch = Mathf.Lerp(_pitch, _pitchTarget, Time.deltaTime*3);
+        _volume = Mathf.Lerp(_volume, _volumeTarget, Time.deltaTime * 3) * _volumeSound;
+        _pitch = Mathf.Lerp(_pitch, _pitchTarget, Time.deltaTime * 3);
         _audioSource.volume = _volume;
         _audioSource.pitch = _pitch;
     }

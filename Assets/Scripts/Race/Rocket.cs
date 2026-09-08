@@ -4,6 +4,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBlast;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private float _speed;
     [SerializeField] private int _damage;
     [SerializeField] private float _blastForce;
@@ -17,6 +18,7 @@ public class Rocket : MonoBehaviour
     {        
         _attacker = attacker;
         _hub = _attacker.Hub;
+        _audioSource.volume *= PlayerPrefs.GetFloat("SoundVolume", 1);
     }
 
     public void Shoot(Car car)

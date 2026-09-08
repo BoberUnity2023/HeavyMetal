@@ -110,8 +110,8 @@ public class CarControl: MonoBehaviour
             }
             else
             {
-                bool isForwardToPlayer = _car.LapsCounter.Points > _car.Hub.Level.Race.Car.LapsCounter.Points;
-                float multipler = isForwardToPlayer ? 0.8f : 1.2f;
+                bool isFrontOfPlayer = _car.LapsCounter.Points > _car.Hub.Level.Race.Car.LapsCounter.Points;
+                float multipler = isFrontOfPlayer ? 0.7f : 1.25f;
                 _motorTorque = _car.Config.MotorTorque * multipler;
                 _maxSpeed = _car.Config.MaxSpeed * multipler;
             }            

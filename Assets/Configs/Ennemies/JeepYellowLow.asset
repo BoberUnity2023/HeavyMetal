@@ -15,7 +15,7 @@ MonoBehaviour:
   _car: {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
   _tuningEngine: 2
   _tuningShields: 0
-  _tuningTires: 2
+  _tuningTires: 1
   _tuningWeapon: 2
   _tuningMines: 2
   _tuningNitro: 0

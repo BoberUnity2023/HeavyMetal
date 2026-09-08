@@ -19,7 +19,7 @@ public class RaceStarter : MonoBehaviour
         yield return new WaitForSeconds(time);
         OnTimer?.Invoke(3);
         StartCoroutine(Show2(0.7f));
-        _hub.Game.Sound.Play(SoundClip.ThreeTwoOneGo);
+        _hub.Game.Sound.Play(SoundClip.ThreeTwoOneGo, 0.3f);
     }
 
     private IEnumerator Show2(float time)

@@ -23,6 +23,8 @@ public class CanvasLevel : MonoBehaviour
     [SerializeField] private GameObject _buttonRight;
     private int _scoreStartLevel;
 
+    public event Action OnSettingsClose;
+
     public Hub Hub => _hub;
 
     public PauseMenu PauseMenu => _pauseMenu;
@@ -170,6 +172,12 @@ public class CanvasLevel : MonoBehaviour
     public void PointerUpHandbrake()
     {
         _hub.Input.PlayerInput.PointerUpHandbrake();
+    }
+
+    public void SettingsClose()
+    {
+        PauseMenu.Show();
+        OnSettingsClose?.Invoke();
     }
 
     private void RaceButtonsShow()

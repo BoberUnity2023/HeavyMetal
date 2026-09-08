@@ -13,7 +13,7 @@ public class VolumeSound : MonoBehaviour
         if (_car.Mode == Mode.Track)
         {
             enabled = true;
-            //_car.Hub.CanvasLevel.OnSettingsClose += OnSettingsClose;
+            _car.Hub.CanvasLevel.OnSettingsClose += OnSettingsClose;
             GetVolumeSound();
             _isInited = true;
         }
@@ -21,8 +21,8 @@ public class VolumeSound : MonoBehaviour
 
     protected virtual void OnDestroy()
     {
-        //if (_isInited)
-        //    _car.Hub.CanvasLevel.OnSettingsClose -= OnSettingsClose;
+        if (_isInited)
+            _car.Hub.CanvasLevel.OnSettingsClose -= OnSettingsClose;
     }
 
     private void OnSettingsClose()
@@ -32,6 +32,6 @@ public class VolumeSound : MonoBehaviour
 
     private void GetVolumeSound()
     {
-        _volumeSound = PlayerPrefs.GetFloat("SoundVolume", 1);
+        _volumeSound = _car.Hub.Game.Sound.VolumeSound;
     }
 }
