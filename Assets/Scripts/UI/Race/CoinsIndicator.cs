@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CoinsIndicator : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class CoinsIndicator : MonoBehaviour
     [SerializeField] private TMP_Text _indicator;
     [SerializeField] private TMP_Text _indicatorAdd;
     private int _previousCoins;
-    private bool _isInited;
 
     private void Start()
     {
@@ -26,6 +26,7 @@ public class CoinsIndicator : MonoBehaviour
 
     private void OnCoinsChanged(int value)
     {
+        Debug.Log("OnCoinsChanged(" + value + ")");
         int change = value - _previousCoins;
         string text = change > 0 ? "+" : "";
         text = text + change;
@@ -34,7 +35,7 @@ public class CoinsIndicator : MonoBehaviour
         if (change < 0)
             _indicator.text = value.ToString();
 
-        if (_isInited)
+        if (Mathf.Abs(change) > 0)
         {
             _indicatorAdd.text = text;
             _indicatorAdd.gameObject.SetActive(true);
@@ -44,8 +45,6 @@ public class CoinsIndicator : MonoBehaviour
             _indicatorAdd.transform.parent.DOScale(1.2f, 0.4f);
             StartCoroutine(AfterCoinsChanged(1.2f, value));
         }
-        else
-            _isInited = true;
     }
 
     private IEnumerator AfterCoinsChanged(float time, int value)

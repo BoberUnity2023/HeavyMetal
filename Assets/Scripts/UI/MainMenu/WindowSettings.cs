@@ -20,16 +20,14 @@ public class WindowSettings : WindowBase
     [SerializeField] private GameObject _iconSoundOn;
     [SerializeField] private GameObject _iconSoundOff;
 
-    [SerializeField] private Slider _sliderQuality;
-    private GameController _game;
+    [SerializeField] private Slider _sliderQuality;    
     private bool _playingSound;
 
     public event Action OnSettingsClose;
 
     public override void Init(GameController game)
     {
-        base.Init(game);
-        _game = game;
+        base.Init(game);        
         _sliderMusicVolume.value = PlayerPrefs.GetFloat("MusicVolume", 0.15f);
         OnMusicVolumeChanged(PlayerPrefs.GetFloat("MusicVolume", 0.15f));
         _sliderSoundVolume.value = PlayerPrefs.GetFloat("SoundVolume", 1);

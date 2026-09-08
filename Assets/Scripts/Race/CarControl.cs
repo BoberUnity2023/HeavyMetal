@@ -13,7 +13,7 @@ public class CarControl: MonoBehaviour
     private Car _car;
     private float _angularDampingStart;
     //Calculate current speed along the car's forward axis
-    public float MaxSpeed => _maxSpeed;
+    public float MaxSpeed => _maxSpeed + _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Engine) * 2;
 
     public float EngineMultiplerDamage { get; set; }
 

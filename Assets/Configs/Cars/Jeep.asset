@@ -17,7 +17,7 @@ MonoBehaviour:
   _price: 25000
   _motorTorque: 4800
   _brakeTorque: 4000
-  _maxSpeed: 40
+  _maxSpeed: 36
   _damageSpeed: 20
   _damageImpulse: 32000
   _startMines: 1
