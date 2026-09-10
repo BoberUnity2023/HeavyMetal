@@ -37967,22 +37967,6 @@ PrefabInstance:
       propertyPath: _sceneController
       value: 
       objectReference: {fileID: 1862994659}
-    - target: {fileID: 6375227034532339212, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.74544
-      objectReference: {fileID: 0}
-    - target: {fileID: 6375227034532339212, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.74544
-      objectReference: {fileID: 0}
-    - target: {fileID: 6375227034532339212, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.74544
-      objectReference: {fileID: 0}
-    - target: {fileID: 6375227034532339212, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 15.3
-      objectReference: {fileID: 0}
     - target: {fileID: 6382084865511431953, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _sceneController
       value: 
@@ -38026,10 +38010,6 @@ PrefabInstance:
     - target: {fileID: 8030821530727201731, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 145.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8225476465527481214, guid: 061484eed728d5342b139956db07c1f5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 8301975629388553090, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: mLocalizeTarget
