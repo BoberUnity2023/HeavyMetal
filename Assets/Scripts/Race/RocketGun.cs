@@ -7,6 +7,7 @@ public class RocketGun : MonoBehaviour
 {
     [SerializeField] private Transform _rayPosition;
     [SerializeField] private Transform[] _armoPlaces;
+    [SerializeField] private LayerMask _layerMask;
     [SerializeField] private int _startPatrons;
     [SerializeField] private float _tryAIShootTime;    
     private Car _car;
@@ -122,7 +123,7 @@ public class RocketGun : MonoBehaviour
             RaycastHit hit;
             Vector3 from = _rayPosition.position + transform.forward * 3;
             Vector3 direction = transform.forward;
-            LayerMask layerMask = 1 << 11;//Layer Car
+            LayerMask layerMask = _layerMask;// 1 << 11;//Layer Car
 
             if (Physics.Raycast(from, direction, out hit, 100, layerMask))
             {                

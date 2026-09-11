@@ -6255,6 +6255,9 @@ MonoBehaviour:
   _armoPlaces:
   - {fileID: 6807491965068240581}
   - {fileID: 1512645657220905846}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   _startPatrons: 3
   _tryAIShootTime: 0.3
 --- !u!114 &6513871764248414650
@@ -6302,9 +6305,6 @@ MonoBehaviour:
   _car: {fileID: 8397304227506098460}
   _collapsTimePlayer: 2.5
   _collapsTimeEnemy: 1
-  _currentCollapsTime: 0
-  _isTurned: 0
-  _isSlippage: 0
 --- !u!114 &-7558054904584615606
 MonoBehaviour:
   m_ObjectHideFlags: 0
