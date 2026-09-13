@@ -5960,6 +5960,7 @@ GameObject:
   - component: {fileID: 3930983298962315897}
   - component: {fileID: 6513871764248414650}
   - component: {fileID: 2133264978317198086}
+  - component: {fileID: -1556231771885250255}
   - component: {fileID: -4303322087925471485}
   - component: {fileID: -7558054904584615606}
   - component: {fileID: -3263639599032819825}
@@ -6080,6 +6081,7 @@ MonoBehaviour:
   _rocketGun: {fileID: 3930983298962315897}
   _weaponMines: {fileID: 6513871764248414650}
   _damageCounter: {fileID: 2133264978317198086}
+  _decalOpacityController: {fileID: -1556231771885250255}
   _returnOnRoad: {fileID: -4303322087925471485}
   _visible: {fileID: 8551986998073348888}
   _nitro: {fileID: 8848959205160165673}
@@ -6290,6 +6292,19 @@ MonoBehaviour:
   _smoke: {fileID: 9011584670821114092}
   _fire: {fileID: 4114760906551830870}
   _reward: 300
+--- !u!114 &-1556231771885250255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136799944968247584}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88eb5f66525b114479b05a1c2d01cbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DecalOpacityController
+  decalProjectors: []
 --- !u!114 &-4303322087925471485
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public class DamageCounter : MonoBehaviour
             return;
 
         int shields = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Shields);
-        value -= shields * (int)_car.Config.Tuning.Shields.Power;
+        value -= shields * (int)_car.Config.Tuning.Shields.Power;              
 
         if (value <= 0)
         {
@@ -51,6 +51,9 @@ public class DamageCounter : MonoBehaviour
         }
 
         _damage += Mathf.Max(0, value);
+
+        float opacity = (float)_damage / 100;
+        _car.DecalOpacityController.SetOpacity(opacity);
 
         if (_damage < 35)
         {
@@ -150,7 +153,8 @@ public class DamageCounter : MonoBehaviour
 
         _car.IsCrashed = false;
         _car.Control.EngineMultiplerDamage = 1.0f;
-        _damage = 0;
+        _damage = 0;        
+        _car.DecalOpacityController.SetOpacity(0);
 
         bool inWater = transform.position.y < -10;
         if (inWater)

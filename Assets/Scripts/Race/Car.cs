@@ -23,6 +23,7 @@ public class Car : MonoBehaviour
     [SerializeField] private RocketGun _rocketGun;
     [SerializeField] private WeaponMines _weaponMines;
     [SerializeField] private DamageCounter _damageCounter;
+    [SerializeField] private DecalOpacityController _decalOpacityController;
     [SerializeField] private ReturnOnRoad _returnOnRoad;
     [SerializeField] private Visible _visible;
     [SerializeField] private Nitro _nitro;
@@ -70,7 +71,9 @@ public class Car : MonoBehaviour
 
     public WeaponMines WeaponMines => _weaponMines;
 
-    public DamageCounter DamageCounter => _damageCounter; 
+    public DamageCounter DamageCounter => _damageCounter;
+
+    public DecalOpacityController DecalOpacityController => _decalOpacityController;
 
     public ReturnOnRoad ReturnOnRoad => _returnOnRoad;
 
@@ -150,6 +153,7 @@ public class Car : MonoBehaviour
         _rocketGun.Init(this);
         _weaponMines.Init(this);
         _damageCounter.Init(this);
+        _decalOpacityController.Init(this);
         _returnOnRoad.Init(this);
         _paint.Init(this);
         _nitro.Init(this);
@@ -180,6 +184,7 @@ public class Car : MonoBehaviour
 
         _rocketGun.Init(this);
         _weaponMines.Init(this);
+        _decalOpacityController.Init(this);
         Tuning.Init(this, game);
         OnInit?.Invoke(mode);
     }
