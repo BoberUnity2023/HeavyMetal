@@ -109,7 +109,7 @@ public class DamageCounter : MonoBehaviour
         if (fromPlayer)
             _car.Hub.Game.Saves.Coins += _reward;
 
-        StartCoroutine(WaitDeadCrash(5));
+        StartCoroutine(WaitDeadCrash(3));
     }
 
     private IEnumerator WaitDeadCrash(float time)

@@ -18,6 +18,7 @@ public class Car : MonoBehaviour
     [SerializeField] private CarType _carType;    
     [SerializeField] private CarControl _control;
     [SerializeField] private CarAI _aIInput;
+    [SerializeField] private Suspension _suspension;
     [SerializeField] private Tuning _tuning;
     [SerializeField] private LapsCounter _lapsCounter;
     [SerializeField] private RocketGun _rocketGun;
@@ -62,6 +63,8 @@ public class Car : MonoBehaviour
     public CarControl Control => _control;
 
     public CarAI AIInput => _aIInput;
+
+    public Suspension Suspension => _suspension;
 
     public Tuning Tuning => _tuning;
 
@@ -148,7 +151,8 @@ public class Car : MonoBehaviour
         }
 
         _control.Init(this);
-        _aIInput.Init(this);        
+        _aIInput.Init(this);
+        _suspension.Init(this);
         _lapsCounter.Init(this);
         _rocketGun.Init(this);
         _weaponMines.Init(this);
