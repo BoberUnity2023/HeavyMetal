@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class IndicatorMines : MonoBehaviour
 {
     [SerializeField] private Hub _hub;
+    [SerializeField] private Image _indicatorMax;
     [SerializeField] private Image _indicatorProgress;
     [SerializeField] private RocketUI[] _rockets;    
 
@@ -24,6 +25,7 @@ public class IndicatorMines : MonoBehaviour
             }
         }
 
-        _indicatorProgress.fillAmount = (float)_hub.Level.Race.Car.WeaponMines.ArmoMax / _rockets.Length;
+        _indicatorMax.fillAmount = (float)_hub.Level.Race.Car.WeaponMines.ArmoMax / 4;
+        _indicatorProgress.fillAmount = (float)_hub.Level.Race.Car.WeaponMines.Armo / _rockets.Length;
     }
 }

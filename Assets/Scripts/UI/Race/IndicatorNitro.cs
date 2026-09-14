@@ -9,7 +9,7 @@ public class IndicatorNitro : MonoBehaviour
 
     private void Update()
     {
-        _indicatorNitro.fillAmount = _hub.Level.Race.Car.Nitro.FillProgress;
+        _indicatorNitro.fillAmount = _hub.Level.Race.Car.Nitro.FillProgress * 4;
         _iconOn.SetActive(_hub.Level.Race.Car.Nitro.FillProgress > 0);
     }
 }
