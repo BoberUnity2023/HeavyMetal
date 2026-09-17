@@ -21,6 +21,6 @@ MonoBehaviour:
   _starsForOpen: 65
   _enemies:
   - {fileID: 11400000, guid: 61b8559114312f74bbb6dfba59708d52, type: 2}
-  - {fileID: 11400000, guid: f7d5d7452bd0f6b44892e069f6de3745, type: 2}
+  - {fileID: 11400000, guid: c99872ac6ce367d46938bef486d04792, type: 2}
   - {fileID: 11400000, guid: f7d5d7452bd0f6b44892e069f6de3745, type: 2}
   _finishCoins: 10270000a00f0000c409000000000000
