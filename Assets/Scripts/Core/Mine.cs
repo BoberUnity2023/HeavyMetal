@@ -25,7 +25,9 @@ public class Mine : MonoBehaviour
     {
         if (!car.IsVisible)
             return;
-        Instantiate(_blastPrefab, transform.position, Quaternion.identity);
+        GameObject blast = Instantiate(_blastPrefab, transform.position, Quaternion.identity);
+        AudioSource audioSource = blast.GetComponent<AudioSource>();
+        audioSource.volume = car.Hub.Game.Sound.VolumeSound;
 
         Vector3 direction = (car.transform.position - transform.position).normalized;
         car.Rigidbody.AddForce(direction * _blastForce);

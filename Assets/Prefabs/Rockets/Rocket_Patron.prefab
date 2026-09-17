@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b87222166137046b0400797c8ddeba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rocket
-  _prefabBlast: {fileID: 1337198075554910, guid: 0b2f7b71c64e6e749bad68749bb9b394, type: 3}
+  _prefabBlast: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
   _audioSource: {fileID: 695100463036843369}
   _speed: 90
   _damage: 16

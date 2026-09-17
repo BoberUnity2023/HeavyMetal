@@ -34,9 +34,9 @@ MonoBehaviour:
       Prices: 8813000010270000983a0000409c0000
     _tires:
       CountBought: 0
-      CountMax: 4
+      CountMax: 3
       Power: 1
-      Prices: 8813000010270000204e0000409c0000
+      Prices: 8813000010270000409c0000
     _weapon:
       CountBought: 0
       CountMax: 5

@@ -131,8 +131,8 @@ public class Tuning : MonoBehaviour
             Debug.LogError("No Equal Settings Car!" + carType + "  Weapon: Prefab: " + (armoPrefabMax - 1) + "/ Config: " + weaponsMax);
 
         int tiresMax = configCar.Tuning.Tires.CountMax;
-        if (_tireArrays.Length != tiresMax)
-            Debug.LogError("No Equal Settings Car!" + carType + "  Tires: Prefab: " + _tireArrays.Length + "/ Config: " + tiresMax);
+        if (_tireArrays.Length - 1 != tiresMax)
+            Debug.LogError("No Equal Settings Car!" + carType + "  Tires: Prefab: " + (_tireArrays.Length - 1) + "/ Config: " + tiresMax);
 
         int shieldMax = configCar.Tuning.Shield.CountMax;
         if (_shield.Length != shieldMax)

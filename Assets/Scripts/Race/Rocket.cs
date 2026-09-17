@@ -18,7 +18,7 @@ public class Rocket : MonoBehaviour
     {        
         _attacker = attacker;
         _hub = _attacker.Hub;
-        _audioSource.volume *= PlayerPrefs.GetFloat("SoundVolume", 1);
+        _audioSource.volume *= _hub.Game.Sound.VolumeSound;
     }
 
     public void Shoot(Car car)
