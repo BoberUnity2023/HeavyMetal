@@ -60,6 +60,14 @@ public class PauseMenu : WindowBase
         _hub.Game.UI.NavigationEnd();
     }
 
+    public void OnPressControl()
+    {
+        Debug.Log("Press Control");
+        Hide();
+        _hub.CanvasLevel.WindowControl.Show();
+        _hub.Game.UI.NavigationEnd();
+    }
+
     public void OnPressGarage()
     {
         PauseOff();

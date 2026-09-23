@@ -50,6 +50,15 @@ public class MainMenu : WindowBase
         _garage.WindowSettings.Show();
     }
 
+    public void OnPressControl()
+    {
+        Debug.Log("Press Control");
+        _game.Sound.Play(SoundClip.Click);
+        _game.UI.NavigationEnd();
+        Hide();
+        _garage.WindowControl.Show();
+    }
+
     public void OnPressAboutGame()
     {
         Debug.Log("Press About Game");

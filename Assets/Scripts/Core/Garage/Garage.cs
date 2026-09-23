@@ -6,6 +6,7 @@ public class Garage : MonoBehaviour
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private WindowSelectCar _windowSelectCar;
     [SerializeField] private WindowSettings _windowSettings;
+    [SerializeField] private WindowControl _windowControl;
     [SerializeField] private WindowBase _windowAboutGame;
     [SerializeField] private CameraMovier _cameraMovier;
     [SerializeField] private Transform _carPosition;
@@ -17,6 +18,8 @@ public class Garage : MonoBehaviour
     public MainMenu MainMenu => _mainMenu;
     public WindowSelectCar WindowSelectCar => _windowSelectCar;
     public WindowSettings WindowSettings => _windowSettings;
+
+    public WindowControl WindowControl => _windowControl;
     public WindowBase WindowAboutGame => _windowAboutGame;
     public Car CurrentCar => _currentCar;    
     public CameraMovier CameraMovier => _cameraMovier;    
@@ -27,6 +30,7 @@ public class Garage : MonoBehaviour
         _mainMenu.Init(game);
         _windowSelectCar.Init(game);
         _windowSettings.Init(game);
+        _windowControl.Init(game);
         _windowAboutGame.Init(game);
 
         if (fromLevel)

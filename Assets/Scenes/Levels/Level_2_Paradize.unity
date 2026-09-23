@@ -90582,6 +90582,14 @@ PrefabInstance:
       propertyPath: _hub
       value: 
       objectReference: {fileID: 1862994659}
+    - target: {fileID: 6016187982477364308, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _hub
+      value: 
+      objectReference: {fileID: 1862994659}
+    - target: {fileID: 6016187982477364308, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 6204872754029138250, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 

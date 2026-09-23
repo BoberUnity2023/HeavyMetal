@@ -220,10 +220,10 @@ public class WindowSelectCar : WindowBase
 
     private void SetBar(TuningCategory category, TuningType tuningType, Bar bar)
     {
-        int curcountTuning = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
+        int countTuning = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
         int max = category.CountMax;
-        float value = (float)curcountTuning / max;        
-        int price = curcountTuning < max ? category.Prices[curcountTuning] : 0;
+        float value = (float)countTuning / max;        
+        int price = countTuning < max ? category.Prices[countTuning] : 0;
         bar.Set(value, price);
     }
 

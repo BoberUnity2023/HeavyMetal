@@ -65404,6 +65404,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 573e75b2f851dcf409d543fb074cf070, type: 3}
+    - target: {fileID: 6016187982477364308, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _hub
+      value: 
+      objectReference: {fileID: 1862994659}
+    - target: {fileID: 6016187982477364308, guid: 061484eed728d5342b139956db07c1f5, type: 3}
+      propertyPath: _sceneController
+      value: 
+      objectReference: {fileID: 1862994659}
     - target: {fileID: 6204872754029138250, guid: 061484eed728d5342b139956db07c1f5, type: 3}
       propertyPath: _hub
       value: 
@@ -65828,6 +65836,7 @@ MonoBehaviour:
   _hub: {fileID: 1862994659}
   _pauseMenu: {fileID: 0}
   _windowSettings: {fileID: 0}
+  _windowControl: {fileID: 0}
   _buttonOpenPanel: {fileID: 0}
   _buttonPanelCloseScreen: {fileID: 0}
   _buttonCamera: {fileID: 0}

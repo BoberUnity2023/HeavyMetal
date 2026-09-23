@@ -104,7 +104,7 @@ public class CameraMove : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Joystick1Button2))
+        if (Input.GetKeyDown(KeyCode.C)/* || Input.GetKeyDown(KeyCode.Joystick1Button2)*/)
         {
             switch (_state)
             {

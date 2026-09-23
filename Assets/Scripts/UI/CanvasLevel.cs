@@ -8,6 +8,7 @@ public class CanvasLevel : MonoBehaviour
     [SerializeField] private Hub _hub;
     [SerializeField] private PauseMenu _pauseMenu;
     [SerializeField] private WindowBase _windowSettings;
+    [SerializeField] private WindowBase _windowControl;
     //Do not use
     [SerializeField] private GameObject _buttonOpenPanel;
     [SerializeField] private GameObject _buttonPanelCloseScreen;
@@ -31,10 +32,13 @@ public class CanvasLevel : MonoBehaviour
 
     public WindowBase WindowSettings => _windowSettings;
 
+    public WindowBase WindowControl => _windowControl;
+
     public void Init()
     {
         _pauseMenu.Init(_hub.Game);
         _windowSettings.Init(_hub.Game);
+        _windowControl.Init(_hub.Game);
     }
 
     public void PausePanelShow()
@@ -178,6 +182,11 @@ public class CanvasLevel : MonoBehaviour
     {
         PauseMenu.Show();
         OnSettingsClose?.Invoke();
+    }
+
+    public void ControlsClose()
+    {
+        PauseMenu.Show();
     }
 
     private void RaceButtonsShow()

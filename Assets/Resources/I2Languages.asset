@@ -449,6 +449,151 @@ MonoBehaviour:
       - 'COR '
       Flags: 000000000000
       Languages_Touch: []
+    - Term: left
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041B\u0415\u0412\u041E"
+      - LEFT
+      - 'IZQUIERDA '
+      - 'LINKS '
+      - 'GAUCHE '
+      - 'ESQUERDA '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: right
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0420\u0410\u0412\u041E"
+      - 'RIGHT '
+      - 'DERECHA '
+      - 'RECHTS '
+      - 'DROITE '
+      - 'DIREITA '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: left/right
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041B\u0415\u0412\u041E/\u041F\u0420\u0410\u0412\u041E"
+      - 'LEFT / RIGHT '
+      - 'IZQUIERDA / DERECHA '
+      - 'LINKS / RECHTS '
+      - 'GAUCHE / DROITE '
+      - 'ESQUERDA / DIREITA '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: shoot
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u042B\u0421\u0422\u0420\u0415\u041B"
+      - SHOOT
+      - 'DISPARO '
+      - 'SCHUSS '
+      - 'TIR '
+      - 'TIRO '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: mine
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041C\u0418\u041D\u0410"
+      - 'MINE '
+      - 'MINA '
+      - 'MINE '
+      - 'MINE '
+      - 'MINA '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: nitro
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0418\u0422\u0420\u041E"
+      - 'NITRO '
+      - 'NITRO '
+      - 'NITRO '
+      - 'NITRO '
+      - 'NITRO '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: acelerate
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0410\u041A\u0421\u0415\u041B\u0415\u0420\u0410\u0422\u041E\u0420"
+      - 'THROTTLE '
+      - 'ACELERADOR '
+      - 'BESCHLEUNIGER '
+      - "ACC\xC9L\xC9RATEUR "
+      - 'ACELERADOR '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: backward
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0417\u0410\u0414\u041D\u0418\u0419 \u0425\u041E\u0414"
+      - REVERSE
+      - 'REVERSA '
+      - "R\xDCCKW\xC4RTSGANG "
+      - "MARCHE ARRI\xC8RE "
+      - "MARCHA R\xC9 "
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: welcom_demo
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+        \u0432 \u0434\u0435\u043C\u043E\u0432\u0435\u0440\u0441\u0438\u044E! \u041E\u0431\u0440\u0430\u0442\u0438\u0442\u0435
+        \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u0435, \u0447\u0442\u043E \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435
+        \u0444\u0443\u043D\u043A\u0446\u0438\u0438, \u043A\u043E\u043D\u0442\u0435\u043D\u0442
+        \u0438 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0438\u0433\u0440\u043E\u0432\u043E\u0433\u043E
+        \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0430 \u0432 \u044D\u0442\u043E\u0439
+        \u0432\u0435\u0440\u0441\u0438\u0438 \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B. "
+      - Welcome to the demo! Please note that some features, content, and gameplay
+        elements are unavailable in this version.
+      - "\xA1Bienvenido a la versi\xF3n de demostraci\xF3n! Ten en cuenta que algunas
+        funciones, contenido \u0438 elementos del juego no est\xE1n disponibles en
+        esta versi\xF3n. "
+      - "Willkommen in der Demoversion! Bitte beachte, dass einige Funktionen, Inhalte
+        und Gameplay-Elemente in dieser Version nicht verf\xFCgbar sind. "
+      - "Bienvenue dans la version d\xE9mo ! Veuillez noter que certaines fonctionnalit\xE9s,
+        contenus et \xE9l\xE9ments de gameplay ne sont pas disponibles dans cette
+        version. "
+      - "Bem-vindo \xE0 vers\xE3o demo! Por favor, note que alguns recursos, conte\xFAdos
+        e elementos de jogabilidade n\xE3o est\xE3o dispon\xEDveis nesta vers\xE3o. "
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: handbrake
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0423\u0427\u041D\u0418\u041E\u0419 \u0422\u041E\u0420\u041C\u041E\u0417"
+      - 'HANDBRAKE '
+      - 'FRENO DE MANO '
+      - 'HANDBREMSE '
+      - "FREIN \xC0 MAIN "
+      - "FREIO DE M\xC3O "
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: control
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415"
+      - CONTROLS
+      - 'CONTROLES '
+      - 'STEUERUNG '
+      - 'COMMANDES '
+      - 'CONTROLES '
+      Flags: 000000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

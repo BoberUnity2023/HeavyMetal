@@ -35,3 +35,14 @@ pause,ПАУЗА,PAUSE,PAUSA ,PAUSE ,PAUSE ,PAUSA
 quit,ВЫХОД,QUIT,SALIR ,BEENDEN ,QUITTER ,SAIR 
 about,ОБ ИГРЕ,ABOUT GAME,ACERCA DEL JUEGO ,ÜBER DAS SPIEL ,À PROPOS DU JEU ,SOBRE O JOGO 
 color,ЦВЕТ,COLOR,COLOR ,FARBE ,COULEUR ,COR 
+left,ЛЕВО,LEFT,IZQUIERDA ,LINKS ,GAUCHE ,ESQUERDA 
+right,ПРАВО,RIGHT ,DERECHA ,RECHTS ,DROITE ,DIREITA 
+left/right,ЛЕВО/ПРАВО,LEFT / RIGHT ,IZQUIERDA / DERECHA ,LINKS / RECHTS ,GAUCHE / DROITE ,ESQUERDA / DIREITA 
+shoot,ВЫСТРЕЛ,SHOOT,DISPARO ,SCHUSS ,TIR ,TIRO 
+mine,МИНА,MINE ,MINA ,MINE ,MINE ,MINA 
+nitro,НИТРО,NITRO ,NITRO ,NITRO ,NITRO ,NITRO 
+acelerate,АКСЕЛЕРАТОР,THROTTLE ,ACELERADOR ,BESCHLEUNIGER ,ACCÉLÉRATEUR ,ACELERADOR 
+backward,ЗАДНИЙ ХОД,REVERSE,REVERSA ,RÜCKWÄRTSGANG ,MARCHE ARRIÈRE ,MARCHA RÉ 
+welcom_demo,"Добро пожаловать в демоверсию! Обратите внимание, что некоторые функции, контент и элементы игрового процесса в этой версии недоступны. ","Welcome to the demo! Please note that some features, content, and gameplay elements are unavailable in this version.","¡Bienvenido a la versión de demostración! Ten en cuenta que algunas funciones, contenido и elementos del juego no están disponibles en esta versión. ","Willkommen in der Demoversion! Bitte beachte, dass einige Funktionen, Inhalte und Gameplay-Elemente in dieser Version nicht verfügbar sind. ","Bienvenue dans la version démo ! Veuillez noter que certaines fonctionnalités, contenus et éléments de gameplay ne sont pas disponibles dans cette version. ","Bem-vindo à versão demo! Por favor, note que alguns recursos, conteúdos e elementos de jogabilidade não estão disponíveis nesta versão. "
+handbrake,РУЧНИОЙ ТОРМОЗ,HANDBRAKE ,FRENO DE MANO ,HANDBREMSE ,FREIN À MAIN ,FREIO DE MÃO 
+control,УПРАВЛЕНИЕ,CONTROLS,CONTROLES ,STEUERUNG ,COMMANDES ,CONTROLES 
