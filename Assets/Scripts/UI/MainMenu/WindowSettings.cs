@@ -22,6 +22,7 @@ public class WindowSettings : WindowBase
 
     [SerializeField] private Slider _sliderQuality;    
     private bool _playingSound;
+    private bool _isInitCompleted;
 
     public event Action OnSettingsClose;
 
@@ -35,6 +36,8 @@ public class WindowSettings : WindowBase
 
         _sliderQuality.value = PlayerPrefs.GetInt("QualityLevel", 2);
         OnGraficChanged(PlayerPrefs.GetInt("QualityLevel", 2));
+
+        _isInitCompleted = true;
     }
 
     public void OnSoundVolumeChanged(float value)
@@ -49,21 +52,25 @@ public class WindowSettings : WindowBase
 
     public void OnMusicVolumeChanged(float value)
     {
-        _game.Sound.Play(SoundClip.Click);
         PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.Save();
         _game.Sound.SetMusicVolume(value);
         _iconMusicOn.SetActive(value > 0);
         _iconMusicOff.SetActive(value == 0);
+
+        if (_isInitCompleted)
+            _game.Sound.Play(SoundClip.Click);
     }
 
     public void OnGraficChanged(float value)
     {
-        _game.Sound.Play(SoundClip.Click);
         PlayerPrefs.SetInt("QualityLevel", (int)value);
         PlayerPrefs.Save();
 
         _game.Settings.SetGrafics();
+
+        if(_isInitCompleted)
+            _game.Sound.Play(SoundClip.Click);
     }
 
     public void PressClose()
@@ -82,7 +89,9 @@ public class WindowSettings : WindowBase
     public void OnLanguageChanged(int id)
     {
         Debug.Log("Lang:" + id);
-        _game.Sound.Play(SoundClip.Click);
+        if (_isInitCompleted)
+            _game.Sound.Play(SoundClip.Click);
+
         if (id == 0)
             _game.Localize.ChangeLanguage("en");
 
@@ -105,6 +114,9 @@ public class WindowSettings : WindowBase
     private void TryPlaySound()
     {
         if (_playingSound)
+            return;
+
+        if (!_isInitCompleted)
             return;
 
         _playingSound = true;
