@@ -34,8 +34,6 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
-  - DecalMeshForwardEmissive
-  - DecalProjectorForwardEmissive
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -145,7 +143,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AffectAO: 0
     - _AffectAlbedo: 1
-    - _AffectEmission: 0
+    - _AffectEmission: 1
     - _AffectMetal: 1
     - _AffectNormal: 1
     - _AffectSmoothness: 1
@@ -192,8 +190,8 @@ Material:
     - _DstBlend: 0
     - _DstBlend2: 0
     - _EmissiveColorMode: 1
-    - _EmissiveExposureWeight: 1
-    - _EmissiveIntensity: 1
+    - _EmissiveExposureWeight: 0.958
+    - _EmissiveIntensity: 10.680628
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
@@ -280,9 +278,9 @@ Material:
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColorHDR: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColor: {r: 7.999999, g: 7.999999, b: 7.999999, a: 10.680628}
+    - _EmissiveColorHDR: {r: 7.999999, g: 7.999999, b: 7.999999, a: 10.680628}
+    - _EmissiveColorLDR: {r: 0.88031507, g: 0.88031507, b: 0.88031507, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

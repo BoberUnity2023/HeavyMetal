@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 927f968d6f12b99438534903a05d762a, type: 3}
-  m_Name: GnomMiddle
+  m_Name: JeepYellow_24_32
   m_EditorClassIdentifier: Assembly-CSharp::ConfigEnemy
-  _car: {fileID: 11400000, guid: c6e78ec8d34297c4a93557b6542a72f7, type: 2}
-  _tuningEngine: 2
+  _car: {fileID: 11400000, guid: 58724ebada8393647819cea85d768dfc, type: 2}
+  _tuningEngine: 4
   _tuningShields: 0
-  _tuningTires: 2
-  _tuningWeapon: 5
-  _tuningMines: 2
-  _tuningNitro: 0
+  _tuningTires: 3
+  _tuningWeapon: 6
+  _tuningMines: 5
+  _tuningNitro: 1
   _tuningShield: 0
-  _tuningColor: 1
+  _tuningColor: 3

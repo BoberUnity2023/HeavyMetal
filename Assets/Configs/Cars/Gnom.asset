@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConfigCar
   _carType: 2
   _prefab: {fileID: 8397304227506098460, guid: d9ff6c9ba23e7bd4b866c8d6d9f06814, type: 3}
-  _price: 140000
+  _price: 240000
   _motorTorque: 4500
   _brakeTorque: 4000
   _maxSpeed: 40

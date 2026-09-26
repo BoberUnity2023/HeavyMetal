@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 927f968d6f12b99438534903a05d762a, type: 3}
-  m_Name: PoliceRedHard
+  m_Name: Gnom_24_32
   m_EditorClassIdentifier: Assembly-CSharp::ConfigEnemy
-  _car: {fileID: 11400000, guid: 7077ed3aa1f4b9c449637204a6204d92, type: 2}
-  _tuningEngine: 3
+  _car: {fileID: 11400000, guid: c6e78ec8d34297c4a93557b6542a72f7, type: 2}
+  _tuningEngine: 6
   _tuningShields: 0
-  _tuningTires: 2
-  _tuningWeapon: 4
-  _tuningMines: 4
-  _tuningNitro: 0
+  _tuningTires: 6
+  _tuningWeapon: 6
+  _tuningMines: 5
+  _tuningNitro: 2
   _tuningShield: 0
   _tuningColor: 2
