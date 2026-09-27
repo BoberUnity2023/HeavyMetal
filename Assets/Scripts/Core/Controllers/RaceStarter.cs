@@ -11,8 +11,23 @@ public class RaceStarter : MonoBehaviour
 
     private void Start()
     {
+        if (!_hub.CanvasLevel.WindowControl.IsTutorialCompleted)
+        {
+            _hub.CanvasLevel.WindowControl.Show();
+        }
+        else
+            StartCounter();
+    }  
+    
+    public void CloseTutorial()
+    {
+        StartCounter();
+    }
+
+    private void StartCounter()
+    {
         StartCoroutine(Show3(0.8f));
-    }    
+    }
 
     private IEnumerator Show3(float time)
     {
