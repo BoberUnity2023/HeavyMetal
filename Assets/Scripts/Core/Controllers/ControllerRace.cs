@@ -16,6 +16,7 @@ public class ControllerRace : MonoBehaviour
     public bool IsStarted { get; private set; }
     public bool IsFinished => _hub.Level.Race.Car.IsFinished;
 
+    public event Action OnStartRace;
     public event Action<int> OnLapCompleted;
     public event Action OnFinish;    
 
@@ -24,6 +25,7 @@ public class ControllerRace : MonoBehaviour
         _hub.Result.StartRace();
         IsStarted = true;
         _hub.Game.Sound.Play(SoundClip.BattleBegin, 0.8f);
+        OnStartRace?.Invoke();
     }
 
     public void Finish()
