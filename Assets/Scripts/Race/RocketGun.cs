@@ -86,7 +86,7 @@ public class RocketGun : MonoBehaviour
     {
         if (_armo > 0 && _car.IsAI)
         {
-            if (RayDistance < 30)
+            if (RayDistance < 45)
                 TryShoot();
         }
     }
