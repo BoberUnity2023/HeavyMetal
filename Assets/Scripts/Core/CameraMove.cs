@@ -6,7 +6,8 @@ public enum CameraState
     Follow,
     Izometry,
     InEyes,
-    Finish
+    Finish,
+    FollowUp
 }
 public class CameraMove : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class CameraMove : MonoBehaviour
     //[SerializeField] private float _freeDist;
     [SerializeField] private Vector3 _offsetIzometry;
     [SerializeField] private Vector3 _offsetFollow;
+    [SerializeField] private Vector3 _offsetFollowUp;
     [SerializeField] private Vector3 _offsetInEyes;
     //[SerializeField] private Vector3 _offsetFollow;
 
@@ -44,7 +46,7 @@ public class CameraMove : MonoBehaviour
             if (_state == CameraState.Izometry)
                 output = _target.position + _offsetIzometry;
 
-            if (_state == CameraState.Follow)
+            if (_state == CameraState.Follow || _state == CameraState.FollowUp)
             {
                 float y = Mathf.Max(_cameraPosition.position.y, _target.position.y + 1);
                 output = new Vector3(_cameraPosition.position.x, y, _cameraPosition.position.z); 
@@ -69,10 +71,10 @@ public class CameraMove : MonoBehaviour
         GameObject pos = new GameObject();
         pos.name = "CameraPosition";
         pos.transform.parent = _target;
-        pos.transform.localPosition = _offsetFollow;
+        pos.transform.localPosition = _offsetFollowUp;
         _cameraPosition = pos.transform;
 
-        _state = CameraState.Izometry;
+        _state = CameraState.FollowUp;
     }
 
     private void SetIzometry()
@@ -85,7 +87,13 @@ public class CameraMove : MonoBehaviour
     {
         _state = CameraState.Follow;
         transform.SetParent(null);        
-    }    
+    }
+
+    private void SetFollowUp()
+    {
+        _state = CameraState.FollowUp;
+        transform.SetParent(null);
+    }
 
     private void SetInEyes()
     {
@@ -108,6 +116,9 @@ public class CameraMove : MonoBehaviour
         {
             switch (_state)
             {
+                case CameraState.FollowUp:
+                    SetIzometry();
+                    break;
                 case CameraState.Izometry:
                     SetFollow();
                     break;
@@ -115,7 +126,7 @@ public class CameraMove : MonoBehaviour
                     SetInEyes();
                     break;
                 case CameraState.InEyes:
-                    SetIzometry();
+                    SetFollowUp();
                     break;
                 default:
                     break;
@@ -127,7 +138,11 @@ public class CameraMove : MonoBehaviour
 
         Update_ScrollZoom();
         //Update_FieldOfView();
-        _cameraPosition.localPosition = _offsetFollow;
+        if (_state == CameraState.Follow)
+            _cameraPosition.localPosition = _offsetFollow;
+        
+        if (_state == CameraState.FollowUp)
+            _cameraPosition.localPosition = _offsetFollowUp;
         //_freeDist = FreeDistance;        
     }
 
