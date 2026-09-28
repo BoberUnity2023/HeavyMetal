@@ -1,20 +1,20 @@
 Keys,Russian,English,Spanish,German,France,Português 
 buy,КУПИТЬ,BUY,COMPRAR,KAUFEN,ACHETER ,COMPRAR 
 coins,МОНЕТЫ,COINS,MONEDAS,MÜNZEN,PIÈCES ,MOEDAS 
-congratulations,ПОЗДРАВЛЯЕМ!,CONGRATULATIONS!,¡FELICIDADES!,GLÜCKWUNSCH!,FÉLICITATIONS ! ,PARABÉNS! 
-daily_bonus,ДНЕВНАЯ НАГРАДА,DAILY REWARD,RECOMPENSA DIARIA,TÄGLICHE BELOHNUNG,RÉCOMPENSE QUOTIDIENNE ,RECOMPENSA DIÁRIA 
+congratulations,ПОЗДРАВЛЯЕМ!,CONGRATULATIONS!,¡FELICIDADES!,GLÜCKWUNSCH!,FELICITATIONS ! ,PARABÉNS! 
+daily_bonus,ДНЕВНАЯ НАГРАДА,DAILY REWARD,RECOMPENSA DIARIA,TÄGLICHE BELOHNUNG,RECOMPENSE QUOTIDIENNE ,RECOMPENSA DIARIA 
 day,ДЕНЬ,DAY,DÍA,TAG,JOUR ,DIA 
 get,ПОЛУЧИТЬ,COLLECT,RECOGER,ERHALTEN,COLLECTER ,COLETAR 
 new_game,НОВАЯ ИГРА,NEW GAME,NUEVO JUEGO,NEUES SPIEL,NOUVELLE PARTIE ,NOVO JOGO 
-no,НЕТ,NO,NO,NEIN,NON ,NÃO 
+no,НЕТ,NO,NO,NEIN,NON ,NAO 
 personal_record,ЛИЧНЫЙ РЕКОРД,PERSONAL BEST,RÉCORD PERSONAL,PERSÖNLICHER REKORD,MEILLEUR PERFORMANT ,RECORDE PESSOAL 
 play,ИГРАТЬ,PLAY,JUGAR,SPIELEN,JOUER ,JOGAR 
 rating,РЕЙТИНГ,LEADERBOARD,CLASIFICACIÓN,RANGLISTE,CLASSEMENT ,RANKING 
 restart,РЕСТАРТ,RESTART,REINICIAR,NEUSTART,REMARQUER ,REINICIAR 
-rules,ПРАВИЛА ИГРЫ,GAME RULES,REGLAS DEL JUEGO,SPIELREGELN,RÈGLES DU JEU ,REGRAS DO JOGO 
+rules,ПРАВИЛА ИГРЫ,GAME RULES,REGLAS DEL JUEGO,SPIELREGELN,REGLES DU JEU ,REGRAS DO JOGO 
 score,ОЧКИ,Score,PUNTOS,PUNKTE,Score ,PONTOS 
 sec,СЕК,SEC,SEG,SEK,SEC ,SEG 
-settings,НАСТРОЙКИ,SETTINGS,AJUSTES,EINSTELLUNGEN,PARAMÈTRES ,OPCOES
+settings,НАСТРОЙКИ,SETTINGS,AJUSTES,EINSTELLUNGEN,PARAMETRES ,OPCOES
 sound,ЗВУК,SOUND,SONIDO,TON,SON ,SOM 
 time,ВРЕМЯ,TIME,TIEMPO,ZEIT,TEMPS ,TEMPO 
 time_bonus,БОНУС ЗА ВРЕМЯ,TIME BONUS,BONO DE TIEMPO,ZEITBONUS,BONUS DE TEMPS ,BÔNUS DE TEMPO 
@@ -24,7 +24,7 @@ purchase,ПОКУПКА,PURCHASE,COMPRA,KAUF,ACHETER ,COMPRA
 shop,МАГАЗИН,STORE,TIENDA,LADEN,BOUTIQUE ,LOJA 
 garage,ГАРАЖ,GARAGE,GARAJE,GARAGE ,GARAGE ,GARAGEM 
 lap,КРУГ,LAP,VUELTA ,RUNDE ,TOUR ,VOLTA 
-place,ПОЗИЦИЯ,PLACE,UBICACIÓN,PLATZ ,PLACE ,POSIÇÃO 
+place,ПОЗИЦИЯ,PLACE,UBICACION,PLATZ ,PLACE ,POSICAO 
 speed,СКОРОСТЬ,SPEED,VELOCIDAD,GESCHWINDIGKEIT ,VITESSE ,VELOCIDADE 
 continue,ПРОДОЛЖИТЬ,CONTINUE,CONTINUAR ,FORTSETZEN ,CONTINUER ,CONTINUAR 
 loading,ЗАГРУЗКА...,LOADING...,CARGANDO... ,LÄDT... ,CHARGEMENT… ,CARREGANDO... 
@@ -42,7 +42,9 @@ shoot,ВЫСТРЕЛ,SHOOT,DISPARO ,SCHUSS ,TIR ,TIRO
 mine,МИНА,MINE ,MINA ,MINE ,MINE ,MINA 
 nitro,НИТРО,NITRO ,NITRO ,NITRO ,NITRO ,NITRO 
 acelerate,АКСЕЛЕРАТОР,THROTTLE ,ACELERADOR ,BESCHLEUNIGER ,ACCÉLÉRATEUR ,ACELERADOR 
-backward,ЗАДНИЙ ХОД,REVERSE,REVERSA ,RÜCKWÄRTSGANG ,MARCHE ARRIÈRE ,MARCHA RÉ 
-welcom_demo,"Добро пожаловать в демоверсию! Обратите внимание, что некоторые функции, контент и элементы игрового процесса в этой версии недоступны. ","Welcome to the demo! Please note that some features, content, and gameplay elements are unavailable in this version.","¡Bienvenido a la versión de demostración! Ten en cuenta que algunas funciones, contenido и elementos del juego no están disponibles en esta versión. ","Willkommen in der Demoversion! Bitte beachte, dass einige Funktionen, Inhalte und Gameplay-Elemente in dieser Version nicht verfügbar sind. ","Bienvenue dans la version démo ! Veuillez noter que certaines fonctionnalités, contenus et éléments de gameplay ne sont pas disponibles dans cette version. ","Bem-vindo à versão demo! Por favor, note que alguns recursos, conteúdos e elementos de jogabilidade não estão disponíveis nesta versão. "
-handbrake,РУЧНИОЙ ТОРМОЗ,HANDBRAKE ,FRENO DE MANO ,HANDBREMSE ,FREIN À MAIN ,FREIO DE MÃO 
+backward,ЗАДНИЙ ХОД,REVERSE,REVERSA ,RÜCKWÄRTSGANG ,MARCHE ARRIÈRE ,MARCHA RE
+welcom_demo,"Добро пожаловать в демоверсию! Обратите внимание, что некоторые функции, контент и элементы игрового процесса в этой версии недоступны. ","Welcome to the demo! Please note that some features, content, and gameplay elements are unavailable in this version.","¡Bienvenido a la version de demostración! Ten en cuenta que algunas funciones, contenido и elementos del juego no están disponibles en esta versión. ","Willkommen in der Demoversion! Bitte beachte, dass einige Funktionen, Inhalte und Gameplay-Elemente in dieser Version nicht verfügbar sind. ","Bienvenue dans la version démo ! Veuillez noter que certaines fonctionnalités, contenus et éléments de gameplay ne sont pas disponibles dans cette version. ","Bem-vindo à versão demo! Por favor, note que alguns recursos, conteúdos e elementos de jogabilidade não estão disponíveis nesta versão. "
+handbrake,РУЧНИОЙ ТОРМОЗ,HANDBRAKE ,FRENO DE MANO ,HANDBREMSE ,FREIN A MAIN ,FREIO DE MAO 
 control,УПРАВЛЕНИЕ,CONTROLS,CONTROLES ,STEUERUNG ,COMMANDES ,CONTROLES 
+rate,ОЦЕНИТЬ ИГРУ,RATE THE GAME,CALIFÍCANOS ,SPIEL BEWERTEN ,NOUS NOTER ,AVALIE-NOS 
+main_menu,ГЛАВНОЕ МЕНЮ,MAIN MENU,MENÚ PRINCIPAL ,HAUPTMENU,MENU PRINCIPAL ,MENU PRINCIPAL 

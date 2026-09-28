@@ -30,9 +30,10 @@ public class Suspension : MonoBehaviour
     //public AudioClip softLandingSound;
     public AudioClip hardLandingSound;
     public ParticleSystem landingParticles;
-    private Car _car;
 
-    private bool isCarInAir;
+    private Car _car;
+    private bool _isCarInAir;
+    private bool _isRaceStarted;
 
     void FixedUpdate()
     {
@@ -81,16 +82,27 @@ public class Suspension : MonoBehaviour
 
         // --- ОБЩАЯ ЛОГИКА ДЛЯ ВСЕЙ МАШИНЫ ---
 
-        if (!isCarInAir && wheelsOnGround == 0)
+        if (!_isCarInAir && wheelsOnGround == 0)
         {
-            isCarInAir = true;
+            _isCarInAir = true;
             OnCarTakeOff();
         }
 
-        if (isCarInAir && wheelsOnGround > 0)
+        if (_isCarInAir && wheelsOnGround > 0)
         {
-            isCarInAir = false;
+            _isCarInAir = false;
             OnCarLanding(maxCompressionThisFrame);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_car == null) 
+            return;
+
+        if (_car.Mode == Mode.Track)
+        {            
+            _car.Hub.RaceStarter.OnStartRace -= OnStartRace;
         }
     }
 
@@ -98,7 +110,10 @@ public class Suspension : MonoBehaviour
     {
         _car = car;
         if (_car.Mode == Mode.Track)
+        { 
             enabled = true;
+            _car.Hub.RaceStarter.OnStartRace += OnStartRace;
+        }
     }
 
     private void OnCarTakeOff()
@@ -138,10 +153,15 @@ public class Suspension : MonoBehaviour
 
     private void PlaySound(AudioClip clip)
     {
-        if (audioSource != null && clip != null)
+        if (audioSource != null && clip != null && _isRaceStarted)
         {
             audioSource.volume = _car.Hub.Game.Sound.VolumeSound;
             audioSource.PlayOneShot(clip);
         }
+    }
+
+    private void OnStartRace()
+    {
+        _isRaceStarted = true;
     }
 }

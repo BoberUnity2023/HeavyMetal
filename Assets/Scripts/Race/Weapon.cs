@@ -10,6 +10,7 @@ public enum WeaponType
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private WeaponType _type;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private GameObject[] _tunings;
     [SerializeField] private Rocket _prefabRocket;
     [SerializeField] private Transform _shootPosition;
@@ -58,6 +59,8 @@ public class Weapon : MonoBehaviour
     {
         Rocket rocket = Instantiate(PrefabRocket, shootPosition.position, shootPosition.rotation);
         rocket.Init(_car);
+        _audioSource.volume = _car.Hub.Game.Sound.VolumeSound;
+        _audioSource.Play();
     }
 
     private IEnumerator NextShoot(float time, Transform shootPosition)

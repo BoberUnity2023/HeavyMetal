@@ -8,7 +8,7 @@ public class CanvasLevel : MonoBehaviour
     [SerializeField] private Hub _hub;
     [SerializeField] private PauseMenu _pauseMenu;
     [SerializeField] private WindowBase _windowSettings;
-    [SerializeField] private WindowBase _windowControl;
+    [SerializeField] private WindowControl _windowControl;
     //Do not use
     [SerializeField] private GameObject _buttonOpenPanel;
     [SerializeField] private GameObject _buttonPanelCloseScreen;
@@ -32,7 +32,7 @@ public class CanvasLevel : MonoBehaviour
 
     public WindowBase WindowSettings => _windowSettings;
 
-    public WindowBase WindowControl => _windowControl;
+    public WindowControl WindowControl => _windowControl;
 
     public void Init()
     {

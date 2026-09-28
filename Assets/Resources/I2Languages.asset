@@ -49,7 +49,7 @@ MonoBehaviour:
       - CONGRATULATIONS!
       - "\xA1FELICIDADES!"
       - "GL\xDCCKWUNSCH!"
-      - "F\xC9LICITATIONS\_! "
+      - "FELICITATIONS\_! "
       - "PARAB\xC9NS! "
       Flags: 000000000000
       Languages_Touch: []
@@ -61,8 +61,8 @@ MonoBehaviour:
       - DAILY REWARD
       - RECOMPENSA DIARIA
       - "T\xC4GLICHE BELOHNUNG"
-      - "R\xC9COMPENSE QUOTIDIENNE "
-      - "RECOMPENSA DI\xC1RIA "
+      - 'RECOMPENSE QUOTIDIENNE '
+      - 'RECOMPENSA DIARIA '
       Flags: 000000000000
       Languages_Touch: []
     - Term: day
@@ -110,7 +110,7 @@ MonoBehaviour:
       - NO
       - NEIN
       - 'NON '
-      - "N\xC3O "
+      - 'NAO '
       Flags: 000000000000
       Languages_Touch: []
     - Term: personal_record
@@ -169,7 +169,7 @@ MonoBehaviour:
       - GAME RULES
       - REGLAS DEL JUEGO
       - SPIELREGELN
-      - "R\xC8GLES DU JEU "
+      - 'REGLES DU JEU '
       - 'REGRAS DO JOGO '
       Flags: 000000000000
       Languages_Touch: []
@@ -205,7 +205,7 @@ MonoBehaviour:
       - SETTINGS
       - AJUSTES
       - EINSTELLUNGEN
-      - "PARAM\xC8TRES "
+      - 'PARAMETRES '
       - OPCOES
       Flags: 000000000000
       Languages_Touch: []
@@ -323,10 +323,10 @@ MonoBehaviour:
       Languages:
       - "\u041F\u041E\u0417\u0418\u0426\u0418\u042F"
       - PLACE
-      - "UBICACI\xD3N"
+      - UBICACION
       - 'PLATZ '
       - 'PLACE '
-      - "POSI\xC7\xC3O "
+      - 'POSICAO '
       Flags: 000000000000
       Languages_Touch: []
     - Term: speed
@@ -542,7 +542,7 @@ MonoBehaviour:
       - 'REVERSA '
       - "R\xDCCKW\xC4RTSGANG "
       - "MARCHE ARRI\xC8RE "
-      - "MARCHA R\xC9 "
+      - MARCHA RE
       Flags: 000000000000
       Languages_Touch: []
     - Term: welcom_demo
@@ -558,7 +558,7 @@ MonoBehaviour:
         \u0432\u0435\u0440\u0441\u0438\u0438 \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B. "
       - Welcome to the demo! Please note that some features, content, and gameplay
         elements are unavailable in this version.
-      - "\xA1Bienvenido a la versi\xF3n de demostraci\xF3n! Ten en cuenta que algunas
+      - "\xA1Bienvenido a la version de demostraci\xF3n! Ten en cuenta que algunas
         funciones, contenido \u0438 elementos del juego no est\xE1n disponibles en
         esta versi\xF3n. "
       - "Willkommen in der Demoversion! Bitte beachte, dass einige Funktionen, Inhalte
@@ -578,8 +578,8 @@ MonoBehaviour:
       - 'HANDBRAKE '
       - 'FRENO DE MANO '
       - 'HANDBREMSE '
-      - "FREIN \xC0 MAIN "
-      - "FREIO DE M\xC3O "
+      - 'FREIN A MAIN '
+      - 'FREIO DE MAO '
       Flags: 000000000000
       Languages_Touch: []
     - Term: control
@@ -592,6 +592,30 @@ MonoBehaviour:
       - 'STEUERUNG '
       - 'COMMANDES '
       - 'CONTROLES '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: rate
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041E\u0426\u0415\u041D\u0418\u0422\u042C \u0418\u0413\u0420\u0423"
+      - RATE THE GAME
+      - "CALIF\xCDCANOS "
+      - 'SPIEL BEWERTEN '
+      - 'NOUS NOTER '
+      - 'AVALIE-NOS '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: main_menu
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0413\u041B\u0410\u0412\u041D\u041E\u0415 \u041C\u0415\u041D\u042E"
+      - MAIN MENU
+      - "MEN\xDA PRINCIPAL "
+      - HAUPTMENU
+      - 'MENU PRINCIPAL '
+      - 'MENU PRINCIPAL '
       Flags: 000000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0

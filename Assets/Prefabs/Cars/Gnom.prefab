@@ -6423,7 +6423,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   _startPatrons: 3
-  _tryAIShootTime: 0.3
+  _tryAIShootTime: 0.25
 --- !u!114 &6513871764248414650
 MonoBehaviour:
   m_ObjectHideFlags: 0
