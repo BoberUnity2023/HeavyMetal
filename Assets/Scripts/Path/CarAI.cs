@@ -117,6 +117,9 @@ public class CarAI : MonoBehaviour, ICarInputable
             if (_car.IsFinished)
                 return 0;
 
+            if (_car.Speed > _car.LapsCounter.MaxSpeed/* * _rndSpeedCorrector*/)
+                return 0;
+
             if (_isReversing)
                 return -1;
 

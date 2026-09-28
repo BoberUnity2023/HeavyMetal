@@ -22,6 +22,14 @@ public class LapsCounter : MonoBehaviour
         } 
     }
 
+    public int MaxSpeed
+    {
+        get
+        {
+            return (int)_wayPath.MaxSpeeds[_currentPoint];
+        }
+    }
+
     public bool IsWayCompleted => _isWayCompleted;
 
     public int CurrentPoint => _currentPoint;

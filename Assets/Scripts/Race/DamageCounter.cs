@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +8,7 @@ public class DamageCounter : MonoBehaviour
     [SerializeField] private ParticleSystem _smoke;
     [SerializeField] private ParticleSystem _fire;
     [SerializeField] private int _reward;
+    [SerializeField] private float _spiritTime;
     private Spirit _spirit;
     private Car _car;
     private Transform _wheelsParent;
@@ -127,7 +127,7 @@ public class DamageCounter : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         _spirit = new GameObject().AddComponent<Spirit>();
-        _spirit.Init(_car, 3);   
+        _spirit.Init(_car, _spiritTime);   
     }
 
     public void SpiritEnd()//From Spirit

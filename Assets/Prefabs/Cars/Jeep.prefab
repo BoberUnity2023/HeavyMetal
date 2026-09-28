@@ -9558,6 +9558,7 @@ MonoBehaviour:
   _smoke: {fileID: 2941240523914696912}
   _fire: {fileID: 7837502575181107562}
   _reward: 300
+  _spiritTime: 1.8
 --- !u!114 &5941001688005518741
 MonoBehaviour:
   m_ObjectHideFlags: 0
