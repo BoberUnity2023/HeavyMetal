@@ -2464,7 +2464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &103214320
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,7 +7992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 10
+  Speed: 15
 --- !u!1 &290059604
 GameObject:
   m_ObjectHideFlags: 0
@@ -11980,7 +11980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &406425140
 GameObject:
   m_ObjectHideFlags: 0
@@ -18185,7 +18185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 10
+  Speed: 15
 --- !u!1001 &614882724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23420,7 +23420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 18
 --- !u!1 &832217729
 GameObject:
   m_ObjectHideFlags: 0
@@ -26757,7 +26757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 21
 --- !u!1001 &926376780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34506,7 +34506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &1189053167
 GameObject:
   m_ObjectHideFlags: 0
@@ -36053,7 +36053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 16
 --- !u!1 &1249032427
 GameObject:
   m_ObjectHideFlags: 0
@@ -41526,7 +41526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &1472067694
 GameObject:
   m_ObjectHideFlags: 0
@@ -43315,7 +43315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!4 &1525356767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3542380974634848713, guid: 424d18f31790cba43a8ac1e2a3ec7a77, type: 3}
@@ -51403,7 +51403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1001 &1817282683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52860,7 +52860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &1866816414
 GameObject:
   m_ObjectHideFlags: 0
@@ -60076,7 +60076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &2106038561
 GameObject:
   m_ObjectHideFlags: 0

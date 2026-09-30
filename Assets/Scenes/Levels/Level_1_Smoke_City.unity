@@ -2529,7 +2529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &135716105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 8
+  Speed: 12
 --- !u!1 &178787208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 7
+  Speed: 16
 --- !u!1 &229378070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6766,7 +6766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &338319918
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,7 +6997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1001 &371205447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7412,7 +7412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 100
 --- !u!1 &394906395
 GameObject:
   m_ObjectHideFlags: 0
@@ -8766,6 +8766,8 @@ Transform:
   - {fileID: 934911149}
   - {fileID: 1173167654}
   - {fileID: 1400174602}
+  - {fileID: 1955949386}
+  - {fileID: 1917518945}
   - {fileID: 1861776163}
   - {fileID: 1095138313}
   - {fileID: 559348530}
@@ -12491,7 +12493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &728491055
 GameObject:
   m_ObjectHideFlags: 0
@@ -13170,7 +13172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1001 &782201500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13754,7 +13756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 7
+  Speed: 11
 --- !u!1001 &796975724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14078,7 +14080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 18
 --- !u!1 &816995701
 GameObject:
   m_ObjectHideFlags: 0
@@ -14279,7 +14281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 100
 --- !u!1 &829801825
 GameObject:
   m_ObjectHideFlags: 0
@@ -14414,7 +14416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 8
+  Speed: 18
 --- !u!1 &834397790
 GameObject:
   m_ObjectHideFlags: 0
@@ -14639,7 +14641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 18
 --- !u!1 &844269737
 GameObject:
   m_ObjectHideFlags: 0
@@ -18110,7 +18112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 7
+  Speed: 15
 --- !u!1001 &1049804954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18496,7 +18498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &1068409547
 GameObject:
   m_ObjectHideFlags: 0
@@ -19261,7 +19263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &1103133089
 GameObject:
   m_ObjectHideFlags: 0
@@ -19643,7 +19645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 7
+  Speed: 15
 --- !u!1 &1125287758
 GameObject:
   m_ObjectHideFlags: 0
@@ -21257,7 +21259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &1219879933
 GameObject:
   m_ObjectHideFlags: 0
@@ -22205,7 +22207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 17
 --- !u!1001 &1255404722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22998,7 +23000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &1311600136
 GameObject:
   m_ObjectHideFlags: 0
@@ -25636,7 +25638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1001 &1495989902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28297,7 +28299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 5
+  Speed: 15
 --- !u!1 &1664587909
 GameObject:
   m_ObjectHideFlags: 0
@@ -28852,7 +28854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1690863248
 Transform:
   m_ObjectHideFlags: 0
@@ -28937,7 +28939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 7
+  Speed: 16
 --- !u!1 &1693397956
 GameObject:
   m_ObjectHideFlags: 0
@@ -30055,7 +30057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1772507409
 Transform:
   m_ObjectHideFlags: 0
@@ -30489,7 +30491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 8
+  Speed: 18
 --- !u!1001 &1810709293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30748,7 +30750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1001 &1820353174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31644,7 +31646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &1877806345
 GameObject:
   m_ObjectHideFlags: 0
@@ -32386,7 +32388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 15
 --- !u!1 &1902618635
 GameObject:
   m_ObjectHideFlags: 0
@@ -32522,6 +32524,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
   Speed: 100
+--- !u!1001 &1917518944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 452302875}
+    m_Modifications:
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -54.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -92.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100905936, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_Name
+      value: OilOnRoad (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+--- !u!4 &1917518945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+  m_PrefabInstance: {fileID: 1917518944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923929628
 GameObject:
   m_ObjectHideFlags: 0
@@ -33087,6 +33155,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
   Speed: 100
+--- !u!1001 &1955949385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 452302875}
+    m_Modifications:
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -67.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -106.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097226836100905936, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+      propertyPath: m_Name
+      value: OilOnRoad (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+--- !u!4 &1955949386 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6097226836100671472, guid: ef9772e22a9ee3c4298b4f2d27c5d1f4, type: 3}
+  m_PrefabInstance: {fileID: 1955949385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1961936176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33443,7 +33577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a062c916dc2b42ac999290f819713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPoint
-  Speed: 3
+  Speed: 14
 --- !u!4 &1990257095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3953510131823488866, guid: f22e2ec1ea9635143bd4cf61d245b8e9, type: 3}
