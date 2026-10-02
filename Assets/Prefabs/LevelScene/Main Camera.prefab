@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
   _hub: {fileID: 0}
-  _speed: 5
+  _speed: 2.5
   _distanceMin: 2
   _distanceMax: 8
   _distanceToTarget: 5

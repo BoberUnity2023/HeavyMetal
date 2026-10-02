@@ -12,6 +12,7 @@ public class RocketGun : MonoBehaviour
     [SerializeField] private float _tryAIShootTime;    
     private Car _car;
     private List<Weapon> _weapons = new List<Weapon>();
+    private float _aiShootTimer;
     private int _armo;
     private int _tuningArmo;
     private bool _isInited;
@@ -35,7 +36,8 @@ public class RocketGun : MonoBehaviour
             _isInited = true;
             _armo = _startPatrons;
             _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
-            StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+            _aiShootTimer = UnityEngine.Random.Range(_tryAIShootTime/2, _tryAIShootTime);
+            //StartCoroutine(WaitAITryShoot(_tryAIShootTime));
         }
     }    
 
@@ -51,9 +53,10 @@ public class RocketGun : MonoBehaviour
         _tuningArmo = weapons;
         _armo = ArmoMax;
 
-        foreach (Weapon weapon in _weapons)
+        int weaponCount = _weapons.Count;
+        for (int i = 0; i < weaponCount; i++)
         {
-            weapon.SetTuning(weapons);
+            _weapons[i].SetTuning(weapons);
         }
     }
 
@@ -70,15 +73,44 @@ public class RocketGun : MonoBehaviour
 
     private void Update()
     {        
-        if (Time.timeScale == 0 || _car.Hub.IsPaused || _car.IsAI)
+        if (Time.timeScale == 0 || _car.Hub.IsPaused)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E) || 
+        Update_AI();
+        Update_Player();
+    }
+
+    private void Update_AI()
+    {
+        if (_car.IsAI)
+        {
+            // Если бот не виден на экране, нет смысла пускать лучи и стрелять — экономим CPU
+            if (!_car.IsVisible)//TODO?
+                return;
+
+            _aiShootTimer += Time.deltaTime;
+            if (_aiShootTimer >= _tryAIShootTime)
+            {
+                _aiShootTimer = 0f;
+                if (!_car.Hub.Level.Race.Car.IsFinished)
+                {
+                    TryAIShoot();
+                }
+            }            
+        }
+    }
+
+    private void Update_Player()
+    {
+        if (!_car.IsAI)
+        {
+            if (Input.GetKeyDown(KeyCode.E) ||
             Input.GetKeyDown(KeyCode.Return) ||
             Input.GetKeyDown(KeyCode.KeypadEnter) ||
             Input.GetKeyDown(KeyCode.Joystick1Button0))
-        {
-            TryShoot();
+            {
+                TryShoot();
+            }
         }
     }
 
@@ -97,11 +129,12 @@ public class RocketGun : MonoBehaviour
             return;
 
         if(_car.IsFinished || !_car.Hub.Level.IsPlaying)
-            return;        
+            return;
 
-        foreach (Weapon weapon in _weapons)
+        int weaponCount = _weapons.Count;
+        for (int i = 0; i < weaponCount; i++)
         {
-            weapon.TryShoot();
+            _weapons[i].TryShoot();
         }
 
         _armo--;        
@@ -134,12 +167,12 @@ public class RocketGun : MonoBehaviour
         }
     }    
 
-    private IEnumerator WaitAITryShoot(float time)
-    {        
-        yield return new WaitForSeconds(time);
-        TryAIShoot();
+    //private IEnumerator WaitAITryShoot(float time)
+    //{        
+    //    yield return new WaitForSeconds(time);
+    //    TryAIShoot();
 
-        if (!_car.Hub.Level.Race.Car.IsFinished)
-            StartCoroutine(WaitAITryShoot(_tryAIShootTime));
-    }
+    //    if (!_car.Hub.Level.Race.Car.IsFinished)
+    //        StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+    //}
 }

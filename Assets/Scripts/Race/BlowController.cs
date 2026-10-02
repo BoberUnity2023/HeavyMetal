@@ -1,21 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BlowController : MonoBehaviour
 {
-    [SerializeField] private Car _car;    
+    [SerializeField] private Car _car;
+    private List<ContactPoint> _contactPointsCache = new List<ContactPoint>(16);
 
     private void OnCollisionEnter(Collision collision)
     {
         if (!_car.IsVisible)
             return;
 
+        int contactCount = collision.GetContacts(_contactPointsCache);
         if (collision.contacts.Length > 0)
         {
             float impulses = 0;
             bool isBorder = false;
 
-            foreach (ContactPoint contact in collision.contacts)
+            for (int i = 0; i < contactCount; i++)
             {
+                ContactPoint contact = _contactPointsCache[i];
                 float impulse = contact.impulse.magnitude;
                 impulses += impulse;
 
@@ -27,15 +31,20 @@ public class BlowController : MonoBehaviour
                     float volume = Mathf.Min(impulse / 5000, 1) * _car.Hub.Game.Sound.VolumeSound;
                     sparkAudioSource.volume = volume;
 
-                    if (!isBorder && _car.Hub.Game.IsEqualPhysicsMaterials(contact.otherCollider.material, _car.Hub.Game.GroundPropses[_car.Hub.Game.GroundPropses.Length - 1].PhysicMaterial))
+                    //if (contact.otherCollider.sharedMaterial == null)
+                    //{
+                    //    Debug.LogWarning(string.Format("PhysicMaterial is null! Object: {0}", contact.otherCollider.gameObject.name));                        
+                    //}
+
+                    if (!isBorder && _car.Hub.Game.IsEqualPhysicsMaterials(contact.otherCollider.sharedMaterial, _car.Hub.Game.GroundPropses[_car.Hub.Game.GroundPropses.Length - 1].PhysicMaterial))
                         isBorder = true;                    
                 }
             }
 
             if (_car.Speed > _car.Config.DamageSpeed && impulses > _car.Config.DamageImpulse && isBorder)
             {
-                if (!_car.IsAI)
-                    Debug.Log("Damage from blow. Speed: " + (_car.Speed * 3.6f).ToString("f0") + " km/h; impulse: " + impulses.ToString("f0"));
+                //if (!_car.IsAI)
+                //    Debug.Log("Damage from blow. Speed: " + (_car.Speed * 3.6f).ToString("f0") + " km/h; impulse: " + impulses.ToString("f0"));
 
                 _car.DamageCounter.DamageAdd(34, false);
             }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using static UnityEngine.LowLevelPhysics2D.PhysicsShape;
 
 [RequireComponent(typeof(WheelCollider))]
 public class WheelSkid : MonoBehaviour 
@@ -84,12 +85,20 @@ public class WheelSkid : MonoBehaviour
 
         if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
-            _physicMaterial = hit.collider.material;
+            if (hit.collider.isTrigger || hit.collider.gameObject.CompareTag("Car"))
+                return;
+
+            _physicMaterial = hit.collider.sharedMaterial;
             if (_physicMaterial != _physicMaterialPrevious)
             {
                 foreach (GroundProps groundProps in _car.Hub.Game.GroundPropses)
                 {
-                    if (_car.Hub.Game.IsEqualPhysicsMaterials(hit.collider.material, groundProps.PhysicMaterial))
+                    //if (hit.collider.sharedMaterial == null)
+                    //{
+                    //    Debug.LogWarning(string.Format("PhysicMaterial is null! Object: {0}", hit.collider.gameObject.name));
+                    //}
+
+                    if (_car.Hub.Game.IsEqualPhysicsMaterials(hit.collider.sharedMaterial, groundProps.PhysicMaterial))
                     {
                         _groundMaterial = groundProps.GroundMaterial;
                         _groundProps = groundProps;
@@ -131,6 +140,7 @@ public class WheelSkid : MonoBehaviour
 
     private void SetFriction(float friction)
     {
+        Debug.Log("SetFriction");
         if (!_wheelControl.IsSteerable)
             friction *= (1 - _car.Input.Handbrake);        
 

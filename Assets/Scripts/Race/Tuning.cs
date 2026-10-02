@@ -82,9 +82,13 @@ public class Tuning : MonoBehaviour
         {
             bool isActive = tires == i;
             
-            foreach (GameObject tire in _tireArrays[i].Tires)
+            GameObject[] tiresList = _tireArrays[i].Tires;
+            int tiresCount = tiresList.Length;
+
+            for (int j = 0; j < tiresCount; j++)
             {
-                tire.SetActive(isActive);
+                if (tiresList[j] != null)
+                    tiresList[j].SetActive(isActive);
             }
         }
     }
@@ -115,6 +119,9 @@ public class Tuning : MonoBehaviour
 
     private void CheckByConfig()
     {
+        if (Application.platform != RuntimePlatform.WindowsEditor)
+            return;
+
         string carType = _car.CarType.ToString();
         ConfigCar configCar = _game.ConfigGame.Car(_car.CarType);
         int engineMax = configCar.Tuning.Engine.CountMax;

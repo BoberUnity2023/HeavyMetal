@@ -38,10 +38,12 @@ public class Suspension : MonoBehaviour
     void FixedUpdate()
     {
         int wheelsOnGround = 0;
-        float maxCompressionThisFrame = 0f;        
+        float maxCompressionThisFrame = 0f;
 
-        foreach (var wheel in wheels)
+        int wheelsCount = wheels.Count;
+        for (int i = 0; i < wheelsCount; i++)
         {
+            var wheel = wheels[i];
             if (wheel.collider == null) continue;
 
             WheelHit hit;
@@ -118,13 +120,13 @@ public class Suspension : MonoBehaviour
 
     private void OnCarTakeOff()
     {
-        Debug.Log("🚀 Машина в воздухе!");
+        //Debug.Log("🚀 Машина в воздухе!");
         //PlaySound(jumpSound);
     }
 
     private void OnCarLanding(float maxCompression)
     {
-        Debug.Log($"🛬 Приземление. Макс. сжатие стойки: {maxCompression * 100f:F0}%");
+        //Debug.Log($"🛬 Приземление. Макс. сжатие стойки: {maxCompression * 100f:F0}%");
 
         if (landingParticles != null) landingParticles.Play();
 

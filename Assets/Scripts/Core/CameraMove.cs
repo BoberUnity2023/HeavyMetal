@@ -31,7 +31,8 @@ public class CameraMove : MonoBehaviour
     private Camera _camera;
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _cameraPosition;
-    private CameraState _state;    
+    private CameraState _state;
+    private float _followUpY;
 
     public int TargetState { get; private set; }
 
@@ -46,10 +47,16 @@ public class CameraMove : MonoBehaviour
             if (_state == CameraState.Izometry)
                 output = _target.position + _offsetIzometry;
 
-            if (_state == CameraState.Follow || _state == CameraState.FollowUp)
+            if (_state == CameraState.Follow)
             {
                 float y = Mathf.Max(_cameraPosition.position.y, _target.position.y + 1);
                 output = new Vector3(_cameraPosition.position.x, y, _cameraPosition.position.z); 
+            }
+
+            if (_state == CameraState.FollowUp)
+            {
+                float y = _followUpY;
+                output = new Vector3(_cameraPosition.position.x, y, _cameraPosition.position.z);
             }
 
             if (output.y < _minimalY)
@@ -154,6 +161,7 @@ public class CameraMove : MonoBehaviour
     public void SetTarget(Transform target)
     {
         _target = target;
+        _followUpY = _target.position.y + _offsetFollowUp.y;
     }
 
     public void SetCanMove(bool value)
@@ -305,7 +313,7 @@ public class CameraMove : MonoBehaviour
             _target.localPosition = new Vector3(0, 0.5f, 0.5f);
             _distanceToTarget = 4.8f;
             _distanceGame = 7.5f;
-            _speed = 3.2f;
+            _speed = 1.2f;
             //}
         }
 

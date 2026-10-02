@@ -204,9 +204,12 @@ public class Car : MonoBehaviour
     private void FixedUpdate_CalculateSlideForce()
     {
         float force = 0;
-        foreach (var wheel in _wheelSkids)
+        int count = _wheelSkids.Length;
+
+        for (int i = 0; i < count; i++)
         {
-            force += wheel.Intensity;
+            if (_wheelSkids[i] != null)
+                force += _wheelSkids[i].Intensity;
         }
 
         if (Speed < 1)

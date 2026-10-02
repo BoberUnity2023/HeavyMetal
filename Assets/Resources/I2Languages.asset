@@ -618,6 +618,18 @@ MonoBehaviour:
       - 'MENU PRINCIPAL '
       Flags: 000000000000
       Languages_Touch: []
+    - Term: camera
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041A\u0410\u041C\u0415\u0420\u0410"
+      - CAMERA
+      - "C\xC1MARA "
+      - 'KAMERA '
+      - 'CAMERA '
+      - 'CAMERA '
+      Flags: 000000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

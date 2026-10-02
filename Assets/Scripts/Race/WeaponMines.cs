@@ -7,6 +7,8 @@ public class WeaponMines : MonoBehaviour
     [SerializeField] private Mine _prefabMine;    
     [SerializeField] private float _tryAIShootTime;
     private Car _car;
+    private float _aiShootTimer;
+    private float _patronCooldownTimer;
     private int _armo;
     private int _tuningArmo;
     private bool _waitingNextPatron;
@@ -26,7 +28,7 @@ public class WeaponMines : MonoBehaviour
             ConfigCar configCar = _car.Game.ConfigGame.Car(_car.CarType);
             _armo = configCar.StartMines;
             _car.LapsCounter.OnLapStart += LapsCounter_OnLapStart;
-            StartCoroutine(WaitAITryShoot(_tryAIShootTime));
+            _aiShootTimer = _tryAIShootTime;
         }
     }
 
@@ -49,13 +51,56 @@ public class WeaponMines : MonoBehaviour
 
     private void Update()
     {
-        if (_car.IsAI)
+        if (Time.timeScale == 0 || _car.Hub.IsPaused)
             return;
-
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button1))
+        
+        if (_waitingNextPatron)
         {
-            TryShoot();
+            _patronCooldownTimer -= Time.deltaTime;
+            if (_patronCooldownTimer <= 0)
+            {
+                _waitingNextPatron = false;
+            }
         }
+
+        Update_AI();
+        Update_Player();
+    }
+
+    private void Update_AI()
+    {
+        if (_car.IsAI)
+        {
+            // ОПТИМИЗАЦИЯ: Если бот далеко/вне экрана — не пускаем луч и экономим CPU
+            if (!_car.IsVisible)
+                return;
+
+            _aiShootTimer += Time.deltaTime;
+
+            // Вычисляем целевой интервал в зависимости от текущего круга бота
+            float currentTargetTime = _car.LapsCounter.Lap == 1 ? _tryAIShootTime * 3 : _tryAIShootTime;
+
+            if (_aiShootTimer >= currentTargetTime)
+            {
+                _aiShootTimer = 0f;
+                if (!_car.Hub.Level.Race.Car.IsFinished)
+                {
+                    TryAIShoot();
+                }
+            }
+            return; // Выходим из Update для ИИ
+        }
+    }
+
+    private void Update_Player()
+    {
+        if (!_car.IsAI)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button1))
+            {
+                TryShoot();
+            }
+        }           
     }
 
     private void TryAIShoot()
@@ -83,7 +128,8 @@ public class WeaponMines : MonoBehaviour
         bool _isShooted = false;
         Mine mine = Instantiate(_prefabMine, _transformGun.position, _transformGun.rotation);
 
-        StartCoroutine(WaitPatron(0.8f));
+        _waitingNextPatron = true;
+        _patronCooldownTimer = 0.8f;
     }
 
     private bool CanShooted(Car enemy)
@@ -109,25 +155,6 @@ public class WeaponMines : MonoBehaviour
             }
 
             return 100;
-        }
-    }
-
-    private IEnumerator WaitPatron(float time)
-    {
-        _waitingNextPatron = true;
-        yield return new WaitForSeconds(time);
-        _waitingNextPatron = false;
-    }
-
-    private IEnumerator WaitAITryShoot(float time)
-    {
-        yield return new WaitForSeconds(time);
-        TryAIShoot();
-
-        if (!_car.Hub.Level.Race.Car.IsFinished)
-        { 
-            float shootTime = _car.LapsCounter.Lap == 1 ? _tryAIShootTime * 3 : _tryAIShootTime;
-            StartCoroutine(WaitAITryShoot(shootTime)); 
         }
     }
 }

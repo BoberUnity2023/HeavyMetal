@@ -37,41 +37,48 @@ public class CarAI : MonoBehaviour, ICarInputable
     {
         _steerPrevious = _steer;
         _steer = _car.LapsCounter.RelativePointPosition.x / _car.LapsCounter.RelativePointPosition.magnitude;
-    }
+    }    
+
+    private float _reverseTimer = 0f; // Переменная класса вместо корутины
 
     private void FixedUpdate_TryReverse()
     {
-        if (!_car.IsFinished &&
-            _car.Input.Handbrake < 0.01f &&
-            _car.Speed < 2 &&
-            _car.Input.Force > 0.5f)
+        if (_isReversing)
+        {
+            _reverseTimer -= Time.fixedDeltaTime;
+            if (_reverseTimer <= 0)
+            {
+                _isReversing = false;
+                _currentCollapsTime = 0;
+            }
+            return; // Пока сдаем назад, новые проверки не делаем
+        }
+
+        if (!_car.IsFinished && _car.Input.Handbrake < 0.01f && _car.Speed < 2 && _car.Input.Force > 0.5f)
         {
             _currentCollapsTime += Time.fixedDeltaTime;
-            if (_currentCollapsTime > 1)
+            if (_currentCollapsTime > 1f)
             {
                 if (_car.LapsCounter.Points >= _car.Hub.Level.Race.Car.LapsCounter.Points || _car.IsVisible)
-                    AIReverseOn();
+                {
+                    // Вместо корутины просто взводим флаг и таймер!
+                    _isReversing = true;
+                    _reverseTimer = _reverceTime;
+                    _currentCollapsTime = 0;
+                }
                 else
-                {                    
-                    _car.ReturnOnRoad.MoveToNearestReturnPoint(); 
+                {
+                    _car.ReturnOnRoad.MoveToNearestReturnPoint();
+                    _currentCollapsTime = 0; // Обязательно сбрасываем, чтобы не спамить методом!
                 }
             }
         }
-    }
-
-    private void AIReverseOn()
-    {
-        _currentCollapsTime = 0;
-        _isReversing = true;
-        StartCoroutine(AIReverseOff(_reverceTime));
-    }
-
-    private IEnumerator AIReverseOff(float time)
-    {
-        yield return new WaitForSeconds(time);
-        _isReversing = false;
-        _currentCollapsTime = 0;
-    }
+        else
+        {
+            // Если машина поехала сама, плавно сбрасываем панику
+            if (_currentCollapsTime > 0) _currentCollapsTime -= Time.fixedDeltaTime;
+        }
+    }    
 
     public float Steer
     {

@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -24,30 +23,22 @@ public class IndicatorLap : MonoBehaviour
 
     private void OnLapCompleted(int lap)
     {
+        Debug.Log("IndicatorLap.OnLapCompleted: " + lap);
         float effectTime = 0.5f;
-        StartScale(effectTime);
-        StartCoroutine(ChangeText(effectTime, lap + 1));
-    }
-
-    private void StartScale(float effectTime)
-    {
         transform.DOScale(2, effectTime);
-        transform.DOMoveY(_positionY - 200, effectTime);
-    }
+        transform.DOMoveY(_positionY - 200, effectTime).OnComplete(() =>
+        {
+            SetText(lap + 1);
+            StartReturn();
+        });
+    }    
 
     private void StartReturn()
     {
         float effectTime = 1.0f;
         transform.DOScale(1, effectTime);
         transform.DOMoveY(_positionY, effectTime);
-    }
-
-    private IEnumerator ChangeText(float time, int lap)
-    {
-        yield return new WaitForSeconds(time);
-        SetText(lap);
-        StartReturn();
-    }
+    }    
 
     private void SetText(int lap)
     {

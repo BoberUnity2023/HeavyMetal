@@ -51,8 +51,10 @@ public class CarControl: MonoBehaviour
         float currentMotorTorque = _car.Input.IsNitro ? torque : Mathf.Lerp(torque, 0, _car.SpeedFactor);
         float currentSteerRange = Mathf.Lerp(_steeringRange, _steeringRangeAtMaxSpeed, _car.SpeedFactor);
 
-        foreach (WheelControl wheel in _car.Wheels)
+        int wheelsCount = _car.Wheels.Length;
+        for (int i = 0; i < wheelsCount; i++)
         {
+            WheelControl wheel = _car.Wheels[i];
             float brakeTorque = 0;
 
             // Apply steering to wheels that support steering
@@ -118,29 +120,22 @@ public class CarControl: MonoBehaviour
         }        
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //Debug.Log("Car.OnTriggerEnter: " + other.gameObject.name);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    //Debug.Log("Car.OnTriggerEnter: " + other.gameObject.name);
 
-        if (other.gameObject.tag == "FinishHero")
-        {
-            Debug.Log(gameObject.name + ".Finish");
-            //_hub.Hero.Finish();
-        }
+    //    if (other.gameObject.CompareTag("FinishHero"))
+    //    {
+    //        Debug.Log(gameObject.name + ".Finish");
+    //        //_hub.Hero.Finish();
+    //    }
 
-        if (other.gameObject.tag == "Dead")
-        {
-            Debug.Log(gameObject.name + ".Dead");
-            //_hub.Hero.Dead();
-        }
-
-        if (other.gameObject.name.Contains("Checkpoint"))
-        {
-            //Debug.Log(gameObject.name + ".Checkpoint");
-            //Checkpoint checkpoint = other.GetComponent<Checkpoint>();
-            //checkpoint.StartComplete();
-        }
-    }
+    //    if (other.gameObject.CompareTag("Dead"))
+    //    {
+    //        Debug.Log(gameObject.name + ".Dead");
+    //        //_hub.Hero.Dead();
+    //    }
+    //}
 
     private void FixedUpdate_AddDownForce()
     {

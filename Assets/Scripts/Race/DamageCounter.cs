@@ -14,7 +14,17 @@ public class DamageCounter : MonoBehaviour
     private Transform _wheelsParent;
     private Vector3[] _wheelPositions = new Vector3[4];
     private int _damage;
-    
+    private float _deadCrashTimer;
+    private float _hideTimer;
+    private bool _isWaitingDeadCrash;
+    private bool _isWaitingHide;
+
+    public int Damage
+    {
+        get => _damage;
+        private set => _damage = value;
+    }
+
     public void Init(Car car)
     {  
         _car = car;
@@ -23,14 +33,55 @@ public class DamageCounter : MonoBehaviour
         {
             _wheelPositions[i] = _car.Wheels[i].transform.localPosition;
         }
+
+        enabled = false;
     }
 
-    public int Damage 
-    {         
-        get => _damage; 
-        private set => _damage = value;  
+    private void Update()
+    {
+        if (Time.timeScale == 0 || _car.Hub.IsPaused)
+            return;
+
+        // Логика заменяет корутину WaitDeadCrash
+        if (_isWaitingDeadCrash)
+        {
+            _deadCrashTimer -= Time.deltaTime;
+            if (_deadCrashTimer <= 0)
+            {
+                _isWaitingDeadCrash = false;
+
+                for (int i = 0; i < _car.Wheels.Length; i++)
+                {
+                    WheelControl wheel = _car.Wheels[i];
+                    WheelDeattach(wheel);
+                }
+
+                _car.IsCrashed = true;
+
+                // Взводим второй таймер (замена корутины WaitHide)
+                _hideTimer = 1f; // Ждем 1 секунду до скрытия и спавна Духа
+                _isWaitingHide = true;
+            }
+        }
+
+        // Логика заменяет корутину WaitHide
+        if (_isWaitingHide)
+        {
+            _hideTimer -= Time.deltaTime;
+            if (_hideTimer <= 0)
+            {
+                _isWaitingHide = false;
+
+                // Таймеры закончились — выключаем Update, чтобы не тратить CPU
+                enabled = false;
+
+                _spirit = new GameObject().AddComponent<Spirit>();
+                _spirit.Init(_car, _spiritTime);
+            }
+        }
     }
-    
+
+
     public void DamageAdd(int value, bool fromPlayer)
     {
         if (_car.IsCrashed)
@@ -39,16 +90,16 @@ public class DamageCounter : MonoBehaviour
         int shields = _car.Hub.Game.Saves.GetTuning(_car.CarType, TuningType.Shields);
         value -= shields * (int)_car.Config.Tuning.Shields.Power;              
 
-        if (value <= 0)
-        {
-            Debug.Log("Damage was not added. Shield more than damage");
-            return;
-        }
-        else
-        {
-            string t = _car.IsAI ? "AI " : "Player ";
-            Debug.Log("Car " + t + _car.CarType.ToString() + ". Damage: " + value); 
-        }
+        //if (value <= 0)
+        //{
+        //    Debug.Log("Damage was not added. Shield more than damage");
+        //    return;
+        //}
+        //else
+        //{
+        //    string t = _car.IsAI ? "AI " : "Player ";
+        //    Debug.Log("Car " + t + _car.CarType.ToString() + ". Damage: " + value); 
+        //}
 
         _damage += Mathf.Max(0, value);
 
@@ -85,8 +136,10 @@ public class DamageCounter : MonoBehaviour
     private void SecondCrash() 
     {
         _car.Control.EngineMultiplerDamage = 0.8f;
-        foreach (WheelControl wheel in _car.Wheels)
+
+        for (int i = 0; i < _car.Wheels.Length; i++)
         {
+            WheelControl wheel = _car.Wheels[i];
             wheel.DamageRotationSet();
         }
     }
@@ -109,16 +162,21 @@ public class DamageCounter : MonoBehaviour
         if (fromPlayer)
             _car.Hub.Game.Saves.Coins += _reward;
 
-        StartCoroutine(WaitDeadCrash(3));
+        _deadCrashTimer = 3f; // Ждем 3 секунды до полного отрыва колес
+        _isWaitingDeadCrash = true;
+        enabled = true;
     }
 
     private IEnumerator WaitDeadCrash(float time)
     {
         yield return new WaitForSeconds(time);
-        foreach (var wheel in _car.Wheels)
+
+        for (int i = 0; i < _car.Wheels.Length; i++)
         {
+            WheelControl wheel = _car.Wheels[i];
             WheelDeattach(wheel);
         }
+        
         _car.IsCrashed = true;
         StartCoroutine(WaitHide(1));
     }
@@ -137,19 +195,19 @@ public class DamageCounter : MonoBehaviour
 
     public void Restart()
     {
-        StopAllCoroutines();
+        _isWaitingDeadCrash = false;
+        _isWaitingHide = false;
+        enabled = false;
+
         Emit(_smoke, false);
         Emit(_fire, false);
 
-        for (int i = 0; i < 4; i++)
-        {            
-            WheelAttach(_car.Wheels[i], i);
-        }
-
-        foreach (WheelControl wheel in _car.Wheels)
+        for (int i = 0; i < _car.Wheels.Length; i++)
         {
+            WheelControl wheel = _car.Wheels[i];
+            WheelAttach(wheel, i);
             wheel.DamageRotationReset();
-        }
+        }        
 
         _car.IsCrashed = false;
         _car.Control.EngineMultiplerDamage = 1.0f;
@@ -159,6 +217,11 @@ public class DamageCounter : MonoBehaviour
         bool inWater = transform.position.y < -10;
         if (inWater)
             _car.ReturnOnRoad.MoveToNearestReturnPoint();
+        
+        if (_spirit != null)
+        {
+            Destroy(_spirit.gameObject);
+        }
     }
 
     private void Emit(ParticleSystem particleSystem, bool value)
@@ -186,8 +249,6 @@ public class DamageCounter : MonoBehaviour
         WheelDeattach(_car.Wheels[rnd]);
     }
 
-
-
     private void WheelDeattach(WheelControl wheelControl)
     {
         if (!wheelControl.IsAttached)
@@ -212,5 +273,9 @@ public class DamageCounter : MonoBehaviour
         wheelControl.WheelCollider.enabled = true;
         wheelControl.WheelModel.SetParent(_wheelsParent);
         wheelControl.enabled = true;
+
+        // Сбрасываем локальные координаты модельки колеса, чтобы оно не смещалось визуально после искривления
+        //wheelControl.WheelModel.localPosition = Vector3.zero;
+        //wheelControl.WheelModel.localRotation = Quaternion.identity;
     }
 }

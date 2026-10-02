@@ -12,7 +12,23 @@ public class EngineSound : VolumeSound
     private float _pitchTarget;    
 
     private void Update()
-    {        
+    {
+        Car playerCar = _car.Hub.Level.Race.Car;
+        if (playerCar != null)
+        {
+            // Считаем квадрат расстояния между ботом и игроком
+            float sqrDistance = (transform.position - playerCar.transform.position).sqrMagnitude;
+
+            // Если бот уехал дальше, чем Max Distance из настроек AudioSource (40 метров)
+            if (sqrDistance > _audioSource.maxDistance)
+            {
+                if (_audioSource.volume > 0) 
+                    _audioSource.volume = 0;
+
+                return; // Процессор отдыхает
+            }
+        }
+
         if (_car.Force < 0.05f)
         {
             _volumeTarget = 0.5f * _scale; ;
