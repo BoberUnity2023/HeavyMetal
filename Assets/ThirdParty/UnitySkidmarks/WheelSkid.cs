@@ -140,7 +140,7 @@ public class WheelSkid : MonoBehaviour
 
     private void SetFriction(float friction)
     {
-        Debug.Log("SetFriction");
+        //Debug.Log("SetFriction");
         if (!_wheelControl.IsSteerable)
             friction *= (1 - _car.Input.Handbrake);        
 

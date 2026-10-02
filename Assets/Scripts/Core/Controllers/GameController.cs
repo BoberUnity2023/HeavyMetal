@@ -372,6 +372,12 @@ public class GameController : MonoBehaviour
 
     public bool IsEqualPhysicsMaterials(PhysicsMaterial material1, PhysicsMaterial material2)
     {
+        if (material1 == null && material2 == null) 
+            return true;
+
+        if (material1 == null || material2 == null) 
+            return false;
+        
         return material1.dynamicFriction == material2.dynamicFriction &&
             material1.frictionCombine == material2.frictionCombine;
     }
