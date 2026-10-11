@@ -10,6 +10,7 @@ public class ConfigCar : ScriptableObject
     [SerializeField] private int _price;
     [SerializeField] private int _motorTorque;
     [SerializeField] private int _brakeTorque;
+    [SerializeField] private int _mass;
     [SerializeField] private int _maxSpeed;
     [SerializeField] private int _damageSpeed;
     [SerializeField] private int _damageImpulse;
@@ -25,6 +26,8 @@ public class ConfigCar : ScriptableObject
     public int MotorTorque => _motorTorque;
 
     public int BrakeTorque => _brakeTorque;
+
+    public int Mass => _mass;
 
     public int MaxSpeed => _maxSpeed;
 

@@ -204,41 +204,41 @@ public class GameController : MonoBehaviour
 
     public Canvas Console => _console;
 
-    private bool isWaitingStorage;
-    
-    public int CurrentLevel 
-    { 
-        get 
+    private bool isWaitingStorage;       
+
+    public ControllerAnalitycs Analitycs => _controllerAnalitycs;
+
+    public Skidmarks PrefabSkidmarks => _prefabSkidmarks;
+
+    public int CurrentLevel
+    {
+        get
         {
             if (_currentLevel == 0)//from Editor
-            { 
+            {
                 int levelNumber = 0;
                 string sceneName = SceneManager.GetActiveScene().name.Substring(3);//��� "04_"                
 
                 for (int i = 0; i < _configLevels.Levels.Length; i++)
                 {
                     if (_configLevels.Levels[i].name.Contains(sceneName))
-                    {                        
+                    {
                         levelNumber = i + 1;
                         break;
                     }
-                } 
+                }
                 //Debug.Log("Scene " + sceneName + " started as Level: " + levelNumber);
                 return levelNumber;
                 //return SceneManager.GetActiveScene().levelNumber - 1; 
             }
 
             return _currentLevel;
-        } 
-        set 
-        { 
-            _currentLevel = value; 
         }
-    }       
-
-    public ControllerAnalitycs Analitycs => _controllerAnalitycs;
-
-    public Skidmarks PrefabSkidmarks => _prefabSkidmarks;      
+        set
+        {
+            _currentLevel = value;
+        }
+    }
 
     public int Stars
     {

@@ -9,26 +9,17 @@ public class WindowSelectCar : WindowBase
     [SerializeField] private ColorPanel _colorPanel;
     [SerializeField] private PriceIndicator _priceIndicator;
     [SerializeField] private Button _buttonContinue;
-    [SerializeField] private Button _buttonBuy;    
-    [SerializeField] private Bar _barEngine;
-    [SerializeField] private Bar _barShields;
-    [SerializeField] private Bar _barTires;
-    [SerializeField] private Bar _barWeapon;
-    [SerializeField] private Bar _barNitro;
-    [SerializeField] private Bar _barMines;
+    [SerializeField] private Button _buttonBuy;
     //[SerializeField] private Bar _barShield;
-    [SerializeField] private GameObject _lock;    
+    [SerializeField] private GameObject _lock;
+    [SerializeField] private CarTuningPanel _carTuningPanel;
+    [SerializeField] private CarInfoPanel _carInfoPanel;
 
     private void Awake()
     {
         _game = _sceneController.Game;
-        _barEngine.Init(_sceneController);
-        _barShields.Init(_sceneController);
-        _barTires.Init(_sceneController);
-        _barWeapon.Init(_sceneController);
-        _barNitro.Init(_sceneController);
-        _barMines.Init(_sceneController);
-        _colorPanel.Init(_sceneController, _garage);
+        _carInfoPanel.Init(_sceneController);
+        _carTuningPanel.Init(_sceneController, _garage);        
     }
 
     protected override void Start()
@@ -107,6 +98,8 @@ public class WindowSelectCar : WindowBase
         Debug.Log("PressBack");
         Game.Sound.Play(SoundClip.Click);
         _garage.CameraMovier.MoveToCups();
+        _garage.RemoveCars();
+        _game.UI.NavigationEnd();
         Hide();
         Invoke("MainMenuShow", 1);
     }
@@ -191,13 +184,18 @@ public class WindowSelectCar : WindowBase
         _buttonBuy.gameObject.SetActive(!hasCar);
         _priceIndicator.gameObject.SetActive(!hasCar);
         int price = Price();
-        _priceIndicator.SetPrice(price);
-        SetBars();
-        
+        _priceIndicator.SetPrice(price);        
+
         if (hasCar)
-            _colorPanel.Show();
+        {
+            _carInfoPanel.Show();
+            _carTuningPanel.Show();
+        }
         else
-            _colorPanel.Hide();
+        {
+            _carInfoPanel.Show();
+            _carTuningPanel.Hide();            
+        }
 
         _lock.SetActive(_game.SelectedCarType == CarType.Gnom && _game.ConfigGame.GameVersion == GameVersion.Demo);
     }
@@ -205,26 +203,6 @@ public class WindowSelectCar : WindowBase
     private int Price()
     {
         return _game.ConfigGame.Cars[_game.SelectedCar].Price;
-    }
-
-    private void SetBars()
-    {
-        ConfigCar configCar = _game.ConfigGame.Cars[_game.SelectedCar];
-        SetBar(configCar.Tuning.Engine, TuningType.Engine, _barEngine);
-        SetBar(configCar.Tuning.Shields, TuningType.Shields, _barShields);
-        SetBar(configCar.Tuning.Tires, TuningType.Tires, _barTires);
-        SetBar(configCar.Tuning.Weapon, TuningType.Weapons, _barWeapon);
-        SetBar(configCar.Tuning.Mines, TuningType.Mines, _barMines);
-        SetBar(configCar.Tuning.Nitro, TuningType.Nitro, _barNitro);
-    }
-
-    private void SetBar(TuningCategory category, TuningType tuningType, Bar bar)
-    {
-        int countTuning = _game.Saves.GetTuning(_game.SelectedCarType, tuningType);
-        int max = category.CountMax;
-        float value = (float)countTuning / max;        
-        int price = countTuning < max ? category.Prices[countTuning] : 0;
-        bar.Set(value, price);
     }
 
     private bool HasCar => _game.Saves.HasBoughtCar(_game.SelectedCarType);

@@ -162,4 +162,10 @@ public class ControllerAnalitycs : MonoBehaviour
         GameAnalytics.NewDesignEvent(eventName);
         //Debug.LogWarning(eventName);
     }
+
+    public void SendAverageFPS(int fps)
+    {        
+        string eventName = "AverageFPS_" + fps;
+        GameAnalytics.NewDesignEvent(eventName, fps);
+    }
 }

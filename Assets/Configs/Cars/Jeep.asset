@@ -17,6 +17,7 @@ MonoBehaviour:
   _price: 25500
   _motorTorque: 4800
   _brakeTorque: 4000
+  _mass: 2500
   _maxSpeed: 36
   _damageSpeed: 20
   _damageImpulse: 32000
@@ -49,9 +50,9 @@ MonoBehaviour:
       Prices: d0070000a00f0000401f0000983a0000a8610000
     _mines:
       CountBought: 0
-      CountMax: 5
+      CountMax: 3
       Power: 1
-      Prices: c4090000a00f0000401f0000983a000030750000
+      Prices: c409000010270000a8610000
     _shield:
       CountBought: 0
       CountMax: 1

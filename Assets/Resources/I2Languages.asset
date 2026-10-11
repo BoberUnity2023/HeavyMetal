@@ -624,10 +624,46 @@ MonoBehaviour:
       Languages:
       - "\u041A\u0410\u041C\u0415\u0420\u0410"
       - CAMERA
-      - "C\xC1MARA "
+      - 'CAMARA '
       - 'KAMERA '
       - 'CAMERA '
       - 'CAMERA '
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: feedback
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041E\u0422\u0417\u042B\u0412"
+      - FEEDBACK
+      - 'OPINION '
+      - 'BEWERTUNG '
+      - 'AVIS '
+      - AVALIACAO
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: pass
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0410\u0420\u041E\u041B\u042C"
+      - PASSWORD
+      - 'CONTRASENA '
+      - 'PASSWORT '
+      - CODE
+      - SENHA
+      Flags: 000000000000
+      Languages_Touch: []
+    - Term: back
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0410\u0417\u0410\u0414"
+      - BACK
+      - 'ATRAS '
+      - 'ZURUECK '
+      - 'RETOUR '
+      - 'VOLTAR '
       Flags: 000000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0

@@ -13,6 +13,7 @@ public class CarAI : MonoBehaviour, ICarInputable
     private const float _reverceTime = 0.75f;
     private float _currentCollapsTime = 0;
 
+    private float _speedMultipler;
     private const float _steeringSpeed = 2;//Double by CarInput
     private const float _steeringBackSpeed = 4;//Double by CarInput
 
@@ -21,7 +22,19 @@ public class CarAI : MonoBehaviour, ICarInputable
         _car = car;
 
         if (_car.Mode == Mode.Track)
+        {
+            if (!car.IsAI)
+                return;
+
             enabled = true;
+            _speedMultipler = _car.Hub.Level.Config.SpeedMultipler;//считываем из ScriptableObject
+            float _rndSpeedCorrector = Random.Range(0.90f, 1.1f);
+            _speedMultipler *= _rndSpeedCorrector;
+            //if (_car.Hub.Game.MagnetController.LevelReplays >= 3)//Если игрок переигрывет же уровень 3й (или более) раз подряд
+            //    _speedMultipler *= 0.9f;
+            //if (PlayerPrefs.HasKey("IsDevicePowerLow"))//если у игрока тормозит телефон 
+            //    _speedMultipler *= 0.9f;
+        }
     }
 
     public void FixedUpdate()
@@ -124,7 +137,7 @@ public class CarAI : MonoBehaviour, ICarInputable
             if (_car.IsFinished)
                 return 0;
 
-            if (_car.Speed > _car.LapsCounter.MaxSpeed/* * _rndSpeedCorrector*/)
+            if (_car.Speed > _car.LapsCounter.MaxSpeed * _speedMultipler)
                 return 0;
 
             if (_isReversing)

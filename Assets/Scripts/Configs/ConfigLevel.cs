@@ -22,6 +22,8 @@ public class ConfigLevel : ScriptableObject
 
     [SerializeField] private int _laps;
 
+    [SerializeField] private float _speedMultipler;
+
     [SerializeField] private int _starsForOpen;    
 
     [SerializeField] private ConfigEnemy[] _enemies;
@@ -39,6 +41,8 @@ public class ConfigLevel : ScriptableObject
     public int Track => _track; 
 
     public int Laps => _laps;
+
+    public float SpeedMultipler => _speedMultipler;
 
     public int StarsForOpen => _starsForOpen;    
 

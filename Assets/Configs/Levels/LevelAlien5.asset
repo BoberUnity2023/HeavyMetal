@@ -18,6 +18,7 @@ MonoBehaviour:
   _key: 5
   _track: 5
   _laps: 3
+  _speedMultipler: 1.1
   _starsForOpen: 0
   _enemies:
   - {fileID: 11400000, guid: 5a8574ea770baea4c955ca33111419cf, type: 2}

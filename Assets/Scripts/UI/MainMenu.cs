@@ -25,7 +25,7 @@ public class MainMenu : WindowBase
         Debug.Log("Press New Game");
         _game.Sound.Play(SoundClip.Click);
         _game.UI.NavigationEnd();
-        _garage.RemoveCars();        
+        _garage.RemoveCars();
         PlayerPrefs.DeleteAll();               
         PlayerPrefs.SetInt("GameStarted", 1);
         _game.Saves.Coins = _game.ConfigGame.StartCoins;
