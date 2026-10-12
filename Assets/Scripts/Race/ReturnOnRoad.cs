@@ -70,14 +70,15 @@ public class ReturnOnRoad : MonoBehaviour
     }
 
     public void MoveToPoint(int pointID)
-    {
-        _car.Rigidbody.linearVelocity = Vector3.zero;
+    {        
         _currentCollapsTime = 0;
         
         Transform wayPoint = _car.WayPath.Points[pointID];
         float y = PointPositionOnGround(wayPoint.position);
         transform.localPosition = new Vector3(wayPoint.position.x, y, wayPoint.position.z);
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+        _car.Rigidbody.linearVelocity = Vector3.zero;
+        _car.Rigidbody.angularVelocity = Vector3.zero;
         Debug.Log(gameObject.name + " was returned on point " + pointID);
     }
 

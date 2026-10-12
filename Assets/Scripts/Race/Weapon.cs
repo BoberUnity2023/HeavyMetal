@@ -40,10 +40,10 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void TryShoot()
+    public bool TryShoot()
     {
         if (_waitingReload)
-            return;
+            return false;
 
         CreateRocket(_shootPosition);
 
@@ -53,6 +53,7 @@ public class Weapon : MonoBehaviour
         }
 
         StartCoroutine(WaitPatron(_reloadTime));
+        return true;
     }
 
     private void CreateRocket(Transform shootPosition)

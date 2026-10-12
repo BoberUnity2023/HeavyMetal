@@ -132,12 +132,16 @@ public class RocketGun : MonoBehaviour
             return;
 
         int weaponCount = _weapons.Count;
+        bool shooted = false;
         for (int i = 0; i < weaponCount; i++)
         {
-            _weapons[i].TryShoot();
+            shooted = _weapons[i].TryShoot();
         }
 
-        _armo--;        
+        if (shooted)
+        {
+            _armo--;
+        }
     }
 
     
