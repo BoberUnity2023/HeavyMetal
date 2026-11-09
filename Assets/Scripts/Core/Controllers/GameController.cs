@@ -26,7 +26,8 @@ public enum CarType
 {
     Jeep,
     Police,
-    Gnom
+    Gnom,
+    Fish
 }
 
 public enum GameLanguage

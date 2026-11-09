@@ -55,7 +55,7 @@ public class WindowSelectCar : WindowBase
     {
         Game.Sound.Play(SoundClip.Click);
         _game.SelectedCar++;
-        if (_game.SelectedCar == 3)
+        if (_game.SelectedCar == _game.ConfigGame.Cars.Length)
             _game.SelectedCar = 0;
 
         _garage.ShowCar(_game.SelectedCar);
@@ -67,7 +67,7 @@ public class WindowSelectCar : WindowBase
         Game.Sound.Play(SoundClip.Click);
         _game.SelectedCar--;
         if (_game.SelectedCar < 0)
-            _game.SelectedCar = 2;
+            _game.SelectedCar = _game.ConfigGame.Cars.Length - 1;
 
         _garage.ShowCar(_game.SelectedCar);
         SetButtonsByCar();        
@@ -78,8 +78,12 @@ public class WindowSelectCar : WindowBase
         Debug.Log("PressBuyCar()");
         Game.Sound.Play(SoundClip.Click);
 
-        if (_game.SelectedCarType == CarType.Gnom && _game.ConfigGame.GameVersion == GameVersion.Demo)
-            return;
+        if (_game.ConfigGame.GameVersion == GameVersion.Demo)
+        {
+            if (_game.SelectedCarType == CarType.Gnom || _game.SelectedCarType == CarType.Fish)
+                return;
+        }
+            
 
         bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);
         int price = Price();
