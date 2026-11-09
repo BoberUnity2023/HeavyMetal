@@ -78,7 +78,7 @@ public class WindowSelectCar : WindowBase
         Debug.Log("PressBuyCar()");
         Game.Sound.Play(SoundClip.Click);
 
-        if (_game.SelectedCarType == CarType.Gnom)
+        if (_game.SelectedCarType == CarType.Gnom && _game.ConfigGame.GameVersion == GameVersion.Demo)
             return;
 
         bool hasCar = _game.Saves.HasBoughtCar(_game.SelectedCarType);

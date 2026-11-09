@@ -30,9 +30,9 @@ MonoBehaviour:
       Prices: d4300000d4300000d4300000d4300000
     _shields:
       CountBought: 0
-      CountMax: 1
+      CountMax: 4
       Power: 1
-      Prices: a8610000
+      Prices: 204e000030750000409c000050c30000
     _tires:
       CountBought: 0
       CountMax: 3
