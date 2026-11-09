@@ -15,7 +15,7 @@ public class ColorPanel : MonoBehaviour
     }
 
     public void Show()
-    {
+    {        
         gameObject.SetActive(true);
         CreateButtons();
     }

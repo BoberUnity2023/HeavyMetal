@@ -21,6 +21,7 @@ public class CarTuningPanel : MonoBehaviour
         _game = sceneController.Game;
         _garage = garage;
         InitBars();
+        _colorPanel.Show();
     }
 
     public void Show()

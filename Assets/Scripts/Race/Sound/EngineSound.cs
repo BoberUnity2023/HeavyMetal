@@ -1,59 +1,58 @@
 using UnityEngine;
 
 public class EngineSound : VolumeSound
-{    
+{
     [SerializeField] private AudioSource _audioSource;
     [Range(0, 1)][SerializeField] private float _scale;
 
-    private bool _isFun;
+    private Car _playerCar;
     private float _volume;
     private float _volumeTarget;
     private float _pitch;
-    private float _pitchTarget;    
+    private float _pitchTarget;
+    private float _maxDistanceSqr;
+
+    private void Start()
+    {
+        _playerCar = _car.Hub.Level.Race.Car;
+        _maxDistanceSqr = _audioSource.maxDistance * _audioSource.maxDistance;
+    }
 
     private void Update()
     {
-        Car playerCar = _car.Hub.Level.Race.Car;
-        if (playerCar != null)
+        Update_EngineSound();
+    }
+
+    private void Update_EngineSound()
+    {
+        float sqrDistance = (transform.position - _playerCar.transform.position).sqrMagnitude;
+        if (sqrDistance > _maxDistanceSqr)
         {
-            // Считаем квадрат расстояния между ботом и игроком
-            float sqrDistance = (transform.position - playerCar.transform.position).sqrMagnitude;
+            if (_audioSource.volume > 0)
+                _audioSource.volume = 0;
 
-            // Если бот уехал дальше, чем Max Distance из настроек AudioSource (40 метров)
-            if (sqrDistance > _audioSource.maxDistance)
-            {
-                if (_audioSource.volume > 0) 
-                    _audioSource.volume = 0;
-
-                return; // Процессор отдыхает
-            }
+            return;
         }
 
         if (_car.Force < 0.05f)
         {
-            _volumeTarget = 0.5f * _scale; ;
-
-            if (_isFun)
-            {
-                _pitchTarget = 0.75f;                
-            }
-            _isFun = false;
+            _volumeTarget = 0.4f * _scale;
+            // Машина катится или стоит — звук холостого хода (низкий тон)
+            _pitchTarget = 0.75f;
         }
         else
         {
-            _volumeTarget = _car.Force * _scale; ;
-
-            if (!_isFun)
-            {
-                _pitchTarget = 1.25f;
-            }
-
-            _isFun = true;
+            _volumeTarget = _car.Force * _scale;
+            // ИДЕАЛЬНО ДЛЯ ГОНОК: Динамический питч! 
+            // Звук мотора будет плавно повышаться от 0.85 до 1.35 в зависимости от силы нажатия газа!
+            _pitchTarget = Mathf.Lerp(0.85f, 1.35f, _car.Force);
         }
 
-        _volume = Mathf.Lerp(_volume, _volumeTarget, Time.deltaTime * 3) * _volumeSound;
+        // 3. Плавный и стерильный Lerp в стеке памяти процессора
+        _volume = Mathf.Lerp(_volume, _volumeTarget, Time.deltaTime * 3);
         _pitch = Mathf.Lerp(_pitch, _pitchTarget, Time.deltaTime * 3);
-        _audioSource.volume = _volume;
+
+        _audioSource.volume = _volume * _volumeSound;
         _audioSource.pitch = _pitch;
     }
 }

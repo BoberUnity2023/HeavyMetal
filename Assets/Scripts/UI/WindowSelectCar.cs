@@ -184,16 +184,15 @@ public class WindowSelectCar : WindowBase
         _buttonBuy.gameObject.SetActive(!hasCar);
         _priceIndicator.gameObject.SetActive(!hasCar);
         int price = Price();
-        _priceIndicator.SetPrice(price);        
+        _priceIndicator.SetPrice(price);
+        _carInfoPanel.Show();
 
         if (hasCar)
-        {
-            _carInfoPanel.Show();
+        {            
             _carTuningPanel.Show();
         }
         else
-        {
-            _carInfoPanel.Show();
+        {            
             _carTuningPanel.Hide();            
         }
 
